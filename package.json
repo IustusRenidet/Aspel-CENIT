@@ -1,0 +1,27 @@
+{
+  "name": "aspel-cenit",
+  "version": "1.0.0",
+  "description": "Dashboard ejecutivo innovador, desarrollado como una solución web fullstack, diseñado para ofrecer una visión 360° del rendimiento empresarial. Consolidando y reportando datos de sistemas Aspel clave como SAE, NOI, COI y BANCO",
+  "main": "index.js",
+  "authors": [
+    {
+      "name": "RintelGatachi",
+      "email": "iustusrenidet@gmail.com"
+    }
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IustusRenidet/Aspel-CENIT.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/IustusRenidet/Aspel-CENIT/issues"
+  },
+  "homepage": "https://github.com/IustusRenidet/Aspel-CENIT#readme"
+}
