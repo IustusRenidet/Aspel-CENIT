@@ -23,5 +23,10 @@
   "bugs": {
     "url": "https://github.com/IustusRenidet/Aspel-CENIT/issues"
   },
-  "homepage": "https://github.com/IustusRenidet/Aspel-CENIT#readme"
+  "homepage": "https://github.com/IustusRenidet/Aspel-CENIT#readme",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "express": "^5.1.0",
+    "node-firebird-driver-native": "^3.2.2"
+  }
 }
