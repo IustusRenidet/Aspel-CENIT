@@ -6,6 +6,7 @@ chart.js
 node.js
 express
 dotenv
+mongodb
 bcryptjs 
 node-firebird-driver-native (poolTiempo real)
 express body-parser

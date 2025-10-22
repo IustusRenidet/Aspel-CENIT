@@ -27,6 +27,7 @@
   "dependencies": {
     "body-parser": "^2.2.0",
     "express": "^5.1.0",
+    "mongodb": "^6.20.0",
     "node-firebird-driver-native": "^3.2.2"
   }
 }
