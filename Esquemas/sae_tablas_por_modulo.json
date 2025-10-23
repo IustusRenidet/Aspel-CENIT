@@ -1,0 +1,719 @@
+{
+  "Compras": {
+    "ACOMP": {
+      "descripcion": "Acumulado de compras",
+      "tipo": "Resumen",
+      "sincroniza": "No"
+    },
+    "COMPC": {
+      "descripcion": "Compras",
+      "tipo": "Mov",
+      "sincroniza": "No"
+    },
+    "COMPC_CLIB": {
+      "descripcion": "Compras campos libres",
+      "tipo": "Lateral",
+      "sincroniza": "No"
+    },
+    "COMPD": {
+      "descripcion": "Devoluciones de compra",
+      "tipo": "Mov",
+      "sincroniza": "No"
+    },
+    "COMPD_CLIB": {
+      "descripcion": "Devoluciones compras campos libres",
+      "tipo": "Lateral",
+      "sincroniza": "No"
+    },
+    "COMPO": {
+      "descripcion": "Órdenes de Compra",
+      "tipo": "Mov",
+      "sincroniza": "No"
+    },
+    "COMPO_CLIB": {
+      "descripcion": "Órdenes campos libres",
+      "tipo": "Lateral",
+      "sincroniza": "No"
+    },
+    "COMPQ": {
+      "descripcion": "Requisiciones",
+      "tipo": "Mov",
+      "sincroniza": "No"
+    },
+    "COMPQ_CLIB": {
+      "descripcion": "Requisiciones campos libres",
+      "tipo": "Lateral",
+      "sincroniza": "No"
+    },
+    "COMPR": {
+      "descripcion": "Recepciones",
+      "tipo": "Mov",
+      "sincroniza": "No"
+    },
+    "COMPR_CLIB": {
+      "descripcion": "Recepciones campos libres",
+      "tipo": "Lateral",
+      "sincroniza": "No"
+    },
+    "FOLIOSC": {
+      "descripcion": "Compras folios",
+      "tipo": "Config",
+      "sincroniza": "No"
+    },
+    "OBS_DOCC": {
+      "descripcion": "Compras observaciones",
+      "tipo": "Lateral",
+      "sincroniza": "No"
+    },
+    "OPER_TERCEROS": {
+      "descripcion": "Proveedores operaciones",
+      "tipo": "Maestro",
+      "sincroniza": "No"
+    },
+    "OPER_X_TIPO_TERCERO": {
+      "descripcion": "Proveedores operaciones con terceros",
+      "tipo": "Maestro",
+      "sincroniza": "No"
+    },
+    "PAR_COMPC": {
+      "descripcion": "Compras partidas",
+      "tipo": "Detalle",
+      "sincroniza": "Sí"
+    },
+    "PAR_COMPC_CLIB": {
+      "descripcion": "Compras partidas campos libres",
+      "tipo": "Lateral",
+      "sincroniza": "No"
+    },
+    "PAR_COMPD": {
+      "descripcion": "Devoluciones de compra partidas",
+      "tipo": "Detalle",
+      "sincroniza": "Sí"
+    },
+    "PAR_COMPD_CLIB": {
+      "descripcion": "Devoluciones compras partidas campos libres",
+      "tipo": "Lateral",
+      "sincroniza": "No"
+    },
+    "PAR_COMPO": {
+      "descripcion": "Órdenes partidas",
+      "tipo": "Detalle",
+      "sincroniza": "Sí"
+    },
+    "PAR_COMPO_CLIB": {
+      "descripcion": "Órdenes partidas campos libres",
+      "tipo": "Lateral",
+      "sincroniza": "No"
+    },
+    "PAR_COMPQ": {
+      "descripcion": "Requisiciones partidas",
+      "tipo": "Detalle",
+      "sincroniza": "Sí"
+    },
+    "PAR_COMPQ_CLIB": {
+      "descripcion": "Requisiciones partidas campos libres",
+      "tipo": "Lateral",
+      "sincroniza": "No"
+    },
+    "PAR_COMPR": {
+      "descripcion": "Recepciones Partidas",
+      "tipo": "Detalle",
+      "sincroniza": "Sí"
+    },
+    "PAR_COMPR_CLIB": {
+      "descripcion": "Recepciones partidas campos libres",
+      "tipo": "Lateral",
+      "sincroniza": "No"
+    },
+    "PARAM_COMPRAS": {
+      "descripcion": "Parámetros de compras",
+      "tipo": "Config",
+      "sincroniza": "No"
+    },
+    "PARAM_FOLIOSC": {
+      "descripcion": "Parámetros de series de compras",
+      "tipo": "Config",
+      "sincroniza": "No"
+    },
+    "PARAM_PARTIDASCOMP": {
+      "descripcion": "Parámetros de compras partidas",
+      "tipo": "Config",
+      "sincroniza": "No"
+    },
+    "PARAM_TIPODOCTOSC": {
+      "descripcion": "Parámetros de documentos de compras",
+      "tipo": "Config",
+      "sincroniza": "No"
+    },
+    "PRVPROD": {
+      "descripcion": "Artículo y Proveedor con costo y tiempo de entrega",
+      "tipo": "Catalogo",
+      "sincroniza": "Sí"
+    },
+    "TIPO_TERCEROS": {
+      "descripcion": "Proveedor por tipo de tercero",
+      "tipo": "Maestro",
+      "sincroniza": "No"
+    }
+  },
+  "Campañas": {
+    "ACTCAM": {
+      "descripcion": "Campañas actividades",
+      "tipo": "Maestro",
+      "sincroniza": "No"
+    },
+    "ACTIVI": {
+      "descripcion": "Actividades en campañas",
+      "tipo": "Catalogo",
+      "sincroniza": "No"
+    },
+    "CAMP": {
+      "descripcion": "Campañas",
+      "tipo": "Mov",
+      "sincroniza": "No"
+    },
+    "CAMPFIL": {
+      "descripcion": "Campañas Filtros",
+      "tipo": "Maestro",
+      "sincroniza": "No"
+    },
+    "CLICAM": {
+      "descripcion": "Campañas clientes",
+      "tipo": "Mov",
+      "sincroniza": "No"
+    },
+    "DESACT": {
+      "descripcion": "Campañas descripción actividades",
+      "tipo": "Maestro",
+      "sincroniza": "No"
+    },
+    "GUICAM": {
+      "descripcion": "Campañas guías",
+      "tipo": "Maestro",
+      "sincroniza": "No"
+    },
+    "RESACT": {
+      "descripcion": "Campañas resultados",
+      "tipo": "Resumen",
+      "sincroniza": "No"
+    },
+    "RESULT": {
+      "descripcion": "Resultados de campañas",
+      "tipo": "Resumen",
+      "sincroniza": "No"
+    }
+  },
+  "Ventas": {
+    "AFACT": {
+      "descripcion": "Acumulado de ventas",
+      "tipo": "Resumen",
+      "sincroniza": "No"
+    },
+    "FACTA_CLIB": {
+      "descripcion": "Parcialidades campos libres",
+      "tipo": "Lateral",
+      "sincroniza": "No"
+    },
+    "FACTC": {
+      "descripcion": "Cotizaciones",
+      "tipo": "Mov",
+      "sincroniza": "Sí"
+    },
+    "FACTC_CLIB": {
+      "descripcion": "Cotizaciones campos libres",
+      "tipo": "Lateral",
+      "sincroniza": "No"
+    },
+    "FACTD": {
+      "descripcion": "Devoluciones de venta",
+      "tipo": "Mov",
+      "sincroniza": "Sí"
+    },
+    "FACTD_CLIB": {
+      "descripcion": "Devoluciones de venta campos libres",
+      "tipo": "Lateral",
+      "sincroniza": "No"
+    },
+    "FACTF": {
+      "descripcion": "Facturas",
+      "tipo": "Mov",
+      "sincroniza": "Sí"
+    },
+    "FACTF_CLIB": {
+      "descripcion": "Facturas campos libres",
+      "tipo": "Lateral",
+      "sincroniza": "No"
+    },
+    "FACTP": {
+      "descripcion": "Pedidos",
+      "tipo": "Mov",
+      "sincroniza": "Sí"
+    },
+    "FACTP_CLIB": {
+      "descripcion": "Pedidos campos libres",
+      "tipo": "Lateral",
+      "sincroniza": "No"
+    },
+    "FACTR_CLIB": {
+      "descripcion": "Remisiones campos libres",
+      "tipo": "Lateral",
+      "sincroniza": "No"
+    },
+    "FACTV_CLIB": {
+      "descripcion": "Notas de venta campos libres",
+      "tipo": "Lateral",
+      "sincroniza": "No"
+    },
+    "FOLIOSF": {
+      "descripcion": "Facturas folios",
+      "tipo": "Config",
+      "sincroniza": "No"
+    },
+    "INFENVIO": {
+      "descripcion": "Facturas información de envío",
+      "tipo": "Lateral",
+      "sincroniza": "No"
+    },
+    "OBS_DOCF": {
+      "descripcion": "Facturas observaciones",
+      "tipo": "Lateral",
+      "sincroniza": "No"
+    },
+    "PAR_FACTA": {
+      "descripcion": "Parcialidades partidas",
+      "tipo": "Detalle",
+      "sincroniza": "Sí"
+    },
+    "PAR_FACTA_CLIB": {
+      "descripcion": "Parcialidades partidas campos libres",
+      "tipo": "Lateral",
+      "sincroniza": "No"
+    },
+    "PAR_FACTC": {
+      "descripcion": "Cotizaciones partidas",
+      "tipo": "Detalle",
+      "sincroniza": "Sí"
+    },
+    "PAR_FACTC_CLIB": {
+      "descripcion": "Cotizaciones partidas campos libres",
+      "tipo": "Lateral",
+      "sincroniza": "No"
+    },
+    "PAR_FACTD": {
+      "descripcion": "Devoluciones de facturas partidas",
+      "tipo": "Detalle",
+      "sincroniza": "Sí"
+    },
+    "PAR_FACTD_CLIB": {
+      "descripcion": "Devoluciones facturas partidas campos libres",
+      "tipo": "Lateral",
+      "sincroniza": "No"
+    },
+    "PAR_FACTF": {
+      "descripcion": "Facturas Partidas",
+      "tipo": "Detalle",
+      "sincroniza": "Sí"
+    },
+    "PAR_FACTF_CLIB": {
+      "descripcion": "Facturas partidas campos libres",
+      "tipo": "Lateral",
+      "sincroniza": "No"
+    },
+    "PAR_FACTP_CLIB": {
+      "descripcion": "Pedidos partidas campos libres",
+      "tipo": "Lateral",
+      "sincroniza": "No"
+    },
+    "PAR_FACTR": {
+      "descripcion": "Remisiones partidas",
+      "tipo": "Detalle",
+      "sincroniza": "Sí"
+    },
+    "PAR_FACTR_CLIB": {
+      "descripcion": "Remisiones partidas campos libres",
+      "tipo": "Lateral",
+      "sincroniza": "No"
+    },
+    "PAR_FACTV": {
+      "descripcion": "Notas de venta partidas",
+      "tipo": "Detalle",
+      "sincroniza": "Sí"
+    },
+    "PAR_FACTV_CLIB": {
+      "descripcion": "Notas de venta partidas campos libres",
+      "tipo": "Lateral",
+      "sincroniza": "No"
+    },
+    "PARAM_FACTURA": {
+      "descripcion": "Parámetros de facturas",
+      "tipo": "Config",
+      "sincroniza": "No"
+    },
+    "PARAM_FACTURAELECTRONICA": {
+      "descripcion": "Parámetros de facturación electrónica",
+      "tipo": "Config",
+      "sincroniza": "No"
+    },
+    "PARAM_FOLIOSF": {
+      "descripcion": "Parámetros de series de ventas",
+      "tipo": "Config",
+      "sincroniza": "No"
+    },
+    "PARAM_PARTIDASFACT": {
+      "descripcion": "Parámetros de facturas partidas",
+      "tipo": "Config",
+      "sincroniza": "No"
+    },
+    "PARAM_TIPODOCTOSF": {
+      "descripcion": "Parámetros de documentos de facturas",
+      "tipo": "Config",
+      "sincroniza": "No"
+    },
+    "PRECIO_X_PROD": {
+      "descripcion": "Inventario precios por producto",
+      "tipo": "Catalogo",
+      "sincroniza": "Sí"
+    },
+    "PRECIOS": {
+      "descripcion": "Inventario lista de precios",
+      "tipo": "Catalogo",
+      "sincroniza": "Sí"
+    },
+    "VEND": {
+      "descripcion": "Vendedores",
+      "tipo": "Catalogo",
+      "sincroniza": "Sí"
+    }
+  },
+  "Inventarios": {
+    "ALMACENES": {
+      "descripcion": "Almacenes",
+      "tipo": "Catalogo",
+      "sincroniza": "Sí"
+    },
+    "CAPAS_X_MOV": {
+      "descripcion": "Movs al inventario capas",
+      "tipo": "Mov",
+      "sincroniza": "No"
+    },
+    "CONM": {
+      "descripcion": "Conceptos de Movs. Al inventario",
+      "tipo": "Maestro",
+      "sincroniza": "No"
+    },
+    "CVES_ALTER": {
+      "descripcion": "Claves alternas de inventarios",
+      "tipo": "Maestro",
+      "sincroniza": "No"
+    },
+    "ENLACE_LTPD": {
+      "descripcion": "Lotes y pedimentos enlace",
+      "tipo": "Mov",
+      "sincroniza": "Sí"
+    },
+    "HNUMSER": {
+      "descripcion": "Números de serie historial",
+      "tipo": "Mov",
+      "sincroniza": "No"
+    },
+    "INVFIS": {
+      "descripcion": "Inventario físico",
+      "tipo": "Mov",
+      "sincroniza": "No"
+    },
+    "KITS": {
+      "descripcion": "Inventario kits",
+      "tipo": "Catalogo",
+      "sincroniza": "Sí"
+    },
+    "LISTPRODSUST": {
+      "descripcion": "Inventario productos sustitutos 1",
+      "tipo": "Maestro",
+      "sincroniza": "No"
+    },
+    "LTPD": {
+      "descripcion": "Lotes y pedimentos",
+      "tipo": "Catalogo",
+      "sincroniza": "No"
+    },
+    "MINVE": {
+      "descripcion": "Movimientos al inventario",
+      "tipo": "Mov",
+      "sincroniza": "Sí"
+    },
+    "NUMSER": {
+      "descripcion": "Números de serie",
+      "tipo": "Catalogo",
+      "sincroniza": "No"
+    },
+    "OINVE": {
+      "descripcion": "Inventarios observaciones",
+      "tipo": "Lateral",
+      "sincroniza": "No"
+    },
+    "OLTPD": {
+      "descripcion": "Lotes y pedimentos observaciones",
+      "tipo": "Lateral",
+      "sincroniza": "No"
+    },
+    "OMINVE": {
+      "descripcion": "Movs. Al inventario observaciones",
+      "tipo": "Lateral",
+      "sincroniza": "No"
+    },
+    "PARAM_INVENTARIO": {
+      "descripcion": "Parámetros de inventarios",
+      "tipo": "Config",
+      "sincroniza": "No"
+    },
+    "PRODSUST": {
+      "descripcion": "Inventario productos sustitutos 2",
+      "tipo": "Maestro",
+      "sincroniza": "No"
+    }
+  },
+  "Por Cobrar": {
+    "AUTORIZAC": {
+      "descripcion": "Cuentas por cobrar autorizaciones",
+      "tipo": "Lateral",
+      "sincroniza": "No"
+    },
+    "CONC": {
+      "descripcion": "Conceptos de cuentas por cobrar",
+      "tipo": "Maestro",
+      "sincroniza": "No"
+    },
+    "CUEN_DET": {
+      "descripcion": "Cuentas por cobrar detalle",
+      "tipo": "Detalle",
+      "sincroniza": "No"
+    },
+    "CUEN_M": {
+      "descripcion": "Cuentas por cobrar",
+      "tipo": "Mov",
+      "sincroniza": "No"
+    },
+    "FOLCXC": {
+      "descripcion": "Cuentas por cobrar folios",
+      "tipo": "Config",
+      "sincroniza": "No"
+    },
+    "FOLIOSCXC": {
+      "descripcion": "Configuración de folios para cuentas por cobrar",
+      "tipo": "Config",
+      "sincroniza": "No"
+    },
+    "OCUEN": {
+      "descripcion": "Cuentas por cobrar observaciones",
+      "tipo": "Lateral",
+      "sincroniza": "No"
+    }
+  },
+  "Por Pagar": {
+    "AUTORIZAP": {
+      "descripcion": "Cuentas por pagar autorizaciones",
+      "tipo": "Lateral",
+      "sincroniza": "No"
+    },
+    "CONP": {
+      "descripcion": "Conceptos de cuentas por pagar",
+      "tipo": "Maestro",
+      "sincroniza": "No"
+    },
+    "FOLCXP": {
+      "descripcion": "Cuentas por pagar folios",
+      "tipo": "Config",
+      "sincroniza": "No"
+    },
+    "FOLIOSCXP": {
+      "descripcion": "Configuración de folios para cuentas por pagar",
+      "tipo": "Config",
+      "sincroniza": "No"
+    },
+    "OPAGA": {
+      "descripcion": "Cuentas por pagar observaciones",
+      "tipo": "Lateral",
+      "sincroniza": "No"
+    },
+    "PAGA_DET": {
+      "descripcion": "Cuentas por pagar detalle",
+      "tipo": "Detalle",
+      "sincroniza": "Sí"
+    },
+    "PAGA_M": {
+      "descripcion": "Cuentas por pagar",
+      "tipo": "Mov",
+      "sincroniza": "Sí"
+    }
+  },
+  "Fiscal": {
+    "CFDIC": {
+      "descripcion": "Comprobante fiscal digital por internet compras",
+      "tipo": "Mov",
+      "sincroniza": "No"
+    }
+  },
+  "Clientes": {
+    "CITAS": {
+      "descripcion": "Clientes citas",
+      "tipo": "Mov",
+      "sincroniza": "No"
+    },
+    "CLIE": {
+      "descripcion": "Clientes",
+      "tipo": "Catalogo",
+      "sincroniza": "Sí"
+    },
+    "CLIE_CLIB": {
+      "descripcion": "Clientes campos libres",
+      "tipo": "Lateral",
+      "sincroniza": "No"
+    },
+    "CONTAC": {
+      "descripcion": "Clientes contactos",
+      "tipo": "Lateral",
+      "sincroniza": "No"
+    },
+    "LNKOLKC": {
+      "descripcion": "Clientes contactos outlook",
+      "tipo": "Lateral",
+      "sincroniza": "No"
+    },
+    "OCLI": {
+      "descripcion": "Clientes observaciones",
+      "tipo": "Lateral",
+      "sincroniza": "No"
+    },
+    "PARAM_CLIENTES": {
+      "descripcion": "Parámetros de clientes",
+      "tipo": "Config",
+      "sincroniza": "No"
+    }
+  },
+  "N/A": {
+    "CONS_PER": {
+      "descripcion": "Consultas variables",
+      "tipo": "Sys",
+      "sincroniza": "No"
+    },
+    "CTRLBLOQUEO": {
+      "descripcion": "Control de bloqueo de la base de datos",
+      "tipo": "Sys",
+      "sincroniza": "No"
+    },
+    "PAIS": {
+      "descripcion": "Países",
+      "tipo": "Maestro",
+      "sincroniza": "No"
+    },
+    "PARAM_APLICASOC": {
+      "descripcion": "Parámetros de aplicaciones asociadas",
+      "tipo": "Config",
+      "sincroniza": "No"
+    },
+    "PARAM_CAMPOSLIBRES": {
+      "descripcion": "Parámetros de campos libres",
+      "tipo": "Config",
+      "sincroniza": "No"
+    },
+    "PARAM_CTACONTABLE": {
+      "descripcion": "Parámetros de cuentas contables",
+      "tipo": "Config",
+      "sincroniza": "No"
+    },
+    "PARAM_DATOSBANCARIOS": {
+      "descripcion": "?",
+      "tipo": "Config",
+      "sincroniza": "No"
+    },
+    "PARAM_DATOSBD": {
+      "descripcion": "Parámetros de base de datos",
+      "tipo": "Config",
+      "sincroniza": "No"
+    },
+    "PARAM_DATOSEMP": {
+      "descripcion": "Parámetros de empresa",
+      "tipo": "Config",
+      "sincroniza": "No"
+    },
+    "PARAM_DATOSGRALES": {
+      "descripcion": "Parámetros generales",
+      "tipo": "Config",
+      "sincroniza": "No"
+    },
+    "PARAM_DOMEXPED": {
+      "descripcion": "Parámetros de domicilio de expedición",
+      "tipo": "Config",
+      "sincroniza": "No"
+    },
+    "PARAM_DOMFISCAL": {
+      "descripcion": "Parámetros de domicilio fiscal",
+      "tipo": "Config",
+      "sincroniza": "No"
+    },
+    "PARAM_GRAFICAS": {
+      "descripcion": "Parámetros de gráficas",
+      "tipo": "Config",
+      "sincroniza": "No"
+    },
+    "TBLCONTROL": {
+      "descripcion": "Tabla de control",
+      "tipo": "Sys",
+      "sincroniza": "No"
+    },
+    "ZONA": {
+      "descripcion": "Zonas",
+      "tipo": "Maestro",
+      "sincroniza": "No"
+    }
+  },
+  "Proveedores": {
+    "CONTAP": {
+      "descripcion": "Proveedores contactos",
+      "tipo": "Lateral",
+      "sincroniza": "No"
+    },
+    "LNKOLKP": {
+      "descripcion": "Proveedores contactos outlook",
+      "tipo": "Maestro",
+      "sincroniza": "No"
+    },
+    "OPROV": {
+      "descripcion": "Proveedores observaciones",
+      "tipo": "Lateral",
+      "sincroniza": "No"
+    },
+    "PARAM_PROVEEDORES": {
+      "descripcion": "Parámetros de proveedores",
+      "tipo": "Config",
+      "sincroniza": "No"
+    },
+    "PROV": {
+      "descripcion": "Proveedor",
+      "tipo": "Catalogo",
+      "sincroniza": "Sí"
+    },
+    "PROV_CLIB": {
+      "descripcion": "Proveedores campos libres",
+      "tipo": "Lateral",
+      "sincroniza": "No"
+    }
+  },
+  "Contabilidad": {
+    "CTAESQ": {
+      "descripcion": "Impuestos cuentas contables",
+      "tipo": "Config",
+      "sincroniza": "No"
+    },
+    "IMPU": {
+      "descripcion": "Esquemas de impuestos",
+      "tipo": "Config",
+      "sincroniza": "No"
+    },
+    "MONED": {
+      "descripcion": "Monedas",
+      "tipo": "Maestro",
+      "sincroniza": "Sí"
+    }
+  }
+}
