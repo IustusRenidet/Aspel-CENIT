@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aspel CENIT</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="../../node_modules/tom-select/dist/css/tom-select.bootstrap5.min.css"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="starfield"></div>
+    <main class="app-shell container py-5">
+      <section id="login-view" class="glass-card mx-auto" style="max-width: 480px;">
+        <div class="text-center mb-4">
+          <h1 class="fw-semibold">Aspel CENIT</h1>
+          <p class="text-secondary mb-0">
+            Plataforma nocturna para la visualización integral de indicadores Aspel.
+          </p>
+        </div>
+        <div class="alert alert-danger alert-feedback" role="alert" id="login-alert"></div>
+        <form id="login-form" class="mt-4">
+          <div class="mb-3">
+            <label for="email" class="form-label">Correo electrónico</label>
+            <input type="email" class="form-control" id="email" placeholder="admin@aspel.local" required />
+          </div>
+          <div class="mb-4">
+            <label for="password" class="form-label">Contraseña</label>
+            <input type="password" class="form-control" id="password" placeholder="••••••••" required />
+          </div>
+          <button class="btn btn-primary w-100 py-2" type="submit" id="login-button">
+            Iniciar sesión
+          </button>
+          <p class="text-secondary text-center small mt-3">
+            Accede con las credenciales provistas por tu administrador. Los datos se protegen con
+            bcrypt y se almacenan en MongoDB.
+          </p>
+        </form>
+      </section>
+
+      <section id="dashboard-view" class="glass-card d-none">
+        <header class="d-flex flex-column flex-lg-row align-items-lg-center justify-content-between gap-3">
+          <div>
+            <h2 class="fw-semibold mb-1">Panel ejecutivo</h2>
+            <p class="text-secondary mb-0">
+              Selecciona una empresa para consolidar los indicadores de tus sistemas Aspel.
+            </p>
+          </div>
+          <div class="d-flex flex-column align-items-lg-end gap-2">
+            <div class="d-flex flex-wrap align-items-center gap-2">
+              <span class="badge-role" id="user-name">Usuario</span>
+              <span class="badge-role" id="user-email">correo@empresa.com</span>
+            </div>
+            <div id="user-roles" class="d-flex flex-wrap gap-2"></div>
+          </div>
+        </header>
+
+        <section class="dashboard-section">
+          <div class="row g-3 align-items-center">
+            <div class="col-12 col-lg-6">
+              <label for="company-select" class="form-label mb-1">Empresa</label>
+              <select id="company-select" placeholder="Selecciona la empresa" autocomplete="off"></select>
+            </div>
+            <div class="col-12 col-lg-6 text-lg-end">
+              <small class="text-secondary d-block mb-1">Configuración persistida en archivo seguro.</small>
+              <button class="btn btn-outline-light btn-sm" id="config-path-button">Ver ruta configuración</button>
+            </div>
+          </div>
+        </section>
+
+        <ul class="nav nav-tabs mt-4" id="module-tabs" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link active"
+              id="tab-sae-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#tab-sae"
+              type="button"
+              role="tab"
+              aria-controls="tab-sae"
+              aria-selected="true"
+            >
+              SAE
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="tab-coi-tab" data-bs-toggle="tab" data-bs-target="#tab-coi" type="button" role="tab">
+              COI
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="tab-noi-tab" data-bs-toggle="tab" data-bs-target="#tab-noi" type="button" role="tab">
+              NOI
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="tab-banco-tab" data-bs-toggle="tab" data-bs-target="#tab-banco" type="button" role="tab">
+              BANCO
+            </button>
+          </li>
+        </ul>
+
+        <div class="tab-content pt-4" id="module-tabs-content">
+          <div class="tab-pane fade show active" id="tab-sae" role="tabpanel" aria-labelledby="tab-sae-tab">
+            <div class="row g-3 metric-grid">
+              <div class="col-12 col-md-6 col-xl-3">
+                <div class="metric-card">
+                  <p class="metric-title">Ventas del mes</p>
+                  <p class="metric-value" id="sae-ventas"></p>
+                  <span class="text-secondary small" id="sae-ventas-info"></span>
+                </div>
+              </div>
+              <div class="col-12 col-md-6 col-xl-3">
+                <div class="metric-card">
+                  <p class="metric-title">Compras del mes</p>
+                  <p class="metric-value" id="sae-compras"></p>
+                  <span class="text-secondary small" id="sae-compras-info"></span>
+                </div>
+              </div>
+              <div class="col-12 col-md-6 col-xl-3">
+                <div class="metric-card">
+                  <p class="metric-title">Clientes activos</p>
+                  <p class="metric-value" id="sae-clientes"></p>
+                  <span class="text-secondary small">Seguimiento en tiempo real.</span>
+                </div>
+              </div>
+              <div class="col-12 col-md-6 col-xl-3">
+                <div class="metric-card">
+                  <p class="metric-title">Pedidos pendientes</p>
+                  <p class="metric-value" id="sae-pedidos"></p>
+                  <span class="text-secondary small">Monitoreo desde pool Firebird.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="row g-4 align-items-stretch mt-2">
+              <div class="col-12 col-xl-8">
+                <div class="metric-card h-100">
+                  <div class="d-flex justify-content-between align-items-start mb-3">
+                    <div>
+                      <h3 class="h5 mb-1">Tendencia de ventas vs compras</h3>
+                      <span class="text-secondary small" id="sae-chart-caption"></span>
+                    </div>
+                    <button class="btn btn-outline-light btn-sm" id="download-pdf">Exportar PDF</button>
+                  </div>
+                  <canvas id="sae-chart" height="320"></canvas>
+                </div>
+              </div>
+              <div class="col-12 col-xl-4">
+                <div class="metric-card h-100 d-flex flex-column">
+                  <h3 class="h5 mb-3">Detalle resumido</h3>
+                  <table class="table table-dark table-hover table-sm mb-0">
+                    <tbody id="sae-summary-table"></tbody>
+                  </table>
+                  <div class="mt-auto pt-3">
+                    <small class="text-secondary" id="sae-data-source"></small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-pane fade" id="tab-coi" role="tabpanel" aria-labelledby="tab-coi-tab">
+            <div class="metric-card">
+              <h3 class="h5">COI</h3>
+              <p class="text-secondary mb-0">
+                El panel de COI estará disponible próximamente con indicadores contables especializados.
+              </p>
+            </div>
+          </div>
+
+          <div class="tab-pane fade" id="tab-noi" role="tabpanel" aria-labelledby="tab-noi-tab">
+            <div class="metric-card">
+              <h3 class="h5">NOI</h3>
+              <p class="text-secondary mb-0">
+                Visualiza métricas de nómina, prenómina y asistencias en la siguiente iteración.
+              </p>
+            </div>
+          </div>
+
+          <div class="tab-pane fade" id="tab-banco" role="tabpanel" aria-labelledby="tab-banco-tab">
+            <div class="metric-card">
+              <h3 class="h5">BANCO</h3>
+              <p class="text-secondary mb-0">
+                Consolidación bancaria con flujos de efectivo y conciliaciones próximamente.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer src="./renderer.js"></script>
+  </body>
+</html>

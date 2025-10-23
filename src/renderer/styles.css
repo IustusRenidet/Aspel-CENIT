@@ -1,0 +1,192 @@
+:root {
+  --night-gradient-start: #050816;
+  --night-gradient-end: #0c0f24;
+  --accent: #6c5ce7;
+  --accent-light: #a29bfe;
+  --text-primary: #f8f9fa;
+  --text-secondary: #ced4da;
+  --glass-background: rgba(10, 13, 30, 0.75);
+  --glass-border: rgba(108, 92, 231, 0.3);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: radial-gradient(circle at 20% 20%, rgba(108, 92, 231, 0.15), transparent 40%),
+    radial-gradient(circle at 80% 0%, rgba(29, 209, 161, 0.1), transparent 45%),
+    linear-gradient(180deg, var(--night-gradient-start), var(--night-gradient-end));
+  color: var(--text-primary);
+  overflow-x: hidden;
+}
+
+.starfield,
+.starfield::before,
+.starfield::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background-repeat: repeat;
+  z-index: -2;
+}
+
+.starfield::before {
+  background-image: radial-gradient(2px 2px at 20px 20px, rgba(255, 255, 255, 0.8), transparent),
+    radial-gradient(1px 1px at 80px 90px, rgba(255, 255, 255, 0.6), transparent),
+    radial-gradient(1px 1px at 160px 30px, rgba(255, 255, 255, 0.3), transparent);
+  animation: twinkle 18s linear infinite;
+}
+
+.starfield::after {
+  background-image: radial-gradient(2px 2px at 60px 70px, rgba(255, 255, 255, 0.8), transparent),
+    radial-gradient(1px 1px at 200px 160px, rgba(255, 255, 255, 0.5), transparent),
+    radial-gradient(1px 1px at 300px 20px, rgba(255, 255, 255, 0.4), transparent);
+  animation: twinkle 24s linear infinite reverse;
+  opacity: 0.7;
+}
+
+@keyframes twinkle {
+  from {
+    transform: translate3d(-5%, -5%, 0) scale(1.1);
+  }
+  to {
+    transform: translate3d(5%, 5%, 0) scale(1.1);
+  }
+}
+
+main.app-shell {
+  position: relative;
+  z-index: 1;
+}
+
+.glass-card {
+  background: var(--glass-background);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--glass-border);
+  border-radius: 1.5rem;
+  box-shadow: 0 25px 45px rgba(4, 6, 12, 0.6);
+  padding: 2.5rem;
+}
+
+.glass-card h1,
+.glass-card h2,
+.glass-card h3 {
+  color: var(--text-primary);
+}
+
+.form-control,
+.form-select,
+.ts-control {
+  background-color: rgba(15, 19, 40, 0.8) !important;
+  border-color: rgba(162, 155, 254, 0.4) !important;
+  color: var(--text-primary) !important;
+}
+
+.form-control:focus,
+.ts-control:focus {
+  box-shadow: 0 0 0 0.25rem rgba(108, 92, 231, 0.25);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
+  border: none;
+  color: #fff;
+}
+
+.btn-outline-light {
+  border-color: rgba(255, 255, 255, 0.35);
+  color: var(--text-secondary);
+}
+
+.btn-outline-light:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-tabs .nav-link {
+  color: var(--text-secondary);
+}
+
+.nav-tabs .nav-link.active {
+  background-color: rgba(108, 92, 231, 0.15);
+  border-color: transparent;
+  color: var(--text-primary);
+}
+
+.metric-card {
+  background: linear-gradient(160deg, rgba(108, 92, 231, 0.15), rgba(39, 60, 117, 0.2));
+  border: 1px solid rgba(108, 92, 231, 0.2);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.metric-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.45);
+}
+
+.metric-title {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12rem;
+  color: var(--text-secondary);
+}
+
+.metric-value {
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
+.badge-role {
+  background: rgba(108, 92, 231, 0.2);
+  color: var(--accent-light);
+  border: 1px solid rgba(108, 92, 231, 0.5);
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+}
+
+.dashboard-section {
+  margin-top: 2.5rem;
+}
+
+.table-dark.table-hover tbody tr:hover {
+  background-color: rgba(108, 92, 231, 0.15);
+}
+
+.alert-feedback {
+  display: none;
+}
+
+.alert-feedback.show {
+  display: block;
+}
+
+@media (max-width: 992px) {
+  .glass-card {
+    padding: 1.75rem;
+  }
+
+  .metric-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .glass-card {
+    padding: 1.25rem;
+  }
+
+  .metric-value {
+    font-size: 1.45rem;
+  }
+}

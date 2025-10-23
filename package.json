@@ -1,33 +1,53 @@
 {
   "name": "aspel-cenit",
   "version": "1.0.0",
-  "description": "Dashboard ejecutivo innovador, desarrollado como una solución web fullstack, diseñado para ofrecer una visión 360° del rendimiento empresarial. Consolidando y reportando datos de sistemas Aspel clave como SAE, NOI, COI y BANCO",
-  "main": "index.js",
-  "authors": [
-    {
-      "name": "RintelGatachi",
-      "email": "iustusrenidet@gmail.com"
-    }
-  ],
+  "description": "Dashboard ejecutivo innovador desarrollado en Electron con integraci\u00f3n Aspel (SAE, COI, NOI y BANCO).",
+  "main": "main.js",
+  "author": "RintelGatachi",
+  "license": "ISC",
+  "type": "commonjs",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "electron .",
+    "dev": "electron .",
+    "build": "electron-builder"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/IustusRenidet/Aspel-CENIT.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
   "bugs": {
     "url": "https://github.com/IustusRenidet/Aspel-CENIT/issues"
   },
   "homepage": "https://github.com/IustusRenidet/Aspel-CENIT#readme",
   "dependencies": {
-    "body-parser": "^2.2.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.3",
+    "bootstrap": "^5.3.3",
+    "chart.js": "^4.4.4",
+    "dayjs": "^1.11.11",
+    "dotenv": "^16.4.5",
     "express": "^5.1.0",
+    "helmet": "^7.0.0",
+    "joi": "^17.12.1",
     "mongodb": "^6.20.0",
-    "node-firebird-driver-native": "^3.2.2"
+    "node-firebird-driver-native": "^3.2.2",
+    "pdfkit": "^0.15.0",
+    "tom-select": "^2.3.1"
+  },
+  "devDependencies": {
+    "electron": "^38.2.2",
+    "electron-builder": "^24.6.0"
+  },
+  "build": {
+    "appId": "com.aspel.cenit",
+    "productName": "Aspel CENIT",
+    "asar": true,
+    "files": [
+      "config/**/*",
+      "src/**/*",
+      "main.js",
+      "preload.js",
+      "package.json"
+    ]
   }
 }
