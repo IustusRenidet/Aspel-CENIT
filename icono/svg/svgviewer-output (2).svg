@@ -1,0 +1,30 @@
+<svg width="500" height="500" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+  <rect width="500" height="500" fill="#0F172A" rx="30" />
+
+  <g stroke="#D4AF37" stroke-width="2" fill="none" opacity="0.8">
+    <polyline points="320,140 240,100 140,180 120,280 160,380 260,400 320,350" />
+    <line x1="240" y1="100" x2="250" y2="250" opacity="0.3" />
+    <line x1="120" y1="280" x2="250" y2="250" opacity="0.3" />
+    <line x1="260" y1="400" x2="250" y2="250" opacity="0.3" />
+  </g>
+
+  <g fill="#CAF0F8">
+    <circle cx="320" cy="140" r="6" />
+    <circle cx="240" cy="100" r="6" />
+    <circle cx="140" cy="180" r="6" />
+    <circle cx="120" cy="280" r="6" />
+    <circle cx="160" cy="380" r="6" />
+    <circle cx="260" cy="400" r="6" />
+    <circle cx="320" cy="350" r="6" />
+  </g>
+
+  <circle cx="250" cy="250" r="35" fill="#F2C94C">
+     <animate attributeName="r" values="35;38;35" dur="4s" repeatCount="indefinite" />
+  </circle>
+  
+  <circle cx="250" cy="250" r="55" stroke="#7067f0" stroke-width="1" fill="none" opacity="0.5" stroke-dasharray="2 4"/>
+
+  <text x="400" y="460" font-family="Arial, sans-serif" font-size="18" fill="#94A3B8" text-anchor="end" letter-spacing="2">
+    SYSTEM
+  </text>
+</svg>
