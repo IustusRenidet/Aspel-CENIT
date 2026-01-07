@@ -1,0 +1,8 @@
+﻿# dataset	database	engine_version	row_count	column_count
+metadata_constraints_BANCO	C:\Program Files (x86)\Common Files\Aspel\Sistemas Aspel\BAN6.00\Datos\Empresa01\BAN60EMPRE01.FDB	2.5.0	710	4
+# --- columnas ---
+order	name	pandas_dtype
+1	tabla	object
+2	constraint_name	object
+3	constraint_type	object
+4	index_name	object

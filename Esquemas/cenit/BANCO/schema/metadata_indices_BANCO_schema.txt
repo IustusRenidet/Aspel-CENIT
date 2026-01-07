@@ -1,0 +1,15 @@
+﻿# dataset	database	engine_version	row_count	column_count
+metadata_indices_BANCO	C:\Program Files (x86)\Common Files\Aspel\Sistemas Aspel\BAN6.00\Datos\Empresa01\BAN60EMPRE01.FDB	2.5.0	168	11
+# --- columnas ---
+order	name	pandas_dtype
+1	tabla	object
+2	indice	object
+3	unique_flag	float64
+4	inactive_flag	object
+5	index_type	object
+6	campo_indexado	object
+7	posicion_en_indice	int64
+8	descripcion	object
+9	unico	object
+10	estado	object
+11	orden	object

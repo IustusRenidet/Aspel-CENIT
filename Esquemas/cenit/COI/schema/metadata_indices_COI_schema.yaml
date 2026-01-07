@@ -1,0 +1,39 @@
+dataset: metadata_indices_COI
+database: C:\Program Files (x86)\Common Files\Aspel\Sistemas Aspel\COI10.00\Datos\Empresa1\COI10EMPRE1.FDB
+engine_version: 2.5.0
+row_count: 547
+column_count: 11
+columns:
+- order: 1
+  name: tabla
+  pandas_dtype: object
+- order: 2
+  name: indice
+  pandas_dtype: object
+- order: 3
+  name: unique_flag
+  pandas_dtype: float64
+- order: 4
+  name: inactive_flag
+  pandas_dtype: float64
+- order: 5
+  name: index_type
+  pandas_dtype: float64
+- order: 6
+  name: campo_indexado
+  pandas_dtype: object
+- order: 7
+  name: posicion_en_indice
+  pandas_dtype: int64
+- order: 8
+  name: descripcion
+  pandas_dtype: object
+- order: 9
+  name: unico
+  pandas_dtype: object
+- order: 10
+  name: estado
+  pandas_dtype: object
+- order: 11
+  name: orden
+  pandas_dtype: object

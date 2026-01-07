@@ -1,0 +1,15 @@
+{
+  "dataset": "metadata_fks_SAE",
+  "database": "C:\\Program Files (x86)\\Common Files\\Aspel\\Sistemas Aspel\\SAE9.00\\Empresa01\\Datos\\SAE90EMPRE01.FDB",
+  "columns": [
+    "tabla_origen",
+    "fk_name",
+    "fk_index",
+    "tabla_destino",
+    "pk_name",
+    "pk_index"
+  ],
+  "row_count": 0,
+  "notes": "Valores normalizados: sin tabs ni saltos de linea.",
+  "data": []
+}

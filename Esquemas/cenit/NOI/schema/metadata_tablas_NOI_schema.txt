@@ -1,0 +1,7 @@
+﻿# dataset	database	engine_version	row_count	column_count
+metadata_tablas_NOI	C:\Program Files (x86)\Common Files\Aspel\Sistemas Aspel\NOI11.00\Datos\Empresa01\NOI11EMPRE01.FDB	2.5.0	2005	3
+# --- columnas ---
+order	name	pandas_dtype
+1	tabla	object
+2	es_vista	int64
+3	descripcion	object

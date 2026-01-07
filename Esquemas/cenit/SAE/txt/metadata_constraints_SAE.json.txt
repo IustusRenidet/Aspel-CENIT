@@ -1,0 +1,3278 @@
+{
+  "dataset": "metadata_constraints_SAE",
+  "database": "C:\\Program Files (x86)\\Common Files\\Aspel\\Sistemas Aspel\\SAE9.00\\Empresa01\\Datos\\SAE90EMPRE01.FDB",
+  "columns": [
+    "tabla",
+    "constraint_name",
+    "constraint_type",
+    "index_name"
+  ],
+  "row_count": 544,
+  "notes": "Valores normalizados: sin tabs ni saltos de linea.",
+  "data": [
+    {
+      "tabla": "ACOMP01",
+      "constraint_name": "INTEG_165",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "ACOMP01",
+      "constraint_name": "PK_ACOMP01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_ACOMP01"
+    },
+    {
+      "tabla": "ACTCAM01",
+      "constraint_name": "INTEG_5",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "ACTCAM01",
+      "constraint_name": "INTEG_6",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "ACTCAM01",
+      "constraint_name": "PK_ACTCAM01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_ACTCAM01"
+    },
+    {
+      "tabla": "ACTIVI01",
+      "constraint_name": "INTEG_1",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "ACTIVI01",
+      "constraint_name": "PK_ACTIVI01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_ACTIVI01"
+    },
+    {
+      "tabla": "AFACT01",
+      "constraint_name": "INTEG_164",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "AFACT01",
+      "constraint_name": "PK_AFACT01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_AFACT01"
+    },
+    {
+      "tabla": "ALERTA01",
+      "constraint_name": "INTEG_304",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "ALERTA01",
+      "constraint_name": "INTEG_305",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "ALERTA01",
+      "constraint_name": "PK_ALERTA01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_ALERTA01"
+    },
+    {
+      "tabla": "ALERTA_USUARIO01",
+      "constraint_name": "INTEG_306",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "ALERTA_USUARIO01",
+      "constraint_name": "INTEG_307",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "ALERTA_USUARIO01",
+      "constraint_name": "INTEG_308",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "ALMACENES01",
+      "constraint_name": "INTEG_26",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "ALMACENES01",
+      "constraint_name": "PK_ALMACENES01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_ALMACENES01"
+    },
+    {
+      "tabla": "AUTORIZAC01",
+      "constraint_name": "INTEG_182",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "AUTORIZAC01",
+      "constraint_name": "PK_AUTORIZAC01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_AUTORIZAC01"
+    },
+    {
+      "tabla": "AUTORIZAP01",
+      "constraint_name": "INTEG_183",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "AUTORIZAP01",
+      "constraint_name": "PK_AUTORIZAP01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_AUTORIZAP01"
+    },
+    {
+      "tabla": "BITA01",
+      "constraint_name": "INTEG_67",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "BITA01",
+      "constraint_name": "PK_BITA01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_BITA01"
+    },
+    {
+      "tabla": "CAMP01",
+      "constraint_name": "INTEG_2",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "CAMP01",
+      "constraint_name": "PK_CAMP01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_CAMP01"
+    },
+    {
+      "tabla": "CAMPFIL01",
+      "constraint_name": "INTEG_3",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "CAPAS_X_MOV01",
+      "constraint_name": "INTEG_52",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "CAPAS_X_MOV01",
+      "constraint_name": "INTEG_53",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "CAPAS_X_MOV01",
+      "constraint_name": "INTEG_54",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "CAPAS_X_MOV01",
+      "constraint_name": "PK_CAPAS_X_MOV01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_CAPAS_X_MOV01"
+    },
+    {
+      "tabla": "CARTAPORTE01",
+      "constraint_name": "INTEG_348",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "CARTAPORTE01",
+      "constraint_name": "INTEG_349",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "CARTAPORTE01",
+      "constraint_name": "PK_CARTAPORTE01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_CARTAPORTE01"
+    },
+    {
+      "tabla": "CFDI01",
+      "constraint_name": "INTEG_219",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "CFDI01",
+      "constraint_name": "INTEG_220",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "CFDI01",
+      "constraint_name": "PK_CFDI01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_CFDI01"
+    },
+    {
+      "tabla": "CFDIC01",
+      "constraint_name": "INTEG_272",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "CFDIC01",
+      "constraint_name": "INTEG_273",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "CFDIC01",
+      "constraint_name": "INTEG_274",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "CFDIC01",
+      "constraint_name": "PK_CFDIC01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_CFDIC01"
+    },
+    {
+      "tabla": "CFDI_REL01",
+      "constraint_name": "INTEG_293",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "CFDI_REL01",
+      "constraint_name": "INTEG_294",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "CFGLIN01",
+      "constraint_name": "INTEG_17",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "CFGLIN01",
+      "constraint_name": "PK_CFGLIN01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_CFGLIN01"
+    },
+    {
+      "tabla": "CITAS01",
+      "constraint_name": "INTEG_64",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "CLICAM01",
+      "constraint_name": "INTEG_65",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "CLICAM01",
+      "constraint_name": "INTEG_66",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "CLICAM01",
+      "constraint_name": "PK_CLICAM01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_CLICAM01"
+    },
+    {
+      "tabla": "CLIE01",
+      "constraint_name": "INTEG_59",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "CLIE01",
+      "constraint_name": "INTEG_60",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "CLIE01",
+      "constraint_name": "PK_CLIE01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_CLIE01"
+    },
+    {
+      "tabla": "CLIE_CLIB01",
+      "constraint_name": "INTEG_61",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "CLIE_CLIB01",
+      "constraint_name": "PK_CLIE_CLIB01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_CLIE_CLIB01"
+    },
+    {
+      "tabla": "CLIE_TIENDA01",
+      "constraint_name": "INTEG_328",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "CLIE_TIENDA01",
+      "constraint_name": "INTEG_329",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "CLIE_TIENDA01",
+      "constraint_name": "INTEG_330",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "CLIE_TIENDA01",
+      "constraint_name": "PK_CLIE_TIENDA01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_CLIE_TIENDA01"
+    },
+    {
+      "tabla": "CLIN01",
+      "constraint_name": "INTEG_16",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "CLIN01",
+      "constraint_name": "PK_CLIN01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_CLIN01"
+    },
+    {
+      "tabla": "CNSEST01",
+      "constraint_name": "INTEG_178",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "CNSEST01",
+      "constraint_name": "PK_CNSEST01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_CNSEST01"
+    },
+    {
+      "tabla": "COLOR01",
+      "constraint_name": "INTEG_20",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "COLOR01",
+      "constraint_name": "INTEG_21",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "COLOR01",
+      "constraint_name": "PK_COLOR01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_COLOR01"
+    },
+    {
+      "tabla": "COMPACTACION01",
+      "constraint_name": "INTEG_275",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "COMPC01",
+      "constraint_name": "INTEG_90",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "COMPC01",
+      "constraint_name": "INTEG_91",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "COMPC01",
+      "constraint_name": "INTEG_92",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "COMPC01",
+      "constraint_name": "INTEG_93",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "COMPC01",
+      "constraint_name": "PK_COMPC01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_COMPC01"
+    },
+    {
+      "tabla": "COMPC_CLIB01",
+      "constraint_name": "INTEG_201",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "COMPC_CLIB01",
+      "constraint_name": "PK_COMPC_CLIB01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_COMPC_CLIB01"
+    },
+    {
+      "tabla": "COMPD01",
+      "constraint_name": "INTEG_96",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "COMPD01",
+      "constraint_name": "INTEG_97",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "COMPD01",
+      "constraint_name": "INTEG_98",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "COMPD01",
+      "constraint_name": "PK_COMPD01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_COMPD01"
+    },
+    {
+      "tabla": "COMPD_CLIB01",
+      "constraint_name": "INTEG_207",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "COMPD_CLIB01",
+      "constraint_name": "PK_COMPD_CLIB01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_COMPD_CLIB01"
+    },
+    {
+      "tabla": "COMPO01",
+      "constraint_name": "INTEG_79",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "COMPO01",
+      "constraint_name": "INTEG_80",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "COMPO01",
+      "constraint_name": "INTEG_81",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "COMPO01",
+      "constraint_name": "PK_COMPO01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_COMPO01"
+    },
+    {
+      "tabla": "COMPO_CLIB01",
+      "constraint_name": "INTEG_204",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "COMPO_CLIB01",
+      "constraint_name": "PK_COMPO_CLIB01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_COMPO_CLIB01"
+    },
+    {
+      "tabla": "COMPQ01",
+      "constraint_name": "INTEG_101",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "COMPQ01",
+      "constraint_name": "INTEG_102",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "COMPQ01",
+      "constraint_name": "INTEG_103",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "COMPQ01",
+      "constraint_name": "PK_COMPQ01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_COMPQ01"
+    },
+    {
+      "tabla": "COMPQ_CLIB01",
+      "constraint_name": "INTEG_210",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "COMPQ_CLIB01",
+      "constraint_name": "PK_COMPQ_CLIB01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_COMPQ_CLIB01"
+    },
+    {
+      "tabla": "COMPR01",
+      "constraint_name": "INTEG_84",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "COMPR01",
+      "constraint_name": "INTEG_85",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "COMPR01",
+      "constraint_name": "INTEG_86",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "COMPR01",
+      "constraint_name": "INTEG_87",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "COMPR01",
+      "constraint_name": "PK_COMPR01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_COMPR01"
+    },
+    {
+      "tabla": "COMPR_CLIB01",
+      "constraint_name": "INTEG_213",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "COMPR_CLIB01",
+      "constraint_name": "PK_COMPR_CLIB01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_COMPR_CLIB01"
+    },
+    {
+      "tabla": "COM_EXTERIOR01",
+      "constraint_name": "INTEG_361",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "COM_EXTERIOR01",
+      "constraint_name": "INTEG_362",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "COM_EXTERIOR01",
+      "constraint_name": "PK_COM_EXTERIOR01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_COM_EXTERIOR01"
+    },
+    {
+      "tabla": "CONC01",
+      "constraint_name": "INTEG_56",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "CONC01",
+      "constraint_name": "PK_CONC01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_CONC01"
+    },
+    {
+      "tabla": "CONFIG_ENVIOS01",
+      "constraint_name": "INTEG_321",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "CONFIG_ENVIOS01",
+      "constraint_name": "INTEG_322",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "CONFIG_ENVIOS01",
+      "constraint_name": "INTEG_323",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "CONFIG_ENVIOS01",
+      "constraint_name": "INTEG_324",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "CONFIG_ENVIOS01",
+      "constraint_name": "PK_CONFIG_ENVIOS01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_CONFIG_ENVIOS01"
+    },
+    {
+      "tabla": "CONM01",
+      "constraint_name": "INTEG_45",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "CONM01",
+      "constraint_name": "PK_CONM01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_CONM01"
+    },
+    {
+      "tabla": "CONP01",
+      "constraint_name": "INTEG_57",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "CONP01",
+      "constraint_name": "PK_CONP01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_CONP01"
+    },
+    {
+      "tabla": "CONS_PER01",
+      "constraint_name": "INTEG_216",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "CONS_PER01",
+      "constraint_name": "PK_CONS_PER01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_CONS_PER01"
+    },
+    {
+      "tabla": "CONTAC01",
+      "constraint_name": "INTEG_62",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "CONTAC01",
+      "constraint_name": "INTEG_63",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "CONTAC01",
+      "constraint_name": "PK_CONTAC01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_CONTAC01"
+    },
+    {
+      "tabla": "CONTAP01",
+      "constraint_name": "INTEG_72",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "CONTAP01",
+      "constraint_name": "INTEG_73",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "CONTAP01",
+      "constraint_name": "PK_CONTAP01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_CONTAP01"
+    },
+    {
+      "tabla": "CTAESQ01",
+      "constraint_name": "INTEG_22",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "CTAESQ01",
+      "constraint_name": "INTEG_23",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "CTAESQ01",
+      "constraint_name": "PK_CTAESQ01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_CTAESQ01"
+    },
+    {
+      "tabla": "CTRLBLOQUEO01",
+      "constraint_name": "INTEG_217",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "CTRLBLOQUEO01",
+      "constraint_name": "INTEG_218",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "CTRL_ELIMINA01",
+      "constraint_name": "INTEG_276",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "CTRL_ELIMINA01",
+      "constraint_name": "INTEG_277",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "CTRL_ELIMINA01",
+      "constraint_name": "INTEG_278",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "CTRL_ELIMINA01",
+      "constraint_name": "INTEG_279",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "CUEN_DET01",
+      "constraint_name": "INTEG_150",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "CUEN_DET01",
+      "constraint_name": "INTEG_151",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "CUEN_DET01",
+      "constraint_name": "INTEG_152",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "CUEN_DET01",
+      "constraint_name": "INTEG_153",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "CUEN_DET01",
+      "constraint_name": "INTEG_154",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "CUEN_M01",
+      "constraint_name": "INTEG_146",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "CUEN_M01",
+      "constraint_name": "INTEG_147",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "CUEN_M01",
+      "constraint_name": "INTEG_148",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "CUEN_M01",
+      "constraint_name": "INTEG_149",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "CUEN_M01",
+      "constraint_name": "PK_CUEN_M01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_CUEN_M01"
+    },
+    {
+      "tabla": "CVES_ALTER01",
+      "constraint_name": "INTEG_29",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "CVES_ALTER01",
+      "constraint_name": "INTEG_30",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "CVES_ALTER01",
+      "constraint_name": "PK_CVES_ALTER01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_CVES_ALTER01"
+    },
+    {
+      "tabla": "DESACT01",
+      "constraint_name": "INTEG_11",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "DESACT01",
+      "constraint_name": "INTEG_12",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "DESACT01",
+      "constraint_name": "PK_DESACT01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_DESACT01"
+    },
+    {
+      "tabla": "DOCTOSIGC01",
+      "constraint_name": "INTEG_142",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "DOCTOSIGC01",
+      "constraint_name": "INTEG_143",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "DOCTOSIGF01",
+      "constraint_name": "INTEG_140",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "DOCTOSIGF01",
+      "constraint_name": "INTEG_141",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "DOCTOSIGFC01",
+      "constraint_name": "INTEG_354",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "DOCTOSIGFC01",
+      "constraint_name": "INTEG_355",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "ENLACEFC01",
+      "constraint_name": "INTEG_356",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "ENLACEFC01",
+      "constraint_name": "INTEG_357",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "ENLACE_LTPD01",
+      "constraint_name": "INTEG_51",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "FACTA01",
+      "constraint_name": "INTEG_223",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "FACTA01",
+      "constraint_name": "INTEG_224",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "FACTA01",
+      "constraint_name": "INTEG_225",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "FACTA01",
+      "constraint_name": "PK_FACTA01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_FACTA01"
+    },
+    {
+      "tabla": "FACTA_CLIB01",
+      "constraint_name": "INTEG_228",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "FACTA_CLIB01",
+      "constraint_name": "PK_FACTA_CLIB01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_FACTA_CLIB01"
+    },
+    {
+      "tabla": "FACTC01",
+      "constraint_name": "INTEG_125",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "FACTC01",
+      "constraint_name": "INTEG_126",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "FACTC01",
+      "constraint_name": "INTEG_127",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "FACTC01",
+      "constraint_name": "INTEG_128",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "FACTC01",
+      "constraint_name": "PK_FACTC01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_FACTC01"
+    },
+    {
+      "tabla": "FACTC_CLIB01",
+      "constraint_name": "INTEG_195",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "FACTC_CLIB01",
+      "constraint_name": "PK_FACTC_CLIB01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_FACTC_CLIB01"
+    },
+    {
+      "tabla": "FACTD01",
+      "constraint_name": "INTEG_131",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "FACTD01",
+      "constraint_name": "INTEG_132",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "FACTD01",
+      "constraint_name": "INTEG_133",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "FACTD01",
+      "constraint_name": "INTEG_134",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "FACTD01",
+      "constraint_name": "PK_FACTD01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_FACTD01"
+    },
+    {
+      "tabla": "FACTD_CLIB01",
+      "constraint_name": "INTEG_198",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "FACTD_CLIB01",
+      "constraint_name": "PK_FACTD_CLIB01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_FACTD_CLIB01"
+    },
+    {
+      "tabla": "FACTE01",
+      "constraint_name": "INTEG_295",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "FACTE01",
+      "constraint_name": "INTEG_296",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "FACTE01",
+      "constraint_name": "INTEG_297",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "FACTE01",
+      "constraint_name": "INTEG_298",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "FACTE01",
+      "constraint_name": "PK_FACTE01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_FACTE01"
+    },
+    {
+      "tabla": "FACTE_CLIB01",
+      "constraint_name": "INTEG_301",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "FACTE_CLIB01",
+      "constraint_name": "PK_FACTE_CLIB01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_FACTE_CLIB01"
+    },
+    {
+      "tabla": "FACTF01",
+      "constraint_name": "INTEG_109",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "FACTF01",
+      "constraint_name": "INTEG_110",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "FACTF01",
+      "constraint_name": "INTEG_111",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "FACTF01",
+      "constraint_name": "PK_FACTF01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_FACTF01"
+    },
+    {
+      "tabla": "FACTF_CLIB01",
+      "constraint_name": "INTEG_186",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "FACTF_CLIB01",
+      "constraint_name": "PK_FACTF_CLIB01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_FACTF_CLIB01"
+    },
+    {
+      "tabla": "FACTG01",
+      "constraint_name": "INTEG_285",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "FACTG01",
+      "constraint_name": "INTEG_286",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "FACTG01",
+      "constraint_name": "INTEG_287",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "FACTG01",
+      "constraint_name": "PK_FACTG01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_FACTG01"
+    },
+    {
+      "tabla": "FACTG_CLIB01",
+      "constraint_name": "INTEG_290",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "FACTG_CLIB01",
+      "constraint_name": "PK_FACTG_CLIB01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_FACTG_CLIB01"
+    },
+    {
+      "tabla": "FACTP01",
+      "constraint_name": "INTEG_119",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "FACTP01",
+      "constraint_name": "INTEG_120",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "FACTP01",
+      "constraint_name": "INTEG_121",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "FACTP01",
+      "constraint_name": "INTEG_122",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "FACTP01",
+      "constraint_name": "PK_FACTP01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_FACTP01"
+    },
+    {
+      "tabla": "FACTP_CLIB01",
+      "constraint_name": "INTEG_192",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "FACTP_CLIB01",
+      "constraint_name": "PK_FACTP_CLIB01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_FACTP_CLIB01"
+    },
+    {
+      "tabla": "FACTR01",
+      "constraint_name": "INTEG_114",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "FACTR01",
+      "constraint_name": "INTEG_115",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "FACTR01",
+      "constraint_name": "INTEG_116",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "FACTR01",
+      "constraint_name": "PK_FACTR01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_FACTR01"
+    },
+    {
+      "tabla": "FACTR_CLIB01",
+      "constraint_name": "INTEG_189",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "FACTR_CLIB01",
+      "constraint_name": "PK_FACTR_CLIB01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_FACTR_CLIB01"
+    },
+    {
+      "tabla": "FACTT01",
+      "constraint_name": "INTEG_340",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "FACTT01",
+      "constraint_name": "INTEG_341",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "FACTT01",
+      "constraint_name": "INTEG_342",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "FACTT01",
+      "constraint_name": "PK_FACTT01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_FACTT01"
+    },
+    {
+      "tabla": "FACTT_CLIB01",
+      "constraint_name": "INTEG_343",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "FACTT_CLIB01",
+      "constraint_name": "PK_FACTT_CLIB01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_FACTT_CLIB01"
+    },
+    {
+      "tabla": "FACTV01",
+      "constraint_name": "INTEG_231",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "FACTV01",
+      "constraint_name": "INTEG_232",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "FACTV01",
+      "constraint_name": "INTEG_233",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "FACTV01",
+      "constraint_name": "PK_FACTV01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_FACTV01"
+    },
+    {
+      "tabla": "FACTV_CLIB01",
+      "constraint_name": "INTEG_236",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "FACTV_CLIB01",
+      "constraint_name": "PK_FACTV_CLIB01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_FACTV_CLIB01"
+    },
+    {
+      "tabla": "FACT_GLOBAL01",
+      "constraint_name": "INTEG_352",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "FACT_GLOBAL01",
+      "constraint_name": "PK_FACT_GLOBAL01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_FACT_GLOBAL01"
+    },
+    {
+      "tabla": "FOLCXC01",
+      "constraint_name": "INTEG_138",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "FOLCXC01",
+      "constraint_name": "PK_FOLCXC01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_FOLCXC01"
+    },
+    {
+      "tabla": "FOLCXP01",
+      "constraint_name": "INTEG_139",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "FOLCXP01",
+      "constraint_name": "PK_FOLCXP01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_FOLCXP01"
+    },
+    {
+      "tabla": "FOLIOSC01",
+      "constraint_name": "INTEG_76",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "FOLIOSC01",
+      "constraint_name": "INTEG_77",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "FOLIOSC01",
+      "constraint_name": "INTEG_78",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "FOLIOSC01",
+      "constraint_name": "PK_FOLIOSC01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_FOLIOSC01"
+    },
+    {
+      "tabla": "FOLIOSCXC01",
+      "constraint_name": "INTEG_221",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "FOLIOSCXC01",
+      "constraint_name": "PK_FOLIOSCXC01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_FOLIOSCXC01"
+    },
+    {
+      "tabla": "FOLIOSCXP01",
+      "constraint_name": "INTEG_222",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "FOLIOSCXP01",
+      "constraint_name": "PK_FOLIOSCXP01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_FOLIOSCXP01"
+    },
+    {
+      "tabla": "FOLIOSF01",
+      "constraint_name": "INTEG_106",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "FOLIOSF01",
+      "constraint_name": "INTEG_107",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "FOLIOSF01",
+      "constraint_name": "INTEG_108",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "FOLIOSF01",
+      "constraint_name": "PK_FOLIOSF01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_FOLIOSF01"
+    },
+    {
+      "tabla": "FOTO_INVE01",
+      "constraint_name": "INTEG_284",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "GUICAM01",
+      "constraint_name": "INTEG_10",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "GUICAM01",
+      "constraint_name": "PK_GUICAM01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_GUICAM01"
+    },
+    {
+      "tabla": "HNUMSER01",
+      "constraint_name": "INTEG_35",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "HNUMSER01",
+      "constraint_name": "INTEG_36",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "HNUMSER01",
+      "constraint_name": "INTEG_37",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "IMG_ARTICULO01",
+      "constraint_name": "INTEG_337",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "IMG_ARTICULO01",
+      "constraint_name": "INTEG_338",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "IMG_ARTICULO01",
+      "constraint_name": "INTEG_339",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "IMG_ARTICULO01",
+      "constraint_name": "PK_IMG_ARTICULO01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_IMG_ARTICULO01"
+    },
+    {
+      "tabla": "IMPU01",
+      "constraint_name": "INTEG_24",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "IMPU01",
+      "constraint_name": "PK_IMPU01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_IMPU01"
+    },
+    {
+      "tabla": "INFCLI01",
+      "constraint_name": "INTEG_68",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "INFCLI01",
+      "constraint_name": "PK_INFCLI01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_INFCLI01"
+    },
+    {
+      "tabla": "INFENVIO01",
+      "constraint_name": "INTEG_137",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "INTCOI01",
+      "constraint_name": "INTEG_166",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "INTCOI01",
+      "constraint_name": "PK_INTCOI01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_INTCOI01"
+    },
+    {
+      "tabla": "INVE01",
+      "constraint_name": "INTEG_28",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "INVE01",
+      "constraint_name": "PK_INVE01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_INVE01"
+    },
+    {
+      "tabla": "INVEN_CLARO01",
+      "constraint_name": "INTEG_317",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "INVEN_CLARO01",
+      "constraint_name": "PK_INVEN_CLARO01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_INVEN_CLARO01"
+    },
+    {
+      "tabla": "INVE_AMAZON01",
+      "constraint_name": "INTEG_331",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "INVE_AMAZON01",
+      "constraint_name": "PK_INVE_AMAZON01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_INVE_AMAZON01"
+    },
+    {
+      "tabla": "INVE_CLIB01",
+      "constraint_name": "INTEG_31",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "INVE_CLIB01",
+      "constraint_name": "PK_INVE_CLIB01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_INVE_CLIB01"
+    },
+    {
+      "tabla": "INVE_MELI01",
+      "constraint_name": "INTEG_353",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "INVE_MELI01",
+      "constraint_name": "PK_INVE_MELI01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_INVE_MELI01"
+    },
+    {
+      "tabla": "INVFIS01",
+      "constraint_name": "INTEG_180",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "INVFIS01",
+      "constraint_name": "INTEG_181",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "INVFIS01",
+      "constraint_name": "PK_INVFIS01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_INVFIS01"
+    },
+    {
+      "tabla": "KITS01",
+      "constraint_name": "INTEG_38",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "KITS01",
+      "constraint_name": "INTEG_39",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "KITS01",
+      "constraint_name": "PK_KITS01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_KITS01"
+    },
+    {
+      "tabla": "LISTPRODSUST01",
+      "constraint_name": "INTEG_184",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "LISTPRODSUST01",
+      "constraint_name": "PK_LISTPRODSUST01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_LISTPRODSUST01"
+    },
+    {
+      "tabla": "LNKOLKC01",
+      "constraint_name": "INTEG_13",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "LNKOLKC01",
+      "constraint_name": "PK_LNKOLKC01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_LNKOLKC01"
+    },
+    {
+      "tabla": "LNKOLKP01",
+      "constraint_name": "INTEG_14",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "LNKOLKP01",
+      "constraint_name": "PK_LNKOLKP01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_LNKOLKP01"
+    },
+    {
+      "tabla": "LTPD01",
+      "constraint_name": "INTEG_41",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "LTPD01",
+      "constraint_name": "INTEG_42",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "LTPD01",
+      "constraint_name": "PK_LTPD01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_LTPD01"
+    },
+    {
+      "tabla": "MINVE01",
+      "constraint_name": "INTEG_47",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "MINVE01",
+      "constraint_name": "INTEG_48",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "MINVE01",
+      "constraint_name": "INTEG_49",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "MINVE01",
+      "constraint_name": "INTEG_50",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "MONED01",
+      "constraint_name": "INTEG_25",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "MONED01",
+      "constraint_name": "PK_MONED01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_MONED01"
+    },
+    {
+      "tabla": "MULT01",
+      "constraint_name": "INTEG_43",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "MULT01",
+      "constraint_name": "INTEG_44",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "MULT01",
+      "constraint_name": "PK_MULT01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_MULT01"
+    },
+    {
+      "tabla": "NUMSER01",
+      "constraint_name": "INTEG_32",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "NUMSER01",
+      "constraint_name": "INTEG_33",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "NUMSER01",
+      "constraint_name": "INTEG_34",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "NUMSER01",
+      "constraint_name": "PK_NUMSER01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_NUMSER01"
+    },
+    {
+      "tabla": "OBS_DOCC01",
+      "constraint_name": "INTEG_74",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "OBS_DOCC01",
+      "constraint_name": "PK_OBS_DOCC01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_OBS_DOCC01"
+    },
+    {
+      "tabla": "OBS_DOCF01",
+      "constraint_name": "INTEG_75",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "OBS_DOCF01",
+      "constraint_name": "PK_OBS_DOCF01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_OBS_DOCF01"
+    },
+    {
+      "tabla": "OCLI01",
+      "constraint_name": "INTEG_58",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "OCLI01",
+      "constraint_name": "PK_OCLI01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_OCLI01"
+    },
+    {
+      "tabla": "OCUEN01",
+      "constraint_name": "INTEG_145",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "OCUEN01",
+      "constraint_name": "PK_OCUEN01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_OCUEN01"
+    },
+    {
+      "tabla": "OINVE01",
+      "constraint_name": "INTEG_27",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "OINVE01",
+      "constraint_name": "PK_OINVE01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_OINVE01"
+    },
+    {
+      "tabla": "OLTPD01",
+      "constraint_name": "INTEG_40",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "OLTPD01",
+      "constraint_name": "PK_OLTPD01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_OLTPD01"
+    },
+    {
+      "tabla": "OMINVE01",
+      "constraint_name": "INTEG_46",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "OMINVE01",
+      "constraint_name": "PK_OMINVE01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_OMINVE01"
+    },
+    {
+      "tabla": "OPAGA01",
+      "constraint_name": "INTEG_155",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "OPAGA01",
+      "constraint_name": "PK_OPAGA01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_OPAGA01"
+    },
+    {
+      "tabla": "OPERADOR01",
+      "constraint_name": "INTEG_350",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "OPERADOR01",
+      "constraint_name": "INTEG_351",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "OPERADOR01",
+      "constraint_name": "PK_OPERADOR01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_OPERADOR01"
+    },
+    {
+      "tabla": "OPER_TERCEROS01",
+      "constraint_name": "INTEG_174",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "OPER_TERCEROS01",
+      "constraint_name": "PK_OPER_TERCEROS01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_OPER_TERCEROS01"
+    },
+    {
+      "tabla": "OPER_X_TIPO_TERCERO01",
+      "constraint_name": "INTEG_175",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "OPER_X_TIPO_TERCERO01",
+      "constraint_name": "INTEG_176",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "OPER_X_TIPO_TERCERO01",
+      "constraint_name": "PK_OPER_X_TIPO_TERCERO01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_OPER_X_TIPO_TERCERO01"
+    },
+    {
+      "tabla": "OPROV01",
+      "constraint_name": "INTEG_69",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "OPROV01",
+      "constraint_name": "PK_OPROV01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_OPROV01"
+    },
+    {
+      "tabla": "PAGA_DET01",
+      "constraint_name": "INTEG_160",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAGA_DET01",
+      "constraint_name": "INTEG_161",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAGA_DET01",
+      "constraint_name": "INTEG_162",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAGA_DET01",
+      "constraint_name": "INTEG_163",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAGA_M01",
+      "constraint_name": "INTEG_156",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAGA_M01",
+      "constraint_name": "INTEG_157",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAGA_M01",
+      "constraint_name": "INTEG_158",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAGA_M01",
+      "constraint_name": "INTEG_159",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAGA_M01",
+      "constraint_name": "PK_PAGA_M01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PAGA_M01"
+    },
+    {
+      "tabla": "PAGOCODI01",
+      "constraint_name": "INTEG_336",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAGOCODI01",
+      "constraint_name": "PK_PAGOCODI01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PAGOCODI01"
+    },
+    {
+      "tabla": "PAGOLINEA01",
+      "constraint_name": "INTEG_280",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAGOLINEA01",
+      "constraint_name": "INTEG_281",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAGOLINEA01",
+      "constraint_name": "PK_PAGOLINEA01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PAGOLINEA01"
+    },
+    {
+      "tabla": "PAGOS_PED_TIENDA01",
+      "constraint_name": "INTEG_325",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAGOS_PED_TIENDA01",
+      "constraint_name": "INTEG_326",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAGOS_PED_TIENDA01",
+      "constraint_name": "INTEG_327",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAGOS_PED_TIENDA01",
+      "constraint_name": "PK_PAGOS_PED_TIENDA01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PAGOS_PED_TIENDA01"
+    },
+    {
+      "tabla": "PAIS01",
+      "constraint_name": "INTEG_177",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAIS01",
+      "constraint_name": "PK_PAIS01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PAIS01"
+    },
+    {
+      "tabla": "PARAM_APLICASOC01",
+      "constraint_name": "INTEG_250",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PARAM_APLICASOC01",
+      "constraint_name": "PK_PARAM_APLICASOC01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PARAM_APLICASOC01"
+    },
+    {
+      "tabla": "PARAM_CAMPOSLIBRES01",
+      "constraint_name": "INTEG_269",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PARAM_CAMPOSLIBRES01",
+      "constraint_name": "INTEG_270",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PARAM_CAMPOSLIBRES01",
+      "constraint_name": "INTEG_271",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PARAM_CAMPOSLIBRES01",
+      "constraint_name": "PK_PARAM_CAMPOSLIBRES01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PARAM_CAMPOSLIBRES01"
+    },
+    {
+      "tabla": "PARAM_CLIENTES01",
+      "constraint_name": "INTEG_246",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PARAM_CLIENTES01",
+      "constraint_name": "INTEG_247",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PARAM_CLIENTES01",
+      "constraint_name": "PK_PARAM_CLIENTES01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PARAM_CLIENTES01"
+    },
+    {
+      "tabla": "PARAM_CODI01",
+      "constraint_name": "INTEG_335",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PARAM_CODI01",
+      "constraint_name": "PK_PARAM_CODI01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PARAM_CODI01"
+    },
+    {
+      "tabla": "PARAM_COMPRAS01",
+      "constraint_name": "INTEG_255",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PARAM_COMPRAS01",
+      "constraint_name": "PK_PARAM_COMPRAS01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PARAM_COMPRAS01"
+    },
+    {
+      "tabla": "PARAM_CTACONTABLE01",
+      "constraint_name": "INTEG_245",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PARAM_CTACONTABLE01",
+      "constraint_name": "PK_PARAM_CTACONTABLE01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PARAM_CTACONTABLE01"
+    },
+    {
+      "tabla": "PARAM_DATOSBANCARIOS01",
+      "constraint_name": "INTEG_282",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PARAM_DATOSBANCARIOS01",
+      "constraint_name": "PK_PARAM_DATOSBANCARIOS01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PARAM_DATOSBANCARIOS01"
+    },
+    {
+      "tabla": "PARAM_DATOSBD01",
+      "constraint_name": "INTEG_241",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PARAM_DATOSBD01",
+      "constraint_name": "PK_PARAM_DATOSBD01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PARAM_DATOSBD01"
+    },
+    {
+      "tabla": "PARAM_DATOSEMP01",
+      "constraint_name": "INTEG_239",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PARAM_DATOSEMP01",
+      "constraint_name": "INTEG_240",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PARAM_DATOSEMP01",
+      "constraint_name": "PK_PARAM_DATOSEMP01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PARAM_DATOSEMP01"
+    },
+    {
+      "tabla": "PARAM_DATOSGRALES01",
+      "constraint_name": "INTEG_244",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PARAM_DATOSGRALES01",
+      "constraint_name": "PK_PARAM_DATOSGRALES01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PARAM_DATOSGRALES01"
+    },
+    {
+      "tabla": "PARAM_DOMEXPED01",
+      "constraint_name": "INTEG_243",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PARAM_DOMEXPED01",
+      "constraint_name": "PK_PARAM_DOMEXPED01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PARAM_DOMEXPED01"
+    },
+    {
+      "tabla": "PARAM_DOMFISCAL01",
+      "constraint_name": "INTEG_242",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PARAM_DOMFISCAL01",
+      "constraint_name": "PK_PARAM_DOMFISCAL01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PARAM_DOMFISCAL01"
+    },
+    {
+      "tabla": "PARAM_FACTURA01",
+      "constraint_name": "INTEG_252",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PARAM_FACTURA01",
+      "constraint_name": "PK_PARAM_FACTURA01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PARAM_FACTURA01"
+    },
+    {
+      "tabla": "PARAM_FACTURAELECTRONICA01",
+      "constraint_name": "INTEG_254",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PARAM_FACTURAELECTRONICA01",
+      "constraint_name": "PK_PARAM_FACTURAELECTRONICA01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PARAM_FACTURAELECTRONICA01"
+    },
+    {
+      "tabla": "PARAM_FOLIOSC01",
+      "constraint_name": "INTEG_266",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PARAM_FOLIOSC01",
+      "constraint_name": "INTEG_267",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PARAM_FOLIOSC01",
+      "constraint_name": "INTEG_268",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PARAM_FOLIOSC01",
+      "constraint_name": "PK_PARAM_FOLIOSC01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PARAM_FOLIOSC01"
+    },
+    {
+      "tabla": "PARAM_FOLIOSF01",
+      "constraint_name": "INTEG_263",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PARAM_FOLIOSF01",
+      "constraint_name": "INTEG_264",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PARAM_FOLIOSF01",
+      "constraint_name": "INTEG_265",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PARAM_FOLIOSF01",
+      "constraint_name": "PK_PARAM_FOLIOSF01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PARAM_FOLIOSF01"
+    },
+    {
+      "tabla": "PARAM_GRAFICAS01",
+      "constraint_name": "INTEG_251",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PARAM_GRAFICAS01",
+      "constraint_name": "PK_PARAM_GRAFICAS01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PARAM_GRAFICAS01"
+    },
+    {
+      "tabla": "PARAM_INVENTARIO01",
+      "constraint_name": "INTEG_249",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PARAM_INVENTARIO01",
+      "constraint_name": "PK_PARAM_INVENTARIO01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PARAM_INVENTARIO01"
+    },
+    {
+      "tabla": "PARAM_PARTIDASCOMP01",
+      "constraint_name": "INTEG_256",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PARAM_PARTIDASCOMP01",
+      "constraint_name": "PK_PARAM_PARTIDASCOMP01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PARAM_PARTIDASCOMP01"
+    },
+    {
+      "tabla": "PARAM_PARTIDASFACT01",
+      "constraint_name": "INTEG_253",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PARAM_PARTIDASFACT01",
+      "constraint_name": "PK_PARAM_PARTIDASFACT01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PARAM_PARTIDASFACT01"
+    },
+    {
+      "tabla": "PARAM_PROVEEDORES01",
+      "constraint_name": "INTEG_248",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PARAM_PROVEEDORES01",
+      "constraint_name": "PK_PARAM_PROVEEDORES01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PARAM_PROVEEDORES01"
+    },
+    {
+      "tabla": "PARAM_TIENDAS01",
+      "constraint_name": "INTEG_309",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PARAM_TIENDAS01",
+      "constraint_name": "INTEG_310",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PARAM_TIENDAS01",
+      "constraint_name": "INTEG_311",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PARAM_TIENDAS01",
+      "constraint_name": "PK_PARAM_TIENDAS01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PARAM_TIENDAS01"
+    },
+    {
+      "tabla": "PARAM_TIPODOCTOSC01",
+      "constraint_name": "INTEG_260",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PARAM_TIPODOCTOSC01",
+      "constraint_name": "INTEG_261",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PARAM_TIPODOCTOSC01",
+      "constraint_name": "INTEG_262",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PARAM_TIPODOCTOSC01",
+      "constraint_name": "PK_PARAM_TIPODOCTOSC01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PARAM_TIPODOCTOSC01"
+    },
+    {
+      "tabla": "PARAM_TIPODOCTOSF01",
+      "constraint_name": "INTEG_257",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PARAM_TIPODOCTOSF01",
+      "constraint_name": "INTEG_258",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PARAM_TIPODOCTOSF01",
+      "constraint_name": "INTEG_259",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PARAM_TIPODOCTOSF01",
+      "constraint_name": "PK_PARAM_TIPODOCTOSF01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PARAM_TIPODOCTOSF01"
+    },
+    {
+      "tabla": "PAR_COMPC01",
+      "constraint_name": "INTEG_94",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAR_COMPC01",
+      "constraint_name": "INTEG_95",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAR_COMPC01",
+      "constraint_name": "PK_PAR_COMPC01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PAR_COMPC01"
+    },
+    {
+      "tabla": "PAR_COMPC_CLIB01",
+      "constraint_name": "INTEG_202",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAR_COMPC_CLIB01",
+      "constraint_name": "INTEG_203",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAR_COMPC_CLIB01",
+      "constraint_name": "PK_PAR_COMPC_CLIB01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PAR_COMPC_CLIB01"
+    },
+    {
+      "tabla": "PAR_COMPD01",
+      "constraint_name": "INTEG_100",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAR_COMPD01",
+      "constraint_name": "INTEG_99",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAR_COMPD01",
+      "constraint_name": "PK_PAR_COMPD01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PAR_COMPD01"
+    },
+    {
+      "tabla": "PAR_COMPD_CLIB01",
+      "constraint_name": "INTEG_208",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAR_COMPD_CLIB01",
+      "constraint_name": "INTEG_209",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAR_COMPD_CLIB01",
+      "constraint_name": "PK_PAR_COMPD_CLIB01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PAR_COMPD_CLIB01"
+    },
+    {
+      "tabla": "PAR_COMPO01",
+      "constraint_name": "INTEG_82",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAR_COMPO01",
+      "constraint_name": "INTEG_83",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAR_COMPO01",
+      "constraint_name": "PK_PAR_COMPO01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PAR_COMPO01"
+    },
+    {
+      "tabla": "PAR_COMPO_CLIB01",
+      "constraint_name": "INTEG_205",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAR_COMPO_CLIB01",
+      "constraint_name": "INTEG_206",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAR_COMPO_CLIB01",
+      "constraint_name": "PK_PAR_COMPO_CLIB01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PAR_COMPO_CLIB01"
+    },
+    {
+      "tabla": "PAR_COMPQ01",
+      "constraint_name": "INTEG_104",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAR_COMPQ01",
+      "constraint_name": "INTEG_105",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAR_COMPQ01",
+      "constraint_name": "PK_PAR_COMPQ01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PAR_COMPQ01"
+    },
+    {
+      "tabla": "PAR_COMPQ_CLIB01",
+      "constraint_name": "INTEG_211",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAR_COMPQ_CLIB01",
+      "constraint_name": "INTEG_212",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAR_COMPQ_CLIB01",
+      "constraint_name": "PK_PAR_COMPQ_CLIB01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PAR_COMPQ_CLIB01"
+    },
+    {
+      "tabla": "PAR_COMPR01",
+      "constraint_name": "INTEG_88",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAR_COMPR01",
+      "constraint_name": "INTEG_89",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAR_COMPR01",
+      "constraint_name": "PK_PAR_COMPR01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PAR_COMPR01"
+    },
+    {
+      "tabla": "PAR_COMPR_CLIB01",
+      "constraint_name": "INTEG_214",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAR_COMPR_CLIB01",
+      "constraint_name": "INTEG_215",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAR_COMPR_CLIB01",
+      "constraint_name": "PK_PAR_COMPR_CLIB01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PAR_COMPR_CLIB01"
+    },
+    {
+      "tabla": "PAR_FACTA01",
+      "constraint_name": "INTEG_226",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAR_FACTA01",
+      "constraint_name": "INTEG_227",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAR_FACTA01",
+      "constraint_name": "PK_PAR_FACTA01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PAR_FACTA01"
+    },
+    {
+      "tabla": "PAR_FACTA_CLIB01",
+      "constraint_name": "INTEG_229",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAR_FACTA_CLIB01",
+      "constraint_name": "INTEG_230",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAR_FACTA_CLIB01",
+      "constraint_name": "PK_PAR_FACTA_CLIB01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PAR_FACTA_CLIB01"
+    },
+    {
+      "tabla": "PAR_FACTC01",
+      "constraint_name": "INTEG_129",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAR_FACTC01",
+      "constraint_name": "INTEG_130",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAR_FACTC01",
+      "constraint_name": "PK_PAR_FACTC01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PAR_FACTC01"
+    },
+    {
+      "tabla": "PAR_FACTC_CLIB01",
+      "constraint_name": "INTEG_196",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAR_FACTC_CLIB01",
+      "constraint_name": "INTEG_197",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAR_FACTC_CLIB01",
+      "constraint_name": "PK_PAR_FACTC_CLIB01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PAR_FACTC_CLIB01"
+    },
+    {
+      "tabla": "PAR_FACTD01",
+      "constraint_name": "INTEG_135",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAR_FACTD01",
+      "constraint_name": "INTEG_136",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAR_FACTD01",
+      "constraint_name": "PK_PAR_FACTD01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PAR_FACTD01"
+    },
+    {
+      "tabla": "PAR_FACTD_CLIB01",
+      "constraint_name": "INTEG_199",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAR_FACTD_CLIB01",
+      "constraint_name": "INTEG_200",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAR_FACTD_CLIB01",
+      "constraint_name": "PK_PAR_FACTD_CLIB01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PAR_FACTD_CLIB01"
+    },
+    {
+      "tabla": "PAR_FACTE01",
+      "constraint_name": "INTEG_299",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAR_FACTE01",
+      "constraint_name": "INTEG_300",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAR_FACTE01",
+      "constraint_name": "PK_PAR_FACTE01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PAR_FACTE01"
+    },
+    {
+      "tabla": "PAR_FACTE_CLIB01",
+      "constraint_name": "INTEG_302",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAR_FACTE_CLIB01",
+      "constraint_name": "INTEG_303",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAR_FACTE_CLIB01",
+      "constraint_name": "PK_PAR_FACTE_CLIB01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PAR_FACTE_CLIB01"
+    },
+    {
+      "tabla": "PAR_FACTF01",
+      "constraint_name": "INTEG_112",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAR_FACTF01",
+      "constraint_name": "INTEG_113",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAR_FACTF01",
+      "constraint_name": "PK_PAR_FACTF01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PAR_FACTF01"
+    },
+    {
+      "tabla": "PAR_FACTF_CLIB01",
+      "constraint_name": "INTEG_187",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAR_FACTF_CLIB01",
+      "constraint_name": "INTEG_188",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAR_FACTF_CLIB01",
+      "constraint_name": "PK_PAR_FACTF_CLIB01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PAR_FACTF_CLIB01"
+    },
+    {
+      "tabla": "PAR_FACTG01",
+      "constraint_name": "INTEG_288",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAR_FACTG01",
+      "constraint_name": "INTEG_289",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAR_FACTG01",
+      "constraint_name": "PK_PAR_FACTG01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PAR_FACTG01"
+    },
+    {
+      "tabla": "PAR_FACTG_CLIB01",
+      "constraint_name": "INTEG_291",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAR_FACTG_CLIB01",
+      "constraint_name": "INTEG_292",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAR_FACTG_CLIB01",
+      "constraint_name": "PK_PAR_FACTG_CLIB01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PAR_FACTG_CLIB01"
+    },
+    {
+      "tabla": "PAR_FACTP01",
+      "constraint_name": "INTEG_123",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAR_FACTP01",
+      "constraint_name": "INTEG_124",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAR_FACTP01",
+      "constraint_name": "PK_PAR_FACTP01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PAR_FACTP01"
+    },
+    {
+      "tabla": "PAR_FACTP_CLIB01",
+      "constraint_name": "INTEG_193",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAR_FACTP_CLIB01",
+      "constraint_name": "INTEG_194",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAR_FACTP_CLIB01",
+      "constraint_name": "PK_PAR_FACTP_CLIB01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PAR_FACTP_CLIB01"
+    },
+    {
+      "tabla": "PAR_FACTR01",
+      "constraint_name": "INTEG_117",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAR_FACTR01",
+      "constraint_name": "INTEG_118",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAR_FACTR01",
+      "constraint_name": "PK_PAR_FACTR01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PAR_FACTR01"
+    },
+    {
+      "tabla": "PAR_FACTR_CLIB01",
+      "constraint_name": "INTEG_190",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAR_FACTR_CLIB01",
+      "constraint_name": "INTEG_191",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAR_FACTR_CLIB01",
+      "constraint_name": "PK_PAR_FACTR_CLIB01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PAR_FACTR_CLIB01"
+    },
+    {
+      "tabla": "PAR_FACTT01",
+      "constraint_name": "INTEG_344",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAR_FACTT01",
+      "constraint_name": "INTEG_345",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAR_FACTT01",
+      "constraint_name": "PK_PAR_FACTT01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PAR_FACTT01"
+    },
+    {
+      "tabla": "PAR_FACTT_CLIB01",
+      "constraint_name": "INTEG_346",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAR_FACTT_CLIB01",
+      "constraint_name": "INTEG_347",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAR_FACTT_CLIB01",
+      "constraint_name": "PK_PAR_FACTT_CLIB01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PAR_FACTT_CLIB01"
+    },
+    {
+      "tabla": "PAR_FACTV01",
+      "constraint_name": "INTEG_234",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAR_FACTV01",
+      "constraint_name": "INTEG_235",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAR_FACTV01",
+      "constraint_name": "PK_PAR_FACTV01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PAR_FACTV01"
+    },
+    {
+      "tabla": "PAR_FACTV_CLIB01",
+      "constraint_name": "INTEG_237",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAR_FACTV_CLIB01",
+      "constraint_name": "INTEG_238",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAR_FACTV_CLIB01",
+      "constraint_name": "PK_PAR_FACTV_CLIB01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PAR_FACTV_CLIB01"
+    },
+    {
+      "tabla": "PAR_PED_AMAZON01",
+      "constraint_name": "INTEG_333",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAR_PED_AMAZON01",
+      "constraint_name": "INTEG_334",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAR_PED_AMAZON01",
+      "constraint_name": "PK_PAR_PED_AMAZON01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PAR_PED_AMAZON01"
+    },
+    {
+      "tabla": "PAR_PED_CLARO01",
+      "constraint_name": "INTEG_319",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAR_PED_CLARO01",
+      "constraint_name": "INTEG_320",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAR_PED_CLARO01",
+      "constraint_name": "PK_PAR_PED_CLARO01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PAR_PED_CLARO01"
+    },
+    {
+      "tabla": "PAR_PED_TIEND01",
+      "constraint_name": "INTEG_315",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAR_PED_TIEND01",
+      "constraint_name": "INTEG_316",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PAR_PED_TIEND01",
+      "constraint_name": "PK_PAR_PED_TIEND01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PAR_PED_TIEND01"
+    },
+    {
+      "tabla": "PED_AMAZON01",
+      "constraint_name": "INTEG_332",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PED_AMAZON01",
+      "constraint_name": "PK_PED_AMAZON01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PED_AMAZON01"
+    },
+    {
+      "tabla": "PED_CLARO01",
+      "constraint_name": "INTEG_318",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PED_CLARO01",
+      "constraint_name": "PK_PED_CLARO01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PED_CLARO01"
+    },
+    {
+      "tabla": "PED_TIEND01",
+      "constraint_name": "INTEG_312",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PED_TIEND01",
+      "constraint_name": "INTEG_313",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PED_TIEND01",
+      "constraint_name": "INTEG_314",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PED_TIEND01",
+      "constraint_name": "PK_PED_TIEND01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PED_TIEND01"
+    },
+    {
+      "tabla": "PERIODOS01",
+      "constraint_name": "INTEG_179",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "POLI01",
+      "constraint_name": "INTEG_144",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "POLI01",
+      "constraint_name": "PK_POLI01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_POLI01"
+    },
+    {
+      "tabla": "PRECIOS01",
+      "constraint_name": "INTEG_167",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PRECIOS01",
+      "constraint_name": "INTEG_168",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PRECIOS01",
+      "constraint_name": "PK_PRECIOS01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PRECIOS01"
+    },
+    {
+      "tabla": "PRECIO_X_PROD01",
+      "constraint_name": "INTEG_169",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PRECIO_X_PROD01",
+      "constraint_name": "INTEG_170",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PRECIO_X_PROD01",
+      "constraint_name": "PK_PRECIO_X_PROD01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PRECIO_X_PROD01"
+    },
+    {
+      "tabla": "PRODSUST01",
+      "constraint_name": "INTEG_185",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PRODSUST01",
+      "constraint_name": "PK_PRODSUST01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PRODSUST01"
+    },
+    {
+      "tabla": "PROD_X_CONC01",
+      "constraint_name": "INTEG_358",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PROD_X_CONC01",
+      "constraint_name": "INTEG_359",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PROD_X_CONC01",
+      "constraint_name": "INTEG_360",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PROD_X_CONC01",
+      "constraint_name": "PK_PROD_X_CONC01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PROD_X_CONC01"
+    },
+    {
+      "tabla": "PROV01",
+      "constraint_name": "INTEG_70",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PROV01",
+      "constraint_name": "PK_PROV01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PROV01"
+    },
+    {
+      "tabla": "PROV_CLIB01",
+      "constraint_name": "INTEG_71",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PROV_CLIB01",
+      "constraint_name": "PK_PROV_CLIB01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PROV_CLIB01"
+    },
+    {
+      "tabla": "PRVPROD01",
+      "constraint_name": "INTEG_171",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PRVPROD01",
+      "constraint_name": "INTEG_172",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "PRVPROD01",
+      "constraint_name": "PK_PRVPROD01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_PRVPROD01"
+    },
+    {
+      "tabla": "RESACT01",
+      "constraint_name": "INTEG_7",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "RESACT01",
+      "constraint_name": "INTEG_8",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "RESACT01",
+      "constraint_name": "INTEG_9",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "RESACT01",
+      "constraint_name": "PK_RESACT01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_RESACT01"
+    },
+    {
+      "tabla": "RESULT01",
+      "constraint_name": "INTEG_4",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "RESULT01",
+      "constraint_name": "PK_RESULT01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_RESULT01"
+    },
+    {
+      "tabla": "TALLA01",
+      "constraint_name": "INTEG_18",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "TALLA01",
+      "constraint_name": "INTEG_19",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "TALLA01",
+      "constraint_name": "PK_TALLA01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_TALLA01"
+    },
+    {
+      "tabla": "TBLCONTROL01",
+      "constraint_name": "INTEG_283",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "TBLCONTROL01",
+      "constraint_name": "PK_TBLCONTROL01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_TBLCONTROL01"
+    },
+    {
+      "tabla": "TIPO_TERCEROS01",
+      "constraint_name": "INTEG_173",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "TIPO_TERCEROS01",
+      "constraint_name": "PK_TIPO_TERCEROS01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_TIPO_TERCEROS01"
+    },
+    {
+      "tabla": "VEND01",
+      "constraint_name": "INTEG_55",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "VEND01",
+      "constraint_name": "PK_VEND01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_VEND01"
+    },
+    {
+      "tabla": "ZONA01",
+      "constraint_name": "INTEG_15",
+      "constraint_type": "NOT NULL",
+      "index_name": ""
+    },
+    {
+      "tabla": "ZONA01",
+      "constraint_name": "PK_ZONA01",
+      "constraint_type": "PRIMARY KEY",
+      "index_name": "PK_ZONA01"
+    }
+  ]
+}

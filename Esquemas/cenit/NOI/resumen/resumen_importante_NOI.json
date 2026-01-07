@@ -1,0 +1,410 @@
+{
+  "sistema": "NOI",
+  "db_path": "C:\\Program Files (x86)\\Common Files\\Aspel\\Sistemas Aspel\\NOI11.00\\Datos\\Empresa01\\NOI11EMPRE01.FDB",
+  "tablas": 2005,
+  "campos": 48792,
+  "indices": 3660,
+  "constraints": 6021,
+  "ranking": [
+    {
+      "tabla": "RECIBOSNOI2101",
+      "score": 44
+    },
+    {
+      "tabla": "RECIBOSNOI2201",
+      "score": 44
+    },
+    {
+      "tabla": "RECIBOSNOI2301",
+      "score": 44
+    },
+    {
+      "tabla": "RECIBOSNOI2401",
+      "score": 44
+    },
+    {
+      "tabla": "RECIBOSNOI2501",
+      "score": 44
+    },
+    {
+      "tabla": "INFONAVIT01",
+      "score": 26
+    },
+    {
+      "tabla": "MN15012201",
+      "score": 26
+    },
+    {
+      "tabla": "MN15012301",
+      "score": 26
+    },
+    {
+      "tabla": "MN15012401",
+      "score": 26
+    },
+    {
+      "tabla": "MN15012501",
+      "score": 26
+    },
+    {
+      "tabla": "MN15022201",
+      "score": 26
+    },
+    {
+      "tabla": "MN15022301",
+      "score": 26
+    },
+    {
+      "tabla": "MN15022401",
+      "score": 26
+    },
+    {
+      "tabla": "MN15022501",
+      "score": 26
+    },
+    {
+      "tabla": "MN15032201",
+      "score": 26
+    },
+    {
+      "tabla": "MN15032301",
+      "score": 26
+    },
+    {
+      "tabla": "MN15032401",
+      "score": 26
+    },
+    {
+      "tabla": "MN15032501",
+      "score": 26
+    },
+    {
+      "tabla": "MN15042201",
+      "score": 26
+    },
+    {
+      "tabla": "MN15042301",
+      "score": 26
+    },
+    {
+      "tabla": "MN15042401",
+      "score": 26
+    },
+    {
+      "tabla": "MN15042501",
+      "score": 26
+    },
+    {
+      "tabla": "MN15052201",
+      "score": 26
+    },
+    {
+      "tabla": "MN15052301",
+      "score": 26
+    },
+    {
+      "tabla": "MN15052401",
+      "score": 26
+    },
+    {
+      "tabla": "MN15052501",
+      "score": 26
+    },
+    {
+      "tabla": "MN15062201",
+      "score": 26
+    },
+    {
+      "tabla": "MN15062301",
+      "score": 26
+    },
+    {
+      "tabla": "MN15062401",
+      "score": 26
+    },
+    {
+      "tabla": "MN15062501",
+      "score": 26
+    },
+    {
+      "tabla": "MN15072201",
+      "score": 26
+    },
+    {
+      "tabla": "MN15072301",
+      "score": 26
+    },
+    {
+      "tabla": "MN15072401",
+      "score": 26
+    },
+    {
+      "tabla": "MN15072501",
+      "score": 26
+    },
+    {
+      "tabla": "MN15082201",
+      "score": 26
+    },
+    {
+      "tabla": "MN15082301",
+      "score": 26
+    },
+    {
+      "tabla": "MN15082401",
+      "score": 26
+    },
+    {
+      "tabla": "MN15082501",
+      "score": 26
+    },
+    {
+      "tabla": "MN15092201",
+      "score": 26
+    },
+    {
+      "tabla": "MN15092301",
+      "score": 26
+    },
+    {
+      "tabla": "MN15092401",
+      "score": 26
+    },
+    {
+      "tabla": "MN15102201",
+      "score": 26
+    },
+    {
+      "tabla": "MN15102301",
+      "score": 26
+    },
+    {
+      "tabla": "MN15102401",
+      "score": 26
+    },
+    {
+      "tabla": "MN15112101",
+      "score": 26
+    },
+    {
+      "tabla": "MN15112201",
+      "score": 26
+    },
+    {
+      "tabla": "MN15112301",
+      "score": 26
+    },
+    {
+      "tabla": "MN15112401",
+      "score": 26
+    },
+    {
+      "tabla": "MN15122101",
+      "score": 26
+    },
+    {
+      "tabla": "MN15122201",
+      "score": 26
+    },
+    {
+      "tabla": "MN15122301",
+      "score": 26
+    },
+    {
+      "tabla": "MN15122401",
+      "score": 26
+    },
+    {
+      "tabla": "MN16122301",
+      "score": 26
+    },
+    {
+      "tabla": "MN18122301",
+      "score": 26
+    },
+    {
+      "tabla": "MN20122101",
+      "score": 26
+    },
+    {
+      "tabla": "MN20122201",
+      "score": 26
+    },
+    {
+      "tabla": "MN20122301",
+      "score": 26
+    },
+    {
+      "tabla": "MN28022201",
+      "score": 26
+    },
+    {
+      "tabla": "MN28022301",
+      "score": 26
+    },
+    {
+      "tabla": "MN28022501",
+      "score": 26
+    },
+    {
+      "tabla": "MN29022401",
+      "score": 26
+    },
+    {
+      "tabla": "MN30042201",
+      "score": 26
+    },
+    {
+      "tabla": "MN30042301",
+      "score": 26
+    },
+    {
+      "tabla": "MN30042401",
+      "score": 26
+    },
+    {
+      "tabla": "MN30042501",
+      "score": 26
+    },
+    {
+      "tabla": "MN30062201",
+      "score": 26
+    },
+    {
+      "tabla": "MN30062301",
+      "score": 26
+    },
+    {
+      "tabla": "MN30062401",
+      "score": 26
+    },
+    {
+      "tabla": "MN30062501",
+      "score": 26
+    },
+    {
+      "tabla": "MN30072201",
+      "score": 26
+    },
+    {
+      "tabla": "MN30092201",
+      "score": 26
+    },
+    {
+      "tabla": "MN30092301",
+      "score": 26
+    },
+    {
+      "tabla": "MN30092401",
+      "score": 26
+    },
+    {
+      "tabla": "MN30112101",
+      "score": 26
+    },
+    {
+      "tabla": "MN30112201",
+      "score": 26
+    },
+    {
+      "tabla": "MN30112301",
+      "score": 26
+    },
+    {
+      "tabla": "MN30112401",
+      "score": 26
+    },
+    {
+      "tabla": "MN31012201",
+      "score": 26
+    },
+    {
+      "tabla": "MN31012301",
+      "score": 26
+    },
+    {
+      "tabla": "MN31012401",
+      "score": 26
+    },
+    {
+      "tabla": "MN31012501",
+      "score": 26
+    },
+    {
+      "tabla": "MN31032201",
+      "score": 26
+    },
+    {
+      "tabla": "MN31032301",
+      "score": 26
+    },
+    {
+      "tabla": "MN31032401",
+      "score": 26
+    },
+    {
+      "tabla": "MN31032501",
+      "score": 26
+    },
+    {
+      "tabla": "MN31052201",
+      "score": 26
+    },
+    {
+      "tabla": "MN31052301",
+      "score": 26
+    },
+    {
+      "tabla": "MN31052401",
+      "score": 26
+    },
+    {
+      "tabla": "MN31052501",
+      "score": 26
+    },
+    {
+      "tabla": "MN31072201",
+      "score": 26
+    },
+    {
+      "tabla": "MN31072301",
+      "score": 26
+    },
+    {
+      "tabla": "MN31072401",
+      "score": 26
+    },
+    {
+      "tabla": "MN31072501",
+      "score": 26
+    },
+    {
+      "tabla": "MN31082201",
+      "score": 26
+    },
+    {
+      "tabla": "MN31082301",
+      "score": 26
+    },
+    {
+      "tabla": "MN31082401",
+      "score": 26
+    },
+    {
+      "tabla": "MN31082501",
+      "score": 26
+    },
+    {
+      "tabla": "MN31102201",
+      "score": 26
+    },
+    {
+      "tabla": "MN31102301",
+      "score": 26
+    },
+    {
+      "tabla": "MN31102401",
+      "score": 26
+    }
+  ]
+}

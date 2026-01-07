@@ -1,0 +1,134 @@
+{
+  "dataset": "metadata_campos_BANCO",
+  "database": "C:\\Program Files (x86)\\Common Files\\Aspel\\Sistemas Aspel\\BAN6.00\\Datos\\Empresa01\\BAN60EMPRE01.FDB",
+  "engine_version": "2.5.0",
+  "row_count": 3610,
+  "column_count": 25,
+  "columns": [
+    {
+      "order": 1,
+      "name": "tabla",
+      "pandas_dtype": "object"
+    },
+    {
+      "order": 2,
+      "name": "campo",
+      "pandas_dtype": "object"
+    },
+    {
+      "order": 3,
+      "name": "field_source",
+      "pandas_dtype": "object"
+    },
+    {
+      "order": 4,
+      "name": "tipo_codigo",
+      "pandas_dtype": "int64"
+    },
+    {
+      "order": 5,
+      "name": "subtipo",
+      "pandas_dtype": "float64"
+    },
+    {
+      "order": 6,
+      "name": "field_precision",
+      "pandas_dtype": "float64"
+    },
+    {
+      "order": 7,
+      "name": "longitud_bytes",
+      "pandas_dtype": "int64"
+    },
+    {
+      "order": 8,
+      "name": "longitud",
+      "pandas_dtype": "int64"
+    },
+    {
+      "order": 9,
+      "name": "escala",
+      "pandas_dtype": "int64"
+    },
+    {
+      "order": 10,
+      "name": "charset_id",
+      "pandas_dtype": "float64"
+    },
+    {
+      "order": 11,
+      "name": "collation_id",
+      "pandas_dtype": "object"
+    },
+    {
+      "order": 12,
+      "name": "es_nulo",
+      "pandas_dtype": "object"
+    },
+    {
+      "order": 13,
+      "name": "default_source",
+      "pandas_dtype": "object"
+    },
+    {
+      "order": 14,
+      "name": "computed_source",
+      "pandas_dtype": "object"
+    },
+    {
+      "order": 15,
+      "name": "tiene_default_flag",
+      "pandas_dtype": "int64"
+    },
+    {
+      "order": 16,
+      "name": "es_computed_flag",
+      "pandas_dtype": "int64"
+    },
+    {
+      "order": 17,
+      "name": "posicion",
+      "pandas_dtype": "int64"
+    },
+    {
+      "order": 18,
+      "name": "descripcion",
+      "pandas_dtype": "object"
+    },
+    {
+      "order": 19,
+      "name": "charset_name",
+      "pandas_dtype": "object"
+    },
+    {
+      "order": 20,
+      "name": "collation_name",
+      "pandas_dtype": "object"
+    },
+    {
+      "order": 21,
+      "name": "tipo_base",
+      "pandas_dtype": "object"
+    },
+    {
+      "order": 22,
+      "name": "tipo_detalle",
+      "pandas_dtype": "object"
+    },
+    {
+      "order": 23,
+      "name": "rol_sugerido",
+      "pandas_dtype": "object"
+    },
+    {
+      "order": 24,
+      "name": "es_computed",
+      "pandas_dtype": "int64"
+    },
+    {
+      "order": 25,
+      "name": "tiene_default",
+      "pandas_dtype": "int64"
+    }
+  ]
+}

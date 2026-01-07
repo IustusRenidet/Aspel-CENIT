@@ -1,0 +1,563 @@
+{
+  "dataset": "metadata_tablas_BANCO",
+  "database": "C:\\Program Files (x86)\\Common Files\\Aspel\\Sistemas Aspel\\BAN6.00\\Datos\\Empresa01\\BAN60EMPRE01.FDB",
+  "columns": [
+    "tabla",
+    "es_vista",
+    "descripcion"
+  ],
+  "row_count": 110,
+  "notes": "Valores normalizados: sin tabs ni saltos de linea.",
+  "data": [
+    {
+      "tabla": "BENEF",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "COMD",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CONTROL",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CONTROLREGMOV",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CTAS",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CTECONC",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FORMPAGO",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "HISTOR",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MONEDA",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MOVAUX",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MOVAUX2",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MOVS01",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MOVS02",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MOVS03",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MOVS04",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MOVS05",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MOVS06",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MOVS07",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MOVS08",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MOVS09",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MOVS10",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MOVS11",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MOVS12",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MOVS13",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MOVS14",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MOVS15",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MOVS16",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MOVS17",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MOVS18",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MOVS19",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MOVS20",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MOVS21",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MOVS22",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MOVS23",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MOVS24",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MOVS25",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MOVS26",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MOVS27",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MOVS28",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MOVS29",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MOVS30",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MOVS31",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MOVS32",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PARAMEMP",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PARMOVS01",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PARMOVS02",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PARMOVS03",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PARMOVS04",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PARMOVS05",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PARMOVS06",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PARMOVS07",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PARMOVS08",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PARMOVS09",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PARMOVS10",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PARMOVS11",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PARMOVS12",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PARMOVS13",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PARMOVS14",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PARMOVS15",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PARMOVS16",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PARMOVS17",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PARMOVS18",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PARMOVS19",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PARMOVS20",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PARMOVS21",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PARMOVS22",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PARMOVS23",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PARMOVS24",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PARMOVS25",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PARMOVS26",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PARMOVS27",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PARMOVS28",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PARMOVS29",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PARMOVS30",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PARMOVS31",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PARMOVS32",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SEMAFORO",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "UUIDTIMBRES",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "UUIDTIMBRES01",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "UUIDTIMBRES02",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "UUIDTIMBRES03",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "UUIDTIMBRES04",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "UUIDTIMBRES05",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "UUIDTIMBRES06",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "UUIDTIMBRES07",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "UUIDTIMBRES08",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "UUIDTIMBRES09",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "UUIDTIMBRES10",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "UUIDTIMBRES11",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "UUIDTIMBRES12",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "UUIDTIMBRES13",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "UUIDTIMBRES14",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "UUIDTIMBRES15",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "UUIDTIMBRES16",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "UUIDTIMBRES17",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "UUIDTIMBRES18",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "UUIDTIMBRES19",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "UUIDTIMBRES20",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "UUIDTIMBRES21",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "UUIDTIMBRES22",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "UUIDTIMBRES23",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "UUIDTIMBRES24",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "UUIDTIMBRES25",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "UUIDTIMBRES26",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "UUIDTIMBRES27",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "UUIDTIMBRES28",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "UUIDTIMBRES29",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "UUIDTIMBRES30",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "UUIDTIMBRES31",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "UUIDTIMBRES32",
+      "es_vista": 0,
+      "descripcion": ""
+    }
+  ]
+}

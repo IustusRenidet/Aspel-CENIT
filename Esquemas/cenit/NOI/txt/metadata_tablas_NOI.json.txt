@@ -1,0 +1,10038 @@
+{
+  "dataset": "metadata_tablas_NOI",
+  "database": "C:\\Program Files (x86)\\Common Files\\Aspel\\Sistemas Aspel\\NOI11.00\\Datos\\Empresa01\\NOI11EMPRE01.FDB",
+  "columns": [
+    "tabla",
+    "es_vista",
+    "descripcion"
+  ],
+  "row_count": 2005,
+  "notes": "Valores normalizados: sin tabs ni saltos de linea.",
+  "data": [
+    {
+      "tabla": "AC15012201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC15012301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC15012401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC15012501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC15022201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC15022301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC15022401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC15022501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC15032201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC15032301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC15032401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC15032501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC15042201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC15042301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC15042401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC15042501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC15052201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC15052301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC15052401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC15052501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC15062201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC15062301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC15062401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC15062501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC15072201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC15072301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC15072401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC15072501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC15082201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC15082301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC15082401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC15082501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC15092201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC15092301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC15092401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC15102201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC15102301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC15102401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC15112101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC15112201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC15112301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC15112401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC15122101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC15122201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC15122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC15122401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC16122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC18122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC20122101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC20122201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC20122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC28022201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC28022301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC28022501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC29022401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC30042201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC30042301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC30042401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC30042501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC30062201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC30062301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC30062401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC30062501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC30072201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC30092201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC30092301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC30092401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC30112101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC30112201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC30112301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC30112401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC31012201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC31012301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC31012401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC31012501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC31032201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC31032301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC31032401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC31032501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC31052201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC31052301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC31052401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC31052501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC31072201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC31072301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC31072401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC31072501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC31082201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC31082301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC31082401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC31082501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC31102201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC31102301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC31102401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC31122101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC31122201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC31122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AC31122401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15012201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15012201CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15012301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15012301CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15012401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15012401CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15012501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15012501CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15022201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15022201CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15022301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15022301CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15022401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15022401CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15022501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15022501CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15032201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15032201CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15032301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15032301CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15032401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15032401CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15032501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15032501CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15042201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15042201CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15042301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15042301CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15042401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15042401CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15042501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15042501CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15052201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15052201CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15052301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15052301CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15052401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15052401CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15052501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15052501CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15062201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15062201CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15062301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15062301CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15062401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15062401CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15062501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15062501CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15072201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15072201CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15072301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15072301CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15072401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15072401CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15072501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15072501CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15082201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15082201CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15082301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15082301CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15082401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15082401CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15082501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15082501CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15092201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15092201CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15092301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15092301CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15092401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15092401CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15102201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15102201CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15102301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15102301CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15102401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15102401CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15112101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15112101CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15112201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15112201CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15112301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15112301CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15112401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15112401CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15122101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15122101CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15122201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15122201CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15122301CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15122401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA15122401CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA16122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA16122301CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA18122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA18122301CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA20122101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA20122101CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA20122201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA20122201CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA20122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA20122301CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA28022201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA28022201CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA28022301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA28022301CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA28022501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA28022501CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA29022401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA29022401CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA30042201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA30042201CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA30042301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA30042301CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA30042401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA30042401CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA30042501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA30042501CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA30062201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA30062201CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA30062301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA30062301CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA30062401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA30062401CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA30062501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA30062501CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA30072201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA30072201CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA30092201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA30092201CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA30092301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA30092301CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA30092401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA30092401CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA30112101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA30112101CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA30112201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA30112201CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA30112301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA30112301CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA30112401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA30112401CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA31012201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA31012201CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA31012301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA31012301CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA31012401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA31012401CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA31012501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA31012501CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA31032201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA31032201CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA31032301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA31032301CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA31032401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA31032401CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA31032501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA31032501CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA31052201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA31052201CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA31052301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA31052301CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA31052401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA31052401CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA31052501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA31052501CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA31072201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA31072201CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA31072301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA31072301CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA31072401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA31072401CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA31072501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA31072501CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA31082201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA31082201CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA31082301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA31082301CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA31082401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA31082401CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA31082501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA31082501CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA31102201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA31102201CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA31102301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA31102301CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA31102401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA31102401CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA31122101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA31122101CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA31122201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA31122201CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA31122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA31122301CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA31122401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CA31122401CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CAPACITA01",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE14082201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE15012201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE15012301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE15012401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE15012501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE15022201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE15022301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE15022401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE15022501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE15032201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE15032301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE15032401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE15032501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE15042201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE15042301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE15042401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE15042501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE15052201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE15052301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE15052401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE15052501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE15062201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE15062301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE15062401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE15062501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE15072201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE15072301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE15072401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE15072501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE15082201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE15082301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE15082401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE15082501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE15092201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE15092301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE15092401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE15102201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE15102301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE15102401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE15112101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE15112201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE15112301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE15112401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE15122101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE15122201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE15122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE15122401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE16122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE18122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE20122101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE20122201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE20122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE28022201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE28022301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE28022501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE29022401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE29082201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE30012201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE30042201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE30042301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE30042401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE30042501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE30062201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE30062301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE30062401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE30062501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE30072201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE30092201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE30092301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE30092401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE30112101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE30112201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE30112301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE30112401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE30122101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE31012201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE31012301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE31012401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE31012501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE31032201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE31032301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE31032401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE31032501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE31052201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE31052301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE31052401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE31052501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE31072201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE31072301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE31072401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE31072501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE31082201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE31082301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE31082401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE31082501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE31102201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE31102301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE31102401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE31122101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE31122201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE31122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CFRE31122401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CLASIF01",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "COMPISR2101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "COMPISR2201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "COMPISR2301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "COMPISR2401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "COMPISR2501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CONTROL01",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CTASCONT01",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "DEPTOS01",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "DETCOMPISR2101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "DETCOMPISR2201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "DETCOMPISR2301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "DETCOMPISR2401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "DETCOMPISR2501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "DOCUMENTOS01",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FAMILIA01",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT15012201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT15012301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT15012401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT15012501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT15022201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT15022301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT15022401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT15022501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT15032201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT15032301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT15032401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT15032501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT15042201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT15042301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT15042401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT15042501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT15052201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT15052301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT15052401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT15052501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT15062201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT15062301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT15062401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT15062501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT15072201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT15072301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT15072401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT15072501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT15082201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT15082301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT15082401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT15082501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT15092201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT15092301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT15092401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT15102201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT15102301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT15102401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT15112101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT15112201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT15112301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT15112401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT15122101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT15122201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT15122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT15122401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT16122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT18122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT20122101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT20122201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT20122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT28022201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT28022301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT28022501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT29022401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT30042201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT30042301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT30042401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT30042501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT30062201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT30062301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT30062401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT30062501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT30072201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT30092201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT30092301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT30092401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT30112101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT30112201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT30112301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT30112401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT31012201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT31012301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT31012401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT31012501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT31032201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT31032301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT31032401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT31032501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT31052201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT31052301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT31052401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT31052501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT31072201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT31072301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT31072401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT31072501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT31082201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT31082301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT31082401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT31082501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT31102201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT31102301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT31102401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT31122101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT31122201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT31122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FT31122401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "HISTB01",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "HISTVAC01",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "INFONAVIT01",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "INTELISIS01",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15012201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15012201CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15012301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15012301CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15012401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15012401CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15012501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15012501CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15022201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15022201CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15022301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15022301CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15022401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15022401CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15022501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15022501CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15032201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15032201CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15032301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15032301CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15032401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15032401CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15032501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15032501CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15042201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15042201CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15042301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15042301CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15042401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15042401CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15042501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15042501CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15052201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15052201CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15052301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15052301CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15052401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15052401CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15052501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15052501CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15062201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15062201CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15062301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15062301CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15062401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15062401CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15062501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15062501CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15072201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15072201CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15072301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15072301CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15072401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15072401CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15072501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15072501CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15082201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15082201CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15082301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15082301CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15082401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15082401CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15082501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15082501CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15092201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15092201CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15092301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15092301CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15092401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15092401CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15102201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15102201CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15102301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15102301CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15102401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15102401CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15112101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15112101CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15112201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15112201CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15112301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15112301CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15112401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15112401CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15122101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15122101CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15122201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15122201CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15122301CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15122401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS15122401CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS16122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS16122301CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS18122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS18122301CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS20122101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS20122101CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS20122201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS20122201CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS20122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS20122301CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS28022201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS28022201CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS28022301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS28022301CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS28022501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS28022501CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS29022401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS29022401CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS30042201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS30042201CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS30042301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS30042301CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS30042401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS30042401CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS30042501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS30042501CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS30062201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS30062201CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS30062301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS30062301CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS30062401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS30062401CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS30062501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS30062501CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS30072201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS30072201CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS30092201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS30092201CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS30092301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS30092301CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS30092401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS30092401CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS30112101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS30112101CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS30112201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS30112201CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS30112301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS30112301CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS30112401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS30112401CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS31012201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS31012201CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS31012301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS31012301CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS31012401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS31012401CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS31012501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS31012501CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS31032201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS31032201CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS31032301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS31032301CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS31032401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS31032401CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS31032501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS31032501CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS31052201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS31052201CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS31052301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS31052301CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS31052401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS31052401CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS31052501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS31052501CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS31072201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS31072201CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS31072301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS31072301CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS31072401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS31072401CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS31072501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS31072501CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS31082201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS31082201CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS31082301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS31082301CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS31082401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS31082401CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS31082501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS31082501CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS31102201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS31102201CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS31102301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS31102301CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS31102401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS31102401CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS31122101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS31122101CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS31122201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS31122201CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS31122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS31122301CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS31122401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IS31122401CY",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF15012201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF15012301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF15012401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF15012501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF15022201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF15022301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF15022401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF15022501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF15032201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF15032301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF15032401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF15032501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF15042201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF15042301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF15042401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF15042501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF15052201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF15052301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF15052401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF15052501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF15062201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF15062301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF15062401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF15062501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF15072201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF15072301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF15072401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF15072501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF15082201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF15082301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF15082401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF15082501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF15092201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF15092301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF15092401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF15102201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF15102301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF15102401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF15112101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF15112201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF15112301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF15112401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF15122101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF15122201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF15122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF15122401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF16122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF18122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF20122101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF20122201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF20122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF28022201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF28022301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF28022501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF29022401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF30042201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF30042301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF30042401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF30042501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF30062201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF30062301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF30062401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF30062501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF30072201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF30092201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF30092301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF30092401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF30112101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF30112201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF30112301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF30112401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF31012201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF31012301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF31012401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF31012501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF31032201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF31032301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF31032401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF31032501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF31052201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF31052301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF31052401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF31052501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF31072201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF31072301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF31072401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF31072501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF31082201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF31082301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF31082401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF31082501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF31102201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF31102301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF31102401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF31122101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF31122201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF31122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MF31122401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN15012201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN15012301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN15012401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN15012501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN15022201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN15022301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN15022401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN15022501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN15032201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN15032301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN15032401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN15032501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN15042201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN15042301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN15042401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN15042501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN15052201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN15052301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN15052401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN15052501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN15062201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN15062301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN15062401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN15062501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN15072201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN15072301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN15072401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN15072501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN15082201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN15082301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN15082401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN15082501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN15092201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN15092301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN15092401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN15102201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN15102301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN15102401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN15112101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN15112201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN15112301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN15112401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN15122101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN15122201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN15122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN15122401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN16122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN18122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN20122101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN20122201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN20122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN28022201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN28022301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN28022501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN29022401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN30042201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN30042301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN30042401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN30042501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN30062201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN30062301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN30062401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN30062501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN30072201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN30092201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN30092301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN30092401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN30112101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN30112201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN30112301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN30112401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN31012201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN31012301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN31012401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN31012501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN31032201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN31032301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN31032401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN31032501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN31052201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN31052301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN31052401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN31052501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN31072201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN31072301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN31072401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN31072501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN31082201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN31082301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN31082401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN31082501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN31102201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN31102301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN31102401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN31122101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN31122201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN31122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MN31122401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "NAANTICIPOS01",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "NADETALLEVENTOS01",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "NAEVENTOS01",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "NAOFICINAS01",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "NAPOLITICAS01",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "NATBSINC01",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "NWNOMINAS01",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PARAMBF01",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PARAMLOGO01",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PARAMSIS01",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD15012201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD15012301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD15012401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD15012501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD15022201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD15022301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD15022401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD15022501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD15032201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD15032301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD15032401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD15032501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD15042201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD15042301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD15042401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD15042501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD15052201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD15052301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD15052401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD15052501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD15062201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD15062301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD15062401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD15062501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD15072201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD15072301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD15072401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD15072501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD15082201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD15082301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD15082401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD15082501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD15092201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD15092301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD15092401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD15102201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD15102301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD15102401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD15112101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD15112201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD15112301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD15112401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD15122101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD15122201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD15122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD15122401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD16122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD18122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD20122101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD20122201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD20122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD28022201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD28022301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD28022501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD29022401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD30042201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD30042301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD30042401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD30042501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD30062201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD30062301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD30062401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD30062501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD30072201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD30092201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD30092301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD30092401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD30112101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD30112201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD30112301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD30112401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD31012201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD31012301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD31012401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD31012501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD31032201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD31032301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD31032401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD31032501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD31052201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD31052301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD31052401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD31052501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD31072201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD31072301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD31072401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD31072501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD31082201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD31082301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD31082401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD31082501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD31102201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD31102301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD31102401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD31122101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD31122201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD31122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PD31122401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "POLIZAS01",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PUESTOS01",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RECIBOSNOI2101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RECIBOSNOI2201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RECIBOSNOI2301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RECIBOSNOI2401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RECIBOSNOI2501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB15012201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB15012301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB15012401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB15012501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB15022201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB15022301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB15022401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB15022501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB15032201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB15032301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB15032401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB15032501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB15042201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB15042301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB15042401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB15042501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB15052201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB15052301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB15052401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB15052501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB15062201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB15062301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB15062401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB15062501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB15072201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB15072301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB15072401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB15072501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB15082201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB15082301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB15082401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB15082501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB15092201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB15092301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB15092401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB15102201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB15102301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB15102401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB15112101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB15112201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB15112301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB15112401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB15122101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB15122201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB15122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB15122401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB16122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB18122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB20122101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB20122201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB20122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB28022201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB28022301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB28022501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB29022401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB30042201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB30042301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB30042401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB30042501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB30062201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB30062301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB30062401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB30062501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB30072201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB30092201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB30092301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB30092401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB30112101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB30112201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB30112301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB30112401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB31012201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB31012301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB31012401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB31012501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB31032201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB31032301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB31032401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB31032501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB31052201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB31052301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB31052401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB31052501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB31072201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB31072301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB31072401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB31072501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB31082201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB31082301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB31082401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB31082501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB31102201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB31102301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB31102401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB31122101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB31122201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB31122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGCONTB31122401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGSPAT01",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT15012201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT15012301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT15012401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT15012501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT15022201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT15022301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT15022401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT15022501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT15032201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT15032301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT15032401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT15032501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT15042201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT15042301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT15042401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT15042501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT15052201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT15052301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT15052401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT15052501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT15062201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT15062301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT15062401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT15062501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT15072201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT15072301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT15072401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT15072501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT15082201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT15082301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT15082401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT15082501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT15092201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT15092301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT15092401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT15102201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT15102301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT15102401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT15112101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT15112201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT15112301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT15112401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT15122101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT15122201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT15122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT15122401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT16122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT18122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT20122101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT20122201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT28022201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT28022301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT28022501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT29022401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT30042201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT30042301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT30042401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT30042501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT30062201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT30062301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT30062401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT30062501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT30072201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT30092201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT30092301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT30092401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT30112101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT30112201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT30112301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT30112401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT31012201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT31012301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT31012401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT31012501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT31032201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT31032301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT31032401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT31032501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT31052201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT31052301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT31052401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT31052501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT31072301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT31072401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT31072501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT31082201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT31082301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT31082401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT31082501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT31102201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT31102301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT31102401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT31122101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT31122201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT31122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINT31122401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED15012201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED15012301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED15012401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED15012501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED15022201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED15022301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED15022401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED15022501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED15032201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED15032301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED15032401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED15032501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED15042201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED15042301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED15042401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED15042501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED15052201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED15052301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED15052401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED15052501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED15062201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED15062301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED15062401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED15062501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED15072201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED15072301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED15072401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED15072501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED15082201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED15082301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED15082401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED15082501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED15092201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED15092301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED15092401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED15102201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED15102301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED15102401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED15112101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED15112201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED15112301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED15112401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED15122101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED15122201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED15122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED15122401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED16122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED18122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED20122101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED20122201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED28022201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED28022301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED28022501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED29022401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED30042201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED30042301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED30042401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED30042501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED30062201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED30062301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED30062401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED30062501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED30072201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED30092201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED30092301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED30092401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED30112101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED30112201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED30112301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED30112401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED31012201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED31012301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED31012401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED31012501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED31032201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED31032301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED31032401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED31032501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED31052201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED31052301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED31052401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED31052501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED31072301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED31072401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED31072501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED31082201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED31082301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED31082401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED31082501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED31102201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED31102301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED31102401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED31122101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED31122201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED31122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RESINTPERDED31122401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RIESPTOS01",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED15012201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED15012301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED15012401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED15012501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED15022201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED15022301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED15022401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED15022501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED15032201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED15032301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED15032401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED15032501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED15042201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED15042301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED15042401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED15042501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED15052201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED15052301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED15052401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED15052501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED15062201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED15062301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED15062401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED15062501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED15072201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED15072301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED15072401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED15072501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED15082201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED15082301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED15082401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED15082501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED15092201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED15092301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED15092401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED15102201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED15102301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED15102401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED15112101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED15112201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED15112301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED15112401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED15122101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED15122201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED15122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED15122401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED16122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED18122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED20122101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED20122201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED20122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED28022201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED28022301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED28022501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED29022401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED30042201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED30042301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED30042401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED30042501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED30062201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED30062301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED30062401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED30062501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED30072201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED30092201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED30092301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED30092401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED30112101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED30112201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED30112301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED30112401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED31012201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED31012301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED31012401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED31012501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED31032201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED31032301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED31032401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED31032501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED31052201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED31052301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED31052401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED31052501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED31072201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED31072301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED31072401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED31072501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED31082201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED31082301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED31082401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED31082501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED31102201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED31102301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED31102401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED31122101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED31122201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED31122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATDED31122401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER15012201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER15012301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER15012401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER15012501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER15022201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER15022301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER15022401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER15022501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER15032201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER15032301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER15032401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER15032501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER15042201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER15042301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER15042401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER15042501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER15052201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER15052301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER15052401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER15052501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER15062201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER15062301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER15062401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER15062501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER15072201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER15072301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER15072401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER15072501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER15082201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER15082301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER15082401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER15082501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER15092201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER15092301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER15092401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER15102201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER15102301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER15102401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER15112101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER15112201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER15112301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER15112401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER15122101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER15122201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER15122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER15122401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER16122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER18122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER20122101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER20122201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER20122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER28022201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER28022301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER28022501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER29022401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER30042201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER30042301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER30042401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER30042501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER30062201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER30062301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER30062401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER30062501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER30072201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER30092201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER30092301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER30092401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER30112101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER30112201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER30112301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER30112401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER31012201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER31012301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER31012401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER31012501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER31032201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER31032301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER31032401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER31032501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER31052201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER31052301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER31052401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER31052501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER31072201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER31072301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER31072401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER31072501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER31082201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER31082301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER31082401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER31082501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER31102201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER31102301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER31102401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER31122101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER31122201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER31122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SATPER31122401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL15012201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL15012301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL15012401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL15012501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL15022201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL15022301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL15022401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL15022501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL15032201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL15032301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL15032401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL15032501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL15042201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL15042301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL15042401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL15042501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL15052201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL15052301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL15052401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL15052501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL15062201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL15062301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL15062401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL15062501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL15072201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL15072301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL15072401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL15072501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL15082201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL15082301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL15082401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL15082501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL15092201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL15092301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL15092401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL15102201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL15102301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL15102401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL15112101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL15112201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL15112301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL15112401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL15122101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL15122201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL15122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL15122401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL16122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL18122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL20122101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL20122201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL20122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL28022201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL28022301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL28022501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL29022401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL30042201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL30042301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL30042401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL30042501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL30062201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL30062301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL30062401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL30062501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL30072201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL30092201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL30092301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL30092401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL30112101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL30112201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL30112301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL30112401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL31012201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL31012301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL31012401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL31012501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL31032201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL31032301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL31032401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL31032501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL31052201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL31052301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL31052401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL31052501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL31072201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL31072301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL31072401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL31072501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL31082201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL31082301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL31082401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL31082501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL31102201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL31102301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL31102401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL31122101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL31122201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL31122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SL31122401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SM01",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15012201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15012201C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15012301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15012301C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15012401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15012401C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15012501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15012501C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15022201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15022201C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15022301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15022301C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15022401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15022401C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15022501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15022501C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15032201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15032201C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15032301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15032301C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15032401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15032401C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15032501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15032501C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15042201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15042201C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15042301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15042301C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15042401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15042401C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15042501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15042501C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15052201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15052201C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15052301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15052301C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15052401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15052401C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15052501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15052501C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15062201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15062201C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15062301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15062301C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15062401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15062401C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15062501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15062501C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15072201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15072201C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15072301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15072301C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15072401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15072401C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15072501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15072501C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15082201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15082201C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15082301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15082301C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15082401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15082401C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15082501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15082501C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15092201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15092201C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15092301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15092301C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15092401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15092401C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15102201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15102201C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15102301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15102301C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15102401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15102401C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15112101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15112101C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15112201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15112201C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15112301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15112301C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15112401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15112401C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15122101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15122101C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15122201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15122201C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15122301C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15122401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB15122401C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB16122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB16122301C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB18122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB18122301C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB20122101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB20122101C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB20122201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB20122201C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB20122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB20122301C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB28022201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB28022201C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB28022301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB28022301C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB28022501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB28022501C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB29022401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB29022401C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB30042201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB30042201C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB30042301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB30042301C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB30042401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB30042401C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB30042501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB30042501C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB30062201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB30062201C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB30062301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB30062301C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB30062401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB30062401C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB30062501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB30062501C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB30072201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB30072201C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB30092201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB30092201C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB30092301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB30092301C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB30092401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB30092401C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB30112101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB30112101C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB30112201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB30112201C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB30112301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB30112301C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB30112401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB30112401C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB31012201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB31012201C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB31012301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB31012301C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB31012401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB31012401C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB31012501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB31012501C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB31032201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB31032201C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB31032301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB31032301C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB31032401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB31032401C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB31032501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB31032501C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB31052201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB31052201C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB31052301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB31052301C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB31052401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB31052401C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB31052501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB31052501C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB31072201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB31072201C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB31072301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB31072301C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB31072401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB31072401C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB31072501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB31072501C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB31082201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB31082201C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB31082301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB31082301C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB31082401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB31082401C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB31082501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB31082501C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB31102201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB31102201C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB31102301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB31102301C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB31102401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB31102401C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB31122101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB31122101C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB31122201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB31122201C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB31122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB31122301C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB31122401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TB31122401C",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TBFOTOS01",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TBLIBRES01",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TBLIBRESTIT01",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIMBRADO01",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC15012201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC15012301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC15012401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC15012501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC15022201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC15022301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC15022401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC15022501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC15032201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC15032301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC15032401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC15032501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC15042201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC15042301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC15042401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC15042501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC15052201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC15052301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC15052401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC15052501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC15062201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC15062301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC15062401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC15062501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC15072201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC15072301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC15072401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC15072501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC15082201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC15082301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC15082401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC15082501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC15092201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC15092301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC15092401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC15102201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC15102301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC15102401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC15112101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC15112201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC15112301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC15112401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC15122101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC15122201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC15122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC15122401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC16122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC18122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC20122101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC20122201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC20122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC28022201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC28022301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC28022501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC29022401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC30042201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC30042301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC30042401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC30042501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC30062201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC30062301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC30062401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC30062501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC30072201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC30092201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC30092301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC30092401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC30112101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC30112201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC30112301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC30112401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC31012201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC31012301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC31012401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC31012501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC31032201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC31032301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC31032401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC31032501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC31052201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC31052301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC31052401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC31052501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC31072201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC31072301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC31072401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC31072501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC31082201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC31082301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC31082401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC31082501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC31102201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC31102301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC31102401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC31122101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC31122201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC31122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSINC31122401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC15012201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC15012301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC15012401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC15012501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC15022201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC15022301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC15022401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC15022501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC15032201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC15032301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC15032401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC15032501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC15042201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC15042301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC15042401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC15042501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC15052201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC15052301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC15052401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC15052501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC15062201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC15062301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC15062401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC15062501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC15072201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC15072301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC15072401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC15072501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC15082201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC15082301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC15082401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC15082501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC15092201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC15092301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC15092401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC15102201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC15102301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC15102401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC15112101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC15112201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC15112301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC15112401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC15122101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC15122201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC15122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC15122401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC16122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC18122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC20122101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC20122201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC20122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC28022201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC28022301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC28022501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC29022401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC30042201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC30042301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC30042401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC30042501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC30062201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC30062301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC30062401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC30062501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC30072201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC30092201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC30092301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC30092401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC30112101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC30112201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC30112301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC30112401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC31012201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC31012301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC31012401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC31012501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC31032201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC31032301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC31032401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC31032501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC31052201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC31052301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC31052401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC31052501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC31072201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC31072301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC31072401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC31072501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC31082201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC31082301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC31082401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC31082501",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC31102201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC31102301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC31102401",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC31122101",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC31122201",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC31122301",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "VC31122401",
+      "es_vista": 0,
+      "descripcion": ""
+    }
+  ]
+}

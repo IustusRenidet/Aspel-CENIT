@@ -1,0 +1,410 @@
+{
+  "sistema": "SAE",
+  "db_path": "C:\\Program Files (x86)\\Common Files\\Aspel\\Sistemas Aspel\\SAE9.00\\Empresa01\\Datos\\SAE90EMPRE01.FDB",
+  "tablas": 203,
+  "campos": 3990,
+  "indices": 479,
+  "constraints": 544,
+  "ranking": [
+    {
+      "tabla": "FACTF01",
+      "score": 38
+    },
+    {
+      "tabla": "FACTC01",
+      "score": 36
+    },
+    {
+      "tabla": "FACTP01",
+      "score": 36
+    },
+    {
+      "tabla": "CFDI01",
+      "score": 35
+    },
+    {
+      "tabla": "FACTD01",
+      "score": 32
+    },
+    {
+      "tabla": "FACTE01",
+      "score": 32
+    },
+    {
+      "tabla": "FACTG01",
+      "score": 32
+    },
+    {
+      "tabla": "FACTR01",
+      "score": 32
+    },
+    {
+      "tabla": "FACTV01",
+      "score": 32
+    },
+    {
+      "tabla": "MINVE01",
+      "score": 31
+    },
+    {
+      "tabla": "COMPC01",
+      "score": 30
+    },
+    {
+      "tabla": "COMPD01",
+      "score": 30
+    },
+    {
+      "tabla": "COMPO01",
+      "score": 30
+    },
+    {
+      "tabla": "COMPQ01",
+      "score": 30
+    },
+    {
+      "tabla": "COMPR01",
+      "score": 30
+    },
+    {
+      "tabla": "CUEN_DET01",
+      "score": 30
+    },
+    {
+      "tabla": "CUEN_M01",
+      "score": 30
+    },
+    {
+      "tabla": "PAGA_M01",
+      "score": 30
+    },
+    {
+      "tabla": "CFDIC01",
+      "score": 28
+    },
+    {
+      "tabla": "FACTA01",
+      "score": 28
+    },
+    {
+      "tabla": "LTPD01",
+      "score": 25
+    },
+    {
+      "tabla": "NUMSER01",
+      "score": 25
+    },
+    {
+      "tabla": "HNUMSER01",
+      "score": 23
+    },
+    {
+      "tabla": "PAGOLINEA01",
+      "score": 22
+    },
+    {
+      "tabla": "PAR_FACTC01",
+      "score": 22
+    },
+    {
+      "tabla": "PAR_FACTP01",
+      "score": 22
+    },
+    {
+      "tabla": "PRECIO_X_PROD01",
+      "score": 22
+    },
+    {
+      "tabla": "CLIE01",
+      "score": 21
+    },
+    {
+      "tabla": "PAR_PED_CLARO01",
+      "score": 21
+    },
+    {
+      "tabla": "FACTT01",
+      "score": 20
+    },
+    {
+      "tabla": "MULT01",
+      "score": 20
+    },
+    {
+      "tabla": "PAGA_DET01",
+      "score": 20
+    },
+    {
+      "tabla": "PAGOCODI01",
+      "score": 20
+    },
+    {
+      "tabla": "PAR_COMPC01",
+      "score": 20
+    },
+    {
+      "tabla": "PAR_COMPD01",
+      "score": 20
+    },
+    {
+      "tabla": "PAR_COMPO01",
+      "score": 20
+    },
+    {
+      "tabla": "PAR_COMPQ01",
+      "score": 20
+    },
+    {
+      "tabla": "PAR_COMPR01",
+      "score": 20
+    },
+    {
+      "tabla": "PAR_FACTA01",
+      "score": 20
+    },
+    {
+      "tabla": "PAR_FACTD01",
+      "score": 20
+    },
+    {
+      "tabla": "PAR_FACTE01",
+      "score": 20
+    },
+    {
+      "tabla": "PAR_FACTF01",
+      "score": 20
+    },
+    {
+      "tabla": "PAR_FACTG01",
+      "score": 20
+    },
+    {
+      "tabla": "PAR_FACTR01",
+      "score": 20
+    },
+    {
+      "tabla": "PAR_FACTV01",
+      "score": 20
+    },
+    {
+      "tabla": "PROD_X_CONC01",
+      "score": 20
+    },
+    {
+      "tabla": "CLICAM01",
+      "score": 19
+    },
+    {
+      "tabla": "FOLIOSC01",
+      "score": 19
+    },
+    {
+      "tabla": "FOLIOSF01",
+      "score": 19
+    },
+    {
+      "tabla": "PAGOS_PED_TIENDA01",
+      "score": 19
+    },
+    {
+      "tabla": "PAR_PED_AMAZON01",
+      "score": 19
+    },
+    {
+      "tabla": "CAPAS_X_MOV01",
+      "score": 18
+    },
+    {
+      "tabla": "CLIE_TIENDA01",
+      "score": 18
+    },
+    {
+      "tabla": "CONTAC01",
+      "score": 18
+    },
+    {
+      "tabla": "CONTAP01",
+      "score": 18
+    },
+    {
+      "tabla": "PARAM_FOLIOSC01",
+      "score": 18
+    },
+    {
+      "tabla": "PARAM_FOLIOSF01",
+      "score": 18
+    },
+    {
+      "tabla": "PARAM_TIENDAS01",
+      "score": 18
+    },
+    {
+      "tabla": "PARAM_TIPODOCTOSC01",
+      "score": 18
+    },
+    {
+      "tabla": "PARAM_TIPODOCTOSF01",
+      "score": 18
+    },
+    {
+      "tabla": "PAR_FACTT01",
+      "score": 18
+    },
+    {
+      "tabla": "PAR_PED_TIEND01",
+      "score": 18
+    },
+    {
+      "tabla": "RESACT01",
+      "score": 18
+    },
+    {
+      "tabla": "ACOMP01",
+      "score": 17
+    },
+    {
+      "tabla": "BITA01",
+      "score": 17
+    },
+    {
+      "tabla": "CAMP01",
+      "score": 17
+    },
+    {
+      "tabla": "CNSEST01",
+      "score": 17
+    },
+    {
+      "tabla": "FOLCXC01",
+      "score": 17
+    },
+    {
+      "tabla": "FOLCXP01",
+      "score": 17
+    },
+    {
+      "tabla": "INTCOI01",
+      "score": 17
+    },
+    {
+      "tabla": "PARAM_APLICASOC01",
+      "score": 17
+    },
+    {
+      "tabla": "PARAM_CLIENTES01",
+      "score": 17
+    },
+    {
+      "tabla": "PARAM_CODI01",
+      "score": 17
+    },
+    {
+      "tabla": "PARAM_COMPRAS01",
+      "score": 17
+    },
+    {
+      "tabla": "PARAM_DATOSGRALES01",
+      "score": 17
+    },
+    {
+      "tabla": "PARAM_FACTURA01",
+      "score": 17
+    },
+    {
+      "tabla": "PARAM_GRAFICAS01",
+      "score": 17
+    },
+    {
+      "tabla": "PARAM_PROVEEDORES01",
+      "score": 17
+    },
+    {
+      "tabla": "PED_AMAZON01",
+      "score": 17
+    },
+    {
+      "tabla": "PED_CLARO01",
+      "score": 17
+    },
+    {
+      "tabla": "PED_TIEND01",
+      "score": 17
+    },
+    {
+      "tabla": "PROV01",
+      "score": 17
+    },
+    {
+      "tabla": "ZONA01",
+      "score": 17
+    },
+    {
+      "tabla": "ACTCAM01",
+      "score": 16
+    },
+    {
+      "tabla": "CARTAPORTE01",
+      "score": 16
+    },
+    {
+      "tabla": "COLOR01",
+      "score": 16
+    },
+    {
+      "tabla": "COM_EXTERIOR01",
+      "score": 16
+    },
+    {
+      "tabla": "CONFIG_ENVIOS01",
+      "score": 16
+    },
+    {
+      "tabla": "CTAESQ01",
+      "score": 16
+    },
+    {
+      "tabla": "CVES_ALTER01",
+      "score": 16
+    },
+    {
+      "tabla": "DESACT01",
+      "score": 16
+    },
+    {
+      "tabla": "IMG_ARTICULO01",
+      "score": 16
+    },
+    {
+      "tabla": "INVFIS01",
+      "score": 16
+    },
+    {
+      "tabla": "KITS01",
+      "score": 16
+    },
+    {
+      "tabla": "PARAM_CAMPOSLIBRES01",
+      "score": 16
+    },
+    {
+      "tabla": "PAR_COMPC_CLIB01",
+      "score": 16
+    },
+    {
+      "tabla": "PAR_COMPD_CLIB01",
+      "score": 16
+    },
+    {
+      "tabla": "PAR_COMPO_CLIB01",
+      "score": 16
+    },
+    {
+      "tabla": "PAR_COMPQ_CLIB01",
+      "score": 16
+    },
+    {
+      "tabla": "PAR_COMPR_CLIB01",
+      "score": 16
+    }
+  ]
+}

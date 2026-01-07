@@ -1,0 +1,4 @@
+{"dataset": "metadata_tablas_BANCO", "database": "C:\\Program Files (x86)\\Common Files\\Aspel\\Sistemas Aspel\\BAN6.00\\Datos\\Empresa01\\BAN60EMPRE01.FDB", "engine_version": "2.5.0", "row_count": 110, "column_count": 3}
+{"order": 1, "name": "tabla", "pandas_dtype": "object", "dataset": "metadata_tablas_BANCO", "database": "C:\\Program Files (x86)\\Common Files\\Aspel\\Sistemas Aspel\\BAN6.00\\Datos\\Empresa01\\BAN60EMPRE01.FDB", "engine_version": "2.5.0"}
+{"order": 2, "name": "es_vista", "pandas_dtype": "int64", "dataset": "metadata_tablas_BANCO", "database": "C:\\Program Files (x86)\\Common Files\\Aspel\\Sistemas Aspel\\BAN6.00\\Datos\\Empresa01\\BAN60EMPRE01.FDB", "engine_version": "2.5.0"}
+{"order": 3, "name": "descripcion", "pandas_dtype": "object", "dataset": "metadata_tablas_BANCO", "database": "C:\\Program Files (x86)\\Common Files\\Aspel\\Sistemas Aspel\\BAN6.00\\Datos\\Empresa01\\BAN60EMPRE01.FDB", "engine_version": "2.5.0"}

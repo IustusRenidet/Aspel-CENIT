@@ -1,0 +1,15 @@
+﻿# dataset	database	engine_version	row_count	column_count
+metadata_indices_NOI	C:\Program Files (x86)\Common Files\Aspel\Sistemas Aspel\NOI11.00\Datos\Empresa01\NOI11EMPRE01.FDB	2.5.0	3660	11
+# --- columnas ---
+order	name	pandas_dtype
+1	tabla	object
+2	indice	object
+3	unique_flag	float64
+4	inactive_flag	float64
+5	index_type	float64
+6	campo_indexado	object
+7	posicion_en_indice	int64
+8	descripcion	object
+9	unico	object
+10	estado	object
+11	orden	object

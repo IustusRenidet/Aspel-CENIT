@@ -1,0 +1,29 @@
+{
+  "dataset": "metadata_constraints_SAE",
+  "database": "C:\\Program Files (x86)\\Common Files\\Aspel\\Sistemas Aspel\\SAE9.00\\Empresa01\\Datos\\SAE90EMPRE01.FDB",
+  "engine_version": "2.5.0",
+  "row_count": 544,
+  "column_count": 4,
+  "columns": [
+    {
+      "order": 1,
+      "name": "tabla",
+      "pandas_dtype": "object"
+    },
+    {
+      "order": 2,
+      "name": "constraint_name",
+      "pandas_dtype": "object"
+    },
+    {
+      "order": 3,
+      "name": "constraint_type",
+      "pandas_dtype": "object"
+    },
+    {
+      "order": 4,
+      "name": "index_name",
+      "pandas_dtype": "object"
+    }
+  ]
+}

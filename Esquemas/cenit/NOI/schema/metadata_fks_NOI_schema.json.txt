@@ -1,0 +1,39 @@
+{
+  "dataset": "metadata_fks_NOI",
+  "database": "C:\\Program Files (x86)\\Common Files\\Aspel\\Sistemas Aspel\\NOI11.00\\Datos\\Empresa01\\NOI11EMPRE01.FDB",
+  "engine_version": "2.5.0",
+  "row_count": 0,
+  "column_count": 6,
+  "columns": [
+    {
+      "order": 1,
+      "name": "tabla_origen",
+      "pandas_dtype": "object"
+    },
+    {
+      "order": 2,
+      "name": "fk_name",
+      "pandas_dtype": "object"
+    },
+    {
+      "order": 3,
+      "name": "fk_index",
+      "pandas_dtype": "object"
+    },
+    {
+      "order": 4,
+      "name": "tabla_destino",
+      "pandas_dtype": "object"
+    },
+    {
+      "order": 5,
+      "name": "pk_name",
+      "pandas_dtype": "object"
+    },
+    {
+      "order": 6,
+      "name": "pk_index",
+      "pandas_dtype": "object"
+    }
+  ]
+}

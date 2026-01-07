@@ -1,0 +1,410 @@
+{
+  "sistema": "BANCO",
+  "db_path": "C:\\Program Files (x86)\\Common Files\\Aspel\\Sistemas Aspel\\BAN6.00\\Datos\\Empresa01\\BAN60EMPRE01.FDB",
+  "tablas": 110,
+  "campos": 3610,
+  "indices": 168,
+  "constraints": 710,
+  "ranking": [
+    {
+      "tabla": "UUIDTIMBRES01",
+      "score": 24
+    },
+    {
+      "tabla": "UUIDTIMBRES02",
+      "score": 24
+    },
+    {
+      "tabla": "UUIDTIMBRES03",
+      "score": 24
+    },
+    {
+      "tabla": "UUIDTIMBRES04",
+      "score": 24
+    },
+    {
+      "tabla": "UUIDTIMBRES05",
+      "score": 24
+    },
+    {
+      "tabla": "UUIDTIMBRES06",
+      "score": 24
+    },
+    {
+      "tabla": "UUIDTIMBRES07",
+      "score": 24
+    },
+    {
+      "tabla": "UUIDTIMBRES08",
+      "score": 24
+    },
+    {
+      "tabla": "UUIDTIMBRES09",
+      "score": 24
+    },
+    {
+      "tabla": "UUIDTIMBRES10",
+      "score": 24
+    },
+    {
+      "tabla": "UUIDTIMBRES11",
+      "score": 24
+    },
+    {
+      "tabla": "UUIDTIMBRES12",
+      "score": 24
+    },
+    {
+      "tabla": "UUIDTIMBRES13",
+      "score": 24
+    },
+    {
+      "tabla": "UUIDTIMBRES14",
+      "score": 24
+    },
+    {
+      "tabla": "UUIDTIMBRES15",
+      "score": 24
+    },
+    {
+      "tabla": "UUIDTIMBRES16",
+      "score": 24
+    },
+    {
+      "tabla": "UUIDTIMBRES17",
+      "score": 24
+    },
+    {
+      "tabla": "UUIDTIMBRES18",
+      "score": 24
+    },
+    {
+      "tabla": "UUIDTIMBRES19",
+      "score": 24
+    },
+    {
+      "tabla": "UUIDTIMBRES20",
+      "score": 24
+    },
+    {
+      "tabla": "UUIDTIMBRES21",
+      "score": 24
+    },
+    {
+      "tabla": "UUIDTIMBRES22",
+      "score": 24
+    },
+    {
+      "tabla": "UUIDTIMBRES23",
+      "score": 24
+    },
+    {
+      "tabla": "UUIDTIMBRES24",
+      "score": 24
+    },
+    {
+      "tabla": "UUIDTIMBRES25",
+      "score": 24
+    },
+    {
+      "tabla": "UUIDTIMBRES26",
+      "score": 24
+    },
+    {
+      "tabla": "UUIDTIMBRES27",
+      "score": 24
+    },
+    {
+      "tabla": "UUIDTIMBRES28",
+      "score": 24
+    },
+    {
+      "tabla": "UUIDTIMBRES29",
+      "score": 24
+    },
+    {
+      "tabla": "UUIDTIMBRES30",
+      "score": 24
+    },
+    {
+      "tabla": "UUIDTIMBRES31",
+      "score": 24
+    },
+    {
+      "tabla": "UUIDTIMBRES32",
+      "score": 24
+    },
+    {
+      "tabla": "CTECONC",
+      "score": 22
+    },
+    {
+      "tabla": "PARMOVS01",
+      "score": 21
+    },
+    {
+      "tabla": "PARMOVS02",
+      "score": 21
+    },
+    {
+      "tabla": "PARMOVS03",
+      "score": 21
+    },
+    {
+      "tabla": "PARMOVS04",
+      "score": 21
+    },
+    {
+      "tabla": "PARMOVS05",
+      "score": 21
+    },
+    {
+      "tabla": "PARMOVS06",
+      "score": 21
+    },
+    {
+      "tabla": "PARMOVS07",
+      "score": 21
+    },
+    {
+      "tabla": "PARMOVS08",
+      "score": 21
+    },
+    {
+      "tabla": "PARMOVS09",
+      "score": 21
+    },
+    {
+      "tabla": "PARMOVS10",
+      "score": 21
+    },
+    {
+      "tabla": "PARMOVS11",
+      "score": 21
+    },
+    {
+      "tabla": "PARMOVS12",
+      "score": 21
+    },
+    {
+      "tabla": "PARMOVS13",
+      "score": 21
+    },
+    {
+      "tabla": "PARMOVS14",
+      "score": 21
+    },
+    {
+      "tabla": "PARMOVS15",
+      "score": 21
+    },
+    {
+      "tabla": "PARMOVS16",
+      "score": 21
+    },
+    {
+      "tabla": "PARMOVS17",
+      "score": 21
+    },
+    {
+      "tabla": "PARMOVS18",
+      "score": 21
+    },
+    {
+      "tabla": "PARMOVS19",
+      "score": 21
+    },
+    {
+      "tabla": "PARMOVS20",
+      "score": 21
+    },
+    {
+      "tabla": "PARMOVS21",
+      "score": 21
+    },
+    {
+      "tabla": "PARMOVS22",
+      "score": 21
+    },
+    {
+      "tabla": "PARMOVS23",
+      "score": 21
+    },
+    {
+      "tabla": "PARMOVS24",
+      "score": 21
+    },
+    {
+      "tabla": "PARMOVS25",
+      "score": 21
+    },
+    {
+      "tabla": "PARMOVS26",
+      "score": 21
+    },
+    {
+      "tabla": "PARMOVS27",
+      "score": 21
+    },
+    {
+      "tabla": "PARMOVS28",
+      "score": 21
+    },
+    {
+      "tabla": "PARMOVS29",
+      "score": 21
+    },
+    {
+      "tabla": "PARMOVS30",
+      "score": 21
+    },
+    {
+      "tabla": "PARMOVS31",
+      "score": 21
+    },
+    {
+      "tabla": "PARMOVS32",
+      "score": 21
+    },
+    {
+      "tabla": "CTAS",
+      "score": 20
+    },
+    {
+      "tabla": "MOVS01",
+      "score": 20
+    },
+    {
+      "tabla": "MOVS02",
+      "score": 20
+    },
+    {
+      "tabla": "MOVS03",
+      "score": 20
+    },
+    {
+      "tabla": "MOVS04",
+      "score": 20
+    },
+    {
+      "tabla": "MOVS05",
+      "score": 20
+    },
+    {
+      "tabla": "MOVS06",
+      "score": 20
+    },
+    {
+      "tabla": "MOVS07",
+      "score": 20
+    },
+    {
+      "tabla": "MOVS08",
+      "score": 20
+    },
+    {
+      "tabla": "MOVS09",
+      "score": 20
+    },
+    {
+      "tabla": "MOVS10",
+      "score": 20
+    },
+    {
+      "tabla": "MOVS11",
+      "score": 20
+    },
+    {
+      "tabla": "MOVS12",
+      "score": 20
+    },
+    {
+      "tabla": "MOVS13",
+      "score": 20
+    },
+    {
+      "tabla": "MOVS14",
+      "score": 20
+    },
+    {
+      "tabla": "MOVS15",
+      "score": 20
+    },
+    {
+      "tabla": "MOVS16",
+      "score": 20
+    },
+    {
+      "tabla": "MOVS17",
+      "score": 20
+    },
+    {
+      "tabla": "MOVS18",
+      "score": 20
+    },
+    {
+      "tabla": "MOVS19",
+      "score": 20
+    },
+    {
+      "tabla": "MOVS20",
+      "score": 20
+    },
+    {
+      "tabla": "MOVS21",
+      "score": 20
+    },
+    {
+      "tabla": "MOVS22",
+      "score": 20
+    },
+    {
+      "tabla": "MOVS23",
+      "score": 20
+    },
+    {
+      "tabla": "MOVS24",
+      "score": 20
+    },
+    {
+      "tabla": "MOVS25",
+      "score": 20
+    },
+    {
+      "tabla": "MOVS26",
+      "score": 20
+    },
+    {
+      "tabla": "MOVS27",
+      "score": 20
+    },
+    {
+      "tabla": "MOVS28",
+      "score": 20
+    },
+    {
+      "tabla": "MOVS29",
+      "score": 20
+    },
+    {
+      "tabla": "MOVS30",
+      "score": 20
+    },
+    {
+      "tabla": "MOVS31",
+      "score": 20
+    },
+    {
+      "tabla": "MOVS32",
+      "score": 20
+    },
+    {
+      "tabla": "UUIDTIMBRES",
+      "score": 20
+    },
+    {
+      "tabla": "COMD",
+      "score": 17
+    }
+  ]
+}

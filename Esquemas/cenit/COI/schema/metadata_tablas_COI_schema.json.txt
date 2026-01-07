@@ -1,0 +1,24 @@
+{
+  "dataset": "metadata_tablas_COI",
+  "database": "C:\\Program Files (x86)\\Common Files\\Aspel\\Sistemas Aspel\\COI10.00\\Datos\\Empresa1\\COI10EMPRE1.FDB",
+  "engine_version": "2.5.0",
+  "row_count": 219,
+  "column_count": 3,
+  "columns": [
+    {
+      "order": 1,
+      "name": "tabla",
+      "pandas_dtype": "object"
+    },
+    {
+      "order": 2,
+      "name": "es_vista",
+      "pandas_dtype": "int64"
+    },
+    {
+      "order": 3,
+      "name": "descripcion",
+      "pandas_dtype": "object"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+﻿# dataset	database	engine_version	row_count	column_count
+metadata_constraints_SAE	C:\Program Files (x86)\Common Files\Aspel\Sistemas Aspel\SAE9.00\Empresa01\Datos\SAE90EMPRE01.FDB	2.5.0	544	4
+# --- columnas ---
+order	name	pandas_dtype
+1	tabla	object
+2	constraint_name	object
+3	constraint_type	object
+4	index_name	object

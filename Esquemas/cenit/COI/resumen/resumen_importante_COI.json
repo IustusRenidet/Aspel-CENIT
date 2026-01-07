@@ -1,0 +1,410 @@
+{
+  "sistema": "COI",
+  "db_path": "C:\\Program Files (x86)\\Common Files\\Aspel\\Sistemas Aspel\\COI10.00\\Datos\\Empresa1\\COI10EMPRE1.FDB",
+  "tablas": 219,
+  "campos": 6671,
+  "indices": 547,
+  "constraints": 788,
+  "ranking": [
+    {
+      "tabla": "AUXILIAR05",
+      "score": 30
+    },
+    {
+      "tabla": "AUXILIAR06",
+      "score": 30
+    },
+    {
+      "tabla": "AUXILIAR07",
+      "score": 30
+    },
+    {
+      "tabla": "AUXILIAR08",
+      "score": 30
+    },
+    {
+      "tabla": "AUXILIAR09",
+      "score": 30
+    },
+    {
+      "tabla": "AUXILIAR10",
+      "score": 30
+    },
+    {
+      "tabla": "AUXILIAR11",
+      "score": 30
+    },
+    {
+      "tabla": "AUXILIAR12",
+      "score": 30
+    },
+    {
+      "tabla": "AUXILIAR13",
+      "score": 30
+    },
+    {
+      "tabla": "AUXILIAR14",
+      "score": 30
+    },
+    {
+      "tabla": "AUXILIAR15",
+      "score": 30
+    },
+    {
+      "tabla": "AUXILIAR16",
+      "score": 30
+    },
+    {
+      "tabla": "AUXILIAR17",
+      "score": 30
+    },
+    {
+      "tabla": "AUXILIAR18",
+      "score": 30
+    },
+    {
+      "tabla": "AUXILIAR19",
+      "score": 30
+    },
+    {
+      "tabla": "AUXILIAR20",
+      "score": 30
+    },
+    {
+      "tabla": "AUXILIAR21",
+      "score": 30
+    },
+    {
+      "tabla": "AUXILIAR22",
+      "score": 30
+    },
+    {
+      "tabla": "AUXILIAR23",
+      "score": 30
+    },
+    {
+      "tabla": "AUXILIAR24",
+      "score": 30
+    },
+    {
+      "tabla": "AUXILIAR25",
+      "score": 30
+    },
+    {
+      "tabla": "AUXILIAR26",
+      "score": 30
+    },
+    {
+      "tabla": "DESIET",
+      "score": 26
+    },
+    {
+      "tabla": "POLIZAS05",
+      "score": 26
+    },
+    {
+      "tabla": "POLIZAS06",
+      "score": 26
+    },
+    {
+      "tabla": "POLIZAS07",
+      "score": 26
+    },
+    {
+      "tabla": "POLIZAS08",
+      "score": 26
+    },
+    {
+      "tabla": "POLIZAS09",
+      "score": 26
+    },
+    {
+      "tabla": "POLIZAS10",
+      "score": 26
+    },
+    {
+      "tabla": "POLIZAS11",
+      "score": 26
+    },
+    {
+      "tabla": "POLIZAS12",
+      "score": 26
+    },
+    {
+      "tabla": "POLIZAS13",
+      "score": 26
+    },
+    {
+      "tabla": "POLIZAS14",
+      "score": 26
+    },
+    {
+      "tabla": "POLIZAS15",
+      "score": 26
+    },
+    {
+      "tabla": "POLIZAS16",
+      "score": 26
+    },
+    {
+      "tabla": "POLIZAS17",
+      "score": 26
+    },
+    {
+      "tabla": "POLIZAS18",
+      "score": 26
+    },
+    {
+      "tabla": "POLIZAS19",
+      "score": 26
+    },
+    {
+      "tabla": "POLIZAS20",
+      "score": 26
+    },
+    {
+      "tabla": "POLIZAS21",
+      "score": 26
+    },
+    {
+      "tabla": "POLIZAS22",
+      "score": 26
+    },
+    {
+      "tabla": "POLIZAS23",
+      "score": 26
+    },
+    {
+      "tabla": "POLIZAS24",
+      "score": 26
+    },
+    {
+      "tabla": "POLIZAS25",
+      "score": 26
+    },
+    {
+      "tabla": "POLIZAS26",
+      "score": 26
+    },
+    {
+      "tabla": "OPEIET",
+      "score": 24
+    },
+    {
+      "tabla": "OPETER",
+      "score": 24
+    },
+    {
+      "tabla": "OTROSIMPUESTOS",
+      "score": 21
+    },
+    {
+      "tabla": "OTROSIMPUESTOSING",
+      "score": 21
+    },
+    {
+      "tabla": "COMPLEMENTOSPAGOS",
+      "score": 20
+    },
+    {
+      "tabla": "PAGO",
+      "score": 20
+    },
+    {
+      "tabla": "UUIDTIMBRES",
+      "score": 20
+    },
+    {
+      "tabla": "ACTIVOS05",
+      "score": 18
+    },
+    {
+      "tabla": "ACTIVOS06",
+      "score": 18
+    },
+    {
+      "tabla": "ACTIVOS07",
+      "score": 18
+    },
+    {
+      "tabla": "ACTIVOS08",
+      "score": 18
+    },
+    {
+      "tabla": "ACTIVOS09",
+      "score": 18
+    },
+    {
+      "tabla": "ACTIVOS10",
+      "score": 18
+    },
+    {
+      "tabla": "ACTIVOS11",
+      "score": 18
+    },
+    {
+      "tabla": "ACTIVOS12",
+      "score": 18
+    },
+    {
+      "tabla": "ACTIVOS13",
+      "score": 18
+    },
+    {
+      "tabla": "ACTIVOS14",
+      "score": 18
+    },
+    {
+      "tabla": "ACTIVOS15",
+      "score": 18
+    },
+    {
+      "tabla": "ACTIVOS16",
+      "score": 18
+    },
+    {
+      "tabla": "ACTIVOS17",
+      "score": 18
+    },
+    {
+      "tabla": "ACTIVOS18",
+      "score": 18
+    },
+    {
+      "tabla": "ACTIVOS19",
+      "score": 18
+    },
+    {
+      "tabla": "ACTIVOS20",
+      "score": 18
+    },
+    {
+      "tabla": "ACTIVOS21",
+      "score": 18
+    },
+    {
+      "tabla": "ACTIVOS22",
+      "score": 18
+    },
+    {
+      "tabla": "ACTIVOS23",
+      "score": 18
+    },
+    {
+      "tabla": "ACTIVOS24",
+      "score": 18
+    },
+    {
+      "tabla": "ACTIVOS25",
+      "score": 18
+    },
+    {
+      "tabla": "ACTIVOS26",
+      "score": 18
+    },
+    {
+      "tabla": "DOCTOSFISCALES",
+      "score": 18
+    },
+    {
+      "tabla": "INFADIPAR",
+      "score": 18
+    },
+    {
+      "tabla": "MONEDAS",
+      "score": 18
+    },
+    {
+      "tabla": "PRESUPDP05",
+      "score": 18
+    },
+    {
+      "tabla": "PRESUPDP06",
+      "score": 18
+    },
+    {
+      "tabla": "PRESUPDP07",
+      "score": 18
+    },
+    {
+      "tabla": "PRESUPDP08",
+      "score": 18
+    },
+    {
+      "tabla": "PRESUPDP09",
+      "score": 18
+    },
+    {
+      "tabla": "PRESUPDP10",
+      "score": 18
+    },
+    {
+      "tabla": "PRESUPDP11",
+      "score": 18
+    },
+    {
+      "tabla": "PRESUPDP12",
+      "score": 18
+    },
+    {
+      "tabla": "PRESUPDP13",
+      "score": 18
+    },
+    {
+      "tabla": "PRESUPDP14",
+      "score": 18
+    },
+    {
+      "tabla": "PRESUPDP15",
+      "score": 18
+    },
+    {
+      "tabla": "PRESUPDP16",
+      "score": 18
+    },
+    {
+      "tabla": "PRESUPDP17",
+      "score": 18
+    },
+    {
+      "tabla": "PRESUPDP18",
+      "score": 18
+    },
+    {
+      "tabla": "PRESUPDP19",
+      "score": 18
+    },
+    {
+      "tabla": "PRESUPDP20",
+      "score": 18
+    },
+    {
+      "tabla": "PRESUPDP21",
+      "score": 18
+    },
+    {
+      "tabla": "PRESUPDP22",
+      "score": 18
+    },
+    {
+      "tabla": "PRESUPDP23",
+      "score": 18
+    },
+    {
+      "tabla": "PRESUPDP24",
+      "score": 18
+    },
+    {
+      "tabla": "PRESUPDP25",
+      "score": 18
+    },
+    {
+      "tabla": "PRESUPDP26",
+      "score": 18
+    },
+    {
+      "tabla": "SALDOSDP05",
+      "score": 18
+    }
+  ]
+}

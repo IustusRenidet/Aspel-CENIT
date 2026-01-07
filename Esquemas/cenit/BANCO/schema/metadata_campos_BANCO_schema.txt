@@ -1,0 +1,29 @@
+﻿# dataset	database	engine_version	row_count	column_count
+metadata_campos_BANCO	C:\Program Files (x86)\Common Files\Aspel\Sistemas Aspel\BAN6.00\Datos\Empresa01\BAN60EMPRE01.FDB	2.5.0	3610	25
+# --- columnas ---
+order	name	pandas_dtype
+1	tabla	object
+2	campo	object
+3	field_source	object
+4	tipo_codigo	int64
+5	subtipo	float64
+6	field_precision	float64
+7	longitud_bytes	int64
+8	longitud	int64
+9	escala	int64
+10	charset_id	float64
+11	collation_id	object
+12	es_nulo	object
+13	default_source	object
+14	computed_source	object
+15	tiene_default_flag	int64
+16	es_computed_flag	int64
+17	posicion	int64
+18	descripcion	object
+19	charset_name	object
+20	collation_name	object
+21	tipo_base	object
+22	tipo_detalle	object
+23	rol_sugerido	object
+24	es_computed	int64
+25	tiene_default	int64

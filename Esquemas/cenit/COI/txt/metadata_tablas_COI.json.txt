@@ -1,0 +1,1108 @@
+{
+  "dataset": "metadata_tablas_COI",
+  "database": "C:\\Program Files (x86)\\Common Files\\Aspel\\Sistemas Aspel\\COI10.00\\Datos\\Empresa1\\COI10EMPRE1.FDB",
+  "columns": [
+    "tabla",
+    "es_vista",
+    "descripcion"
+  ],
+  "row_count": 219,
+  "notes": "Valores normalizados: sin tabs ni saltos de linea.",
+  "data": [
+    {
+      "tabla": "ACTIVOS05",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "ACTIVOS06",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "ACTIVOS07",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "ACTIVOS08",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "ACTIVOS09",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "ACTIVOS10",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "ACTIVOS11",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "ACTIVOS12",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "ACTIVOS13",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "ACTIVOS14",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "ACTIVOS15",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "ACTIVOS16",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "ACTIVOS17",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "ACTIVOS18",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "ACTIVOS19",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "ACTIVOS20",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "ACTIVOS21",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "ACTIVOS22",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "ACTIVOS23",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "ACTIVOS24",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "ACTIVOS25",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "ACTIVOS26",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "ADMPER",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AUXILIAR05",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AUXILIAR06",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AUXILIAR07",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AUXILIAR08",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AUXILIAR09",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AUXILIAR10",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AUXILIAR11",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AUXILIAR12",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AUXILIAR13",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AUXILIAR14",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AUXILIAR15",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AUXILIAR16",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AUXILIAR17",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AUXILIAR18",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AUXILIAR19",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AUXILIAR20",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AUXILIAR21",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AUXILIAR22",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AUXILIAR23",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AUXILIAR24",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AUXILIAR25",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "AUXILIAR26",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CCOSTOS",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CGRUPOS",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "COMPLEMENTOSPAGOS",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CONCEPTO",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CONTROL",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CTAING",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CTANIF",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CTARUB",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CTAS_PRODSERV",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CTATER",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CUENTAS05",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CUENTAS06",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CUENTAS07",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CUENTAS08",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CUENTAS09",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CUENTAS10",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CUENTAS11",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CUENTAS12",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CUENTAS13",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CUENTAS14",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CUENTAS15",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CUENTAS16",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CUENTAS17",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CUENTAS18",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CUENTAS19",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CUENTAS20",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CUENTAS21",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CUENTAS22",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CUENTAS23",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CUENTAS24",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CUENTAS25",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "CUENTAS26",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "DEPTOS",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "DESIET",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "DOCTOSFISCALES",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "DOCTOSRELPAGOS",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "EDOFINNIFS",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "ETIQ_CCOSTOS_SIGO",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "ETIQ_CTAS_POLDINAMICA",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "ETIQ_CTAS_SIGO",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "ETIQ_OPERACION_SIGO",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "FOLIOS",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "HISTOR",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "HOJAS",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "IMPUESTOSFISCALES",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "INFADIPAR",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "INPC",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "LISTANEGRARFC",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "MONEDAS",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "NIFS",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "OPEIET",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "OPETER",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "OTROSIMPUESTOS",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "OTROSIMPUESTOSING",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PAGO",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PARAMEMP",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PLANTILLAXRFC",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "POLDINAMICA",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "POLIZAS05",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "POLIZAS06",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "POLIZAS07",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "POLIZAS08",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "POLIZAS09",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "POLIZAS10",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "POLIZAS11",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "POLIZAS12",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "POLIZAS13",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "POLIZAS14",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "POLIZAS15",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "POLIZAS16",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "POLIZAS17",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "POLIZAS18",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "POLIZAS19",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "POLIZAS20",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "POLIZAS21",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "POLIZAS22",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "POLIZAS23",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "POLIZAS24",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "POLIZAS25",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "POLIZAS26",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PRESUP05",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PRESUP06",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PRESUP07",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PRESUP08",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PRESUP09",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PRESUP10",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PRESUP11",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PRESUP12",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PRESUP13",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PRESUP14",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PRESUP15",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PRESUP16",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PRESUP17",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PRESUP18",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PRESUP19",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PRESUP20",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PRESUP21",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PRESUP22",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PRESUP23",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PRESUP24",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PRESUP25",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PRESUP26",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PRESUPDP05",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PRESUPDP06",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PRESUPDP07",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PRESUPDP08",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PRESUPDP09",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PRESUPDP10",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PRESUPDP11",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PRESUPDP12",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PRESUPDP13",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PRESUPDP14",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PRESUPDP15",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PRESUPDP16",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PRESUPDP17",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PRESUPDP18",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PRESUPDP19",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PRESUPDP20",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PRESUPDP21",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PRESUPDP22",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PRESUPDP23",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PRESUPDP24",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PRESUPDP25",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "PRESUPDP26",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RANGOS",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "REGPOL",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "RFCTER",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SALDOS05",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SALDOS06",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SALDOS07",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SALDOS08",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SALDOS09",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SALDOS10",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SALDOS11",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SALDOS12",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SALDOS13",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SALDOS14",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SALDOS15",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SALDOS16",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SALDOS17",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SALDOS18",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SALDOS19",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SALDOS20",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SALDOS21",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SALDOS22",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SALDOS23",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SALDOS24",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SALDOS25",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SALDOS26",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SALDOSDP05",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SALDOSDP06",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SALDOSDP07",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SALDOSDP08",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SALDOSDP09",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SALDOSDP10",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SALDOSDP11",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SALDOSDP12",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SALDOSDP13",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SALDOSDP14",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SALDOSDP15",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SALDOSDP16",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SALDOSDP17",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SALDOSDP18",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SALDOSDP19",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SALDOSDP20",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SALDOSDP21",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SALDOSDP22",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SALDOSDP23",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SALDOSDP24",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SALDOSDP25",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "SALDOSDP26",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPACTIV",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "TIPOSPOL",
+      "es_vista": 0,
+      "descripcion": ""
+    },
+    {
+      "tabla": "UUIDTIMBRES",
+      "es_vista": 0,
+      "descripcion": ""
+    }
+  ]
+}
