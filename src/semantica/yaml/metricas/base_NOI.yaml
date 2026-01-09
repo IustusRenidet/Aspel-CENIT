@@ -1,0 +1,524 @@
+# Métricas Base - Sistema NOI (Nómina)
+# version: 1.0.0
+# sistema: NOI
+# descripcion: Métricas fundamentales para administración de nómina y recursos humanos
+
+metadata:
+  sistema: NOI
+  version: 1.0.0
+  generado_en: 2026-01-07
+  descripcion: "Métricas base para Aspel NOI - Nómina Integral"
+  tablas_principales:
+    - EMPL01      # Empleados
+    - NOMINA01    # Nóminas generadas
+    - INCID01     # Incidencias
+    - PERCEP01    # Percepciones
+    - DEDUC01     # Deducciones
+
+metricas:
+  # ============================================
+  # EMPLEADOS Y PLANTILLA
+  # ============================================
+  
+  - id: noi_empleados_activos
+    nombre: "Empleados Activos"
+    descripcion: "Total de empleados activos en la plantilla"
+    categoria: plantilla
+    tipo: escalar
+    unidad: cantidad
+    query_duckdb: |
+      SELECT 
+        COUNT(*) as valor
+      FROM empleados
+      WHERE ESTATUS = 'A'  -- Activo
+    formato:
+      decimales: 0
+    comparativo:
+      periodo_anterior: true
+      tipo: "diferencia"
+
+  - id: noi_empleados_por_departamento
+    nombre: "Empleados por Departamento"
+    descripcion: "Distribución de empleados por área"
+    categoria: plantilla
+    tipo: tabla
+    query_duckdb: |
+      SELECT 
+        DEPARTAMENTO as departamento,
+        COUNT(*) as empleados,
+        AVG(SUELDO_BASE) as sueldo_promedio
+      FROM empleados
+      WHERE ESTATUS = 'A'
+      GROUP BY DEPARTAMENTO
+      ORDER BY empleados DESC
+    formato:
+      columnas:
+        - nombre: departamento
+          tipo: texto
+        - nombre: empleados
+          tipo: numero
+        - nombre: sueldo_promedio
+          tipo: moneda
+          decimales: 2
+
+  - id: noi_nuevos_empleados_mes
+    nombre: "Nuevos Empleados del Mes"
+    descripcion: "Empleados contratados en el mes actual"
+    categoria: plantilla
+    tipo: escalar
+    unidad: cantidad
+    query_duckdb: |
+      SELECT 
+        COUNT(*) as valor
+      FROM empleados
+      WHERE FECHA_ALTA >= date_trunc('month', CURRENT_DATE)
+        AND FECHA_ALTA < date_trunc('month', CURRENT_DATE) + INTERVAL '1 month'
+    formato:
+      decimales: 0
+
+  - id: noi_bajas_mes
+    nombre: "Bajas del Mes"
+    descripcion: "Empleados dados de baja en el mes actual"
+    categoria: plantilla
+    tipo: escalar
+    unidad: cantidad
+    query_duckdb: |
+      SELECT 
+        COUNT(*) as valor
+      FROM empleados
+      WHERE FECHA_BAJA >= date_trunc('month', CURRENT_DATE)
+        AND FECHA_BAJA < date_trunc('month', CURRENT_DATE) + INTERVAL '1 month'
+    formato:
+      decimales: 0
+    alerta:
+      tipo: umbral
+      condicion: "> 0"
+      nivel_warning: 3
+      nivel_critical: 10
+
+  - id: noi_rotacion_personal
+    nombre: "Tasa de Rotación"
+    descripcion: "Porcentaje de rotación de personal (últimos 12 meses)"
+    categoria: plantilla
+    tipo: escalar
+    unidad: porcentaje
+    query_duckdb: |
+      SELECT 
+        CASE 
+          WHEN AVG(empleados_activos) > 0
+          THEN (SUM(bajas) / AVG(empleados_activos)) * 100
+          ELSE 0
+        END as valor
+      FROM (
+        SELECT 
+          date_trunc('month', fecha) as mes,
+          COUNT(CASE WHEN ESTATUS = 'A' THEN 1 END) as empleados_activos,
+          COUNT(CASE WHEN FECHA_BAJA IS NOT NULL THEN 1 END) as bajas
+        FROM empleados
+        WHERE fecha >= CURRENT_DATE - INTERVAL '12 months'
+        GROUP BY mes
+      ) sub
+    formato:
+      decimales: 2
+      sufijo: "%"
+
+  # ============================================
+  # NÓMINA Y COSTOS
+  # ============================================
+  
+  - id: noi_costo_nomina_mes
+    nombre: "Costo Total de Nómina"
+    descripcion: "Suma de percepciones + prestaciones del mes actual"
+    categoria: nomina
+    tipo: escalar
+    unidad: moneda
+    query_duckdb: |
+      SELECT 
+        SUM(TOTAL_PERCEPCIONES) as valor
+      FROM nominas
+      WHERE PERIODO = EXTRACT(YEAR FROM CURRENT_DATE) * 100 + EXTRACT(MONTH FROM CURRENT_DATE)
+        AND TIPO_NOMINA = 'O'  -- Ordinaria
+    formato:
+      decimales: 2
+      prefijo: "$"
+      separador_miles: ","
+    comparativo:
+      periodo_anterior: true
+      tipo: "porcentaje"
+
+  - id: noi_nomina_vs_presupuesto
+    nombre: "Nómina vs Presupuesto"
+    descripcion: "Comparación del gasto real contra presupuesto"
+    categoria: nomina
+    tipo: escalar
+    unidad: porcentaje
+    query_duckdb: |
+      SELECT 
+        CASE 
+          WHEN presupuesto > 0
+          THEN (real / presupuesto) * 100
+          ELSE 0
+        END as valor
+      FROM (
+        SELECT 
+          (SELECT SUM(TOTAL_PERCEPCIONES) FROM nominas WHERE PERIODO = {periodo}) as real,
+          (SELECT MONTO_PRESUPUESTO FROM presupuesto_nomina WHERE PERIODO = {periodo}) as presupuesto
+      ) sub
+    parametros:
+      - nombre: periodo
+        tipo: integer
+        requerido: false
+        default: "EXTRACT(YEAR FROM CURRENT_DATE) * 100 + EXTRACT(MONTH FROM CURRENT_DATE)"
+    formato:
+      decimales: 2
+      sufijo: "%"
+    alerta:
+      tipo: umbral
+      condicion: "> 100"
+      nivel_warning: 105
+      nivel_critical: 110
+
+  - id: noi_promedio_sueldo
+    nombre: "Sueldo Promedio"
+    descripcion: "Promedio de sueldo base de empleados activos"
+    categoria: nomina
+    tipo: escalar
+    unidad: moneda
+    query_duckdb: |
+      SELECT 
+        AVG(SUELDO_BASE) as valor
+      FROM empleados
+      WHERE ESTATUS = 'A'
+    formato:
+      decimales: 2
+      prefijo: "$"
+
+  - id: noi_nominas_procesadas_mes
+    nombre: "Nóminas Procesadas"
+    descripcion: "Cantidad de nóminas generadas en el mes"
+    categoria: nomina
+    tipo: escalar
+    unidad: cantidad
+    query_duckdb: |
+      SELECT 
+        COUNT(DISTINCT NOMINA) as valor
+      FROM nominas
+      WHERE PERIODO = EXTRACT(YEAR FROM CURRENT_DATE) * 100 + EXTRACT(MONTH FROM CURRENT_DATE)
+    formato:
+      decimales: 0
+
+  - id: noi_desglose_percepciones
+    nombre: "Desglose de Percepciones"
+    descripcion: "Detalle de percepciones por concepto"
+    categoria: nomina
+    tipo: tabla
+    query_duckdb: |
+      SELECT 
+        c.CONCEPTO as concepto,
+        c.DESCRIPCION as descripcion,
+        COUNT(DISTINCT p.EMPLEADO) as empleados,
+        SUM(p.IMPORTE) as total
+      FROM percepciones p
+      INNER JOIN conceptos c ON p.CVE_CONCEPTO = c.CVE_CONCEPTO
+      WHERE p.PERIODO = {periodo}
+      GROUP BY c.CONCEPTO, c.DESCRIPCION
+      ORDER BY total DESC
+    parametros:
+      - nombre: periodo
+        tipo: integer
+        requerido: false
+
+  - id: noi_desglose_deducciones
+    nombre: "Desglose de Deducciones"
+    descripcion: "Detalle de deducciones por concepto"
+    categoria: nomina
+    tipo: tabla
+    query_duckdb: |
+      SELECT 
+        c.CONCEPTO as concepto,
+        c.DESCRIPCION as descripcion,
+        COUNT(DISTINCT d.EMPLEADO) as empleados,
+        SUM(d.IMPORTE) as total
+      FROM deducciones d
+      INNER JOIN conceptos c ON d.CVE_CONCEPTO = c.CVE_CONCEPTO
+      WHERE d.PERIODO = {periodo}
+      GROUP BY c.CONCEPTO, c.DESCRIPCION
+      ORDER BY total DESC
+    parametros:
+      - nombre: periodo
+        tipo: integer
+        requerido: false
+
+  # ============================================
+  # INCIDENCIAS Y ASISTENCIA
+  # ============================================
+  
+  - id: noi_faltas_mes
+    nombre: "Faltas del Mes"
+    descripcion: "Total de faltas registradas en el mes"
+    categoria: incidencias
+    tipo: escalar
+    unidad: cantidad
+    query_duckdb: |
+      SELECT 
+        COUNT(*) as valor
+      FROM incidencias
+      WHERE TIPO_INCIDENCIA = 'FALTA'
+        AND FECHA >= date_trunc('month', CURRENT_DATE)
+        AND FECHA < date_trunc('month', CURRENT_DATE) + INTERVAL '1 month'
+    formato:
+      decimales: 0
+    alerta:
+      tipo: umbral
+      condicion: "> 0"
+      nivel_warning: 10
+      nivel_critical: 30
+
+  - id: noi_incapacidades_mes
+    nombre: "Incapacidades del Mes"
+    descripcion: "Total de incapacidades registradas"
+    categoria: incidencias
+    tipo: escalar
+    unidad: cantidad
+    query_duckdb: |
+      SELECT 
+        COUNT(*) as valor
+      FROM incidencias
+      WHERE TIPO_INCIDENCIA IN ('INCAPACIDAD', 'ENFERMEDAD')
+        AND FECHA >= date_trunc('month', CURRENT_DATE)
+    formato:
+      decimales: 0
+
+  - id: noi_retardos_mes
+    nombre: "Retardos del Mes"
+    descripcion: "Total de retardos registrados"
+    categoria: incidencias
+    tipo: escalar
+    unidad: cantidad
+    query_duckdb: |
+      SELECT 
+        COUNT(*) as valor
+      FROM incidencias
+      WHERE TIPO_INCIDENCIA = 'RETARDO'
+        AND FECHA >= date_trunc('month', CURRENT_DATE)
+    formato:
+      decimales: 0
+
+  - id: noi_empleados_faltas_frecuentes
+    nombre: "Empleados con Faltas Frecuentes"
+    descripcion: "Empleados con más de 3 faltas en el mes"
+    categoria: incidencias
+    tipo: tabla
+    query_duckdb: |
+      SELECT 
+        e.NUMERO_EMPLEADO as numero,
+        e.NOMBRE_COMPLETO as nombre,
+        e.DEPARTAMENTO as departamento,
+        COUNT(*) as faltas
+      FROM incidencias i
+      INNER JOIN empleados e ON i.EMPLEADO = e.NUMERO_EMPLEADO
+      WHERE i.TIPO_INCIDENCIA = 'FALTA'
+        AND i.FECHA >= date_trunc('month', CURRENT_DATE)
+      GROUP BY e.NUMERO_EMPLEADO, e.NOMBRE_COMPLETO, e.DEPARTAMENTO
+      HAVING COUNT(*) > 3
+      ORDER BY faltas DESC
+    alerta:
+      tipo: existencia
+      nivel: warning
+      mensaje: "Empleados con ausentismo frecuente"
+
+  - id: noi_horas_extra_mes
+    nombre: "Horas Extra del Mes"
+    descripcion: "Total de horas extra trabajadas"
+    categoria: incidencias
+    tipo: escalar
+    unidad: horas
+    query_duckdb: |
+      SELECT 
+        COALESCE(SUM(HORAS), 0) as valor
+      FROM incidencias
+      WHERE TIPO_INCIDENCIA IN ('TIEMPO_EXTRA', 'HORA_EXTRA')
+        AND FECHA >= date_trunc('month', CURRENT_DATE)
+    formato:
+      decimales: 2
+      sufijo: " hrs"
+
+  - id: noi_costo_horas_extra
+    nombre: "Costo de Horas Extra"
+    descripcion: "Monto pagado por horas extra en el mes"
+    categoria: incidencias
+    tipo: escalar
+    unidad: moneda
+    query_duckdb: |
+      SELECT 
+        COALESCE(SUM(IMPORTE_PAGADO), 0) as valor
+      FROM incidencias
+      WHERE TIPO_INCIDENCIA IN ('TIEMPO_EXTRA', 'HORA_EXTRA')
+        AND FECHA >= date_trunc('month', CURRENT_DATE)
+    formato:
+      decimales: 2
+      prefijo: "$"
+
+  # ============================================
+  # PRESTACIONES Y BENEFICIOS
+  # ============================================
+  
+  - id: noi_vacaciones_pendientes
+    nombre: "Empleados con Vacaciones Pendientes"
+    descripcion: "Empleados que no han tomado vacaciones en 12 meses"
+    categoria: prestaciones
+    tipo: tabla
+    query_duckdb: |
+      SELECT 
+        e.NUMERO_EMPLEADO as numero,
+        e.NOMBRE_COMPLETO as nombre,
+        e.DEPARTAMENTO as departamento,
+        e.DIAS_VACACIONES_PENDIENTES as dias_pendientes,
+        e.FECHA_ULTIMO_PERIODO_VACACIONAL as ultimas_vacaciones
+      FROM empleados e
+      WHERE e.ESTATUS = 'A'
+        AND e.DIAS_VACACIONES_PENDIENTES > 0
+        AND (e.FECHA_ULTIMO_PERIODO_VACACIONAL IS NULL 
+             OR e.FECHA_ULTIMO_PERIODO_VACACIONAL < CURRENT_DATE - INTERVAL '12 months')
+      ORDER BY dias_pendientes DESC
+    alerta:
+      tipo: existencia
+      mensaje: "Empleados con vacaciones pendientes de tomar"
+
+  - id: noi_aguinaldos_generados
+    nombre: "Aguinaldos Generados"
+    descripcion: "Monto total de aguinaldos del periodo"
+    categoria: prestaciones
+    tipo: escalar
+    unidad: moneda
+    query_duckdb: |
+      SELECT 
+        COALESCE(SUM(IMPORTE), 0) as valor
+      FROM percepciones
+      WHERE CVE_CONCEPTO = 'AGUINALDO'
+        AND PERIODO = {periodo}
+    parametros:
+      - nombre: periodo
+        tipo: integer
+        requerido: false
+        default: "EXTRACT(YEAR FROM CURRENT_DATE) * 100 + 12"
+    formato:
+      decimales: 2
+      prefijo: "$"
+
+  # ============================================
+  # IMPUESTOS Y SEGURIDAD SOCIAL
+  # ============================================
+  
+  - id: noi_isr_retenido_mes
+    nombre: "ISR Retenido del Mes"
+    descripcion: "Total de ISR retenido a empleados"
+    categoria: impuestos
+    tipo: escalar
+    unidad: moneda
+    query_duckdb: |
+      SELECT 
+        COALESCE(SUM(IMPORTE), 0) as valor
+      FROM deducciones
+      WHERE CVE_CONCEPTO = 'ISR'
+        AND PERIODO = {periodo}
+    parametros:
+      - nombre: periodo
+        tipo: integer
+        requerido: false
+    formato:
+      decimales: 2
+      prefijo: "$"
+
+  - id: noi_imss_patronal
+    nombre: "Cuota Patronal IMSS"
+    descripcion: "Aportación patronal al IMSS del mes"
+    categoria: impuestos
+    tipo: escalar
+    unidad: moneda
+    query_duckdb: |
+      SELECT 
+        COALESCE(SUM(CUOTA_PATRONAL), 0) as valor
+      FROM aportaciones_imss
+      WHERE PERIODO = {periodo}
+    parametros:
+      - nombre: periodo
+        tipo: integer
+        requerido: false
+    formato:
+      decimales: 2
+      prefijo: "$"
+
+  - id: noi_imss_obrero
+    nombre: "Cuota Obrero IMSS"
+    descripcion: "Aportación obrera al IMSS del mes"
+    categoria: impuestos
+    tipo: escalar
+    unidad: moneda
+    query_duckdb: |
+      SELECT 
+        COALESCE(SUM(IMPORTE), 0) as valor
+      FROM deducciones
+      WHERE CVE_CONCEPTO = 'IMSS'
+        AND PERIODO = {periodo}
+    parametros:
+      - nombre: periodo
+        tipo: integer
+        requerido: false
+    formato:
+      decimales: 2
+      prefijo: "$"
+
+  # ============================================
+  # CUMPLIMIENTO Y AUDITORÍA
+  # ============================================
+  
+  - id: noi_empleados_sin_timbrar
+    nombre: "Recibos Sin Timbrar"
+    descripcion: "Recibos de nómina pendientes de timbrado CFDI"
+    categoria: cumplimiento
+    tipo: escalar
+    unidad: cantidad
+    query_duckdb: |
+      SELECT 
+        COUNT(*) as valor
+      FROM nominas n
+      LEFT JOIN timbres_nomina t ON n.NOMINA = t.NOMINA AND n.EMPLEADO = t.EMPLEADO
+      WHERE n.PERIODO >= {periodo}
+        AND n.ESTATUS = 'P'  -- Procesada
+        AND t.UUID IS NULL
+    parametros:
+      - nombre: periodo
+        tipo: integer
+        requerido: false
+        default: "EXTRACT(YEAR FROM CURRENT_DATE) * 100 + EXTRACT(MONTH FROM CURRENT_DATE) - 1"
+    alerta:
+      tipo: umbral
+      condicion: "> 0"
+      nivel_warning: 1
+      nivel_critical: 10
+      mensaje: "Recibos pendientes de timbrar"
+
+  - id: noi_errores_calculo
+    nombre: "Errores de Cálculo Detectados"
+    descripcion: "Inconsistencias encontradas en cálculos de nómina"
+    categoria: cumplimiento
+    tipo: tabla
+    query_duckdb: |
+      SELECT 
+        EMPLEADO as numero_empleado,
+        TIPO_ERROR as tipo,
+        DESCRIPCION as descripcion,
+        FECHA_DETECCION as fecha
+      FROM errores_nomina
+      WHERE PERIODO = {periodo}
+        AND RESUELTO = false
+      ORDER BY FECHA_DETECCION DESC
+    parametros:
+      - nombre: periodo
+        tipo: integer
+        requerido: false
+    alerta:
+      tipo: existencia
+      nivel: critical
+      mensaje: "¡Atención! Errores de cálculo en nómina"

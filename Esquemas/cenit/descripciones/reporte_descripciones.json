@@ -1,0 +1,28 @@
+{
+  "fecha": "2026-01-08T00:08:44.156Z",
+  "exitosos": [
+    "SAE",
+    "COI",
+    "BANCO",
+    "NOI"
+  ],
+  "fallidos": [],
+  "estadisticas": {
+    "SAE": {
+      "tablas": 203,
+      "campos_total": 3990
+    },
+    "COI": {
+      "tablas": 219,
+      "campos_total": 6671
+    },
+    "BANCO": {
+      "tablas": 110,
+      "campos_total": 3610
+    },
+    "NOI": {
+      "tablas": 2005,
+      "campos_total": 48792
+    }
+  }
+}

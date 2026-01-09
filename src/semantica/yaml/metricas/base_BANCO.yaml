@@ -1,0 +1,453 @@
+# Métricas Base - Sistema BANCO
+# version: 1.0.0
+# sistema: BANCO
+# descripcion: Métricas fundamentales para administración bancaria y conciliación
+
+metadata:
+  sistema: BANCO
+  version: 1.0.0
+  generado_en: 2026-01-07
+  descripcion: "Métricas base para Aspel BANCO - Administración Bancaria"
+  tablas_principales:
+    - CTABAN01      # Cuentas bancarias
+    - MOVIM01       # Movimientos bancarios
+    - CHEQ01        # Cheques
+    - CONCILIA01    # Conciliaciones
+    - UUIDTIMBRES01 # Timbres CFDI
+
+metricas:
+  # ============================================
+  # SALDOS Y POSICIÓN BANCARIA
+  # ============================================
+  
+  - id: ban_saldo_total
+    nombre: "Saldo Total en Bancos"
+    descripcion: "Suma de saldos de todas las cuentas bancarias activas"
+    categoria: saldos
+    tipo: escalar
+    unidad: moneda
+    query_duckdb: |
+      SELECT 
+        SUM(SALDO_ACTUAL) as valor
+      FROM cuentas_bancarias
+      WHERE ACTIVA = true
+    formato:
+      decimales: 2
+      prefijo: "$"
+      separador_miles: ","
+    comparativo:
+      periodo_anterior: true
+      tipo: "diferencia"
+
+  - id: ban_saldo_por_banco
+    nombre: "Saldo por Banco"
+    descripcion: "Distribución de saldos por institución bancaria"
+    categoria: saldos
+    tipo: tabla
+    query_duckdb: |
+      SELECT 
+        BANCO as banco,
+        COUNT(*) as cuentas,
+        SUM(SALDO_ACTUAL) as saldo_total,
+        MIN(SALDO_ACTUAL) as saldo_minimo,
+        MAX(SALDO_ACTUAL) as saldo_maximo
+      FROM cuentas_bancarias
+      WHERE ACTIVA = true
+      GROUP BY BANCO
+      ORDER BY saldo_total DESC
+    formato:
+      columnas:
+        - nombre: banco
+          tipo: texto
+        - nombre: cuentas
+          tipo: numero
+        - nombre: saldo_total
+          tipo: moneda
+          decimales: 2
+        - nombre: saldo_minimo
+          tipo: moneda
+          decimales: 2
+        - nombre: saldo_maximo
+          tipo: moneda
+          decimales: 2
+
+  - id: ban_flujo_efectivo_mes
+    nombre: "Flujo de Efectivo del Mes"
+    descripcion: "Total de entradas menos salidas del mes"
+    categoria: saldos
+    tipo: escalar
+    unidad: moneda
+    query_duckdb: |
+      SELECT 
+        SUM(CASE WHEN TIPO = 'D' THEN IMPORTE ELSE -IMPORTE END) as valor
+      FROM movimientos_banco
+      WHERE FECHA >= date_trunc('month', CURRENT_DATE)
+        AND FECHA < date_trunc('month', CURRENT_DATE) + INTERVAL '1 month'
+    formato:
+      decimales: 2
+      prefijo: "$"
+      separador_miles: ","
+
+  # ============================================
+  # MOVIMIENTOS BANCARIOS
+  # ============================================
+  
+  - id: ban_movimientos_mes
+    nombre: "Movimientos del Mes"
+    descripcion: "Total de movimientos bancarios en el mes actual"
+    categoria: movimientos
+    tipo: escalar
+    unidad: cantidad
+    query_duckdb: |
+      SELECT 
+        COUNT(*) as valor
+      FROM movimientos_banco
+      WHERE FECHA >= date_trunc('month', CURRENT_DATE)
+        AND FECHA < date_trunc('month', CURRENT_DATE) + INTERVAL '1 month'
+    formato:
+      decimales: 0
+
+  - id: ban_depositos_vs_retiros
+    nombre: "Depósitos vs Retiros"
+    descripcion: "Comparativa de entradas y salidas del periodo"
+    categoria: movimientos
+    tipo: tabla
+    query_duckdb: |
+      SELECT 
+        'Depósitos' as tipo,
+        COUNT(*) as movimientos,
+        SUM(IMPORTE) as total
+      FROM movimientos_banco
+      WHERE TIPO = 'D'  -- Depósito
+        AND FECHA BETWEEN {fecha_inicio} AND {fecha_fin}
+      UNION ALL
+      SELECT 
+        'Retiros' as tipo,
+        COUNT(*) as movimientos,
+        SUM(IMPORTE) as total
+      FROM movimientos_banco
+      WHERE TIPO = 'R'  -- Retiro
+        AND FECHA BETWEEN {fecha_inicio} AND {fecha_fin}
+    parametros:
+      - nombre: fecha_inicio
+        tipo: date
+        requerido: false
+        default: "date_trunc('month', CURRENT_DATE)"
+      - nombre: fecha_fin
+        tipo: date
+        requerido: false
+        default: "CURRENT_DATE"
+
+  - id: ban_movimientos_por_dia
+    nombre: "Movimientos por Día"
+    descripcion: "Serie de tiempo de flujo diario de efectivo"
+    categoria: movimientos
+    tipo: serie
+    unidad: moneda
+    query_duckdb: |
+      SELECT 
+        FECHA as fecha,
+        SUM(CASE WHEN TIPO = 'D' THEN IMPORTE ELSE -IMPORTE END) as valor
+      FROM movimientos_banco
+      WHERE FECHA BETWEEN {fecha_inicio} AND {fecha_fin}
+      GROUP BY FECHA
+      ORDER BY FECHA
+    parametros:
+      - nombre: fecha_inicio
+        tipo: date
+        requerido: true
+      - nombre: fecha_fin
+        tipo: date
+        requerido: true
+    visual:
+      tipo: linea
+      color: "#7067F0"
+
+  # ============================================
+  # CHEQUES
+  # ============================================
+  
+  - id: ban_cheques_pendientes
+    nombre: "Cheques Pendientes de Cobro"
+    descripcion: "Cheques emitidos que aún no han sido cobrados"
+    categoria: cheques
+    tipo: tabla
+    query_duckdb: |
+      SELECT 
+        CHEQUE as numero,
+        FECHA_EMISION as fecha_emision,
+        BENEFICIARIO as beneficiario,
+        IMPORTE as importe,
+        CURRENT_DATE - FECHA_EMISION as dias_pendiente,
+        CUENTA as cuenta_banco
+      FROM cheques
+      WHERE ESTATUS = 'E'  -- Emitido
+        AND FECHA_COBRO IS NULL
+      ORDER BY dias_pendiente DESC
+    alerta:
+      tipo: existencia
+      nivel: warning
+      mensaje: "Hay cheques pendientes de cobro"
+
+  - id: ban_cheques_antiguos
+    nombre: "Cheques con Más de 90 Días"
+    descripcion: "Cheques emitidos hace más de 90 días sin cobrar"
+    categoria: cheques
+    tipo: escalar
+    unidad: cantidad
+    query_duckdb: |
+      SELECT 
+        COUNT(*) as valor
+      FROM cheques
+      WHERE ESTATUS = 'E'
+        AND FECHA_COBRO IS NULL
+        AND FECHA_EMISION < CURRENT_DATE - INTERVAL '90 days'
+    alerta:
+      tipo: umbral
+      condicion: "> 0"
+      nivel_warning: 1
+      nivel_critical: 5
+      mensaje: "Cheques antiguos requieren atención"
+
+  - id: ban_cheques_emitidos_mes
+    nombre: "Cheques Emitidos en el Mes"
+    descripcion: "Total de cheques emitidos en el mes actual"
+    categoria: cheques
+    tipo: escalar
+    unidad: cantidad
+    query_duckdb: |
+      SELECT 
+        COUNT(*) as valor
+      FROM cheques
+      WHERE FECHA_EMISION >= date_trunc('month', CURRENT_DATE)
+        AND FECHA_EMISION < date_trunc('month', CURRENT_DATE) + INTERVAL '1 month'
+    formato:
+      decimales: 0
+
+  - id: ban_monto_cheques_mes
+    nombre: "Monto de Cheques del Mes"
+    descripcion: "Suma del importe de cheques emitidos en el mes"
+    categoria: cheques
+    tipo: escalar
+    unidad: moneda
+    query_duckdb: |
+      SELECT 
+        COALESCE(SUM(IMPORTE), 0) as valor
+      FROM cheques
+      WHERE FECHA_EMISION >= date_trunc('month', CURRENT_DATE)
+    formato:
+      decimales: 2
+      prefijo: "$"
+
+  # ============================================
+  # CONCILIACIÓN
+  # ============================================
+  
+  - id: ban_cuentas_conciliadas
+    nombre: "Cuentas Conciliadas Este Mes"
+    descripcion: "Cantidad de cuentas que han sido conciliadas en el mes"
+    categoria: conciliacion
+    tipo: escalar
+    unidad: cantidad
+    query_duckdb: |
+      SELECT 
+        COUNT(DISTINCT CUENTA) as valor
+      FROM conciliaciones
+      WHERE FECHA_CONCILIACION >= date_trunc('month', CURRENT_DATE)
+    formato:
+      decimales: 0
+
+  - id: ban_cuentas_sin_conciliar
+    nombre: "Cuentas Sin Conciliar"
+    descripcion: "Cuentas activas que no han sido conciliadas en 60 días"
+    categoria: conciliacion
+    tipo: tabla
+    query_duckdb: |
+      SELECT 
+        cb.CUENTA as cuenta,
+        cb.BANCO as banco,
+        cb.SALDO_ACTUAL as saldo,
+        MAX(c.FECHA_CONCILIACION) as ultima_conciliacion,
+        CURRENT_DATE - MAX(c.FECHA_CONCILIACION) as dias_sin_conciliar
+      FROM cuentas_bancarias cb
+      LEFT JOIN conciliaciones c ON cb.CUENTA = c.CUENTA
+      WHERE cb.ACTIVA = true
+      GROUP BY cb.CUENTA, cb.BANCO, cb.SALDO_ACTUAL
+      HAVING MAX(c.FECHA_CONCILIACION) IS NULL 
+          OR MAX(c.FECHA_CONCILIACION) < CURRENT_DATE - INTERVAL '60 days'
+      ORDER BY dias_sin_conciliar DESC NULLS FIRST
+    alerta:
+      tipo: existencia
+      nivel: critical
+      mensaje: "¡Atención! Cuentas bancarias requieren conciliación"
+
+  - id: ban_partidas_conciliacion
+    nombre: "Partidas Pendientes en Conciliación"
+    descripcion: "Movimientos que no coinciden entre banco y registro"
+    categoria: conciliacion
+    tipo: tabla
+    query_duckdb: |
+      SELECT 
+        CUENTA as cuenta,
+        FECHA as fecha,
+        CONCEPTO as concepto,
+        IMPORTE as importe,
+        TIPO as tipo,
+        DIAS_PENDIENTE as dias
+      FROM partidas_conciliacion
+      WHERE CONCILIADO = false
+        AND CUENTA = {cuenta}
+      ORDER BY FECHA DESC
+    parametros:
+      - nombre: cuenta
+        tipo: string
+        requerido: false
+        descripcion: "Filtrar por cuenta específica"
+
+  # ============================================
+  # CFDI Y TIMBRES
+  # ============================================
+  
+  - id: ban_timbres_disponibles
+    nombre: "Timbres CFDI Disponibles"
+    descripcion: "Cantidad de timbres restantes para facturación"
+    categoria: cfdi
+    tipo: escalar
+    unidad: cantidad
+    query_duckdb: |
+      SELECT 
+        SUM(TIMBRES_DISPONIBLES) as valor
+      FROM paquetes_timbres
+      WHERE ACTIVO = true
+        AND FECHA_EXPIRACION > CURRENT_DATE
+    formato:
+      decimales: 0
+    alerta:
+      tipo: umbral
+      condicion: "< 100"
+      nivel_warning: 100
+      nivel_critical: 50
+      mensaje: "Nivel bajo de timbres disponibles"
+
+  - id: ban_timbres_usados_mes
+    nombre: "Timbres Usados en el Mes"
+    descripcion: "Cantidad de timbres utilizados en el mes actual"
+    categoria: cfdi
+    tipo: escalar
+    unidad: cantidad
+    query_duckdb: |
+      SELECT 
+        COUNT(*) as valor
+      FROM uuidtimbres
+      WHERE FECHA_TIMBRADO >= date_trunc('month', CURRENT_DATE)
+        AND FECHA_TIMBRADO < date_trunc('month', CURRENT_DATE) + INTERVAL '1 month'
+    formato:
+      decimales: 0
+
+  - id: ban_cfdi_cancelados_mes
+    nombre: "CFDI Cancelados en el Mes"
+    descripcion: "Facturas electrónicas canceladas en el mes"
+    categoria: cfdi
+    tipo: escalar
+    unidad: cantidad
+    query_duckdb: |
+      SELECT 
+        COUNT(*) as valor
+      FROM uuidtimbres
+      WHERE FECHA_CANCELACION >= date_trunc('month', CURRENT_DATE)
+        AND FECHA_CANCELACION < date_trunc('month', CURRENT_DATE) + INTERVAL '1 month'
+    formato:
+      decimales: 0
+    alerta:
+      tipo: umbral
+      condicion: "> 0"
+      nivel_warning: 5
+      nivel_critical: 20
+
+  # ============================================
+  # ANÁLISIS Y PROYECCIONES
+  # ============================================
+  
+  - id: ban_proyeccion_saldo
+    nombre: "Proyección de Saldo a 7 Días"
+    descripcion: "Estimación de saldo considerando cheques y pagos programados"
+    categoria: analisis
+    tipo: escalar
+    unidad: moneda
+    query_duckdb: |
+      SELECT 
+        (SELECT SUM(SALDO_ACTUAL) FROM cuentas_bancarias WHERE ACTIVA = true) -
+        (SELECT COALESCE(SUM(IMPORTE), 0) FROM cheques WHERE ESTATUS = 'E' AND FECHA_COBRO IS NULL) -
+        (SELECT COALESCE(SUM(IMPORTE), 0) FROM pagos_programados WHERE FECHA_PAGO <= CURRENT_DATE + INTERVAL '7 days' AND PAGADO = false)
+        as valor
+    formato:
+      decimales: 2
+      prefijo: "$"
+
+  - id: ban_promedio_saldo_diario
+    nombre: "Promedio de Saldo Diario"
+    descripcion: "Saldo promedio en el mes actual"
+    categoria: analisis
+    tipo: escalar
+    unidad: moneda
+    query_duckdb: |
+      SELECT 
+        AVG(saldo_dia) as valor
+      FROM (
+        SELECT 
+          FECHA,
+          SUM(SALDO) as saldo_dia
+        FROM saldos_historicos
+        WHERE FECHA >= date_trunc('month', CURRENT_DATE)
+        GROUP BY FECHA
+      ) sub
+    formato:
+      decimales: 2
+      prefijo: "$"
+
+  - id: ban_movimientos_inusuales
+    nombre: "Movimientos Inusuales"
+    descripcion: "Movimientos que exceden 3 veces la media del mes"
+    categoria: analisis
+    tipo: tabla
+    query_duckdb: |
+      WITH promedio AS (
+        SELECT AVG(IMPORTE) * 3 as limite
+        FROM movimientos_banco
+        WHERE FECHA >= date_trunc('month', CURRENT_DATE)
+      )
+      SELECT 
+        m.FECHA as fecha,
+        m.CONCEPTO as concepto,
+        m.IMPORTE as importe,
+        m.TIPO as tipo,
+        m.CUENTA as cuenta
+      FROM movimientos_banco m, promedio p
+      WHERE m.IMPORTE > p.limite
+        AND m.FECHA >= date_trunc('month', CURRENT_DATE)
+      ORDER BY m.IMPORTE DESC
+      LIMIT 20
+    alerta:
+      tipo: existencia
+      nivel: warning
+      mensaje: "Se detectaron movimientos inusuales"
+
+  # ============================================
+  # OPERACIÓN Y CONFIGURACIÓN
+  # ============================================
+  
+  - id: ban_parametros_modificados
+    nombre: "Parámetros Modificados Recientemente"
+    descripcion: "Configuraciones que han sido modificadas en los últimos 30 días"
+    categoria: operacion
+    tipo: tabla
+    query_duckdb: |
+      SELECT 
+        PARAMETRO as parametro,
+        VALOR_ANTERIOR as valor_anterior,
+        VALOR_ACTUAL as valor_actual,
+        FECHA_MODIFICACION as fecha,
+        USUARIO as modificado_por
+      FROM historial_parametros
+      WHERE FECHA_MODIFICACION >= CURRENT_DATE - INTERVAL '30 days'
+      ORDER BY FECHA_MODIFICACION DESC

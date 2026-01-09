@@ -1,0 +1,134 @@
+{
+  "diccionarios": {
+    "BANCO": {
+      "estado": "OK",
+      "tablas": 110,
+      "campos": 3610
+    },
+    "COI": {
+      "estado": "OK",
+      "tablas": 219,
+      "campos": 6671
+    },
+    "NOI": {
+      "estado": "OK",
+      "tablas": 2005,
+      "campos": 48792
+    },
+    "SAE": {
+      "estado": "OK",
+      "tablas": 203,
+      "campos": 3990
+    }
+  },
+  "semanticas": {
+    "BANCO": {
+      "estado": "OK",
+      "tablas_analizadas": 110,
+      "top_tabla": "PARAMEMP"
+    },
+    "COI": {
+      "estado": "OK",
+      "tablas_analizadas": 219,
+      "top_tabla": "PARAMEMP"
+    },
+    "NOI": {
+      "estado": "OK",
+      "tablas_analizadas": 2005,
+      "top_tabla": "TB15012501C"
+    },
+    "SAE": {
+      "estado": "OK",
+      "tablas_analizadas": 203,
+      "top_tabla": "CLIE01"
+    }
+  },
+  "metricas_validadas": {
+    "BANCO": {
+      "archivo": "base_BANCO.yaml",
+      "valido": false,
+      "metricas": 0,
+      "errores": 1,
+      "advertencias": 0
+    },
+    "COI": {
+      "archivo": "base_COI.yaml",
+      "valido": false,
+      "metricas": 0,
+      "errores": 1,
+      "advertencias": 0
+    },
+    "NOI": {
+      "archivo": "base_NOI.yaml",
+      "valido": false,
+      "metricas": 0,
+      "errores": 1,
+      "advertencias": 0
+    },
+    "SAE": {
+      "archivo": "base_SAE.yaml",
+      "valido": false,
+      "metricas": 0,
+      "errores": 1,
+      "advertencias": 0
+    }
+  },
+  "errores": [
+    {
+      "paso": "validacion_metricas",
+      "sistema": "BANCO",
+      "errores": [
+        {
+          "tipo": "schema",
+          "mensaje": "/metadata/generado_en: must be string",
+          "detalle": {
+            "type": "string"
+          },
+          "dataPath": "/metadata/generado_en"
+        }
+      ]
+    },
+    {
+      "paso": "validacion_metricas",
+      "sistema": "COI",
+      "errores": [
+        {
+          "tipo": "schema",
+          "mensaje": "/metadata/generado_en: must be string",
+          "detalle": {
+            "type": "string"
+          },
+          "dataPath": "/metadata/generado_en"
+        }
+      ]
+    },
+    {
+      "paso": "validacion_metricas",
+      "sistema": "NOI",
+      "errores": [
+        {
+          "tipo": "schema",
+          "mensaje": "/metadata/generado_en: must be string",
+          "detalle": {
+            "type": "string"
+          },
+          "dataPath": "/metadata/generado_en"
+        }
+      ]
+    },
+    {
+      "paso": "validacion_metricas",
+      "sistema": "SAE",
+      "errores": [
+        {
+          "tipo": "schema",
+          "mensaje": "/metadata/generado_en: must be string",
+          "detalle": {
+            "type": "string"
+          },
+          "dataPath": "/metadata/generado_en"
+        }
+      ]
+    }
+  ]
+}

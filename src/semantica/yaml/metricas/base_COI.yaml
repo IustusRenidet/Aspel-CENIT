@@ -1,0 +1,466 @@
+# Métricas Base - Sistema COI (Contabilidad)
+# version: 1.0.0
+# sistema: COI
+# descripcion: Métricas fundamentales para análisis contable y financiero
+
+metadata:
+  sistema: COI
+  version: 1.0.0
+  generado_en: 2026-01-07
+  descripcion: "Métricas base para Aspel COI - Contabilidad Integral"
+  tablas_principales:
+    - POLI01      # Pólizas
+    - AUXILIAR01  # Auxiliares por mes
+    - CTACON01    # Catálogo de cuentas
+    - CTABAN01    # Cuentas bancarias
+    - SALDOS01    # Saldos contables
+
+metricas:
+  # ============================================
+  # PÓLIZAS Y MOVIMIENTOS
+  # ============================================
+  
+  - id: coi_polizas_mes
+    nombre: "Pólizas del Mes"
+    descripcion: "Total de pólizas capturadas en el mes actual"
+    categoria: polizas
+    tipo: escalar
+    unidad: cantidad
+    query_duckdb: |
+      SELECT 
+        COUNT(DISTINCT POLIZA) as valor
+      FROM polizas
+      WHERE PERIODO = EXTRACT(YEAR FROM CURRENT_DATE) * 100 + EXTRACT(MONTH FROM CURRENT_DATE)
+    formato:
+      decimales: 0
+
+  - id: coi_polizas_pendientes
+    nombre: "Pólizas Pendientes de Afectar"
+    descripcion: "Pólizas capturadas pero no afectadas"
+    categoria: polizas
+    tipo: escalar
+    unidad: cantidad
+    query_duckdb: |
+      SELECT 
+        COUNT(*) as valor
+      FROM polizas
+      WHERE ESTATUS = 'P'  -- Pendiente
+        AND PERIODO >= EXTRACT(YEAR FROM CURRENT_DATE) * 100 + EXTRACT(MONTH FROM CURRENT_DATE) - 1
+    alerta:
+      tipo: umbral
+      condicion: "> 0"
+      nivel_warning: 10
+      nivel_critical: 50
+
+  - id: coi_polizas_descuadradas
+    nombre: "Pólizas Descuadradas"
+    descripcion: "Pólizas donde cargos != abonos"
+    categoria: polizas
+    tipo: tabla
+    query_duckdb: |
+      SELECT 
+        POLIZA as numero,
+        TIPO as tipo,
+        FECHA as fecha,
+        CONCEPTO as concepto,
+        ABS(TOTAL_CARGOS - TOTAL_ABONOS) as diferencia
+      FROM (
+        SELECT 
+          POLIZA,
+          TIPO,
+          FECHA,
+          CONCEPTO,
+          SUM(CASE WHEN TIPO_MOV = 'C' THEN IMPORTE ELSE 0 END) as TOTAL_CARGOS,
+          SUM(CASE WHEN TIPO_MOV = 'A' THEN IMPORTE ELSE 0 END) as TOTAL_ABONOS
+        FROM movimientos_poliza
+        WHERE PERIODO = {periodo}
+        GROUP BY POLIZA, TIPO, FECHA, CONCEPTO
+      ) sub
+      WHERE ABS(TOTAL_CARGOS - TOTAL_ABONOS) > 0.01
+      ORDER BY diferencia DESC
+    parametros:
+      - nombre: periodo
+        tipo: integer
+        requerido: false
+        default: "EXTRACT(YEAR FROM CURRENT_DATE) * 100 + EXTRACT(MONTH FROM CURRENT_DATE)"
+    alerta:
+      tipo: existencia
+      mensaje: "¡Atención! Se encontraron pólizas descuadradas"
+
+  # ============================================
+  # BALANZA DE COMPROBACIÓN
+  # ============================================
+  
+  - id: coi_balanza_mes
+    nombre: "Balanza del Mes Actual"
+    descripcion: "Balanza de comprobación del mes en curso"
+    categoria: reportes
+    tipo: tabla
+    query_duckdb: |
+      SELECT 
+        CUENTA as cuenta,
+        NOMBRE_CTA as nombre,
+        SALDO_ANTERIOR as saldo_anterior,
+        CARGOS as cargos,
+        ABONOS as abonos,
+        SALDO_ACTUAL as saldo_actual
+      FROM balanza_comprobacion
+      WHERE PERIODO = {periodo}
+        AND NIVEL <= {nivel_detalle}
+      ORDER BY CUENTA
+    parametros:
+      - nombre: periodo
+        tipo: integer
+        requerido: false
+        default: "EXTRACT(YEAR FROM CURRENT_DATE) * 100 + EXTRACT(MONTH FROM CURRENT_DATE)"
+      - nombre: nivel_detalle
+        tipo: integer
+        requerido: false
+        default: 4
+        descripcion: "Nivel de detalle de cuentas (1=mayor, 4=subcuentas)"
+    formato:
+      columnas:
+        - nombre: cuenta
+          tipo: texto
+        - nombre: nombre
+          tipo: texto
+        - nombre: saldo_anterior
+          tipo: moneda
+          decimales: 2
+        - nombre: cargos
+          tipo: moneda
+          decimales: 2
+        - nombre: abonos
+          tipo: moneda
+          decimales: 2
+        - nombre: saldo_actual
+          tipo: moneda
+          decimales: 2
+
+  - id: coi_suma_balanza
+    nombre: "Suma de Balanza"
+    descripcion: "Totales de cargos y abonos de la balanza (deben coincidir)"
+    categoria: reportes
+    tipo: escalar
+    unidad: moneda
+    query_duckdb: |
+      SELECT 
+        SUM(CARGOS) as valor
+      FROM balanza_comprobacion
+      WHERE PERIODO = {periodo}
+    parametros:
+      - nombre: periodo
+        tipo: integer
+        requerido: false
+        default: "EXTRACT(YEAR FROM CURRENT_DATE) * 100 + EXTRACT(MONTH FROM CURRENT_DATE)"
+    formato:
+      decimales: 2
+      prefijo: "$"
+      separador_miles: ","
+
+  # ============================================
+  # ESTADOS FINANCIEROS
+  # ============================================
+  
+  - id: coi_utilidad_mes
+    nombre: "Utilidad del Mes"
+    descripcion: "Resultado neto del periodo (ingresos - egresos)"
+    categoria: estados_financieros
+    tipo: escalar
+    unidad: moneda
+    query_duckdb: |
+      SELECT 
+        COALESCE(
+          SUM(CASE WHEN NATURALEZA = 'A' THEN SALDO_ACTUAL ELSE -SALDO_ACTUAL END),
+          0
+        ) as valor
+      FROM balanza_comprobacion
+      WHERE PERIODO = {periodo}
+        AND CUENTA LIKE '4%'  -- Cuentas de resultados
+    parametros:
+      - nombre: periodo
+        tipo: integer
+        requerido: false
+        default: "EXTRACT(YEAR FROM CURRENT_DATE) * 100 + EXTRACT(MONTH FROM CURRENT_DATE)"
+    formato:
+      decimales: 2
+      prefijo: "$"
+      separador_miles: ","
+    comparativo:
+      periodo_anterior: true
+      tipo: "porcentaje"
+
+  - id: coi_activo_total
+    nombre: "Activo Total"
+    descripcion: "Suma de todas las cuentas de activo"
+    categoria: estados_financieros
+    tipo: escalar
+    unidad: moneda
+    query_duckdb: |
+      SELECT 
+        SUM(SALDO_ACTUAL) as valor
+      FROM balanza_comprobacion
+      WHERE PERIODO = {periodo}
+        AND CUENTA LIKE '1%'  -- Activo
+        AND NIVEL = 1
+    parametros:
+      - nombre: periodo
+        tipo: integer
+        requerido: false
+    formato:
+      decimales: 2
+      prefijo: "$"
+      separador_miles: ","
+
+  - id: coi_pasivo_total
+    nombre: "Pasivo Total"
+    descripcion: "Suma de todas las cuentas de pasivo"
+    categoria: estados_financieros
+    tipo: escalar
+    unidad: moneda
+    query_duckdb: |
+      SELECT 
+        SUM(SALDO_ACTUAL) as valor
+      FROM balanza_comprobacion
+      WHERE PERIODO = {periodo}
+        AND CUENTA LIKE '2%'  -- Pasivo
+        AND NIVEL = 1
+    parametros:
+      - nombre: periodo
+        tipo: integer
+        requerido: false
+    formato:
+      decimales: 2
+      prefijo: "$"
+
+  - id: coi_capital_contable
+    nombre: "Capital Contable"
+    descripcion: "Capital + Resultados acumulados"
+    categoria: estados_financieros
+    tipo: escalar
+    unidad: moneda
+    query_duckdb: |
+      SELECT 
+        SUM(SALDO_ACTUAL) as valor
+      FROM balanza_comprobacion
+      WHERE PERIODO = {periodo}
+        AND CUENTA LIKE '3%'  -- Capital
+        AND NIVEL = 1
+    parametros:
+      - nombre: periodo
+        tipo: integer
+        requerido: false
+    formato:
+      decimales: 2
+      prefijo: "$"
+
+  # ============================================
+  # BANCOS Y TESORERÍA
+  # ============================================
+  
+  - id: coi_saldo_bancos
+    nombre: "Saldo Total en Bancos"
+    descripcion: "Suma de saldos de todas las cuentas bancarias"
+    categoria: bancos
+    tipo: escalar
+    unidad: moneda
+    query_duckdb: |
+      SELECT 
+        SUM(SALDO_ACTUAL) as valor
+      FROM cuentas_bancarias
+      WHERE ACTIVA = true
+    formato:
+      decimales: 2
+      prefijo: "$"
+      separador_miles: ","
+
+  - id: coi_movimientos_bancarios_mes
+    nombre: "Movimientos Bancarios del Mes"
+    descripcion: "Total de movimientos bancarios registrados"
+    categoria: bancos
+    tipo: escalar
+    unidad: cantidad
+    query_duckdb: |
+      SELECT 
+        COUNT(*) as valor
+      FROM movimientos_banco
+      WHERE PERIODO = {periodo}
+    parametros:
+      - nombre: periodo
+        tipo: integer
+        requerido: false
+    formato:
+      decimales: 0
+
+  - id: coi_cheques_pendientes
+    nombre: "Cheques Pendientes de Cobro"
+    descripcion: "Cheques emitidos pero no cobrados"
+    categoria: bancos
+    tipo: tabla
+    query_duckdb: |
+      SELECT 
+        CHEQUE as numero,
+        FECHA_EMISION as fecha,
+        BENEFICIARIO as beneficiario,
+        IMPORTE as importe,
+        CURRENT_DATE - FECHA_EMISION as dias_pendiente
+      FROM cheques
+      WHERE ESTATUS = 'E'  -- Emitido
+        AND FECHA_COBRO IS NULL
+      ORDER BY dias_pendiente DESC
+    alerta:
+      tipo: existencia
+      mensaje: "Hay cheques pendientes de cobro"
+
+  - id: coi_conciliacion_pendiente
+    nombre: "Cuentas con Conciliación Pendiente"
+    descripcion: "Cuentas bancarias sin conciliar en los últimos 2 meses"
+    categoria: bancos
+    tipo: tabla
+    query_duckdb: |
+      SELECT 
+        CUENTA as cuenta,
+        BANCO as banco,
+        ULTIMA_CONCILIACION as ultima_fecha,
+        CURRENT_DATE - ULTIMA_CONCILIACION as dias_sin_conciliar,
+        SALDO_ACTUAL as saldo
+      FROM cuentas_bancarias
+      WHERE ACTIVA = true
+        AND (ULTIMA_CONCILIACION IS NULL 
+             OR ULTIMA_CONCILIACION < CURRENT_DATE - INTERVAL '60 days')
+      ORDER BY dias_sin_conciliar DESC
+    alerta:
+      tipo: existencia
+      nivel: critical
+      mensaje: "¡Atención! Cuentas bancarias sin conciliar"
+
+  # ============================================
+  # ANÁLISIS DE CUENTAS
+  # ============================================
+  
+  - id: coi_cuentas_mayor_movimiento
+    nombre: "Cuentas con Mayor Movimiento"
+    descripcion: "Top 20 cuentas con más movimientos en el periodo"
+    categoria: analisis
+    tipo: tabla
+    query_duckdb: |
+      SELECT 
+        c.CUENTA as cuenta,
+        c.NOMBRE as nombre,
+        COUNT(m.MOVIMIENTO) as movimientos,
+        SUM(m.CARGO) as total_cargos,
+        SUM(m.ABONO) as total_abonos
+      FROM movimientos_auxiliar m
+      INNER JOIN catalogo_cuentas c ON m.CUENTA = c.CUENTA
+      WHERE m.PERIODO = {periodo}
+      GROUP BY c.CUENTA, c.NOMBRE
+      ORDER BY movimientos DESC
+      LIMIT 20
+    parametros:
+      - nombre: periodo
+        tipo: integer
+        requerido: false
+
+  - id: coi_auxiliar_cuenta
+    nombre: "Auxiliar de Cuenta"
+    descripcion: "Movimientos detallados de una cuenta específica"
+    categoria: analisis
+    tipo: tabla
+    query_duckdb: |
+      SELECT 
+        FECHA as fecha,
+        POLIZA as poliza,
+        CONCEPTO as concepto,
+        CARGO as cargo,
+        ABONO as abono,
+        SALDO as saldo
+      FROM movimientos_auxiliar
+      WHERE CUENTA = {cuenta}
+        AND PERIODO BETWEEN {periodo_inicio} AND {periodo_fin}
+      ORDER BY FECHA, POLIZA
+    parametros:
+      - nombre: cuenta
+        tipo: string
+        requerido: true
+        descripcion: "Número de cuenta contable"
+      - nombre: periodo_inicio
+        tipo: integer
+        requerido: true
+      - nombre: periodo_fin
+        tipo: integer
+        requerido: true
+
+  # ============================================
+  # RATIOS FINANCIEROS
+  # ============================================
+  
+  - id: coi_ratio_liquidez
+    nombre: "Ratio de Liquidez"
+    descripcion: "Activo circulante / Pasivo circulante"
+    categoria: ratios
+    tipo: escalar
+    unidad: ratio
+    query_duckdb: |
+      SELECT 
+        CASE 
+          WHEN SUM(CASE WHEN CUENTA LIKE '2.1%' THEN SALDO_ACTUAL ELSE 0 END) > 0
+          THEN SUM(CASE WHEN CUENTA LIKE '1.1%' THEN SALDO_ACTUAL ELSE 0 END) / 
+               SUM(CASE WHEN CUENTA LIKE '2.1%' THEN SALDO_ACTUAL ELSE 0 END)
+          ELSE 0
+        END as valor
+      FROM balanza_comprobacion
+      WHERE PERIODO = {periodo}
+    parametros:
+      - nombre: periodo
+        tipo: integer
+        requerido: false
+    formato:
+      decimales: 2
+      sufijo: ":1"
+
+  - id: coi_ratio_endeudamiento
+    nombre: "Ratio de Endeudamiento"
+    descripcion: "Pasivo total / Activo total"
+    categoria: ratios
+    tipo: escalar
+    unidad: porcentaje
+    query_duckdb: |
+      SELECT 
+        CASE 
+          WHEN SUM(CASE WHEN CUENTA LIKE '1%' THEN SALDO_ACTUAL ELSE 0 END) > 0
+          THEN (SUM(CASE WHEN CUENTA LIKE '2%' THEN SALDO_ACTUAL ELSE 0 END) / 
+                SUM(CASE WHEN CUENTA LIKE '1%' THEN SALDO_ACTUAL ELSE 0 END)) * 100
+          ELSE 0
+        END as valor
+      FROM balanza_comprobacion
+      WHERE PERIODO = {periodo}
+        AND NIVEL = 1
+    parametros:
+      - nombre: periodo
+        tipo: integer
+        requerido: false
+    formato:
+      decimales: 2
+      sufijo: "%"
+
+  # ============================================
+  # CIERRE Y AUDITORÍA
+  # ============================================
+  
+  - id: coi_periodos_abiertos
+    nombre: "Periodos Contables Abiertos"
+    descripcion: "Periodos que no han sido cerrados"
+    categoria: auditoria
+    tipo: tabla
+    query_duckdb: |
+      SELECT 
+        PERIODO as periodo,
+        COUNT(DISTINCT POLIZA) as polizas,
+        CERRADO as esta_cerrado
+      FROM periodos_contables
+      WHERE CERRADO = false
+        AND PERIODO <= EXTRACT(YEAR FROM CURRENT_DATE) * 100 + EXTRACT(MONTH FROM CURRENT_DATE)
+      ORDER BY PERIODO DESC
+    alerta:
+      tipo: existencia
+      mensaje: "Hay periodos contables sin cerrar"

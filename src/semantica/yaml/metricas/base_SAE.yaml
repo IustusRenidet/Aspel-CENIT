@@ -1,0 +1,450 @@
+# Métricas Base - Sistema SAE (Ventas e Inventarios)
+# version: 1.0.0
+# sistema: SAE
+# descripcion: Métricas fundamentales para análisis de ventas, inventarios, CxC y CxP
+
+metadata:
+  sistema: SAE
+  version: 1.0.0
+  generado_en: 2026-01-07
+  descripcion: "Métricas base para Aspel SAE - Sistema de Administración Empresarial"
+  tablas_principales:
+    - FACTF01  # Facturas
+    - CLIE01   # Clientes
+    - PROD01   # Productos (si existe) / INVE01
+    - MINVE01  # Movimientos de inventario
+    - CUEN_M01 # Cuentas por cobrar
+    - PAGA_M01 # Pagos
+
+metricas:
+  # ============================================
+  # VENTAS - Métricas principales
+  # ============================================
+  
+  - id: sae_ventas_netas_mes
+    nombre: "Ventas Netas del Mes"
+    descripcion: "Total de ventas netas (después de descuentos) del mes actual"
+    categoria: ventas
+    tipo: escalar
+    unidad: moneda
+    query_duckdb: |
+      SELECT 
+        COALESCE(SUM(IMPORTE_NETO), 0) as valor
+      FROM facturas_resumen
+      WHERE FECHA_DOCUMENTO >= date_trunc('month', CURRENT_DATE)
+        AND FECHA_DOCUMENTO < date_trunc('month', CURRENT_DATE) + INTERVAL '1 month'
+        AND ESTATUS != 'CANCELADO'
+    parametros:
+      - nombre: fecha_inicio
+        tipo: date
+        requerido: false
+        default: "date_trunc('month', CURRENT_DATE)"
+      - nombre: fecha_fin
+        tipo: date
+        requerido: false
+        default: "CURRENT_DATE"
+    formato:
+      decimales: 2
+      prefijo: "$"
+      separador_miles: ","
+    comparativo:
+      periodo_anterior: true
+      tipo: "porcentaje"
+
+  - id: sae_ticket_promedio
+    nombre: "Ticket Promedio"
+    descripcion: "Promedio de venta por documento en el periodo"
+    categoria: ventas
+    tipo: escalar
+    unidad: moneda
+    query_duckdb: |
+      SELECT 
+        COALESCE(AVG(IMPORTE_NETO), 0) as valor
+      FROM facturas_resumen
+      WHERE FECHA_DOCUMENTO BETWEEN {fecha_inicio} AND {fecha_fin}
+        AND ESTATUS != 'CANCELADO'
+    parametros:
+      - nombre: fecha_inicio
+        tipo: date
+        requerido: true
+      - nombre: fecha_fin
+        tipo: date
+        requerido: true
+    formato:
+      decimales: 2
+      prefijo: "$"
+
+  - id: sae_ventas_por_dia
+    nombre: "Ventas por Día"
+    descripcion: "Serie de tiempo de ventas diarias"
+    categoria: ventas
+    tipo: serie
+    unidad: moneda
+    query_duckdb: |
+      SELECT 
+        FECHA_DOCUMENTO as fecha,
+        SUM(IMPORTE_NETO) as valor
+      FROM facturas_resumen
+      WHERE FECHA_DOCUMENTO BETWEEN {fecha_inicio} AND {fecha_fin}
+        AND ESTATUS != 'CANCELADO'
+      GROUP BY FECHA_DOCUMENTO
+      ORDER BY FECHA_DOCUMENTO
+    parametros:
+      - nombre: fecha_inicio
+        tipo: date
+        requerido: true
+      - nombre: fecha_fin
+        tipo: date
+        requerido: true
+    formato:
+      decimales: 0
+      prefijo: "$"
+    visual:
+      tipo: linea
+      color: "#7067F0"
+
+  - id: sae_ventas_por_mes
+    nombre: "Ventas por Mes"
+    descripcion: "Comparativo mensual de ventas (últimos 12 meses)"
+    categoria: ventas
+    tipo: serie
+    unidad: moneda
+    query_duckdb: |
+      SELECT 
+        date_trunc('month', FECHA_DOCUMENTO) as periodo,
+        SUM(IMPORTE_NETO) as valor
+      FROM facturas_resumen
+      WHERE FECHA_DOCUMENTO >= CURRENT_DATE - INTERVAL '12 months'
+        AND ESTATUS != 'CANCELADO'
+      GROUP BY date_trunc('month', FECHA_DOCUMENTO)
+      ORDER BY periodo
+    formato:
+      decimales: 0
+      prefijo: "$"
+    visual:
+      tipo: barras
+      color: "#7067F0"
+
+  - id: sae_top_clientes
+    nombre: "Top 20 Clientes por Monto"
+    descripcion: "Principales clientes ordenados por monto de venta"
+    categoria: ventas
+    tipo: tabla
+    query_duckdb: |
+      SELECT 
+        c.CVE_CLIE as clave,
+        c.NOMBRE as cliente,
+        COUNT(DISTINCT f.FACTURA) as facturas,
+        SUM(f.IMPORTE_NETO) as monto_total,
+        AVG(f.IMPORTE_NETO) as ticket_promedio
+      FROM facturas_resumen f
+      INNER JOIN clientes c ON f.CVE_CLIE = c.CVE_CLIE
+      WHERE f.FECHA_DOCUMENTO BETWEEN {fecha_inicio} AND {fecha_fin}
+        AND f.ESTATUS != 'CANCELADO'
+      GROUP BY c.CVE_CLIE, c.NOMBRE
+      ORDER BY monto_total DESC
+      LIMIT 20
+    parametros:
+      - nombre: fecha_inicio
+        tipo: date
+        requerido: true
+      - nombre: fecha_fin
+        tipo: date
+        requerido: true
+      - nombre: limite
+        tipo: integer
+        requerido: false
+        default: 20
+    formato:
+      columnas:
+        - nombre: clave
+          tipo: texto
+        - nombre: cliente
+          tipo: texto
+        - nombre: facturas
+          tipo: numero
+        - nombre: monto_total
+          tipo: moneda
+          decimales: 2
+        - nombre: ticket_promedio
+          tipo: moneda
+          decimales: 2
+
+  # ============================================
+  # INVENTARIOS
+  # ============================================
+  
+  - id: sae_valor_inventario
+    nombre: "Valor Total de Inventario"
+    descripcion: "Valor total del inventario a costo promedio"
+    categoria: inventarios
+    tipo: escalar
+    unidad: moneda
+    query_duckdb: |
+      SELECT 
+        SUM(EXISTENCIA * COSTO_PROM) as valor
+      FROM inventario_actual
+      WHERE EXISTENCIA > 0
+    formato:
+      decimales: 2
+      prefijo: "$"
+      separador_miles: ","
+
+  - id: sae_articulos_bajo_minimo
+    nombre: "Artículos Bajo Mínimo"
+    descripcion: "Cantidad de artículos con existencia menor al mínimo"
+    categoria: inventarios
+    tipo: escalar
+    unidad: cantidad
+    query_duckdb: |
+      SELECT 
+        COUNT(*) as valor
+      FROM inventario_actual
+      WHERE EXISTENCIA < EXIST_MIN
+        AND EXIST_MIN > 0
+    alerta:
+      tipo: umbral
+      condicion: "> 0"
+      nivel_warning: 5
+      nivel_critical: 15
+
+  - id: sae_top_articulos_vendidos
+    nombre: "Top 20 Artículos Más Vendidos"
+    descripcion: "Artículos con mayor cantidad vendida en el periodo"
+    categoria: inventarios
+    tipo: tabla
+    query_duckdb: |
+      SELECT 
+        p.CVE_ART as clave,
+        p.DESCR as articulo,
+        SUM(m.CANTIDAD) as cantidad_vendida,
+        SUM(m.IMPORTE) as importe_total
+      FROM movimientos_inventario m
+      INNER JOIN productos p ON m.CVE_ART = p.CVE_ART
+      WHERE m.TIPO_DOC IN ('F', 'V')  -- Facturas y Ventas
+        AND m.FECHA BETWEEN {fecha_inicio} AND {fecha_fin}
+      GROUP BY p.CVE_ART, p.DESCR
+      ORDER BY cantidad_vendida DESC
+      LIMIT 20
+    parametros:
+      - nombre: fecha_inicio
+        tipo: date
+        requerido: true
+      - nombre: fecha_fin
+        tipo: date
+        requerido: true
+
+  - id: sae_rotacion_inventario
+    nombre: "Rotación de Inventario"
+    descripcion: "Ratio de rotación (Costo de Ventas / Inventario Promedio)"
+    categoria: inventarios
+    tipo: escalar
+    unidad: ratio
+    query_duckdb: |
+      SELECT 
+        CASE 
+          WHEN AVG(valor_inventario) > 0 
+          THEN SUM(costo_ventas) / AVG(valor_inventario)
+          ELSE 0 
+        END as valor
+      FROM inventario_mensual
+      WHERE periodo BETWEEN {fecha_inicio} AND {fecha_fin}
+    parametros:
+      - nombre: fecha_inicio
+        tipo: date
+        requerido: true
+      - nombre: fecha_fin
+        tipo: date
+        requerido: true
+    formato:
+      decimales: 2
+      sufijo: " veces"
+
+  # ============================================
+  # CUENTAS POR COBRAR (CxC)
+  # ============================================
+  
+  - id: sae_saldo_cxc
+    nombre: "Saldo Total CxC"
+    descripcion: "Saldo pendiente de cobro total"
+    categoria: cxc
+    tipo: escalar
+    unidad: moneda
+    query_duckdb: |
+      SELECT 
+        SUM(SALDO) as valor
+      FROM cuentas_por_cobrar
+      WHERE SALDO > 0
+    formato:
+      decimales: 2
+      prefijo: "$"
+      separador_miles: ","
+
+  - id: sae_cxc_vencidas
+    nombre: "CxC Vencidas"
+    descripcion: "Monto de cuentas por cobrar vencidas"
+    categoria: cxc
+    tipo: escalar
+    unidad: moneda
+    query_duckdb: |
+      SELECT 
+        COALESCE(SUM(SALDO), 0) as valor
+      FROM cuentas_por_cobrar
+      WHERE FECHA_VENC < CURRENT_DATE
+        AND SALDO > 0
+    formato:
+      decimales: 2
+      prefijo: "$"
+    alerta:
+      tipo: umbral
+      condicion: "> 0"
+      nivel_warning: 50000
+      nivel_critical: 100000
+
+  - id: sae_antiguedad_saldos
+    nombre: "Antigüedad de Saldos CxC"
+    descripcion: "Distribución de saldos por rangos de antigüedad"
+    categoria: cxc
+    tipo: tabla
+    query_duckdb: |
+      SELECT 
+        CASE 
+          WHEN CURRENT_DATE - FECHA_VENC <= 30 THEN '0-30 días'
+          WHEN CURRENT_DATE - FECHA_VENC <= 60 THEN '31-60 días'
+          WHEN CURRENT_DATE - FECHA_VENC <= 90 THEN '61-90 días'
+          ELSE 'Más de 90 días'
+        END as rango,
+        COUNT(*) as documentos,
+        SUM(SALDO) as monto
+      FROM cuentas_por_cobrar
+      WHERE SALDO > 0
+      GROUP BY rango
+      ORDER BY 
+        CASE rango
+          WHEN '0-30 días' THEN 1
+          WHEN '31-60 días' THEN 2
+          WHEN '61-90 días' THEN 3
+          ELSE 4
+        END
+
+  # ============================================
+  # CUENTAS POR PAGAR (CxP)
+  # ============================================
+  
+  - id: sae_saldo_cxp
+    nombre: "Saldo Total CxP"
+    descripcion: "Saldo pendiente de pago total"
+    categoria: cxp
+    tipo: escalar
+    unidad: moneda
+    query_duckdb: |
+      SELECT 
+        SUM(SALDO) as valor
+      FROM cuentas_por_pagar
+      WHERE SALDO > 0
+    formato:
+      decimales: 2
+      prefijo: "$"
+
+  - id: sae_cxp_vencidas
+    nombre: "CxP Vencidas"
+    descripcion: "Monto de cuentas por pagar vencidas"
+    categoria: cxp
+    tipo: escalar
+    unidad: moneda
+    query_duckdb: |
+      SELECT 
+        COALESCE(SUM(SALDO), 0) as valor
+      FROM cuentas_por_pagar
+      WHERE FECHA_VENC < CURRENT_DATE
+        AND SALDO > 0
+    formato:
+      decimales: 2
+      prefijo: "$"
+
+  # ============================================
+  # COMPRAS
+  # ============================================
+  
+  - id: sae_compras_mes
+    nombre: "Compras del Mes"
+    descripcion: "Total de compras del mes actual"
+    categoria: compras
+    tipo: escalar
+    unidad: moneda
+    query_duckdb: |
+      SELECT 
+        COALESCE(SUM(IMPORTE_NETO), 0) as valor
+      FROM compras_resumen
+      WHERE FECHA_DOCUMENTO >= date_trunc('month', CURRENT_DATE)
+        AND ESTATUS != 'CANCELADO'
+    formato:
+      decimales: 2
+      prefijo: "$"
+
+  - id: sae_top_proveedores
+    nombre: "Top 10 Proveedores por Compras"
+    descripcion: "Principales proveedores ordenados por monto de compra"
+    categoria: compras
+    tipo: tabla
+    query_duckdb: |
+      SELECT 
+        p.CVE_PROV as clave,
+        p.NOMBRE as proveedor,
+        COUNT(DISTINCT c.COMPRA) as compras,
+        SUM(c.IMPORTE_NETO) as monto_total
+      FROM compras_resumen c
+      INNER JOIN proveedores p ON c.CVE_PROV = p.CVE_PROV
+      WHERE c.FECHA_DOCUMENTO BETWEEN {fecha_inicio} AND {fecha_fin}
+        AND c.ESTATUS != 'CANCELADO'
+      GROUP BY p.CVE_PROV, p.NOMBRE
+      ORDER BY monto_total DESC
+      LIMIT 10
+    parametros:
+      - nombre: fecha_inicio
+        tipo: date
+        requerido: true
+      - nombre: fecha_fin
+        tipo: date
+        requerido: true
+
+  # ============================================
+  # DOCUMENTOS / OPERACIÓN
+  # ============================================
+  
+  - id: sae_documentos_cancelados_hoy
+    nombre: "Documentos Cancelados Hoy"
+    descripcion: "Cantidad de documentos cancelados el día de hoy"
+    categoria: operacion
+    tipo: escalar
+    unidad: cantidad
+    query_duckdb: |
+      SELECT 
+        COUNT(*) as valor
+      FROM facturas_resumen
+      WHERE FECHA_CANCELACION = CURRENT_DATE
+    alerta:
+      tipo: umbral
+      condicion: "> 0"
+      nivel_warning: 3
+      nivel_critical: 10
+
+  - id: sae_facturas_pendientes_timbrar
+    nombre: "Facturas Pendientes de Timbrar"
+    descripcion: "Facturas generadas pero no timbradas (sin UUID)"
+    categoria: operacion
+    tipo: escalar
+    unidad: cantidad
+    query_duckdb: |
+      SELECT 
+        COUNT(*) as valor
+      FROM facturas_resumen f
+      LEFT JOIN cfdi c ON f.FACTURA = c.FACTURA
+      WHERE f.FECHA_DOCUMENTO >= CURRENT_DATE - INTERVAL '7 days'
+        AND f.ESTATUS = 'ACTIVO'
+        AND c.UUID IS NULL
+    alerta:
+      tipo: umbral
+      condicion: "> 0"
+      nivel_warning: 5
+      nivel_critical: 20
