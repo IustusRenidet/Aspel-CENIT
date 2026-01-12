@@ -1,0 +1,24 @@
+paneles:
+  tablero_tesoreria:
+    titulo: "Tesorería (BANCO)"
+    descripcion: "Flujo de efectivo y saldos"
+    layout: 
+      - widget: "kpi_saldo_total"
+        metrica: "saldo_total_bancos"
+        tipo_viz: "tarjeta"
+        ancho: 4
+      
+      - widget: "kpi_ingresos"
+        metrica: "total_ingresos_mes"
+        tipo_viz: "tarjeta"
+        ancho: 4
+
+      - widget: "kpi_egresos"
+        metrica: "total_egresos_mes"
+        tipo_viz: "tarjeta"
+        ancho: 4
+
+      - widget: "grafico_flujo"
+        metrica: "flujo_diario"
+        tipo_viz: "linea"
+        ancho: 12

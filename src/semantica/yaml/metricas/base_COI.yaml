@@ -6,7 +6,7 @@
 metadata:
   sistema: COI
   version: 1.0.0
-  generado_en: 2026-01-07
+  generado_en: "2026-01-07"
   descripcion: "Métricas base para Aspel COI - Contabilidad Integral"
   tablas_principales:
     - POLI01      # Pólizas
@@ -464,3 +464,4 @@ metricas:
     alerta:
       tipo: existencia
       mensaje: "Hay periodos contables sin cerrar"
+

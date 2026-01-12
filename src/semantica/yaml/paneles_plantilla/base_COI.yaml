@@ -1,0 +1,19 @@
+paneles:
+  tablero_director_finanzas:
+    titulo: "Dirección Financiera (COI)"
+    descripcion: "Vista general de contabilidad"
+    layout: 
+      - widget: "kpi_cargos_mes"
+        metrica: "total_cargos_mes"
+        tipo_viz: "tarjeta"
+        ancho: 6
+      
+      - widget: "kpi_abonos_mes"
+        metrica: "total_abonos_mes"
+        tipo_viz: "tarjeta"
+        ancho: 6
+
+      - widget: "grafico_movimientos"
+        metrica: "movimientos_por_tipo"
+        tipo_viz: "barras_verticales"
+        ancho: 12

@@ -1,0 +1,1114 @@
+tablas:
+  ACTIVOS05:
+    descripcion: 'Catálogo y control de activos fijos con parámetros de depreciación contable/fiscal, seguros, mantenimiento y cuentas asociadas. Ejemplos de campos clave: FECHAULTRE: Fecha ultima revaluacion; PERIODOMA: Periodo mantenimiento; FECHAADQ: Fecha de adquisicion; COSTOMANT: Costo mantenimiento; FECHAELIM: Fecha eliminacion; NUMSERIE: Numero de serie.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  ACTIVOS06:
+    descripcion: 'Catálogo y control de activos fijos con parámetros de depreciación contable/fiscal, seguros, mantenimiento y cuentas asociadas. Ejemplos de campos clave: FECHAULTRE: Fecha ultima revaluacion; PERIODOMA: Periodo mantenimiento; FECHAADQ: Fecha de adquisicion; COSTOMANT: Costo mantenimiento; FECHAELIM: Fecha eliminacion; NUMSERIE: Numero de serie.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  ACTIVOS07:
+    descripcion: 'Catálogo y control de activos fijos con parámetros de depreciación contable/fiscal, seguros, mantenimiento y cuentas asociadas. Ejemplos de campos clave: FECHAULTRE: Fecha ultima revaluacion; PERIODOMA: Periodo mantenimiento; FECHAADQ: Fecha de adquisicion; COSTOMANT: Costo mantenimiento; FECHAELIM: Fecha eliminacion; NUMSERIE: Numero de serie.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  ACTIVOS08:
+    descripcion: 'Catálogo y control de activos fijos con parámetros de depreciación contable/fiscal, seguros, mantenimiento y cuentas asociadas. Ejemplos de campos clave: FECHAULTRE: Fecha ultima revaluacion; PERIODOMA: Periodo mantenimiento; FECHAADQ: Fecha de adquisicion; COSTOMANT: Costo mantenimiento; FECHAELIM: Fecha eliminacion; NUMSERIE: Numero de serie.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  ACTIVOS09:
+    descripcion: 'Catálogo y control de activos fijos con parámetros de depreciación contable/fiscal, seguros, mantenimiento y cuentas asociadas. Ejemplos de campos clave: FECHAULTRE: Fecha ultima revaluacion; PERIODOMA: Periodo mantenimiento; FECHAADQ: Fecha de adquisicion; COSTOMANT: Costo mantenimiento; FECHAELIM: Fecha eliminacion; NUMSERIE: Numero de serie.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  ACTIVOS10:
+    descripcion: 'Catálogo y control de activos fijos con parámetros de depreciación contable/fiscal, seguros, mantenimiento y cuentas asociadas. Ejemplos de campos clave: FECHAULTRE: Fecha ultima revaluacion; PERIODOMA: Periodo mantenimiento; FECHAADQ: Fecha de adquisicion; COSTOMANT: Costo mantenimiento; FECHAELIM: Fecha eliminacion; NUMSERIE: Numero de serie.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  ACTIVOS11:
+    descripcion: 'Catálogo y control de activos fijos con parámetros de depreciación contable/fiscal, seguros, mantenimiento y cuentas asociadas. Ejemplos de campos clave: FECHAULTRE: Fecha ultima revaluacion; PERIODOMA: Periodo mantenimiento; FECHAADQ: Fecha de adquisicion; COSTOMANT: Costo mantenimiento; FECHAELIM: Fecha eliminacion; NUMSERIE: Numero de serie.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  ACTIVOS12:
+    descripcion: 'Catálogo y control de activos fijos con parámetros de depreciación contable/fiscal, seguros, mantenimiento y cuentas asociadas. Ejemplos de campos clave: FECHAULTRE: Fecha ultima revaluacion; PERIODOMA: Periodo mantenimiento; FECHAADQ: Fecha de adquisicion; COSTOMANT: Costo mantenimiento; FECHAELIM: Fecha eliminacion; NUMSERIE: Numero de serie.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  ACTIVOS13:
+    descripcion: 'Catálogo y control de activos fijos con parámetros de depreciación contable/fiscal, seguros, mantenimiento y cuentas asociadas. Ejemplos de campos clave: FECHAULTRE: Fecha ultima revaluacion; PERIODOMA: Periodo mantenimiento; FECHAADQ: Fecha de adquisicion; COSTOMANT: Costo mantenimiento; FECHAELIM: Fecha eliminacion; NUMSERIE: Numero de serie.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  ACTIVOS14:
+    descripcion: 'Catálogo y control de activos fijos con parámetros de depreciación contable/fiscal, seguros, mantenimiento y cuentas asociadas. Ejemplos de campos clave: FECHAULTRE: Fecha ultima revaluacion; PERIODOMA: Periodo mantenimiento; FECHAADQ: Fecha de adquisicion; COSTOMANT: Costo mantenimiento; FECHAELIM: Fecha eliminacion; NUMSERIE: Numero de serie.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  ACTIVOS15:
+    descripcion: 'Catálogo y control de activos fijos con parámetros de depreciación contable/fiscal, seguros, mantenimiento y cuentas asociadas. Ejemplos de campos clave: FECHAULTRE: Fecha ultima revaluacion; PERIODOMA: Periodo mantenimiento; FECHAADQ: Fecha de adquisicion; COSTOMANT: Costo mantenimiento; FECHAELIM: Fecha eliminacion; NUMSERIE: Numero de serie.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  ACTIVOS16:
+    descripcion: 'Catálogo y control de activos fijos con parámetros de depreciación contable/fiscal, seguros, mantenimiento y cuentas asociadas. Ejemplos de campos clave: FECHAULTRE: Fecha ultima revaluacion; PERIODOMA: Periodo mantenimiento; FECHAADQ: Fecha de adquisicion; COSTOMANT: Costo mantenimiento; FECHAELIM: Fecha eliminacion; NUMSERIE: Numero de serie.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  ACTIVOS17:
+    descripcion: 'Catálogo y control de activos fijos con parámetros de depreciación contable/fiscal, seguros, mantenimiento y cuentas asociadas. Ejemplos de campos clave: FECHAULTRE: Fecha ultima revaluacion; PERIODOMA: Periodo mantenimiento; FECHAADQ: Fecha de adquisicion; COSTOMANT: Costo mantenimiento; FECHAELIM: Fecha eliminacion; NUMSERIE: Numero de serie.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  ACTIVOS18:
+    descripcion: 'Catálogo y control de activos fijos con parámetros de depreciación contable/fiscal, seguros, mantenimiento y cuentas asociadas. Ejemplos de campos clave: FECHAULTRE: Fecha ultima revaluacion; PERIODOMA: Periodo mantenimiento; FECHAADQ: Fecha de adquisicion; COSTOMANT: Costo mantenimiento; FECHAELIM: Fecha eliminacion; NUMSERIE: Numero de serie.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  ACTIVOS19:
+    descripcion: 'Catálogo y control de activos fijos con parámetros de depreciación contable/fiscal, seguros, mantenimiento y cuentas asociadas. Ejemplos de campos clave: FECHAULTRE: Fecha ultima revaluacion; PERIODOMA: Periodo mantenimiento; FECHAADQ: Fecha de adquisicion; COSTOMANT: Costo mantenimiento; FECHAELIM: Fecha eliminacion; NUMSERIE: Numero de serie.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  ACTIVOS20:
+    descripcion: 'Catálogo y control de activos fijos con parámetros de depreciación contable/fiscal, seguros, mantenimiento y cuentas asociadas. Ejemplos de campos clave: FECHAULTRE: Fecha ultima revaluacion; PERIODOMA: Periodo mantenimiento; FECHAADQ: Fecha de adquisicion; COSTOMANT: Costo mantenimiento; FECHAELIM: Fecha eliminacion; NUMSERIE: Numero de serie.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  ACTIVOS21:
+    descripcion: 'Catálogo y control de activos fijos con parámetros de depreciación contable/fiscal, seguros, mantenimiento y cuentas asociadas. Ejemplos de campos clave: FECHAULTRE: Fecha ultima revaluacion; PERIODOMA: Periodo mantenimiento; FECHAADQ: Fecha de adquisicion; COSTOMANT: Costo mantenimiento; FECHAELIM: Fecha eliminacion; NUMSERIE: Numero de serie.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  ACTIVOS22:
+    descripcion: 'Catálogo y control de activos fijos con parámetros de depreciación contable/fiscal, seguros, mantenimiento y cuentas asociadas. Ejemplos de campos clave: FECHAULTRE: Fecha ultima revaluacion; PERIODOMA: Periodo mantenimiento; FECHAADQ: Fecha de adquisicion; COSTOMANT: Costo mantenimiento; FECHAELIM: Fecha eliminacion; NUMSERIE: Numero de serie.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  ACTIVOS23:
+    descripcion: 'Catálogo y control de activos fijos con parámetros de depreciación contable/fiscal, seguros, mantenimiento y cuentas asociadas. Ejemplos de campos clave: FECHAULTRE: Fecha ultima revaluacion; PERIODOMA: Periodo mantenimiento; FECHAADQ: Fecha de adquisicion; COSTOMANT: Costo mantenimiento; FECHAELIM: Fecha eliminacion; NUMSERIE: Numero de serie.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  ACTIVOS24:
+    descripcion: 'Catálogo y control de activos fijos con parámetros de depreciación contable/fiscal, seguros, mantenimiento y cuentas asociadas. Ejemplos de campos clave: FECHAULTRE: Fecha ultima revaluacion; PERIODOMA: Periodo mantenimiento; FECHAADQ: Fecha de adquisicion; COSTOMANT: Costo mantenimiento; FECHAELIM: Fecha eliminacion; NUMSERIE: Numero de serie.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  ACTIVOS25:
+    descripcion: 'Catálogo y control de activos fijos con parámetros de depreciación contable/fiscal, seguros, mantenimiento y cuentas asociadas. Ejemplos de campos clave: FECHAULTRE: Fecha ultima revaluacion; PERIODOMA: Periodo mantenimiento; FECHAADQ: Fecha de adquisicion; COSTOMANT: Costo mantenimiento; FECHAELIM: Fecha eliminacion; NUMSERIE: Numero de serie.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  ADMPER:
+    descripcion: 'Definición y control de ejercicios y periodos contables: fechas, estado (abierto/cerrado) y parámetros para cierre/apertura. Ejemplos de campos clave: EJERCICIO: Ejercicio; PERIODO: Periodo; REQTRASP: Indica si requiere traspaso; CERRADO: Ejercicio cerrado; CTPOLIZAS: Cuenta de polizas; ORDENADO: Ordenado.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  AUXILIAR05:
+    descripcion: 'Encabezado de pólizas contables: tipo y número de póliza, fecha, concepto y estatus. Sirve como registro maestro de asientos contables y se relaciona con sus partidas en AUXILIAR. Ejemplos de campos clave: DEBE_HABER: Abono o cargo; TIPO_POLI: Tipo; IDUUID: Numero de registro de comprobantes; FECHA_POL: Fecha de registro; CCOSTOS: Centro de costos; EJERCICIO: Ejercicio.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  AUXILIAR06:
+    descripcion: 'Encabezado de pólizas contables: tipo y número de póliza, fecha, concepto y estatus. Sirve como registro maestro de asientos contables y se relaciona con sus partidas en AUXILIAR. Ejemplos de campos clave: DEBE_HABER: Abono o cargo; TIPO_POLI: Tipo; IDUUID: Numero de registro de comprobantes; FECHA_POL: Fecha de registro; CCOSTOS: Centro de costos; EJERCICIO: Ejercicio.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  AUXILIAR07:
+    descripcion: 'Encabezado de pólizas contables: tipo y número de póliza, fecha, concepto y estatus. Sirve como registro maestro de asientos contables y se relaciona con sus partidas en AUXILIAR. Ejemplos de campos clave: DEBE_HABER: Abono o cargo; TIPO_POLI: Tipo; IDUUID: Numero de registro de comprobantes; FECHA_POL: Fecha de registro; CCOSTOS: Centro de costos; EJERCICIO: Ejercicio.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  AUXILIAR08:
+    descripcion: 'Encabezado de pólizas contables: tipo y número de póliza, fecha, concepto y estatus. Sirve como registro maestro de asientos contables y se relaciona con sus partidas en AUXILIAR. Ejemplos de campos clave: DEBE_HABER: Abono o cargo; TIPO_POLI: Tipo; IDUUID: Numero de registro de comprobantes; FECHA_POL: Fecha de registro; CCOSTOS: Centro de costos; EJERCICIO: Ejercicio.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  AUXILIAR09:
+    descripcion: 'Encabezado de pólizas contables: tipo y número de póliza, fecha, concepto y estatus. Sirve como registro maestro de asientos contables y se relaciona con sus partidas en AUXILIAR. Ejemplos de campos clave: DEBE_HABER: Abono o cargo; TIPO_POLI: Tipo; IDUUID: Numero de registro de comprobantes; FECHA_POL: Fecha de registro; CCOSTOS: Centro de costos; EJERCICIO: Ejercicio.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  AUXILIAR10:
+    descripcion: 'Encabezado de pólizas contables: tipo y número de póliza, fecha, concepto y estatus. Sirve como registro maestro de asientos contables y se relaciona con sus partidas en AUXILIAR. Ejemplos de campos clave: DEBE_HABER: Abono o cargo; TIPO_POLI: Tipo; IDUUID: Numero de registro de comprobantes; FECHA_POL: Fecha de registro; CCOSTOS: Centro de costos; EJERCICIO: Ejercicio.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  AUXILIAR11:
+    descripcion: 'Encabezado de pólizas contables: tipo y número de póliza, fecha, concepto y estatus. Sirve como registro maestro de asientos contables y se relaciona con sus partidas en AUXILIAR. Ejemplos de campos clave: DEBE_HABER: Abono o cargo; TIPO_POLI: Tipo; IDUUID: Numero de registro de comprobantes; FECHA_POL: Fecha de registro; CCOSTOS: Centro de costos; EJERCICIO: Ejercicio.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  AUXILIAR12:
+    descripcion: 'Encabezado de pólizas contables: tipo y número de póliza, fecha, concepto y estatus. Sirve como registro maestro de asientos contables y se relaciona con sus partidas en AUXILIAR. Ejemplos de campos clave: DEBE_HABER: Abono o cargo; TIPO_POLI: Tipo; IDUUID: Numero de registro de comprobantes; FECHA_POL: Fecha de registro; CCOSTOS: Centro de costos; EJERCICIO: Ejercicio.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  AUXILIAR13:
+    descripcion: 'Encabezado de pólizas contables: tipo y número de póliza, fecha, concepto y estatus. Sirve como registro maestro de asientos contables y se relaciona con sus partidas en AUXILIAR. Ejemplos de campos clave: DEBE_HABER: Abono o cargo; TIPO_POLI: Tipo; IDUUID: Numero de registro de comprobantes; FECHA_POL: Fecha de registro; CCOSTOS: Centro de costos; EJERCICIO: Ejercicio.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  AUXILIAR14:
+    descripcion: 'Encabezado de pólizas contables: tipo y número de póliza, fecha, concepto y estatus. Sirve como registro maestro de asientos contables y se relaciona con sus partidas en AUXILIAR. Ejemplos de campos clave: DEBE_HABER: Abono o cargo; TIPO_POLI: Tipo; IDUUID: Numero de registro de comprobantes; FECHA_POL: Fecha de registro; CCOSTOS: Centro de costos; EJERCICIO: Ejercicio.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  AUXILIAR15:
+    descripcion: 'Encabezado de pólizas contables: tipo y número de póliza, fecha, concepto y estatus. Sirve como registro maestro de asientos contables y se relaciona con sus partidas en AUXILIAR. Ejemplos de campos clave: DEBE_HABER: Abono o cargo; TIPO_POLI: Tipo; IDUUID: Numero de registro de comprobantes; FECHA_POL: Fecha de registro; CCOSTOS: Centro de costos; EJERCICIO: Ejercicio.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  AUXILIAR16:
+    descripcion: 'Encabezado de pólizas contables: tipo y número de póliza, fecha, concepto y estatus. Sirve como registro maestro de asientos contables y se relaciona con sus partidas en AUXILIAR. Ejemplos de campos clave: DEBE_HABER: Abono o cargo; TIPO_POLI: Tipo; IDUUID: Numero de registro de comprobantes; FECHA_POL: Fecha de registro; CCOSTOS: Centro de costos; EJERCICIO: Ejercicio.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  AUXILIAR17:
+    descripcion: 'Encabezado de pólizas contables: tipo y número de póliza, fecha, concepto y estatus. Sirve como registro maestro de asientos contables y se relaciona con sus partidas en AUXILIAR. Ejemplos de campos clave: DEBE_HABER: Abono o cargo; TIPO_POLI: Tipo; IDUUID: Numero de registro de comprobantes; FECHA_POL: Fecha de registro; CCOSTOS: Centro de costos; EJERCICIO: Ejercicio.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  AUXILIAR18:
+    descripcion: 'Encabezado de pólizas contables: tipo y número de póliza, fecha, concepto y estatus. Sirve como registro maestro de asientos contables y se relaciona con sus partidas en AUXILIAR. Ejemplos de campos clave: DEBE_HABER: Abono o cargo; TIPO_POLI: Tipo; IDUUID: Numero de registro de comprobantes; FECHA_POL: Fecha de registro; CCOSTOS: Centro de costos; EJERCICIO: Ejercicio.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  AUXILIAR19:
+    descripcion: 'Encabezado de pólizas contables: tipo y número de póliza, fecha, concepto y estatus. Sirve como registro maestro de asientos contables y se relaciona con sus partidas en AUXILIAR. Ejemplos de campos clave: DEBE_HABER: Abono o cargo; TIPO_POLI: Tipo; IDUUID: Numero de registro de comprobantes; FECHA_POL: Fecha de registro; CCOSTOS: Centro de costos; EJERCICIO: Ejercicio.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  AUXILIAR20:
+    descripcion: 'Encabezado de pólizas contables: tipo y número de póliza, fecha, concepto y estatus. Sirve como registro maestro de asientos contables y se relaciona con sus partidas en AUXILIAR. Ejemplos de campos clave: DEBE_HABER: Abono o cargo; TIPO_POLI: Tipo; IDUUID: Numero de registro de comprobantes; FECHA_POL: Fecha de registro; CCOSTOS: Centro de costos; EJERCICIO: Ejercicio.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  AUXILIAR21:
+    descripcion: 'Encabezado de pólizas contables: tipo y número de póliza, fecha, concepto y estatus. Sirve como registro maestro de asientos contables y se relaciona con sus partidas en AUXILIAR. Ejemplos de campos clave: DEBE_HABER: Abono o cargo; TIPO_POLI: Tipo; IDUUID: Numero de registro de comprobantes; FECHA_POL: Fecha de registro; CCOSTOS: Centro de costos; EJERCICIO: Ejercicio.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  AUXILIAR22:
+    descripcion: 'Encabezado de pólizas contables: tipo y número de póliza, fecha, concepto y estatus. Sirve como registro maestro de asientos contables y se relaciona con sus partidas en AUXILIAR. Ejemplos de campos clave: DEBE_HABER: Abono o cargo; TIPO_POLI: Tipo; IDUUID: Numero de registro de comprobantes; FECHA_POL: Fecha de registro; CCOSTOS: Centro de costos; EJERCICIO: Ejercicio.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  AUXILIAR23:
+    descripcion: 'Encabezado de pólizas contables: tipo y número de póliza, fecha, concepto y estatus. Sirve como registro maestro de asientos contables y se relaciona con sus partidas en AUXILIAR. Ejemplos de campos clave: DEBE_HABER: Abono o cargo; TIPO_POLI: Tipo; IDUUID: Numero de registro de comprobantes; FECHA_POL: Fecha de registro; CCOSTOS: Centro de costos; EJERCICIO: Ejercicio.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  AUXILIAR24:
+    descripcion: 'Encabezado de pólizas contables: tipo y número de póliza, fecha, concepto y estatus. Sirve como registro maestro de asientos contables y se relaciona con sus partidas en AUXILIAR. Ejemplos de campos clave: DEBE_HABER: Abono o cargo; TIPO_POLI: Tipo; IDUUID: Numero de registro de comprobantes; FECHA_POL: Fecha de registro; CCOSTOS: Centro de costos; EJERCICIO: Ejercicio.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  AUXILIAR25:
+    descripcion: 'Encabezado de pólizas contables: tipo y número de póliza, fecha, concepto y estatus. Sirve como registro maestro de asientos contables y se relaciona con sus partidas en AUXILIAR. Ejemplos de campos clave: DEBE_HABER: Abono o cargo; TIPO_POLI: Tipo; IDUUID: Numero de registro de comprobantes; FECHA_POL: Fecha de registro; CCOSTOS: Centro de costos; EJERCICIO: Ejercicio.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  CCOSTOS:
+    descripcion: 'Tabla del sistema COI relacionada con procesos contables/fiscales; su función específica se infiere por sus campos. Ejemplos de campos clave: ID: Identificador; DESCRIPCION: Descripcion.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  CGRUPOS:
+    descripcion: 'Tabla del sistema COI relacionada con procesos contables/fiscales; su función específica se infiere por sus campos. Ejemplos de campos clave: ID: Identificador; DESCRIPCION: Descripcion.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  COMPLEMENTOSPAGOS:
+    descripcion: 'Encabezado de pólizas contables: tipo y número de póliza, fecha, concepto y estatus. Sirve como registro maestro de asientos contables y se relaciona con sus partidas en AUXILIAR. Ejemplos de campos clave: UUIDTIMBREPAGO: UUID del complemento de pago; TIPO_POLI: Tipo; RUTAXML: Ruta del complemento de pago; XML: XML Complementos de pago; SERIE: Serie del complemento; FOLIO: Folio del complemento.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  CONCEPTO:
+    descripcion: 'Tabla del sistema COI relacionada con procesos contables/fiscales; su función específica se infiere por sus campos. Ejemplos de campos clave: CONCEPTO: Conepto; DESCRIP: Descripcion.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  CONTROL:
+    descripcion: 'Tabla del sistema COI relacionada con procesos contables/fiscales; su función específica se infiere por sus campos. Ejemplos de campos clave: CTUUIDCOMP: Numero de control para informacion de comprobantes; CTCONCIVAA: Numero de control para conceptos IVA acreditable; CTCONCIVAT: Numero de control para conceptos IVA trasladado; CCOSTOS: Numero de control para centro de costos; CTCONCEPTOS: Numero de control para conceptos; CGRUPOS: Numero de control para grupos.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  CTAING:
+    descripcion: 'Catálogo del plan de cuentas (PUC): número, nombre, naturaleza, nivel y parámetros contables asociados; base para registrar movimientos y generar estados financieros. Ejemplos de campos clave: IDCONCEPIVAT: dentificador del concepto de iva trasladado; INCLUYEIVA: Indica si incluye o no IVA; PORCENTAJEIVA: Porcentaje de IVA; PORCENTAJEISR: Porcentaje de ISR; CUENTA: Numero de cuenta; IVADEFAULT: IVA default.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  CTANIF:
+    descripcion: 'Catálogo del plan de cuentas (PUC): número, nombre, naturaleza, nivel y parámetros contables asociados; base para registrar movimientos y generar estados financieros. Ejemplos de campos clave: CUENTA: Numero de cuenta contable asociada; ID_NIF: ID del rubro NIF.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  CTARUB:
+    descripcion: 'Catálogo del plan de cuentas (PUC): número, nombre, naturaleza, nivel y parámetros contables asociados; base para registrar movimientos y generar estados financieros. Ejemplos de campos clave: CUENTA: Cuenta; SEGPAPA: Cuenta papa; RUBRO: Rubro.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  CTAS_PRODSERV:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: CVE_PRODSERV: Clave del producto o servicio SAT, solo caracteres numericos; NUM_CTA_COMPRA: Numero de cuenta contable para comprobantes de compras; NUM_CTA_VENTA: Numero de cuenta contable para comprobantes de ventas.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  CTATER:
+    descripcion: 'Catálogo del plan de cuentas (PUC): número, nombre, naturaleza, nivel y parámetros contables asociados; base para registrar movimientos y generar estados financieros. Ejemplos de campos clave: IDCONCEPIVAA: Clave del concepto con iva; INCLUYEIVA: Indica si incluye iva; PORCENTAJEIVA: Porcentaje de IVA; PORCENTAJEISR: Porcentaje de ISR; CUENTA: Numero de cuenta; IVADEFAULT: Iva default.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  CUENTAS05:
+    descripcion: 'Catálogo del plan de cuentas (PUC): número, nombre, naturaleza, nivel y parámetros contables asociados; base para registrar movimientos y generar estados financieros. Ejemplos de campos clave: NOINCLUIRXML: Indica que no se incluira al general el xml de contabilidad; CAPTURACHEQUE: Indica si se captura formas de pago; BANCO: Banco capturado en la forma de pago; CAPTURAUUID: Indica si se captura comprobantes; CAPCHEQTIPOMOV: Tipo de movimiento; BANCOEXTRANJERO: Banco extranjero.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  CUENTAS06:
+    descripcion: 'Catálogo del plan de cuentas (PUC): número, nombre, naturaleza, nivel y parámetros contables asociados; base para registrar movimientos y generar estados financieros. Ejemplos de campos clave: NOINCLUIRXML: Indica que no se incluira al general el xml de contabilidad; CAPTURACHEQUE: Indica si se captura formas de pago; BANCO: Banco capturado en la forma de pago; CAPTURAUUID: Indica si se captura comprobantes; CAPCHEQTIPOMOV: Tipo de movimiento; BANCOEXTRANJERO: Banco extranjero.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  CUENTAS07:
+    descripcion: 'Catálogo del plan de cuentas (PUC): número, nombre, naturaleza, nivel y parámetros contables asociados; base para registrar movimientos y generar estados financieros. Ejemplos de campos clave: NOINCLUIRXML: Indica que no se incluira al general el xml de contabilidad; CAPTURACHEQUE: Indica si se captura formas de pago; BANCO: Banco capturado en la forma de pago; CAPTURAUUID: Indica si se captura comprobantes; CAPCHEQTIPOMOV: Tipo de movimiento; BANCOEXTRANJERO: Banco extranjero.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  CUENTAS08:
+    descripcion: 'Catálogo del plan de cuentas (PUC): número, nombre, naturaleza, nivel y parámetros contables asociados; base para registrar movimientos y generar estados financieros. Ejemplos de campos clave: NOINCLUIRXML: Indica que no se incluira al general el xml de contabilidad; CAPTURACHEQUE: Indica si se captura formas de pago; BANCO: Banco capturado en la forma de pago; CAPTURAUUID: Indica si se captura comprobantes; CAPCHEQTIPOMOV: Tipo de movimiento; BANCOEXTRANJERO: Banco extranjero.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  CUENTAS09:
+    descripcion: 'Catálogo del plan de cuentas (PUC): número, nombre, naturaleza, nivel y parámetros contables asociados; base para registrar movimientos y generar estados financieros. Ejemplos de campos clave: NOINCLUIRXML: Indica que no se incluira al general el xml de contabilidad; CAPTURACHEQUE: Indica si se captura formas de pago; BANCO: Banco capturado en la forma de pago; CAPTURAUUID: Indica si se captura comprobantes; CAPCHEQTIPOMOV: Tipo de movimiento; BANCOEXTRANJERO: Banco extranjero.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  CUENTAS10:
+    descripcion: 'Catálogo del plan de cuentas (PUC): número, nombre, naturaleza, nivel y parámetros contables asociados; base para registrar movimientos y generar estados financieros. Ejemplos de campos clave: NOINCLUIRXML: Indica que no se incluira al general el xml de contabilidad; CAPTURACHEQUE: Indica si se captura formas de pago; BANCO: Banco capturado en la forma de pago; CAPTURAUUID: Indica si se captura comprobantes; CAPCHEQTIPOMOV: Tipo de movimiento; BANCOEXTRANJERO: Banco extranjero.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  CUENTAS11:
+    descripcion: 'Catálogo del plan de cuentas (PUC): número, nombre, naturaleza, nivel y parámetros contables asociados; base para registrar movimientos y generar estados financieros. Ejemplos de campos clave: NOINCLUIRXML: Indica que no se incluira al general el xml de contabilidad; CAPTURACHEQUE: Indica si se captura formas de pago; BANCO: Banco capturado en la forma de pago; CAPTURAUUID: Indica si se captura comprobantes; CAPCHEQTIPOMOV: Tipo de movimiento; BANCOEXTRANJERO: Banco extranjero.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  CUENTAS12:
+    descripcion: 'Catálogo del plan de cuentas (PUC): número, nombre, naturaleza, nivel y parámetros contables asociados; base para registrar movimientos y generar estados financieros. Ejemplos de campos clave: NOINCLUIRXML: Indica que no se incluira al general el xml de contabilidad; CAPTURACHEQUE: Indica si se captura formas de pago; BANCO: Banco capturado en la forma de pago; CAPTURAUUID: Indica si se captura comprobantes; CAPCHEQTIPOMOV: Tipo de movimiento; BANCOEXTRANJERO: Banco extranjero.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  CUENTAS13:
+    descripcion: 'Catálogo del plan de cuentas (PUC): número, nombre, naturaleza, nivel y parámetros contables asociados; base para registrar movimientos y generar estados financieros. Ejemplos de campos clave: NOINCLUIRXML: Indica que no se incluira al general el xml de contabilidad; CAPTURACHEQUE: Indica si se captura formas de pago; BANCO: Banco capturado en la forma de pago; CAPTURAUUID: Indica si se captura comprobantes; CAPCHEQTIPOMOV: Tipo de movimiento; BANCOEXTRANJERO: Banco extranjero.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  CUENTAS14:
+    descripcion: 'Catálogo del plan de cuentas (PUC): número, nombre, naturaleza, nivel y parámetros contables asociados; base para registrar movimientos y generar estados financieros. Ejemplos de campos clave: NOINCLUIRXML: Indica que no se incluira al general el xml de contabilidad; CAPTURACHEQUE: Indica si se captura formas de pago; BANCO: Banco capturado en la forma de pago; CAPTURAUUID: Indica si se captura comprobantes; CAPCHEQTIPOMOV: Tipo de movimiento; BANCOEXTRANJERO: Banco extranjero.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  CUENTAS15:
+    descripcion: 'Catálogo del plan de cuentas (PUC): número, nombre, naturaleza, nivel y parámetros contables asociados; base para registrar movimientos y generar estados financieros. Ejemplos de campos clave: NOINCLUIRXML: Indica que no se incluira al general el xml de contabilidad; CAPTURACHEQUE: Indica si se captura formas de pago; BANCO: Banco capturado en la forma de pago; CAPTURAUUID: Indica si se captura comprobantes; CAPCHEQTIPOMOV: Tipo de movimiento; BANCOEXTRANJERO: Banco extranjero.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  CUENTAS16:
+    descripcion: 'Catálogo del plan de cuentas (PUC): número, nombre, naturaleza, nivel y parámetros contables asociados; base para registrar movimientos y generar estados financieros. Ejemplos de campos clave: NOINCLUIRXML: Indica que no se incluira al general el xml de contabilidad; CAPTURACHEQUE: Indica si se captura formas de pago; BANCO: Banco capturado en la forma de pago; CAPTURAUUID: Indica si se captura comprobantes; CAPCHEQTIPOMOV: Tipo de movimiento; BANCOEXTRANJERO: Banco extranjero.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  CUENTAS17:
+    descripcion: 'Catálogo del plan de cuentas (PUC): número, nombre, naturaleza, nivel y parámetros contables asociados; base para registrar movimientos y generar estados financieros. Ejemplos de campos clave: NOINCLUIRXML: Indica que no se incluira al general el xml de contabilidad; CAPTURACHEQUE: Indica si se captura formas de pago; BANCO: Banco capturado en la forma de pago; CAPTURAUUID: Indica si se captura comprobantes; CAPCHEQTIPOMOV: Tipo de movimiento; BANCOEXTRANJERO: Banco extranjero.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  CUENTAS18:
+    descripcion: 'Catálogo del plan de cuentas (PUC): número, nombre, naturaleza, nivel y parámetros contables asociados; base para registrar movimientos y generar estados financieros. Ejemplos de campos clave: NOINCLUIRXML: Indica que no se incluira al general el xml de contabilidad; CAPTURACHEQUE: Indica si se captura formas de pago; BANCO: Banco capturado en la forma de pago; CAPTURAUUID: Indica si se captura comprobantes; CAPCHEQTIPOMOV: Tipo de movimiento; BANCOEXTRANJERO: Banco extranjero.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  CUENTAS19:
+    descripcion: 'Catálogo del plan de cuentas (PUC): número, nombre, naturaleza, nivel y parámetros contables asociados; base para registrar movimientos y generar estados financieros. Ejemplos de campos clave: NOINCLUIRXML: Indica que no se incluira al general el xml de contabilidad; RFCFLUJO: RFCEmisor Cuenta ordenante o RFCEmisor cuenta beneficiario; CAPTURACHEQUE: Indica si se captura formas de pago; BANCO: Banco capturado en la forma de pago; CAPTURAUUID: Indica si se captura comprobantes; CAPCHEQTIPOMOV: Tipo de movimiento.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  CUENTAS20:
+    descripcion: 'Catálogo del plan de cuentas (PUC): número, nombre, naturaleza, nivel y parámetros contables asociados; base para registrar movimientos y generar estados financieros. Ejemplos de campos clave: NOINCLUIRXML: Indica que no se incluira al general el xml de contabilidad; RFCFLUJO: RFCEmisor Cuenta ordenante o RFCEmisor cuenta beneficiario; CAPTURACHEQUE: Indica si se captura formas de pago; BANCO: Banco capturado en la forma de pago; CAPTURAUUID: Indica si se captura comprobantes; CAPCHEQTIPOMOV: Tipo de movimiento.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  CUENTAS21:
+    descripcion: 'Catálogo del plan de cuentas (PUC): número, nombre, naturaleza, nivel y parámetros contables asociados; base para registrar movimientos y generar estados financieros. Ejemplos de campos clave: NOINCLUIRXML: Indica que no se incluira al general el xml de contabilidad; RFCFLUJO: RFCEmisor Cuenta ordenante o RFCEmisor cuenta beneficiario; CAPTURACHEQUE: Indica si se captura formas de pago; BANCO: Banco capturado en la forma de pago; CAPTURAUUID: Indica si se captura comprobantes; CAPCHEQTIPOMOV: Tipo de movimiento.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  CUENTAS22:
+    descripcion: 'Catálogo del plan de cuentas (PUC): número, nombre, naturaleza, nivel y parámetros contables asociados; base para registrar movimientos y generar estados financieros. Ejemplos de campos clave: NOINCLUIRXML: Indica que no se incluira al general el xml de contabilidad; RFCFLUJO: RFCEmisor Cuenta ordenante o RFCEmisor cuenta beneficiario; CAPTURACHEQUE: Indica si se captura formas de pago; BANCO: Banco capturado en la forma de pago; CAPTURAUUID: Indica si se captura comprobantes; CAPCHEQTIPOMOV: Tipo de movimiento.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  CUENTAS23:
+    descripcion: 'Catálogo del plan de cuentas (PUC): número, nombre, naturaleza, nivel y parámetros contables asociados; base para registrar movimientos y generar estados financieros. Ejemplos de campos clave: NOINCLUIRXML: Indica que no se incluira al general el xml de contabilidad; RFCFLUJO: RFCEmisor Cuenta ordenante o RFCEmisor cuenta beneficiario; CAPTURACHEQUE: Indica si se captura formas de pago; BANCO: Banco capturado en la forma de pago; CAPTURAUUID: Indica si se captura comprobantes; CAPCHEQTIPOMOV: Tipo de movimiento.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  CUENTAS24:
+    descripcion: 'Catálogo del plan de cuentas (PUC): número, nombre, naturaleza, nivel y parámetros contables asociados; base para registrar movimientos y generar estados financieros. Ejemplos de campos clave: NOINCLUIRXML: Indica que no se incluira al general el xml de contabilidad; RFCFLUJO: RFCEmisor Cuenta ordenante o RFCEmisor cuenta beneficiario; CAPTURACHEQUE: Indica si se captura formas de pago; BANCO: Banco capturado en la forma de pago; CAPTURAUUID: Indica si se captura comprobantes; CAPCHEQTIPOMOV: Tipo de movimiento.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  CUENTAS25:
+    descripcion: 'Catálogo del plan de cuentas (PUC): número, nombre, naturaleza, nivel y parámetros contables asociados; base para registrar movimientos y generar estados financieros. Ejemplos de campos clave: NOINCLUIRXML: Indica que no se incluira al general el xml de contabilidad; RFCFLUJO: RFCEmisor Cuenta ordenante o RFCEmisor cuenta beneficiario; CAPTURACHEQUE: Indica si se captura formas de pago; BANCO: Banco capturado en la forma de pago; CAPTURAUUID: Indica si se captura comprobantes; CAPCHEQTIPOMOV: Tipo de movimiento.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  DEPTOS:
+    descripcion: 'Tabla del sistema COI relacionada con procesos contables/fiscales; su función específica se infiere por sus campos. Ejemplos de campos clave: DESCRIP: Descirpcion; DEPTO: Depto.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  DESIET:
+    descripcion: 'Encabezado de pólizas contables: tipo y número de póliza, fecha, concepto y estatus. Sirve como registro maestro de asientos contables y se relaciona con sus partidas en AUXILIAR. Ejemplos de campos clave: FECHAPOL: Fecha de registro; CUENTAGAS: Numero de cuenta; TIPOPOL: Tipo; IDCONCEP: Identificador del concepto; PORCDED: Porcentaje de deduccion; MONTODED: Monto de deduccion.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  DOCTOSFISCALES:
+    descripcion: 'Repositorio de CFDI con datos fiscales (RFC emisor/receptor, totales, impuestos) y su XML para vincular con pólizas y cumplir Contabilidad Electrónica. Ejemplos de campos clave: UUIDTIMBRECFDI: UUID del nodo TimbreFiscalDigital del CFDI; FECHAEMISION: Fecha de emision del documento; USOCFDI: UsoCDFI del nodo cfdi:Receptor; NUMCTAPAGO: Numero de cuenta del pago; VERSIONCFDI: Version del documento; TIPODECOMPROBANTE: Tipo del comprobante.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  DOCTOSRELPAGOS:
+    descripcion: Control de saldos (COI)
+    modulo: Contabilidad
+    tipo_negocio: Desconocido
+    tags:
+      - contabilidad
+  EDOFINNIFS:
+    descripcion: 'Tabla del sistema COI relacionada con procesos contables/fiscales; su función específica se infiere por sus campos. Ejemplos de campos clave: ID_EDO: ID del estado financiero, 1= B6 Estado de situacion financiera, 2= B3 Estado de Resultados Integral; ID_NIF: ID del rubro NIF (solo de nivel 1) relacionado; NOMBRE: Nombre del estado financiero.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  ETIQ_CCOSTOS_SIGO:
+    descripcion: 'Tabla del sistema COI relacionada con procesos contables/fiscales; su función específica se infiere por sus campos. Ejemplos de campos clave: CCOSTOS_COI: Centro de Costos del sistema COI asignada; DESCRIPCION: Valor de la columna Descripción de la matriz de homologación; ETIQUETA: etiqueta que viene en el archivo de importación.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  ETIQ_CTAS_POLDINAMICA:
+    descripcion: 'Catálogo del plan de cuentas (PUC): número, nombre, naturaleza, nivel y parámetros contables asociados; base para registrar movimientos y generar estados financieros. Ejemplos de campos clave: CUENTA_COI: cuenta contable del sistema COI que sustituye la etiqueta; ORIGEN: Origen o tipo de la etiqueta donde 0 seria el valor de las etiquetas que vienen por default y 1 el valor de las etiquetas que agrega el usuario; ETIQUETA: etiqueta que viene en la poliza dinamica; DESCRIPCION: definicion de la etiqueta.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  ETIQ_CTAS_SIGO:
+    descripcion: 'Catálogo del plan de cuentas (PUC): número, nombre, naturaleza, nivel y parámetros contables asociados; base para registrar movimientos y generar estados financieros. Ejemplos de campos clave: CUENTA_COI: cuenta contable del sistema COI asignada; DESCRIPCION: Valor de la columna Descripción de la matriz de homologación; OPERACION: Valor de la columna Operación de la matriz de homologación; ETIQUETA: etiqueta o RFC que viene en el archivo de importación.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  ETIQ_OPERACION_SIGO:
+    descripcion: 'Tabla del sistema COI relacionada con procesos contables/fiscales; su función específica se infiere por sus campos. Ejemplos de campos clave: OPERACION: Valor de la columna Operación de la matriz de homologación; ETIQUETA: etiqueta que viene en el archivo de importación.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  FOLIOS:
+    descripcion: 'Tabla del sistema COI relacionada con procesos contables/fiscales; su función específica se infiere por sus campos. Ejemplos de campos clave: FOLIO10: Numero de folio para el mes 10; FOLIO11: Numero de folio para el mes 11; FOLIO12: Numero de folio para el mes 12; FOLIO13: Numero de folio para el mes 13; FOLIO14: Numero de folio para el mes 14; FOLIO01: Numero de folio para el mes 1.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  HISTOR:
+    descripcion: 'Tabla del sistema COI relacionada con procesos contables/fiscales; su función específica se infiere por sus campos. Ejemplos de campos clave: FECHA: Fecha registro; TIPCAMBIO: Tipo de cambio; MONEDA: Moneda.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  HOJAS:
+    descripcion: 'Tabla del sistema COI relacionada con procesos contables/fiscales; su función específica se infiere por sus campos. Ejemplos de campos clave: TIPOHOJA: Tipo hoja; TITULO: Titulo; HOJAXLS: Hoja.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  IMPUESTOSFISCALES:
+    descripcion: 'Tabla del sistema COI relacionada con procesos contables/fiscales; su función específica se infiere por sus campos. Ejemplos de campos clave: TASACUOTA: Valor de la tasa o cuota; UUIDTIMBRECFDI: UUID timbre del cfdi; TIPOIMPUESTO: tipo del impuesto (0 Trasladado, 1 Retenido); TIPOFACTOR: Tipo factor (tasa ,cuota o exento); BASE: Base del impuesto; IMPORTE: Importe.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  INFADIPAR:
+    descripcion: Movimientos y transacciones (COI)
+    modulo: Contabilidad
+    tipo_negocio: Desconocido
+    tags:
+      - contabilidad
+  INPC:
+    descripcion: 'Definición y control de ejercicios y periodos contables: fechas, estado (abierto/cerrado) y parámetros para cierre/apertura. Ejemplos de campos clave: EJERCICIO: Ejercicio; MES9: INCP de Septiembre; MES11: INCP de Novimebre; MES12: INCP de Diciembre; MES2: INCP de Febrero; MES10: INCP de Octubre.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  LISTANEGRARFC:
+    descripcion: 'Tabla del sistema COI relacionada con procesos contables/fiscales; su función específica se infiere por sus campos. Ejemplos de campos clave: RFC: RFC; SITUACIONCONTRIBUYENTE: Situacion del contribuyente; PBPAGSAT: Publicacion pagina SAT.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  MONEDAS:
+    descripcion: 'Tabla del sistema COI relacionada con procesos contables/fiscales; su función específica se infiere por sus campos. Ejemplos de campos clave: FECHA: Fecha registro; TIPOCAMBIO: Tipo de cambio; DESPAUTO: Desplazamiento automatico; CLASSAT: Clave fiscal; NOMBRE: Descripcion; PREFIJO: Prefijo.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  NIFS:
+    descripcion: 'Catálogo del plan de cuentas (PUC): número, nombre, naturaleza, nivel y parámetros contables asociados; base para registrar movimientos y generar estados financieros. Ejemplos de campos clave: DESCRIPCION: Descripcion del rubro NIF; ID_RAIZ: ID Raiz del rubro NIF; NIVEL: Nivel del rubro NIF; NOTAFINNIF: Nota financiera NIF; ID_PADRE: ID del rubro padre; ID_NIF: ID del rubro NIF.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  OPEIET:
+    descripcion: 'Encabezado de pólizas contables: tipo y número de póliza, fecha, concepto y estatus. Sirve como registro maestro de asientos contables y se relaciona con sus partidas en AUXILIAR. Ejemplos de campos clave: IVANOAC15: Porcentaje de iva  no acreditable al 15 por ciento; IVANOAC10: Porcentaje de iva noa creditable al 10 por ciento; IVAOP15: Porcentaje de iva pagado al 15 por ciento; IVAOP10: Porcentaje de iva pagado al 10 por ciento; IDCONCEPIVAT: Identificador del concepto de iva; IVATRASLAD: Porcentaje de iva trasladado.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  OPETER:
+    descripcion: 'Encabezado de pólizas contables: tipo y número de póliza, fecha, concepto y estatus. Sirve como registro maestro de asientos contables y se relaciona con sus partidas en AUXILIAR. Ejemplos de campos clave: IMPORTEIVANOREQ8; IMPORTEIVANOREQ16_GENERAL; IVANOAC15: Porcentaje de iva no acreditable al 15 por ciento; IVANOAC10: Porcentaje de iva no acreditable al 10 por ciento; IVAOP15: Porcentaje de iva pagado al 15 por ciento; IVAOP10: Porcentaje de iva pagado al 15 por ciento.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  OTROSIMPUESTOS:
+    descripcion: 'Detalle de operaciones con terceros para DIOT/IVA: bases por tasa, traslados/retenciones y parámetros para acreditación/prorrata. Ejemplos de campos clave: TIPOIMPUESTO: Indica el tipo de impuesto (1=ISR, 2=IVA, 3=IEPS, 4= Impuesto local, 5= Otros impuestos, 6= Otras retenciones); TIPO: Indica si es impuesto trasladado  ( 1= trasladado, 0 = retenido); TASA: Tasa o cuota del impuesto; BASE: Base del impuesto; TIPOFACTOR; APLICADIOT: Indica si el impuesto es involucrado en el calculo de DIOT, (1= si, 0 = no).'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  OTROSIMPUESTOSING:
+    descripcion: 'Tabla del sistema COI relacionada con procesos contables/fiscales; su función específica se infiere por sus campos. Ejemplos de campos clave: TIPOIMPUESTO: Indica el tipo de impuesto (1=ISR, 2=IVA, 3=IEPS, 4= Impuesto local, 5= Otros impuestos, 6= Otras retenciones); TIPO: Indica si es impuesto trasladado  ( 1= trasladado, 0 = retenido); TIPOFACTOR: Indica si es  tasa o cuota (tasa , cuota); TASA: Tasa o cuota del impuesto; BASE: Base del impuesto; APLICAIC: Indica si el impuesto es involucrado en el calculo de Ia tabla IETU, (1= si, 0 = no).'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  PAGO:
+    descripcion: 'Vinculación de comprobantes fiscales (UUID) y terceros (RFC) con pólizas/movimientos para trazabilidad fiscal y reporteo. Ejemplos de campos clave: TIPOCADPAGO: Registra la clave del tipo de cadena de pago que genera la entidad receptora del pago.; UUIDTIMBREPAGO: id de complementos de pago; FECHAPAGO: Fecha del pago; CADPAGO: Cadena original del comprobante de pago generado por la entidad emisora de la cuenta beneficiaria; RFCEMISORCTABEN: RFC emisor de la cuenta beneficiaria; CERTPAGO: Certificado que corresponde al pago..'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  PARAMEMP:
+    descripcion: 'Catálogo del plan de cuentas (PUC): número, nombre, naturaleza, nivel y parámetros contables asociados; base para registrar movimientos y generar estados financieros. Ejemplos de campos clave: CUENTAIVATRASLADADO: Cuenta  de IIVA trasladado de la cuenta; CUENTAIVAACREDITABLE: Cuenta de IVA acreditable; GDIOTAPARTIRCFDI: Indica si la captura del diot sera a partir de CFDIs; RFCREPRE: RFC del representante  legal de la empresa; CSTIPOCMB: Indica si se captura tipo de cambio; CPTIPOCMB: Indica si se captura tipo de cambio.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  PLANTILLAXRFC:
+    descripcion: 'Tabla del sistema COI relacionada con procesos contables/fiscales; su función específica se infiere por sus campos. Ejemplos de campos clave: RFC: RFC del tercero; USOCFDI; CLASPLANTILLA: Tipo de cfdi para el que aplica la plantilla (1=factura,2=notacredito,3=credito,4=compPago); NOMBREPLANTILLA: Nombre de la plantilla para 1a contabilizacion del UUID; NOMBREPLANTILLA2: Nombre de la plantilla para 2a contabilizacion del UUID; VERSION.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  POLDINAMICA:
+    descripcion: 'Tabla del sistema COI relacionada con procesos contables/fiscales; su función específica se infiere por sus campos. Ejemplos de campos clave: TIPO: Tipo; CLAS_USR: Clasificacion segun el usuario; TITULO: Titulo del archivo; RUTAARCHIVO: Ruta del archivo; VERSION.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  POLIZAS05:
+    descripcion: 'Encabezado de pólizas contables: tipo y número de póliza, fecha, concepto y estatus. Sirve como registro maestro de asientos contables y se relaciona con sus partidas en AUXILIAR. Ejemplos de campos clave: TIPO_POLI: Tipo poliza; UUIDOP: UUID de la operacion asociada; UUID: UUID del comprobante; ESPOLIZAPRIVADA: Es poliza privada; NUM_POLIZ: Numero de poliza; FECHA_POL: Fecha poliza.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  POLIZAS06:
+    descripcion: 'Encabezado de pólizas contables: tipo y número de póliza, fecha, concepto y estatus. Sirve como registro maestro de asientos contables y se relaciona con sus partidas en AUXILIAR. Ejemplos de campos clave: TIPO_POLI: Tipo poliza; UUIDOP: UUID de la operacion asociada; UUID: UUID del comprobante; ESPOLIZAPRIVADA: Es poliza privada; NUM_POLIZ: Numero de poliza; FECHA_POL: Fecha poliza.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  POLIZAS07:
+    descripcion: 'Encabezado de pólizas contables: tipo y número de póliza, fecha, concepto y estatus. Sirve como registro maestro de asientos contables y se relaciona con sus partidas en AUXILIAR. Ejemplos de campos clave: TIPO_POLI: Tipo poliza; UUIDOP: UUID de la operacion asociada; UUID: UUID del comprobante; ESPOLIZAPRIVADA: Es poliza privada; NUM_POLIZ: Numero de poliza; FECHA_POL: Fecha poliza.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  POLIZAS08:
+    descripcion: 'Encabezado de pólizas contables: tipo y número de póliza, fecha, concepto y estatus. Sirve como registro maestro de asientos contables y se relaciona con sus partidas en AUXILIAR. Ejemplos de campos clave: TIPO_POLI: Tipo poliza; UUIDOP: UUID de la operacion asociada; UUID: UUID del comprobante; ESPOLIZAPRIVADA: Es poliza privada; NUM_POLIZ: Numero de poliza; FECHA_POL: Fecha poliza.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  POLIZAS09:
+    descripcion: 'Encabezado de pólizas contables: tipo y número de póliza, fecha, concepto y estatus. Sirve como registro maestro de asientos contables y se relaciona con sus partidas en AUXILIAR. Ejemplos de campos clave: TIPO_POLI: Tipo poliza; UUIDOP: UUID de la operacion asociada; UUID: UUID del comprobante; ESPOLIZAPRIVADA: Es poliza privada; NUM_POLIZ: Numero de poliza; FECHA_POL: Fecha poliza.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  POLIZAS10:
+    descripcion: 'Encabezado de pólizas contables: tipo y número de póliza, fecha, concepto y estatus. Sirve como registro maestro de asientos contables y se relaciona con sus partidas en AUXILIAR. Ejemplos de campos clave: TIPO_POLI: Tipo poliza; UUIDOP: UUID de la operacion asociada; UUID: UUID del comprobante; ESPOLIZAPRIVADA: Es poliza privada; NUM_POLIZ: Numero de poliza; FECHA_POL: Fecha poliza.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  POLIZAS11:
+    descripcion: 'Encabezado de pólizas contables: tipo y número de póliza, fecha, concepto y estatus. Sirve como registro maestro de asientos contables y se relaciona con sus partidas en AUXILIAR. Ejemplos de campos clave: TIPO_POLI: Tipo poliza; UUIDOP: UUID de la operacion asociada; UUID: UUID del comprobante; ESPOLIZAPRIVADA: Es poliza privada; NUM_POLIZ: Numero de poliza; FECHA_POL: Fecha poliza.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  POLIZAS12:
+    descripcion: 'Encabezado de pólizas contables: tipo y número de póliza, fecha, concepto y estatus. Sirve como registro maestro de asientos contables y se relaciona con sus partidas en AUXILIAR. Ejemplos de campos clave: TIPO_POLI: Tipo poliza; UUIDOP: UUID de la operacion asociada; UUID: UUID del comprobante; ESPOLIZAPRIVADA: Es poliza privada; NUM_POLIZ: Numero de poliza; FECHA_POL: Fecha poliza.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  POLIZAS13:
+    descripcion: 'Encabezado de pólizas contables: tipo y número de póliza, fecha, concepto y estatus. Sirve como registro maestro de asientos contables y se relaciona con sus partidas en AUXILIAR. Ejemplos de campos clave: TIPO_POLI: Tipo poliza; UUIDOP: UUID de la operacion asociada; UUID: UUID del comprobante; ESPOLIZAPRIVADA: Es poliza privada; NUM_POLIZ: Numero de poliza; FECHA_POL: Fecha poliza.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  POLIZAS14:
+    descripcion: 'Encabezado de pólizas contables: tipo y número de póliza, fecha, concepto y estatus. Sirve como registro maestro de asientos contables y se relaciona con sus partidas en AUXILIAR. Ejemplos de campos clave: TIPO_POLI: Tipo poliza; UUIDOP: UUID de la operacion asociada; UUID: UUID del comprobante; ESPOLIZAPRIVADA: Es poliza privada; NUM_POLIZ: Numero de poliza; FECHA_POL: Fecha poliza.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  POLIZAS15:
+    descripcion: 'Encabezado de pólizas contables: tipo y número de póliza, fecha, concepto y estatus. Sirve como registro maestro de asientos contables y se relaciona con sus partidas en AUXILIAR. Ejemplos de campos clave: TIPO_POLI: Tipo poliza; UUIDOP: UUID de la operacion asociada; UUID: UUID del comprobante; ESPOLIZAPRIVADA: Es poliza privada; NUM_POLIZ: Numero de poliza; FECHA_POL: Fecha poliza.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  POLIZAS16:
+    descripcion: 'Encabezado de pólizas contables: tipo y número de póliza, fecha, concepto y estatus. Sirve como registro maestro de asientos contables y se relaciona con sus partidas en AUXILIAR. Ejemplos de campos clave: TIPO_POLI: Tipo poliza; UUIDOP: UUID de la operacion asociada; UUID: UUID del comprobante; ESPOLIZAPRIVADA: Es poliza privada; NUM_POLIZ: Numero de poliza; FECHA_POL: Fecha poliza.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  POLIZAS17:
+    descripcion: 'Encabezado de pólizas contables: tipo y número de póliza, fecha, concepto y estatus. Sirve como registro maestro de asientos contables y se relaciona con sus partidas en AUXILIAR. Ejemplos de campos clave: TIPO_POLI: Tipo poliza; UUIDOP: UUID de la operacion asociada; UUID: UUID del comprobante; ESPOLIZAPRIVADA: Es poliza privada; NUM_POLIZ: Numero de poliza; FECHA_POL: Fecha poliza.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  POLIZAS18:
+    descripcion: 'Encabezado de pólizas contables: tipo y número de póliza, fecha, concepto y estatus. Sirve como registro maestro de asientos contables y se relaciona con sus partidas en AUXILIAR. Ejemplos de campos clave: TIPO_POLI: Tipo poliza; UUIDOP: UUID de la operacion asociada; UUID: UUID del comprobante; ESPOLIZAPRIVADA: Es poliza privada; NUM_POLIZ: Numero de poliza; FECHA_POL: Fecha poliza.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  POLIZAS19:
+    descripcion: 'Encabezado de pólizas contables: tipo y número de póliza, fecha, concepto y estatus. Sirve como registro maestro de asientos contables y se relaciona con sus partidas en AUXILIAR. Ejemplos de campos clave: TIPO_POLI: Tipo poliza; UUIDOP: UUID de la operacion asociada; UUID: UUID del comprobante; ESPOLIZAPRIVADA: Es poliza privada; NUM_POLIZ: Numero de poliza; FECHA_POL: Fecha poliza.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  POLIZAS20:
+    descripcion: 'Encabezado de pólizas contables: tipo y número de póliza, fecha, concepto y estatus. Sirve como registro maestro de asientos contables y se relaciona con sus partidas en AUXILIAR. Ejemplos de campos clave: TIPO_POLI: Tipo poliza; UUIDOP: UUID de la operacion asociada; UUID: UUID del comprobante; ESPOLIZAPRIVADA: Es poliza privada; NUM_POLIZ: Numero de poliza; FECHA_POL: Fecha poliza.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  POLIZAS21:
+    descripcion: 'Encabezado de pólizas contables: tipo y número de póliza, fecha, concepto y estatus. Sirve como registro maestro de asientos contables y se relaciona con sus partidas en AUXILIAR. Ejemplos de campos clave: TIPO_POLI: Tipo poliza; UUIDOP: UUID de la operacion asociada; UUID: UUID del comprobante; ESPOLIZAPRIVADA: Es poliza privada; NUM_POLIZ: Numero de poliza; FECHA_POL: Fecha poliza.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  POLIZAS22:
+    descripcion: 'Encabezado de pólizas contables: tipo y número de póliza, fecha, concepto y estatus. Sirve como registro maestro de asientos contables y se relaciona con sus partidas en AUXILIAR. Ejemplos de campos clave: TIPO_POLI: Tipo poliza; UUIDOP: UUID de la operacion asociada; UUID: UUID del comprobante; ESPOLIZAPRIVADA: Es poliza privada; NUM_POLIZ: Numero de poliza; FECHA_POL: Fecha poliza.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  POLIZAS23:
+    descripcion: 'Encabezado de pólizas contables: tipo y número de póliza, fecha, concepto y estatus. Sirve como registro maestro de asientos contables y se relaciona con sus partidas en AUXILIAR. Ejemplos de campos clave: TIPO_POLI: Tipo poliza; UUIDOP: UUID de la operacion asociada; UUID: UUID del comprobante; ESPOLIZAPRIVADA: Es poliza privada; NUM_POLIZ: Numero de poliza; FECHA_POL: Fecha poliza.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  POLIZAS24:
+    descripcion: 'Encabezado de pólizas contables: tipo y número de póliza, fecha, concepto y estatus. Sirve como registro maestro de asientos contables y se relaciona con sus partidas en AUXILIAR. Ejemplos de campos clave: TIPO_POLI: Tipo poliza; UUIDOP: UUID de la operacion asociada; UUID: UUID del comprobante; ESPOLIZAPRIVADA: Es poliza privada; NUM_POLIZ: Numero de poliza; FECHA_POL: Fecha poliza.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  POLIZAS25:
+    descripcion: 'Encabezado de pólizas contables: tipo y número de póliza, fecha, concepto y estatus. Sirve como registro maestro de asientos contables y se relaciona con sus partidas en AUXILIAR. Ejemplos de campos clave: TIPO_POLI: Tipo poliza; UUIDOP: UUID de la operacion asociada; UUID: UUID del comprobante; ESPOLIZAPRIVADA: Es poliza privada; NUM_POLIZ: Numero de poliza; FECHA_POL: Fecha poliza.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  PRESUP05:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; PRESUP10: Presupuesto para el mes 10; PRESUP11: Presupuesto para el mes 11; PRESUP12: Presupuesto para el mes 12; PRESUP13: Presupuesto para el mes 13; PRESUP14: Presupuesto para el mes 14.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  PRESUP06:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; PRESUP10: Presupuesto para el mes 10; PRESUP11: Presupuesto para el mes 11; PRESUP12: Presupuesto para el mes 12; PRESUP13: Presupuesto para el mes 13; PRESUP14: Presupuesto para el mes 14.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  PRESUP07:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; PRESUP10: Presupuesto para el mes 10; PRESUP11: Presupuesto para el mes 11; PRESUP12: Presupuesto para el mes 12; PRESUP13: Presupuesto para el mes 13; PRESUP14: Presupuesto para el mes 14.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  PRESUP08:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; PRESUP10: Presupuesto para el mes 10; PRESUP11: Presupuesto para el mes 11; PRESUP12: Presupuesto para el mes 12; PRESUP13: Presupuesto para el mes 13; PRESUP14: Presupuesto para el mes 14.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  PRESUP09:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; PRESUP10: Presupuesto para el mes 10; PRESUP11: Presupuesto para el mes 11; PRESUP12: Presupuesto para el mes 12; PRESUP13: Presupuesto para el mes 13; PRESUP14: Presupuesto para el mes 14.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  PRESUP10:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; PRESUP10: Presupuesto para el mes 10; PRESUP11: Presupuesto para el mes 11; PRESUP12: Presupuesto para el mes 12; PRESUP13: Presupuesto para el mes 13; PRESUP14: Presupuesto para el mes 14.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  PRESUP11:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; PRESUP10: Presupuesto para el mes 10; PRESUP11: Presupuesto para el mes 11; PRESUP12: Presupuesto para el mes 12; PRESUP13: Presupuesto para el mes 13; PRESUP14: Presupuesto para el mes 14.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  PRESUP12:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; PRESUP10: Presupuesto para el mes 10; PRESUP11: Presupuesto para el mes 11; PRESUP12: Presupuesto para el mes 12; PRESUP13: Presupuesto para el mes 13; PRESUP14: Presupuesto para el mes 14.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  PRESUP13:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; PRESUP10: Presupuesto para el mes 10; PRESUP11: Presupuesto para el mes 11; PRESUP12: Presupuesto para el mes 12; PRESUP13: Presupuesto para el mes 13; PRESUP14: Presupuesto para el mes 14.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  PRESUP14:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; PRESUP10: Presupuesto para el mes 10; PRESUP11: Presupuesto para el mes 11; PRESUP12: Presupuesto para el mes 12; PRESUP13: Presupuesto para el mes 13; PRESUP14: Presupuesto para el mes 14.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  PRESUP15:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; PRESUP10: Presupuesto para el mes 10; PRESUP11: Presupuesto para el mes 11; PRESUP12: Presupuesto para el mes 12; PRESUP13: Presupuesto para el mes 13; PRESUP14: Presupuesto para el mes 14.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  PRESUP16:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; PRESUP10: Presupuesto para el mes 10; PRESUP11: Presupuesto para el mes 11; PRESUP12: Presupuesto para el mes 12; PRESUP13: Presupuesto para el mes 13; PRESUP14: Presupuesto para el mes 14.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  PRESUP17:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; PRESUP10: Presupuesto para el mes 10; PRESUP11: Presupuesto para el mes 11; PRESUP12: Presupuesto para el mes 12; PRESUP13: Presupuesto para el mes 13; PRESUP14: Presupuesto para el mes 14.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  PRESUP18:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; PRESUP10: Presupuesto para el mes 10; PRESUP11: Presupuesto para el mes 11; PRESUP12: Presupuesto para el mes 12; PRESUP13: Presupuesto para el mes 13; PRESUP14: Presupuesto para el mes 14.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  PRESUP19:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; PRESUP10: Presupuesto para el mes 10; PRESUP11: Presupuesto para el mes 11; PRESUP12: Presupuesto para el mes 12; PRESUP13: Presupuesto para el mes 13; PRESUP14: Presupuesto para el mes 14.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  PRESUP20:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; PRESUP10: Presupuesto para el mes 10; PRESUP11: Presupuesto para el mes 11; PRESUP12: Presupuesto para el mes 12; PRESUP13: Presupuesto para el mes 13; PRESUP14: Presupuesto para el mes 14.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  PRESUP21:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; PRESUP10: Presupuesto para el mes 10; PRESUP11: Presupuesto para el mes 11; PRESUP12: Presupuesto para el mes 12; PRESUP13: Presupuesto para el mes 13; PRESUP14: Presupuesto para el mes 14.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  PRESUP22:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; PRESUP10: Presupuesto para el mes 10; PRESUP11: Presupuesto para el mes 11; PRESUP12: Presupuesto para el mes 12; PRESUP13: Presupuesto para el mes 13; PRESUP14: Presupuesto para el mes 14.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  PRESUP23:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; PRESUP10: Presupuesto para el mes 10; PRESUP11: Presupuesto para el mes 11; PRESUP12: Presupuesto para el mes 12; PRESUP13: Presupuesto para el mes 13; PRESUP14: Presupuesto para el mes 14.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  PRESUP24:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; PRESUP10: Presupuesto para el mes 10; PRESUP11: Presupuesto para el mes 11; PRESUP12: Presupuesto para el mes 12; PRESUP13: Presupuesto para el mes 13; PRESUP14: Presupuesto para el mes 14.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  PRESUP25:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; PRESUP10: Presupuesto para el mes 10; PRESUP11: Presupuesto para el mes 11; PRESUP12: Presupuesto para el mes 12; PRESUP13: Presupuesto para el mes 13; PRESUP14: Presupuesto para el mes 14.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  PRESUPDP05:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; PRESUP10: Presupuesto para el mes 10; PRESUP11: Presupuesto para el mes 11; PRESUP12: Presupuesto para el mes 12; PRESUP13: Presupuesto para el mes 13; PRESUP14: Presupuesto para el mes 14.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  PRESUPDP06:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; PRESUP10: Presupuesto para el mes 10; PRESUP11: Presupuesto para el mes 11; PRESUP12: Presupuesto para el mes 12; PRESUP13: Presupuesto para el mes 13; PRESUP14: Presupuesto para el mes 14.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  PRESUPDP07:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; PRESUP10: Presupuesto para el mes 10; PRESUP11: Presupuesto para el mes 11; PRESUP12: Presupuesto para el mes 12; PRESUP13: Presupuesto para el mes 13; PRESUP14: Presupuesto para el mes 14.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  PRESUPDP08:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; PRESUP10: Presupuesto para el mes 10; PRESUP11: Presupuesto para el mes 11; PRESUP12: Presupuesto para el mes 12; PRESUP13: Presupuesto para el mes 13; PRESUP14: Presupuesto para el mes 14.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  PRESUPDP09:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; PRESUP10: Presupuesto para el mes 10; PRESUP11: Presupuesto para el mes 11; PRESUP12: Presupuesto para el mes 12; PRESUP13: Presupuesto para el mes 13; PRESUP14: Presupuesto para el mes 14.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  PRESUPDP10:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; PRESUP10: Presupuesto para el mes 10; PRESUP11: Presupuesto para el mes 11; PRESUP12: Presupuesto para el mes 12; PRESUP13: Presupuesto para el mes 13; PRESUP14: Presupuesto para el mes 14.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  PRESUPDP11:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; PRESUP10: Presupuesto para el mes 10; PRESUP11: Presupuesto para el mes 11; PRESUP12: Presupuesto para el mes 12; PRESUP13: Presupuesto para el mes 13; PRESUP14: Presupuesto para el mes 14.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  PRESUPDP12:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; PRESUP10: Presupuesto para el mes 10; PRESUP11: Presupuesto para el mes 11; PRESUP12: Presupuesto para el mes 12; PRESUP13: Presupuesto para el mes 13; PRESUP14: Presupuesto para el mes 14.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  PRESUPDP13:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; PRESUP10: Presupuesto para el mes 10; PRESUP11: Presupuesto para el mes 11; PRESUP12: Presupuesto para el mes 12; PRESUP13: Presupuesto para el mes 13; PRESUP14: Presupuesto para el mes 14.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  PRESUPDP14:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; PRESUP10: Presupuesto para el mes 10; PRESUP11: Presupuesto para el mes 11; PRESUP12: Presupuesto para el mes 12; PRESUP13: Presupuesto para el mes 13; PRESUP14: Presupuesto para el mes 14.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  PRESUPDP15:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; PRESUP10: Presupuesto para el mes 10; PRESUP11: Presupuesto para el mes 11; PRESUP12: Presupuesto para el mes 12; PRESUP13: Presupuesto para el mes 13; PRESUP14: Presupuesto para el mes 14.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  PRESUPDP16:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; PRESUP10: Presupuesto para el mes 10; PRESUP11: Presupuesto para el mes 11; PRESUP12: Presupuesto para el mes 12; PRESUP13: Presupuesto para el mes 13; PRESUP14: Presupuesto para el mes 14.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  PRESUPDP17:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; PRESUP10: Presupuesto para el mes 10; PRESUP11: Presupuesto para el mes 11; PRESUP12: Presupuesto para el mes 12; PRESUP13: Presupuesto para el mes 13; PRESUP14: Presupuesto para el mes 14.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  PRESUPDP18:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; PRESUP10: Presupuesto para el mes 10; PRESUP11: Presupuesto para el mes 11; PRESUP12: Presupuesto para el mes 12; PRESUP13: Presupuesto para el mes 13; PRESUP14: Presupuesto para el mes 14.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  PRESUPDP19:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; PRESUP10: Presupuesto para el mes 10; PRESUP11: Presupuesto para el mes 11; PRESUP12: Presupuesto para el mes 12; PRESUP13: Presupuesto para el mes 13; PRESUP14: Presupuesto para el mes 14.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  PRESUPDP20:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; PRESUP10: Presupuesto para el mes 10; PRESUP11: Presupuesto para el mes 11; PRESUP12: Presupuesto para el mes 12; PRESUP13: Presupuesto para el mes 13; PRESUP14: Presupuesto para el mes 14.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  PRESUPDP21:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; PRESUP10: Presupuesto para el mes 10; PRESUP11: Presupuesto para el mes 11; PRESUP12: Presupuesto para el mes 12; PRESUP13: Presupuesto para el mes 13; PRESUP14: Presupuesto para el mes 14.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  PRESUPDP22:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; PRESUP10: Presupuesto para el mes 10; PRESUP11: Presupuesto para el mes 11; PRESUP12: Presupuesto para el mes 12; PRESUP13: Presupuesto para el mes 13; PRESUP14: Presupuesto para el mes 14.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  PRESUPDP23:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; PRESUP10: Presupuesto para el mes 10; PRESUP11: Presupuesto para el mes 11; PRESUP12: Presupuesto para el mes 12; PRESUP13: Presupuesto para el mes 13; PRESUP14: Presupuesto para el mes 14.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  PRESUPDP24:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; PRESUP10: Presupuesto para el mes 10; PRESUP11: Presupuesto para el mes 11; PRESUP12: Presupuesto para el mes 12; PRESUP13: Presupuesto para el mes 13; PRESUP14: Presupuesto para el mes 14.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  PRESUPDP25:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; PRESUP10: Presupuesto para el mes 10; PRESUP11: Presupuesto para el mes 11; PRESUP12: Presupuesto para el mes 12; PRESUP13: Presupuesto para el mes 13; PRESUP14: Presupuesto para el mes 14.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  RANGOS:
+    descripcion: 'Tabla del sistema COI relacionada con procesos contables/fiscales; su función específica se infiere por sus campos. Ejemplos de campos clave: DESCRIP: Descripcion; RANGO: Rango.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  REGPOL:
+    descripcion: 'Encabezado de pólizas contables: tipo y número de póliza, fecha, concepto y estatus. Sirve como registro maestro de asientos contables y se relaciona con sus partidas en AUXILIAR. Ejemplos de campos clave: FECHAOPR: Fecha operacion; FECHAPOL: Fecha poliza; TIPOPOL: Tipo poliza; NUMUSR: Numero de usuario de interfaz; TRANSACCIO: Numero de transaccion; TIPPOLINTR: Tipo poliza interfaz.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  RFCTER:
+    descripcion: 'Catálogo del plan de cuentas (PUC): número, nombre, naturaleza, nivel y parámetros contables asociados; base para registrar movimientos y generar estados financieros. Ejemplos de campos clave: CUENTABANCOPAGO; CUENTABANCOCOBRO; INCLUYEIVA: Indica si incluye iva; TIPOOP: Tipo de operacion; PORCENTAJEIVA: Porcentaje de iva; PORCENTAJEISR: Porcentaje de ISR.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  SALDOS05:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; ABONOEX10: Abono para extranjero para el mes 10; ABONOEX11: Abono para extranjero para el mes 11; ABONOEX12: Abono para extranjero para el mes 12; ABONOEX13: Abono para extranjero para el mes 13; ABONOEX14: Abono para extranjero para el mes 14.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  SALDOS06:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; ABONOEX10: Abono para extranjero para el mes 10; ABONOEX11: Abono para extranjero para el mes 11; ABONOEX12: Abono para extranjero para el mes 12; ABONOEX13: Abono para extranjero para el mes 13; ABONOEX14: Abono para extranjero para el mes 14.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  SALDOS07:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; ABONOEX10: Abono para extranjero para el mes 10; ABONOEX11: Abono para extranjero para el mes 11; ABONOEX12: Abono para extranjero para el mes 12; ABONOEX13: Abono para extranjero para el mes 13; ABONOEX14: Abono para extranjero para el mes 14.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  SALDOS08:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; ABONOEX10: Abono para extranjero para el mes 10; ABONOEX11: Abono para extranjero para el mes 11; ABONOEX12: Abono para extranjero para el mes 12; ABONOEX13: Abono para extranjero para el mes 13; ABONOEX14: Abono para extranjero para el mes 14.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  SALDOS09:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; ABONOEX10: Abono para extranjero para el mes 10; ABONOEX11: Abono para extranjero para el mes 11; ABONOEX12: Abono para extranjero para el mes 12; ABONOEX13: Abono para extranjero para el mes 13; ABONOEX14: Abono para extranjero para el mes 14.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  SALDOS10:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; ABONOEX10: Abono para extranjero para el mes 10; ABONOEX11: Abono para extranjero para el mes 11; ABONOEX12: Abono para extranjero para el mes 12; ABONOEX13: Abono para extranjero para el mes 13; ABONOEX14: Abono para extranjero para el mes 14.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  SALDOS11:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; ABONOEX10: Abono para extranjero para el mes 10; ABONOEX11: Abono para extranjero para el mes 11; ABONOEX12: Abono para extranjero para el mes 12; ABONOEX13: Abono para extranjero para el mes 13; ABONOEX14: Abono para extranjero para el mes 14.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  SALDOS12:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; ABONOEX10: Abono para extranjero para el mes 10; ABONOEX11: Abono para extranjero para el mes 11; ABONOEX12: Abono para extranjero para el mes 12; ABONOEX13: Abono para extranjero para el mes 13; ABONOEX14: Abono para extranjero para el mes 14.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  SALDOS13:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; ABONOEX10: Abono para extranjero para el mes 10; ABONOEX11: Abono para extranjero para el mes 11; ABONOEX12: Abono para extranjero para el mes 12; ABONOEX13: Abono para extranjero para el mes 13; ABONOEX14: Abono para extranjero para el mes 14.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  SALDOS14:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; ABONOEX10: Abono para extranjero para el mes 10; ABONOEX11: Abono para extranjero para el mes 11; ABONOEX12: Abono para extranjero para el mes 12; ABONOEX13: Abono para extranjero para el mes 13; ABONOEX14: Abono para extranjero para el mes 14.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  SALDOS15:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; ABONOEX10: Abono para extranjero para el mes 10; ABONOEX11: Abono para extranjero para el mes 11; ABONOEX12: Abono para extranjero para el mes 12; ABONOEX13: Abono para extranjero para el mes 13; ABONOEX14: Abono para extranjero para el mes 14.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  SALDOS16:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; ABONOEX10: Abono para extranjero para el mes 10; ABONOEX11: Abono para extranjero para el mes 11; ABONOEX12: Abono para extranjero para el mes 12; ABONOEX13: Abono para extranjero para el mes 13; ABONOEX14: Abono para extranjero para el mes 14.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  SALDOS17:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; ABONOEX10: Abono para extranjero para el mes 10; ABONOEX11: Abono para extranjero para el mes 11; ABONOEX12: Abono para extranjero para el mes 12; ABONOEX13: Abono para extranjero para el mes 13; ABONOEX14: Abono para extranjero para el mes 14.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  SALDOS18:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; ABONOEX10: Abono para extranjero para el mes 10; ABONOEX11: Abono para extranjero para el mes 11; ABONOEX12: Abono para extranjero para el mes 12; ABONOEX13: Abono para extranjero para el mes 13; ABONOEX14: Abono para extranjero para el mes 14.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  SALDOS19:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; ABONOEX10: Abono para extranjero para el mes 10; ABONOEX11: Abono para extranjero para el mes 11; ABONOEX12: Abono para extranjero para el mes 12; ABONOEX13: Abono para extranjero para el mes 13; ABONOEX14: Abono para extranjero para el mes 14.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  SALDOS20:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; ABONOEX10: Abono para extranjero para el mes 10; ABONOEX11: Abono para extranjero para el mes 11; ABONOEX12: Abono para extranjero para el mes 12; ABONOEX13: Abono para extranjero para el mes 13; ABONOEX14: Abono para extranjero para el mes 14.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  SALDOS21:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; ABONOEX10: Abono para extranjero para el mes 10; ABONOEX11: Abono para extranjero para el mes 11; ABONOEX12: Abono para extranjero para el mes 12; ABONOEX13: Abono para extranjero para el mes 13; ABONOEX14: Abono para extranjero para el mes 14.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  SALDOS22:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; ABONOEX10: Abono para extranjero para el mes 10; ABONOEX11: Abono para extranjero para el mes 11; ABONOEX12: Abono para extranjero para el mes 12; ABONOEX13: Abono para extranjero para el mes 13; ABONOEX14: Abono para extranjero para el mes 14.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  SALDOS23:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; ABONOEX10: Abono para extranjero para el mes 10; ABONOEX11: Abono para extranjero para el mes 11; ABONOEX12: Abono para extranjero para el mes 12; ABONOEX13: Abono para extranjero para el mes 13; ABONOEX14: Abono para extranjero para el mes 14.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  SALDOS24:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; ABONOEX10: Abono para extranjero para el mes 10; ABONOEX11: Abono para extranjero para el mes 11; ABONOEX12: Abono para extranjero para el mes 12; ABONOEX13: Abono para extranjero para el mes 13; ABONOEX14: Abono para extranjero para el mes 14.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  SALDOS25:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; ABONOEX10: Abono para extranjero para el mes 10; ABONOEX11: Abono para extranjero para el mes 11; ABONOEX12: Abono para extranjero para el mes 12; ABONOEX13: Abono para extranjero para el mes 13; ABONOEX14: Abono para extranjero para el mes 14.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  SALDOSDP05:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; CARGOEX10: Cargo extranjero para el mes 10; ABONOEX10: Abono extranjero para el mes 10; CARGOEX11: Cargo extranjero para el mes 11; ABONOEX11: Abono extranjero para el mes 11; CARGOEX12: Cargo extranjero para el mes 12.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  SALDOSDP06:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; CARGOEX10: Cargo extranjero para el mes 10; ABONOEX10: Abono extranjero para el mes 10; CARGOEX11: Cargo extranjero para el mes 11; ABONOEX11: Abono extranjero para el mes 11; CARGOEX12: Cargo extranjero para el mes 12.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  SALDOSDP07:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; CARGOEX10: Cargo extranjero para el mes 10; ABONOEX10: Abono extranjero para el mes 10; CARGOEX11: Cargo extranjero para el mes 11; ABONOEX11: Abono extranjero para el mes 11; CARGOEX12: Cargo extranjero para el mes 12.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  SALDOSDP08:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; CARGOEX10: Cargo extranjero para el mes 10; ABONOEX10: Abono extranjero para el mes 10; CARGOEX11: Cargo extranjero para el mes 11; ABONOEX11: Abono extranjero para el mes 11; CARGOEX12: Cargo extranjero para el mes 12.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  SALDOSDP09:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; CARGOEX10: Cargo extranjero para el mes 10; ABONOEX10: Abono extranjero para el mes 10; CARGOEX11: Cargo extranjero para el mes 11; ABONOEX11: Abono extranjero para el mes 11; CARGOEX12: Cargo extranjero para el mes 12.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  SALDOSDP10:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; CARGOEX10: Cargo extranjero para el mes 10; ABONOEX10: Abono extranjero para el mes 10; CARGOEX11: Cargo extranjero para el mes 11; ABONOEX11: Abono extranjero para el mes 11; CARGOEX12: Cargo extranjero para el mes 12.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  SALDOSDP11:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; CARGOEX10: Cargo extranjero para el mes 10; ABONOEX10: Abono extranjero para el mes 10; CARGOEX11: Cargo extranjero para el mes 11; ABONOEX11: Abono extranjero para el mes 11; CARGOEX12: Cargo extranjero para el mes 12.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  SALDOSDP12:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; CARGOEX10: Cargo extranjero para el mes 10; ABONOEX10: Abono extranjero para el mes 10; CARGOEX11: Cargo extranjero para el mes 11; ABONOEX11: Abono extranjero para el mes 11; CARGOEX12: Cargo extranjero para el mes 12.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  SALDOSDP13:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; CARGOEX10: Cargo extranjero para el mes 10; ABONOEX10: Abono extranjero para el mes 10; CARGOEX11: Cargo extranjero para el mes 11; ABONOEX11: Abono extranjero para el mes 11; CARGOEX12: Cargo extranjero para el mes 12.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  SALDOSDP14:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; CARGOEX10: Cargo extranjero para el mes 10; ABONOEX10: Abono extranjero para el mes 10; CARGOEX11: Cargo extranjero para el mes 11; ABONOEX11: Abono extranjero para el mes 11; CARGOEX12: Cargo extranjero para el mes 12.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  SALDOSDP15:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; CARGOEX10: Cargo extranjero para el mes 10; ABONOEX10: Abono extranjero para el mes 10; CARGOEX11: Cargo extranjero para el mes 11; ABONOEX11: Abono extranjero para el mes 11; CARGOEX12: Cargo extranjero para el mes 12.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  SALDOSDP16:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; CARGOEX10: Cargo extranjero para el mes 10; ABONOEX10: Abono extranjero para el mes 10; CARGOEX11: Cargo extranjero para el mes 11; ABONOEX11: Abono extranjero para el mes 11; CARGOEX12: Cargo extranjero para el mes 12.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  SALDOSDP17:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; CARGOEX10: Cargo extranjero para el mes 10; ABONOEX10: Abono extranjero para el mes 10; CARGOEX11: Cargo extranjero para el mes 11; ABONOEX11: Abono extranjero para el mes 11; CARGOEX12: Cargo extranjero para el mes 12.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  SALDOSDP18:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; CARGOEX10: Cargo extranjero para el mes 10; ABONOEX10: Abono extranjero para el mes 10; CARGOEX11: Cargo extranjero para el mes 11; ABONOEX11: Abono extranjero para el mes 11; CARGOEX12: Cargo extranjero para el mes 12.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  SALDOSDP19:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; CARGOEX10: Cargo extranjero para el mes 10; ABONOEX10: Abono extranjero para el mes 10; CARGOEX11: Cargo extranjero para el mes 11; ABONOEX11: Abono extranjero para el mes 11; CARGOEX12: Cargo extranjero para el mes 12.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  SALDOSDP20:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; CARGOEX10: Cargo extranjero para el mes 10; ABONOEX10: Abono extranjero para el mes 10; CARGOEX11: Cargo extranjero para el mes 11; ABONOEX11: Abono extranjero para el mes 11; CARGOEX12: Cargo extranjero para el mes 12.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  SALDOSDP21:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; CARGOEX10: Cargo extranjero para el mes 10; ABONOEX10: Abono extranjero para el mes 10; CARGOEX11: Cargo extranjero para el mes 11; ABONOEX11: Abono extranjero para el mes 11; CARGOEX12: Cargo extranjero para el mes 12.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  SALDOSDP22:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; CARGOEX10: Cargo extranjero para el mes 10; ABONOEX10: Abono extranjero para el mes 10; CARGOEX11: Cargo extranjero para el mes 11; ABONOEX11: Abono extranjero para el mes 11; CARGOEX12: Cargo extranjero para el mes 12.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  SALDOSDP23:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; CARGOEX10: Cargo extranjero para el mes 10; ABONOEX10: Abono extranjero para el mes 10; CARGOEX11: Cargo extranjero para el mes 11; ABONOEX11: Abono extranjero para el mes 11; CARGOEX12: Cargo extranjero para el mes 12.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  SALDOSDP24:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; CARGOEX10: Cargo extranjero para el mes 10; ABONOEX10: Abono extranjero para el mes 10; CARGOEX11: Cargo extranjero para el mes 11; ABONOEX11: Abono extranjero para el mes 11; CARGOEX12: Cargo extranjero para el mes 12.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  SALDOSDP25:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: EJERCICIO: Ejercicio; CARGOEX10: Cargo extranjero para el mes 10; ABONOEX10: Abono extranjero para el mes 10; CARGOEX11: Cargo extranjero para el mes 11; ABONOEX11: Abono extranjero para el mes 11; CARGOEX12: Cargo extranjero para el mes 12.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  TIPACTIV:
+    descripcion: 'Cuentas bancarias y operaciones (cheques, depósitos, transferencias) con datos para conciliación y referencia en pólizas de egreso/ingreso. Ejemplos de campos clave: DEPPROY: Porcentaje de Depreciacion proyectada; CTADEPRE: Cuenta del depreciacion del activo; METODODEP: Metodo de depreciacion; CTAPERGAN: Cuenta de ganancias; CTAAACTV: Cuenta del activo; DEDNORMAL: Deduccion normal.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  TIPOSPOL:
+    descripcion: 'Tabla del sistema COI relacionada con procesos contables/fiscales; su función específica se infiere por sus campos. Ejemplos de campos clave: TIPO: Tipo; CLASSAT: Clasificacion fiscal; DESCRIP: Descripcion.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  UUIDTIMBRES:
+    descripcion: 'Vinculación de comprobantes fiscales (UUID) y terceros (RFC) con pólizas/movimientos para trazabilidad fiscal y reporteo. Ejemplos de campos clave: TIPOCOMPROBANTE: Indica si es CFDi o Extranjero; UUIDTIMBRE: UUID del  comprobante; VERSIONCFDI: version del CFDI; TIPOCAMBIO: tipo de cambio; RFCRECEPTOR: RFC receptor; RFCEMISOR: RFC emisor.'
+    modulo: Contabilidad
+    tags:
+      - contabilidad
+  ACTIVOS26:
+    descripcion: Catálogo de activos fijos
+    modulo: Activos Fijos
+    tipo_negocio: Desconocido
+    tags:
+      - activos fijos
+      - temporal
+  AUXILIAR26:
+    descripcion: Auxiliares contables por mes
+    modulo: Contabilidad
+    tipo_negocio: Desconocido
+    tags:
+      - contabilidad
+      - temporal
+  CUENTAS26:
+    descripcion: Tabla de contabilidad - CUENTAS26
+    modulo: Contabilidad
+    tipo_negocio: Desconocido
+    tags:
+      - contabilidad
+      - temporal
+  POLIZAS26:
+    descripcion: Pólizas contables
+    modulo: Pólizas
+    tipo_negocio: Desconocido
+    tags:
+      - pólizas
+      - temporal
+  PRESUP26:
+    descripcion: Presupuestos
+    modulo: Contabilidad
+    tipo_negocio: Desconocido
+    tags:
+      - contabilidad
+      - temporal
+  PRESUPDP26:
+    descripcion: Presupuestos
+    modulo: Contabilidad
+    tipo_negocio: Desconocido
+    tags:
+      - contabilidad
+      - temporal
+  SALDOS26:
+    descripcion: Saldos contables
+    modulo: Contabilidad
+    tipo_negocio: Desconocido
+    tags:
+      - contabilidad
+      - temporal
+  SALDOSDP26:
+    descripcion: Saldos contables
+    modulo: Contabilidad
+    tipo_negocio: Desconocido
+    tags:
+      - contabilidad
+      - temporal

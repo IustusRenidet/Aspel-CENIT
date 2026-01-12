@@ -1,0 +1,44 @@
+
+══════════════════════════════════════════════════════════════════════
+  REPORTE DE VALIDACIÓN DE MÉTRICAS YAML
+══════════════════════════════════════════════════════════════════════
+
+📊 Resumen:
+   Total archivos: 4
+   ✅ Válidos: 4
+   ❌ Inválidos: 0
+
+──────────────────────────────────────────────────────────────────────
+📄 base_BANCO.yaml
+   ✅ VÁLIDO
+   Métricas encontradas: 4
+
+──────────────────────────────────────────────────────────────────────
+📄 base_COI.yaml
+   ✅ VÁLIDO
+   Métricas encontradas: 18
+
+   ⚠️  Advertencias (6):
+      1. [formato] Métrica tipo tabla sin definición de columnas: coi_polizas_descuadradas
+      2. [formato] Métrica tipo tabla sin definición de columnas: coi_cheques_pendientes
+      3. [formato] Métrica tipo tabla sin definición de columnas: coi_conciliacion_pendiente
+      4. [formato] Métrica tipo tabla sin definición de columnas: coi_cuentas_mayor_movimiento
+      5. [formato] Métrica tipo tabla sin definición de columnas: coi_auxiliar_cuenta
+      6. [formato] Métrica tipo tabla sin definición de columnas: coi_periodos_abiertos
+
+──────────────────────────────────────────────────────────────────────
+📄 base_NOI.yaml
+   ✅ VÁLIDO
+   Métricas encontradas: 3
+
+──────────────────────────────────────────────────────────────────────
+📄 base_SAE.yaml
+   ✅ VÁLIDO
+   Métricas encontradas: 18
+
+   ⚠️  Advertencias (3):
+      1. [formato] Métrica tipo tabla sin definición de columnas: sae_top_articulos_vendidos
+      2. [formato] Métrica tipo tabla sin definición de columnas: sae_antiguedad_saldos
+      3. [formato] Métrica tipo tabla sin definición de columnas: sae_top_proveedores
+
+══════════════════════════════════════════════════════════════════════

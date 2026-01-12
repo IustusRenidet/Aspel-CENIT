@@ -1,0 +1,19 @@
+paneles:
+  tablero_rh:
+    titulo: "Recursos Humanos (NOI)"
+    descripcion: "Resumen de nómina y plantilla"
+    layout: 
+      - widget: "kpi_total_nomina"
+        metrica: "nomina_total_periodo"
+        tipo_viz: "tarjeta"
+        ancho: 4
+      
+      - widget: "kpi_empleados_activos"
+        metrica: "conteo_empleados_activos"
+        tipo_viz: "tarjeta"
+        ancho: 4
+
+      - widget: "grafico_depto"
+        metrica: "nomina_por_departamento"
+        tipo_viz: "pastel"
+        ancho: 6

@@ -1,0 +1,2472 @@
+tablas:
+  ACOMP:
+    descripcion: Acumulado de compras
+    modulo: Compras
+    tipo_negocio: Resumen
+    tags:
+      - compras
+      - resumen
+  COMPC:
+    descripcion: Compras
+    modulo: Compras
+    tipo_negocio: Mov
+    tags:
+      - compras
+      - mov
+  COMPC_CLIB:
+    descripcion: Compras campos libres
+    modulo: Compras
+    tipo_negocio: Lateral
+    tags:
+      - compras
+      - lateral
+  COMPD:
+    descripcion: Devoluciones de compra
+    modulo: Compras
+    tipo_negocio: Mov
+    tags:
+      - compras
+      - mov
+  COMPD_CLIB:
+    descripcion: Devoluciones compras campos libres
+    modulo: Compras
+    tipo_negocio: Lateral
+    tags:
+      - compras
+      - lateral
+  COMPO:
+    descripcion: Órdenes de Compra
+    modulo: Compras
+    tipo_negocio: Mov
+    tags:
+      - compras
+      - mov
+  COMPO_CLIB:
+    descripcion: Órdenes campos libres
+    modulo: Compras
+    tipo_negocio: Lateral
+    tags:
+      - compras
+      - lateral
+  COMPQ:
+    descripcion: Requisiciones
+    modulo: Compras
+    tipo_negocio: Mov
+    tags:
+      - compras
+      - mov
+  COMPQ_CLIB:
+    descripcion: Requisiciones campos libres
+    modulo: Compras
+    tipo_negocio: Lateral
+    tags:
+      - compras
+      - lateral
+  COMPR:
+    descripcion: Recepciones
+    modulo: Compras
+    tipo_negocio: Mov
+    tags:
+      - compras
+      - mov
+  COMPR_CLIB:
+    descripcion: Recepciones campos libres
+    modulo: Compras
+    tipo_negocio: Lateral
+    tags:
+      - compras
+      - lateral
+  FOLIOSC:
+    descripcion: Compras folios
+    modulo: Compras
+    tipo_negocio: Config
+    tags:
+      - compras
+      - config
+  OBS_DOCC:
+    descripcion: Compras observaciones
+    modulo: Compras
+    tipo_negocio: Lateral
+    tags:
+      - compras
+      - lateral
+  OPER_TERCEROS:
+    descripcion: Proveedores operaciones
+    modulo: Compras
+    tipo_negocio: Maestro
+    tags:
+      - compras
+      - maestro
+  OPER_X_TIPO_TERCERO:
+    descripcion: Proveedores operaciones con terceros
+    modulo: Compras
+    tipo_negocio: Maestro
+    tags:
+      - compras
+      - maestro
+  PAR_COMPC:
+    descripcion: Compras partidas
+    modulo: Compras
+    tipo_negocio: Detalle
+    tags:
+      - compras
+      - detalle
+  PAR_COMPC_CLIB:
+    descripcion: Compras partidas campos libres
+    modulo: Compras
+    tipo_negocio: Lateral
+    tags:
+      - compras
+      - lateral
+  PAR_COMPD:
+    descripcion: Devoluciones de compra partidas
+    modulo: Compras
+    tipo_negocio: Detalle
+    tags:
+      - compras
+      - detalle
+  PAR_COMPD_CLIB:
+    descripcion: Devoluciones compras partidas campos libres
+    modulo: Compras
+    tipo_negocio: Lateral
+    tags:
+      - compras
+      - lateral
+  PAR_COMPO:
+    descripcion: Órdenes partidas
+    modulo: Compras
+    tipo_negocio: Detalle
+    tags:
+      - compras
+      - detalle
+  PAR_COMPO_CLIB:
+    descripcion: Órdenes partidas campos libres
+    modulo: Compras
+    tipo_negocio: Lateral
+    tags:
+      - compras
+      - lateral
+  PAR_COMPQ:
+    descripcion: Requisiciones partidas
+    modulo: Compras
+    tipo_negocio: Detalle
+    tags:
+      - compras
+      - detalle
+  PAR_COMPQ_CLIB:
+    descripcion: Requisiciones partidas campos libres
+    modulo: Compras
+    tipo_negocio: Lateral
+    tags:
+      - compras
+      - lateral
+  PAR_COMPR:
+    descripcion: Recepciones Partidas
+    modulo: Compras
+    tipo_negocio: Detalle
+    tags:
+      - compras
+      - detalle
+  PAR_COMPR_CLIB:
+    descripcion: Recepciones partidas campos libres
+    modulo: Compras
+    tipo_negocio: Lateral
+    tags:
+      - compras
+      - lateral
+  PARAM_COMPRAS:
+    descripcion: Parámetros de compras
+    modulo: Compras
+    tipo_negocio: Config
+    tags:
+      - compras
+      - config
+  PARAM_FOLIOSC:
+    descripcion: Parámetros de series de compras
+    modulo: Compras
+    tipo_negocio: Config
+    tags:
+      - compras
+      - config
+  PARAM_PARTIDASCOMP:
+    descripcion: Parámetros de compras partidas
+    modulo: Compras
+    tipo_negocio: Config
+    tags:
+      - compras
+      - config
+  PARAM_TIPODOCTOSC:
+    descripcion: Parámetros de documentos de compras
+    modulo: Compras
+    tipo_negocio: Config
+    tags:
+      - compras
+      - config
+  PRVPROD:
+    descripcion: Artículo y Proveedor con costo y tiempo de entrega
+    modulo: Compras
+    tipo_negocio: Catalogo
+    tags:
+      - compras
+      - catalogo
+  TIPO_TERCEROS:
+    descripcion: Proveedor por tipo de tercero
+    modulo: Compras
+    tipo_negocio: Maestro
+    tags:
+      - compras
+      - maestro
+  ACTCAM:
+    descripcion: Campañas actividades
+    modulo: Campañas
+    tipo_negocio: Maestro
+    tags:
+      - campañas
+      - maestro
+  ACTIVI:
+    descripcion: Actividades en campañas
+    modulo: Campañas
+    tipo_negocio: Catalogo
+    tags:
+      - campañas
+      - catalogo
+  CAMP:
+    descripcion: Campañas
+    modulo: Campañas
+    tipo_negocio: Mov
+    tags:
+      - campañas
+      - mov
+  CAMPFIL:
+    descripcion: Campañas Filtros
+    modulo: Campañas
+    tipo_negocio: Maestro
+    tags:
+      - campañas
+      - maestro
+  CLICAM:
+    descripcion: Campañas clientes
+    modulo: Campañas
+    tipo_negocio: Mov
+    tags:
+      - campañas
+      - mov
+  DESACT:
+    descripcion: Campañas descripción actividades
+    modulo: Campañas
+    tipo_negocio: Maestro
+    tags:
+      - campañas
+      - maestro
+  GUICAM:
+    descripcion: Campañas guías
+    modulo: Campañas
+    tipo_negocio: Maestro
+    tags:
+      - campañas
+      - maestro
+  RESACT:
+    descripcion: Campañas resultados
+    modulo: Campañas
+    tipo_negocio: Resumen
+    tags:
+      - campañas
+      - resumen
+  RESULT:
+    descripcion: Resultados de campañas
+    modulo: Campañas
+    tipo_negocio: Resumen
+    tags:
+      - campañas
+      - resumen
+  AFACT:
+    descripcion: Acumulado de ventas
+    modulo: Ventas
+    tipo_negocio: Resumen
+    tags:
+      - ventas
+      - resumen
+  FACTA_CLIB:
+    descripcion: Parcialidades campos libres
+    modulo: Ventas
+    tipo_negocio: Lateral
+    tags:
+      - ventas
+      - lateral
+  FACTC:
+    descripcion: Cotizaciones
+    modulo: Ventas
+    tipo_negocio: Mov
+    tags:
+      - ventas
+      - mov
+  FACTC_CLIB:
+    descripcion: Cotizaciones campos libres
+    modulo: Ventas
+    tipo_negocio: Lateral
+    tags:
+      - ventas
+      - lateral
+  FACTD:
+    descripcion: Devoluciones de venta
+    modulo: Ventas
+    tipo_negocio: Mov
+    tags:
+      - ventas
+      - mov
+  FACTD_CLIB:
+    descripcion: Devoluciones de venta campos libres
+    modulo: Ventas
+    tipo_negocio: Lateral
+    tags:
+      - ventas
+      - lateral
+  FACTF:
+    descripcion: Facturas
+    modulo: Ventas
+    tipo_negocio: Mov
+    tags:
+      - ventas
+      - mov
+  FACTF_CLIB:
+    descripcion: Facturas campos libres
+    modulo: Ventas
+    tipo_negocio: Lateral
+    tags:
+      - ventas
+      - lateral
+  FACTP:
+    descripcion: Pedidos
+    modulo: Ventas
+    tipo_negocio: Mov
+    tags:
+      - ventas
+      - mov
+  FACTP_CLIB:
+    descripcion: Pedidos campos libres
+    modulo: Ventas
+    tipo_negocio: Lateral
+    tags:
+      - ventas
+      - lateral
+  FACTR_CLIB:
+    descripcion: Remisiones campos libres
+    modulo: Ventas
+    tipo_negocio: Lateral
+    tags:
+      - ventas
+      - lateral
+  FACTV_CLIB:
+    descripcion: Notas de venta campos libres
+    modulo: Ventas
+    tipo_negocio: Lateral
+    tags:
+      - ventas
+      - lateral
+  FOLIOSF:
+    descripcion: Facturas folios
+    modulo: Ventas
+    tipo_negocio: Config
+    tags:
+      - ventas
+      - config
+  INFENVIO:
+    descripcion: Facturas información de envío
+    modulo: Ventas
+    tipo_negocio: Lateral
+    tags:
+      - ventas
+      - lateral
+  OBS_DOCF:
+    descripcion: Facturas observaciones
+    modulo: Ventas
+    tipo_negocio: Lateral
+    tags:
+      - ventas
+      - lateral
+  PAR_FACTA:
+    descripcion: Parcialidades partidas
+    modulo: Ventas
+    tipo_negocio: Detalle
+    tags:
+      - ventas
+      - detalle
+  PAR_FACTA_CLIB:
+    descripcion: Parcialidades partidas campos libres
+    modulo: Ventas
+    tipo_negocio: Lateral
+    tags:
+      - ventas
+      - lateral
+  PAR_FACTC:
+    descripcion: Cotizaciones partidas
+    modulo: Ventas
+    tipo_negocio: Detalle
+    tags:
+      - ventas
+      - detalle
+  PAR_FACTC_CLIB:
+    descripcion: Cotizaciones partidas campos libres
+    modulo: Ventas
+    tipo_negocio: Lateral
+    tags:
+      - ventas
+      - lateral
+  PAR_FACTD:
+    descripcion: Devoluciones de facturas partidas
+    modulo: Ventas
+    tipo_negocio: Detalle
+    tags:
+      - ventas
+      - detalle
+  PAR_FACTD_CLIB:
+    descripcion: Devoluciones facturas partidas campos libres
+    modulo: Ventas
+    tipo_negocio: Lateral
+    tags:
+      - ventas
+      - lateral
+  PAR_FACTF:
+    descripcion: Facturas Partidas
+    modulo: Ventas
+    tipo_negocio: Detalle
+    tags:
+      - ventas
+      - detalle
+  PAR_FACTF_CLIB:
+    descripcion: Facturas partidas campos libres
+    modulo: Ventas
+    tipo_negocio: Lateral
+    tags:
+      - ventas
+      - lateral
+  PAR_FACTP_CLIB:
+    descripcion: Pedidos partidas campos libres
+    modulo: Ventas
+    tipo_negocio: Lateral
+    tags:
+      - ventas
+      - lateral
+  PAR_FACTR:
+    descripcion: Remisiones partidas
+    modulo: Ventas
+    tipo_negocio: Detalle
+    tags:
+      - ventas
+      - detalle
+  PAR_FACTR_CLIB:
+    descripcion: Remisiones partidas campos libres
+    modulo: Ventas
+    tipo_negocio: Lateral
+    tags:
+      - ventas
+      - lateral
+  PAR_FACTV:
+    descripcion: Notas de venta partidas
+    modulo: Ventas
+    tipo_negocio: Detalle
+    tags:
+      - ventas
+      - detalle
+  PAR_FACTV_CLIB:
+    descripcion: Notas de venta partidas campos libres
+    modulo: Ventas
+    tipo_negocio: Lateral
+    tags:
+      - ventas
+      - lateral
+  PARAM_FACTURA:
+    descripcion: Parámetros de facturas
+    modulo: Ventas
+    tipo_negocio: Config
+    tags:
+      - ventas
+      - config
+  PARAM_FACTURAELECTRONICA:
+    descripcion: Parámetros de facturación electrónica
+    modulo: Ventas
+    tipo_negocio: Config
+    tags:
+      - ventas
+      - config
+  PARAM_FOLIOSF:
+    descripcion: Parámetros de series de ventas
+    modulo: Ventas
+    tipo_negocio: Config
+    tags:
+      - ventas
+      - config
+  PARAM_PARTIDASFACT:
+    descripcion: Parámetros de facturas partidas
+    modulo: Ventas
+    tipo_negocio: Config
+    tags:
+      - ventas
+      - config
+  PARAM_TIPODOCTOSF:
+    descripcion: Parámetros de documentos de facturas
+    modulo: Ventas
+    tipo_negocio: Config
+    tags:
+      - ventas
+      - config
+  PRECIO_X_PROD:
+    descripcion: Inventario precios por producto
+    modulo: Ventas
+    tipo_negocio: Catalogo
+    tags:
+      - ventas
+      - catalogo
+  PRECIOS:
+    descripcion: Inventario lista de precios
+    modulo: Ventas
+    tipo_negocio: Catalogo
+    tags:
+      - ventas
+      - catalogo
+  VEND:
+    descripcion: Vendedores
+    modulo: Ventas
+    tipo_negocio: Catalogo
+    tags:
+      - ventas
+      - catalogo
+  ALMACENES:
+    descripcion: Almacenes
+    modulo: Inventarios
+    tipo_negocio: Catalogo
+    tags:
+      - inventarios
+      - catalogo
+  CAPAS_X_MOV:
+    descripcion: Movs al inventario capas
+    modulo: Inventarios
+    tipo_negocio: Mov
+    tags:
+      - inventarios
+      - mov
+  CONM:
+    descripcion: Conceptos de Movs. Al inventario
+    modulo: Inventarios
+    tipo_negocio: Maestro
+    tags:
+      - inventarios
+      - maestro
+  CVES_ALTER:
+    descripcion: Claves alternas de inventarios
+    modulo: Inventarios
+    tipo_negocio: Maestro
+    tags:
+      - inventarios
+      - maestro
+  ENLACE_LTPD:
+    descripcion: Lotes y pedimentos enlace
+    modulo: Inventarios
+    tipo_negocio: Mov
+    tags:
+      - inventarios
+      - mov
+  HNUMSER:
+    descripcion: Números de serie historial
+    modulo: Inventarios
+    tipo_negocio: Mov
+    tags:
+      - inventarios
+      - mov
+  INVFIS:
+    descripcion: Inventario físico
+    modulo: Inventarios
+    tipo_negocio: Mov
+    tags:
+      - inventarios
+      - mov
+  KITS:
+    descripcion: Inventario kits
+    modulo: Inventarios
+    tipo_negocio: Catalogo
+    tags:
+      - inventarios
+      - catalogo
+  LISTPRODSUST:
+    descripcion: Inventario productos sustitutos 1
+    modulo: Inventarios
+    tipo_negocio: Maestro
+    tags:
+      - inventarios
+      - maestro
+  LTPD:
+    descripcion: Lotes y pedimentos
+    modulo: Inventarios
+    tipo_negocio: Catalogo
+    tags:
+      - inventarios
+      - catalogo
+  MINVE:
+    descripcion: Movimientos al inventario
+    modulo: Inventarios
+    tipo_negocio: Mov
+    tags:
+      - inventarios
+      - mov
+  NUMSER:
+    descripcion: Números de serie
+    modulo: Inventarios
+    tipo_negocio: Catalogo
+    tags:
+      - inventarios
+      - catalogo
+  OINVE:
+    descripcion: Inventarios observaciones
+    modulo: Inventarios
+    tipo_negocio: Lateral
+    tags:
+      - inventarios
+      - lateral
+  OLTPD:
+    descripcion: Lotes y pedimentos observaciones
+    modulo: Inventarios
+    tipo_negocio: Lateral
+    tags:
+      - inventarios
+      - lateral
+  OMINVE:
+    descripcion: Movs. Al inventario observaciones
+    modulo: Inventarios
+    tipo_negocio: Lateral
+    tags:
+      - inventarios
+      - lateral
+  PARAM_INVENTARIO:
+    descripcion: Parámetros de inventarios
+    modulo: Inventarios
+    tipo_negocio: Config
+    tags:
+      - inventarios
+      - config
+  PRODSUST:
+    descripcion: Inventario productos sustitutos 2
+    modulo: Inventarios
+    tipo_negocio: Maestro
+    tags:
+      - inventarios
+      - maestro
+  AUTORIZAC:
+    descripcion: Cuentas por cobrar autorizaciones
+    modulo: Por Cobrar
+    tipo_negocio: Lateral
+    tags:
+      - por cobrar
+      - lateral
+  CONC:
+    descripcion: Conceptos de cuentas por cobrar
+    modulo: Por Cobrar
+    tipo_negocio: Maestro
+    tags:
+      - por cobrar
+      - maestro
+  CUEN_DET:
+    descripcion: Cuentas por cobrar detalle
+    modulo: Por Cobrar
+    tipo_negocio: Detalle
+    tags:
+      - por cobrar
+      - detalle
+  CUEN_M:
+    descripcion: Cuentas por cobrar
+    modulo: Por Cobrar
+    tipo_negocio: Mov
+    tags:
+      - por cobrar
+      - mov
+  FOLCXC:
+    descripcion: Cuentas por cobrar folios
+    modulo: Por Cobrar
+    tipo_negocio: Config
+    tags:
+      - por cobrar
+      - config
+  FOLIOSCXC:
+    descripcion: Configuración de folios para cuentas por cobrar
+    modulo: Por Cobrar
+    tipo_negocio: Config
+    tags:
+      - por cobrar
+      - config
+  OCUEN:
+    descripcion: Cuentas por cobrar observaciones
+    modulo: Por Cobrar
+    tipo_negocio: Lateral
+    tags:
+      - por cobrar
+      - lateral
+  AUTORIZAP:
+    descripcion: Cuentas por pagar autorizaciones
+    modulo: Por Pagar
+    tipo_negocio: Lateral
+    tags:
+      - por pagar
+      - lateral
+  CONP:
+    descripcion: Conceptos de cuentas por pagar
+    modulo: Por Pagar
+    tipo_negocio: Maestro
+    tags:
+      - por pagar
+      - maestro
+  FOLCXP:
+    descripcion: Cuentas por pagar folios
+    modulo: Por Pagar
+    tipo_negocio: Config
+    tags:
+      - por pagar
+      - config
+  FOLIOSCXP:
+    descripcion: Configuración de folios para cuentas por pagar
+    modulo: Por Pagar
+    tipo_negocio: Config
+    tags:
+      - por pagar
+      - config
+  OPAGA:
+    descripcion: Cuentas por pagar observaciones
+    modulo: Por Pagar
+    tipo_negocio: Lateral
+    tags:
+      - por pagar
+      - lateral
+  PAGA_DET:
+    descripcion: Cuentas por pagar detalle
+    modulo: Por Pagar
+    tipo_negocio: Detalle
+    tags:
+      - por pagar
+      - detalle
+  PAGA_M:
+    descripcion: Cuentas por pagar
+    modulo: Por Pagar
+    tipo_negocio: Mov
+    tags:
+      - por pagar
+      - mov
+  CFDIC:
+    descripcion: Comprobante fiscal digital por internet compras
+    modulo: Fiscal
+    tipo_negocio: Mov
+    tags:
+      - fiscal
+      - mov
+  CITAS:
+    descripcion: Clientes citas
+    modulo: Clientes
+    tipo_negocio: Mov
+    tags:
+      - clientes
+      - mov
+  CLIE:
+    descripcion: Clientes
+    modulo: Clientes
+    tipo_negocio: Catalogo
+    tags:
+      - clientes
+      - catalogo
+  CLIE_CLIB:
+    descripcion: Clientes campos libres
+    modulo: Clientes
+    tipo_negocio: Lateral
+    tags:
+      - clientes
+      - lateral
+  CONTAC:
+    descripcion: Clientes contactos
+    modulo: Clientes
+    tipo_negocio: Lateral
+    tags:
+      - clientes
+      - lateral
+  LNKOLKC:
+    descripcion: Clientes contactos outlook
+    modulo: Clientes
+    tipo_negocio: Lateral
+    tags:
+      - clientes
+      - lateral
+  OCLI:
+    descripcion: Clientes observaciones
+    modulo: Clientes
+    tipo_negocio: Lateral
+    tags:
+      - clientes
+      - lateral
+  PARAM_CLIENTES:
+    descripcion: Parámetros de clientes
+    modulo: Clientes
+    tipo_negocio: Config
+    tags:
+      - clientes
+      - config
+  CONS_PER:
+    descripcion: Consultas variables
+    modulo: N/A
+    tipo_negocio: Sys
+    tags:
+      - n/a
+      - sys
+  CTRLBLOQUEO:
+    descripcion: Control de bloqueo de la base de datos
+    modulo: N/A
+    tipo_negocio: Sys
+    tags:
+      - n/a
+      - sys
+  PAIS:
+    descripcion: Países
+    modulo: N/A
+    tipo_negocio: Maestro
+    tags:
+      - n/a
+      - maestro
+  PARAM_APLICASOC:
+    descripcion: Parámetros de aplicaciones asociadas
+    modulo: N/A
+    tipo_negocio: Config
+    tags:
+      - n/a
+      - config
+  PARAM_CAMPOSLIBRES:
+    descripcion: Parámetros de campos libres
+    modulo: N/A
+    tipo_negocio: Config
+    tags:
+      - n/a
+      - config
+  PARAM_CTACONTABLE:
+    descripcion: Parámetros de cuentas contables
+    modulo: N/A
+    tipo_negocio: Config
+    tags:
+      - n/a
+      - config
+  PARAM_DATOSBANCARIOS:
+    descripcion: '?'
+    modulo: N/A
+    tipo_negocio: Config
+    tags:
+      - n/a
+      - config
+  PARAM_DATOSBD:
+    descripcion: Parámetros de base de datos
+    modulo: N/A
+    tipo_negocio: Config
+    tags:
+      - n/a
+      - config
+  PARAM_DATOSEMP:
+    descripcion: Parámetros de empresa
+    modulo: N/A
+    tipo_negocio: Config
+    tags:
+      - n/a
+      - config
+  PARAM_DATOSGRALES:
+    descripcion: Parámetros generales
+    modulo: N/A
+    tipo_negocio: Config
+    tags:
+      - n/a
+      - config
+  PARAM_DOMEXPED:
+    descripcion: Parámetros de domicilio de expedición
+    modulo: N/A
+    tipo_negocio: Config
+    tags:
+      - n/a
+      - config
+  PARAM_DOMFISCAL:
+    descripcion: Parámetros de domicilio fiscal
+    modulo: N/A
+    tipo_negocio: Config
+    tags:
+      - n/a
+      - config
+  PARAM_GRAFICAS:
+    descripcion: Parámetros de gráficas
+    modulo: N/A
+    tipo_negocio: Config
+    tags:
+      - n/a
+      - config
+  TBLCONTROL:
+    descripcion: Tabla de control
+    modulo: N/A
+    tipo_negocio: Sys
+    tags:
+      - n/a
+      - sys
+  ZONA:
+    descripcion: Zonas
+    modulo: N/A
+    tipo_negocio: Maestro
+    tags:
+      - n/a
+      - maestro
+  CONTAP:
+    descripcion: Proveedores contactos
+    modulo: Proveedores
+    tipo_negocio: Lateral
+    tags:
+      - proveedores
+      - lateral
+  LNKOLKP:
+    descripcion: Proveedores contactos outlook
+    modulo: Proveedores
+    tipo_negocio: Maestro
+    tags:
+      - proveedores
+      - maestro
+  OPROV:
+    descripcion: Proveedores observaciones
+    modulo: Proveedores
+    tipo_negocio: Lateral
+    tags:
+      - proveedores
+      - lateral
+  PARAM_PROVEEDORES:
+    descripcion: Parámetros de proveedores
+    modulo: Proveedores
+    tipo_negocio: Config
+    tags:
+      - proveedores
+      - config
+  PROV:
+    descripcion: Proveedor
+    modulo: Proveedores
+    tipo_negocio: Catalogo
+    tags:
+      - proveedores
+      - catalogo
+  PROV_CLIB:
+    descripcion: Proveedores campos libres
+    modulo: Proveedores
+    tipo_negocio: Lateral
+    tags:
+      - proveedores
+      - lateral
+  CTAESQ:
+    descripcion: Impuestos cuentas contables
+    modulo: Contabilidad
+    tipo_negocio: Config
+    tags:
+      - contabilidad
+      - config
+  IMPU:
+    descripcion: Esquemas de impuestos
+    modulo: Contabilidad
+    tipo_negocio: Config
+    tags:
+      - contabilidad
+      - config
+  MONED:
+    descripcion: Monedas
+    modulo: Contabilidad
+    tipo_negocio: Maestro
+    tags:
+      - contabilidad
+      - maestro
+  ACOMP01:
+    descripcion: Compras y órdenes de compra - Mes de enero
+    modulo: Compras
+    tipo_negocio: Desconocido
+    tags:
+      - compras
+      - temporal
+  ACTCAM01:
+    descripcion: Tabla de administración empresarial - ACTCAM01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  ACTIVI01:
+    descripcion: Tabla de administración empresarial - ACTIVI01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  AFACT01:
+    descripcion: Facturas de venta - Mes de enero
+    modulo: Ventas
+    tipo_negocio: Desconocido
+    tags:
+      - ventas
+      - temporal
+  ALERTA01:
+    descripcion: Tabla de administración empresarial - ALERTA01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  ALERTA_USUARIO01:
+    descripcion: Tabla de administración empresarial - ALERTA_USUARIO01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  ALMACENES01:
+    descripcion: Catálogo de almacenes - Mes de enero
+    modulo: Inventarios
+    tipo_negocio: Desconocido
+    tags:
+      - inventarios
+      - temporal
+  AUTORIZAC01:
+    descripcion: Tabla de administración empresarial - AUTORIZAC01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  AUTORIZAP01:
+    descripcion: Tabla de administración empresarial - AUTORIZAP01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  BITA01:
+    descripcion: Tabla de administración empresarial - BITA01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  CAMP01:
+    descripcion: Tabla de administración empresarial - CAMP01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  CAMPFIL01:
+    descripcion: Tabla de administración empresarial - CAMPFIL01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  CAPAS_X_MOV01:
+    descripcion: Tabla de administración empresarial - CAPAS_X_MOV01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  CARTAPORTE01:
+    descripcion: Tabla de administración empresarial - CARTAPORTE01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  CFDI01:
+    descripcion: Tabla de administración empresarial - CFDI01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  CFDIC01:
+    descripcion: Tabla de administración empresarial - CFDIC01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  CFDI_REL01:
+    descripcion: Tabla de administración empresarial - CFDI_REL01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  CFGLIN01:
+    descripcion: Tabla de administración empresarial - CFGLIN01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  CITAS01:
+    descripcion: Tabla de administración empresarial - CITAS01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  CLICAM01:
+    descripcion: Tabla de administración empresarial - CLICAM01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  CLIE01:
+    descripcion: Catálogo de clientes y prospectos - Mes de enero
+    modulo: Ventas
+    tipo_negocio: Desconocido
+    tags:
+      - ventas
+      - temporal
+  CLIE_CLIB01:
+    descripcion: Catálogo de clientes y prospectos - Mes de enero
+    modulo: Ventas
+    tipo_negocio: Desconocido
+    tags:
+      - ventas
+      - temporal
+      - campos-libres
+  CLIE_TIENDA01:
+    descripcion: Catálogo de clientes y prospectos - Mes de enero
+    modulo: Ventas
+    tipo_negocio: Desconocido
+    tags:
+      - ventas
+      - temporal
+  CLIN01:
+    descripcion: Tabla de administración empresarial - CLIN01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  CNSEST01:
+    descripcion: Tabla de administración empresarial - CNSEST01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  COLOR01:
+    descripcion: Tabla de administración empresarial - COLOR01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  COMPACTACION01:
+    descripcion: Compras y órdenes de compra - Mes de enero
+    modulo: Compras
+    tipo_negocio: Desconocido
+    tags:
+      - compras
+      - temporal
+  COMPC01:
+    descripcion: Compras y órdenes de compra - Mes de enero
+    modulo: Compras
+    tipo_negocio: Desconocido
+    tags:
+      - compras
+      - temporal
+  COMPC_CLIB01:
+    descripcion: Compras y órdenes de compra - Mes de enero
+    modulo: Compras
+    tipo_negocio: Desconocido
+    tags:
+      - compras
+      - temporal
+      - campos-libres
+  COMPD01:
+    descripcion: Compras y órdenes de compra - Mes de enero
+    modulo: Compras
+    tipo_negocio: Desconocido
+    tags:
+      - compras
+      - temporal
+  COMPD_CLIB01:
+    descripcion: Compras y órdenes de compra - Mes de enero
+    modulo: Compras
+    tipo_negocio: Desconocido
+    tags:
+      - compras
+      - temporal
+      - campos-libres
+  COMPO01:
+    descripcion: Compras y órdenes de compra - Mes de enero
+    modulo: Compras
+    tipo_negocio: Desconocido
+    tags:
+      - compras
+      - temporal
+  COMPO_CLIB01:
+    descripcion: Compras y órdenes de compra - Mes de enero
+    modulo: Compras
+    tipo_negocio: Desconocido
+    tags:
+      - compras
+      - temporal
+      - campos-libres
+  COMPQ01:
+    descripcion: Compras y órdenes de compra - Mes de enero
+    modulo: Compras
+    tipo_negocio: Desconocido
+    tags:
+      - compras
+      - temporal
+  COMPQ_CLIB01:
+    descripcion: Compras y órdenes de compra - Mes de enero
+    modulo: Compras
+    tipo_negocio: Desconocido
+    tags:
+      - compras
+      - temporal
+      - campos-libres
+  COMPR01:
+    descripcion: Compras y órdenes de compra - Mes de enero
+    modulo: Compras
+    tipo_negocio: Desconocido
+    tags:
+      - compras
+      - temporal
+  COMPR_CLIB01:
+    descripcion: Compras y órdenes de compra - Mes de enero
+    modulo: Compras
+    tipo_negocio: Desconocido
+    tags:
+      - compras
+      - temporal
+      - campos-libres
+  COM_EXTERIOR01:
+    descripcion: Tabla de administración empresarial - COM_EXTERIOR01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  CONC01:
+    descripcion: Tabla de administración empresarial - CONC01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  CONFIG_ENVIOS01:
+    descripcion: Configuración del sistema - Mes de enero
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+      - configuracion
+  CONM01:
+    descripcion: Tabla de administración empresarial - CONM01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  CONP01:
+    descripcion: Tabla de administración empresarial - CONP01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  CONS_PER01:
+    descripcion: Tabla de administración empresarial - CONS_PER01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  CONTAC01:
+    descripcion: Tabla de administración empresarial - CONTAC01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  CONTAP01:
+    descripcion: Tabla de administración empresarial - CONTAP01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  CTAESQ01:
+    descripcion: Tabla de administración empresarial - CTAESQ01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  CTRLBLOQUEO01:
+    descripcion: Tabla de administración empresarial - CTRLBLOQUEO01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  CTRL_ELIMINA01:
+    descripcion: Tabla de administración empresarial - CTRL_ELIMINA01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  CUENTA_BENEF01:
+    descripcion: Cuentas por cobrar - Mes de enero
+    modulo: Cuentas por Cobrar
+    tipo_negocio: Desconocido
+    tags:
+      - cuentas por cobrar
+      - temporal
+  CUENTA_ORD01:
+    descripcion: Cuentas por cobrar - Mes de enero
+    modulo: Cuentas por Cobrar
+    tipo_negocio: Desconocido
+    tags:
+      - cuentas por cobrar
+      - temporal
+  CUEN_DET01:
+    descripcion: Cuentas por cobrar - Mes de enero
+    modulo: Cuentas por Cobrar
+    tipo_negocio: Desconocido
+    tags:
+      - cuentas por cobrar
+      - temporal
+      - detalle
+  CUEN_M01:
+    descripcion: Cuentas por cobrar - Mes de enero
+    modulo: Cuentas por Cobrar
+    tipo_negocio: Desconocido
+    tags:
+      - cuentas por cobrar
+      - temporal
+  CVES_ALTER01:
+    descripcion: Tabla de administración empresarial - CVES_ALTER01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  DESACT01:
+    descripcion: Tabla de administración empresarial - DESACT01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  DOCTOSIGC01:
+    descripcion: Tabla de administración empresarial - DOCTOSIGC01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  DOCTOSIGF01:
+    descripcion: Tabla de administración empresarial - DOCTOSIGF01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  DOCTOSIGFC01:
+    descripcion: Tabla de administración empresarial - DOCTOSIGFC01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  ENLACEFC01:
+    descripcion: Tabla de administración empresarial - ENLACEFC01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  ENLACE_LTPD01:
+    descripcion: Tabla de administración empresarial - ENLACE_LTPD01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  FACTA01:
+    descripcion: Facturas de venta - Mes de enero
+    modulo: Ventas
+    tipo_negocio: Desconocido
+    tags:
+      - ventas
+      - temporal
+  FACTA_CLIB01:
+    descripcion: Facturas de venta - Mes de enero
+    modulo: Ventas
+    tipo_negocio: Desconocido
+    tags:
+      - ventas
+      - temporal
+      - campos-libres
+  FACTC01:
+    descripcion: Facturas de venta - Mes de enero
+    modulo: Ventas
+    tipo_negocio: Desconocido
+    tags:
+      - ventas
+      - temporal
+  FACTC_CLIB01:
+    descripcion: Facturas de venta - Mes de enero
+    modulo: Ventas
+    tipo_negocio: Desconocido
+    tags:
+      - ventas
+      - temporal
+      - campos-libres
+  FACTD01:
+    descripcion: Facturas de venta - Mes de enero
+    modulo: Ventas
+    tipo_negocio: Desconocido
+    tags:
+      - ventas
+      - temporal
+  FACTD_CLIB01:
+    descripcion: Facturas de venta - Mes de enero
+    modulo: Ventas
+    tipo_negocio: Desconocido
+    tags:
+      - ventas
+      - temporal
+      - campos-libres
+  FACTE01:
+    descripcion: Facturas de venta - Mes de enero
+    modulo: Ventas
+    tipo_negocio: Desconocido
+    tags:
+      - ventas
+      - temporal
+  FACTE_CLIB01:
+    descripcion: Facturas de venta - Mes de enero
+    modulo: Ventas
+    tipo_negocio: Desconocido
+    tags:
+      - ventas
+      - temporal
+      - campos-libres
+  FACTF01:
+    descripcion: Facturas de venta - Mes de enero
+    modulo: Ventas
+    tipo_negocio: Desconocido
+    tags:
+      - ventas
+      - temporal
+  FACTF_CLIB01:
+    descripcion: Facturas de venta - Mes de enero
+    modulo: Ventas
+    tipo_negocio: Desconocido
+    tags:
+      - ventas
+      - temporal
+      - campos-libres
+  FACTG01:
+    descripcion: Facturas de venta - Mes de enero
+    modulo: Ventas
+    tipo_negocio: Desconocido
+    tags:
+      - ventas
+      - temporal
+  FACTG_CLIB01:
+    descripcion: Facturas de venta - Mes de enero
+    modulo: Ventas
+    tipo_negocio: Desconocido
+    tags:
+      - ventas
+      - temporal
+      - campos-libres
+  FACTP01:
+    descripcion: Facturas de venta - Mes de enero
+    modulo: Ventas
+    tipo_negocio: Desconocido
+    tags:
+      - ventas
+      - temporal
+  FACTP_CLIB01:
+    descripcion: Facturas de venta - Mes de enero
+    modulo: Ventas
+    tipo_negocio: Desconocido
+    tags:
+      - ventas
+      - temporal
+      - campos-libres
+  FACTR01:
+    descripcion: Facturas de venta - Mes de enero
+    modulo: Ventas
+    tipo_negocio: Desconocido
+    tags:
+      - ventas
+      - temporal
+  FACTR_CLIB01:
+    descripcion: Facturas de venta - Mes de enero
+    modulo: Ventas
+    tipo_negocio: Desconocido
+    tags:
+      - ventas
+      - temporal
+      - campos-libres
+  FACTT01:
+    descripcion: Facturas de venta - Mes de enero
+    modulo: Ventas
+    tipo_negocio: Desconocido
+    tags:
+      - ventas
+      - temporal
+  FACTT_CLIB01:
+    descripcion: Facturas de venta - Mes de enero
+    modulo: Ventas
+    tipo_negocio: Desconocido
+    tags:
+      - ventas
+      - temporal
+      - campos-libres
+  FACTV01:
+    descripcion: Facturas de venta - Mes de enero
+    modulo: Ventas
+    tipo_negocio: Desconocido
+    tags:
+      - ventas
+      - temporal
+  FACTV_CLIB01:
+    descripcion: Facturas de venta - Mes de enero
+    modulo: Ventas
+    tipo_negocio: Desconocido
+    tags:
+      - ventas
+      - temporal
+      - campos-libres
+  FACT_GLOBAL01:
+    descripcion: Facturas de venta - Mes de enero
+    modulo: Ventas
+    tipo_negocio: Desconocido
+    tags:
+      - ventas
+      - temporal
+  FOLCXC01:
+    descripcion: Tabla de administración empresarial - FOLCXC01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  FOLCXP01:
+    descripcion: Tabla de administración empresarial - FOLCXP01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  FOLIOSC01:
+    descripcion: Tabla de administración empresarial - FOLIOSC01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  FOLIOSCXC01:
+    descripcion: Tabla de administración empresarial - FOLIOSCXC01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  FOLIOSCXP01:
+    descripcion: Tabla de administración empresarial - FOLIOSCXP01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  FOLIOSF01:
+    descripcion: Tabla de administración empresarial - FOLIOSF01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  FOTO_INVE01:
+    descripcion: Catálogo de artículos/productos - Mes de enero
+    modulo: Inventarios
+    tipo_negocio: Desconocido
+    tags:
+      - inventarios
+      - temporal
+  GUICAM01:
+    descripcion: Tabla de administración empresarial - GUICAM01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  HNUMSER01:
+    descripcion: Tabla de administración empresarial - HNUMSER01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  IMG_ARTICULO01:
+    descripcion: Tabla de administración empresarial - IMG_ARTICULO01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  IMPU01:
+    descripcion: Tabla de administración empresarial - IMPU01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  INFCLI01:
+    descripcion: Tabla de administración empresarial - INFCLI01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  INFENVIO01:
+    descripcion: Tabla de administración empresarial - INFENVIO01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  INTCOI01:
+    descripcion: Tabla de administración empresarial - INTCOI01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  INVE01:
+    descripcion: Catálogo de artículos/productos - Mes de enero
+    modulo: Inventarios
+    tipo_negocio: Desconocido
+    tags:
+      - inventarios
+      - temporal
+  INVEN_CLARO01:
+    descripcion: Catálogo de artículos/productos - Mes de enero
+    modulo: Inventarios
+    tipo_negocio: Desconocido
+    tags:
+      - inventarios
+      - temporal
+  INVE_AMAZON01:
+    descripcion: Catálogo de artículos/productos - Mes de enero
+    modulo: Inventarios
+    tipo_negocio: Desconocido
+    tags:
+      - inventarios
+      - temporal
+  INVE_CLIB01:
+    descripcion: Catálogo de artículos/productos - Mes de enero
+    modulo: Inventarios
+    tipo_negocio: Desconocido
+    tags:
+      - inventarios
+      - temporal
+      - campos-libres
+  INVE_MELI01:
+    descripcion: Catálogo de artículos/productos - Mes de enero
+    modulo: Inventarios
+    tipo_negocio: Desconocido
+    tags:
+      - inventarios
+      - temporal
+  INVFIS01:
+    descripcion: Tabla de administración empresarial - INVFIS01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  KITS01:
+    descripcion: Tabla de administración empresarial - KITS01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  LISTPRODSUST01:
+    descripcion: Tabla de administración empresarial - LISTPRODSUST01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  LNKOLKC01:
+    descripcion: Tabla de administración empresarial - LNKOLKC01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  LNKOLKP01:
+    descripcion: Tabla de administración empresarial - LNKOLKP01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  LTPD01:
+    descripcion: Tabla de administración empresarial - LTPD01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  MINVE01:
+    descripcion: Catálogo de artículos/productos - Mes de enero
+    modulo: Inventarios
+    tipo_negocio: Desconocido
+    tags:
+      - inventarios
+      - temporal
+  MONED01:
+    descripcion: Tabla de administración empresarial - MONED01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  MULT01:
+    descripcion: Tabla de administración empresarial - MULT01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  NUMSER01:
+    descripcion: Tabla de administración empresarial - NUMSER01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  OBS_DOCC01:
+    descripcion: Tabla de administración empresarial - OBS_DOCC01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+      - detalle
+  OBS_DOCF01:
+    descripcion: Tabla de administración empresarial - OBS_DOCF01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+      - detalle
+  OCLI01:
+    descripcion: Tabla de administración empresarial - OCLI01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  OCUEN01:
+    descripcion: Cuentas por cobrar - Mes de enero
+    modulo: Cuentas por Cobrar
+    tipo_negocio: Desconocido
+    tags:
+      - cuentas por cobrar
+      - temporal
+  OINVE01:
+    descripcion: Catálogo de artículos/productos - Mes de enero
+    modulo: Inventarios
+    tipo_negocio: Desconocido
+    tags:
+      - inventarios
+      - temporal
+  OLTPD01:
+    descripcion: Tabla de administración empresarial - OLTPD01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  OMINVE01:
+    descripcion: Catálogo de artículos/productos - Mes de enero
+    modulo: Inventarios
+    tipo_negocio: Desconocido
+    tags:
+      - inventarios
+      - temporal
+  OPAGA01:
+    descripcion: Pagos y aplicaciones - Mes de enero
+    modulo: Cuentas por Cobrar
+    tipo_negocio: Desconocido
+    tags:
+      - cuentas por cobrar
+      - temporal
+  OPERADOR01:
+    descripcion: Tabla de administración empresarial - OPERADOR01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  OPER_TERCEROS01:
+    descripcion: Tabla de administración empresarial - OPER_TERCEROS01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  OPER_X_TIPO_TERCERO01:
+    descripcion: Tabla de administración empresarial - OPER_X_TIPO_TERCERO01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  OPROV01:
+    descripcion: Catálogo de proveedores - Mes de enero
+    modulo: Compras
+    tipo_negocio: Desconocido
+    tags:
+      - compras
+      - temporal
+  PAGA_DET01:
+    descripcion: Pagos y aplicaciones - Mes de enero
+    modulo: Cuentas por Cobrar
+    tipo_negocio: Desconocido
+    tags:
+      - cuentas por cobrar
+      - temporal
+      - detalle
+  PAGA_M01:
+    descripcion: Pagos y aplicaciones - Mes de enero
+    modulo: Cuentas por Cobrar
+    tipo_negocio: Desconocido
+    tags:
+      - cuentas por cobrar
+      - temporal
+  PAGOCODI01:
+    descripcion: Tabla de administración empresarial - PAGOCODI01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  PAGOLINEA01:
+    descripcion: Líneas de productos - Mes de enero
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  PAGOS_PED_TIENDA01:
+    descripcion: Tabla de administración empresarial - PAGOS_PED_TIENDA01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  PAIS01:
+    descripcion: Tabla de administración empresarial - PAIS01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  PARAM_APLICASOC01:
+    descripcion: Parámetros de configuración - Mes de enero
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+      - configuracion
+  PARAM_CAMPOSLIBRES01:
+    descripcion: Parámetros de configuración - Mes de enero
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+      - configuracion
+  PARAM_CLIENTES01:
+    descripcion: Catálogo de clientes y prospectos - Mes de enero
+    modulo: Ventas
+    tipo_negocio: Desconocido
+    tags:
+      - ventas
+      - temporal
+      - configuracion
+  PARAM_CODI01:
+    descripcion: Parámetros de configuración - Mes de enero
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+      - configuracion
+  PARAM_COMPRAS01:
+    descripcion: Compras y órdenes de compra - Mes de enero
+    modulo: Compras
+    tipo_negocio: Desconocido
+    tags:
+      - compras
+      - temporal
+      - configuracion
+  PARAM_CTACONTABLE01:
+    descripcion: Parámetros de configuración - Mes de enero
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+      - configuracion
+  PARAM_DATOSBANCARIOS01:
+    descripcion: Parámetros de configuración - Mes de enero
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+      - detalle
+      - configuracion
+  PARAM_DATOSBD01:
+    descripcion: Parámetros de configuración - Mes de enero
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+      - detalle
+      - configuracion
+  PARAM_DATOSEMP01:
+    descripcion: Parámetros de configuración - Mes de enero
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+      - detalle
+      - configuracion
+  PARAM_DATOSGRALES01:
+    descripcion: Parámetros de configuración - Mes de enero
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+      - detalle
+      - configuracion
+  PARAM_DOMEXPED01:
+    descripcion: Parámetros de configuración - Mes de enero
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+      - detalle
+      - configuracion
+  PARAM_DOMFISCAL01:
+    descripcion: Parámetros de configuración - Mes de enero
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+      - detalle
+      - configuracion
+  PARAM_FACTURA01:
+    descripcion: Facturas de venta - Mes de enero
+    modulo: Ventas
+    tipo_negocio: Desconocido
+    tags:
+      - ventas
+      - temporal
+      - configuracion
+  PARAM_FACTURAELECTRONICA01:
+    descripcion: Facturas de venta - Mes de enero
+    modulo: Ventas
+    tipo_negocio: Desconocido
+    tags:
+      - ventas
+      - temporal
+      - configuracion
+  PARAM_FOLIOSC01:
+    descripcion: Parámetros de configuración - Mes de enero
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+      - configuracion
+  PARAM_FOLIOSF01:
+    descripcion: Parámetros de configuración - Mes de enero
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+      - configuracion
+  PARAM_GRAFICAS01:
+    descripcion: Parámetros de configuración - Mes de enero
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+      - configuracion
+  PARAM_INVENTARIO01:
+    descripcion: Catálogo de artículos/productos - Mes de enero
+    modulo: Inventarios
+    tipo_negocio: Desconocido
+    tags:
+      - inventarios
+      - temporal
+      - configuracion
+  PARAM_PARTIDASCOMP01:
+    descripcion: Compras y órdenes de compra - Mes de enero
+    modulo: Compras
+    tipo_negocio: Desconocido
+    tags:
+      - compras
+      - temporal
+      - configuracion
+  PARAM_PARTIDASFACT01:
+    descripcion: Facturas de venta - Mes de enero
+    modulo: Ventas
+    tipo_negocio: Desconocido
+    tags:
+      - ventas
+      - temporal
+      - configuracion
+  PARAM_PROVEEDORES01:
+    descripcion: Catálogo de proveedores - Mes de enero
+    modulo: Compras
+    tipo_negocio: Desconocido
+    tags:
+      - compras
+      - temporal
+      - configuracion
+  PARAM_TIENDAS01:
+    descripcion: Parámetros de configuración - Mes de enero
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+      - configuracion
+  PARAM_TIPODOCTOSC01:
+    descripcion: Parámetros de configuración - Mes de enero
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+      - configuracion
+  PARAM_TIPODOCTOSF01:
+    descripcion: Parámetros de configuración - Mes de enero
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+      - configuracion
+  PAR_COMPC01:
+    descripcion: Compras y órdenes de compra - Mes de enero
+    modulo: Compras
+    tipo_negocio: Desconocido
+    tags:
+      - compras
+      - temporal
+  PAR_COMPC_CLIB01:
+    descripcion: Compras y órdenes de compra - Mes de enero
+    modulo: Compras
+    tipo_negocio: Desconocido
+    tags:
+      - compras
+      - temporal
+      - campos-libres
+  PAR_COMPD01:
+    descripcion: Compras y órdenes de compra - Mes de enero
+    modulo: Compras
+    tipo_negocio: Desconocido
+    tags:
+      - compras
+      - temporal
+  PAR_COMPD_CLIB01:
+    descripcion: Compras y órdenes de compra - Mes de enero
+    modulo: Compras
+    tipo_negocio: Desconocido
+    tags:
+      - compras
+      - temporal
+      - campos-libres
+  PAR_COMPO01:
+    descripcion: Compras y órdenes de compra - Mes de enero
+    modulo: Compras
+    tipo_negocio: Desconocido
+    tags:
+      - compras
+      - temporal
+  PAR_COMPO_CLIB01:
+    descripcion: Compras y órdenes de compra - Mes de enero
+    modulo: Compras
+    tipo_negocio: Desconocido
+    tags:
+      - compras
+      - temporal
+      - campos-libres
+  PAR_COMPQ01:
+    descripcion: Compras y órdenes de compra - Mes de enero
+    modulo: Compras
+    tipo_negocio: Desconocido
+    tags:
+      - compras
+      - temporal
+  PAR_COMPQ_CLIB01:
+    descripcion: Compras y órdenes de compra - Mes de enero
+    modulo: Compras
+    tipo_negocio: Desconocido
+    tags:
+      - compras
+      - temporal
+      - campos-libres
+  PAR_COMPR01:
+    descripcion: Compras y órdenes de compra - Mes de enero
+    modulo: Compras
+    tipo_negocio: Desconocido
+    tags:
+      - compras
+      - temporal
+  PAR_COMPR_CLIB01:
+    descripcion: Compras y órdenes de compra - Mes de enero
+    modulo: Compras
+    tipo_negocio: Desconocido
+    tags:
+      - compras
+      - temporal
+      - campos-libres
+  PAR_FACTA01:
+    descripcion: Facturas de venta - Mes de enero
+    modulo: Ventas
+    tipo_negocio: Desconocido
+    tags:
+      - ventas
+      - temporal
+  PAR_FACTA_CLIB01:
+    descripcion: Facturas de venta - Mes de enero
+    modulo: Ventas
+    tipo_negocio: Desconocido
+    tags:
+      - ventas
+      - temporal
+      - campos-libres
+  PAR_FACTC01:
+    descripcion: Facturas de venta - Mes de enero
+    modulo: Ventas
+    tipo_negocio: Desconocido
+    tags:
+      - ventas
+      - temporal
+  PAR_FACTC_CLIB01:
+    descripcion: Facturas de venta - Mes de enero
+    modulo: Ventas
+    tipo_negocio: Desconocido
+    tags:
+      - ventas
+      - temporal
+      - campos-libres
+  PAR_FACTD01:
+    descripcion: Facturas de venta - Mes de enero
+    modulo: Ventas
+    tipo_negocio: Desconocido
+    tags:
+      - ventas
+      - temporal
+  PAR_FACTD_CLIB01:
+    descripcion: Facturas de venta - Mes de enero
+    modulo: Ventas
+    tipo_negocio: Desconocido
+    tags:
+      - ventas
+      - temporal
+      - campos-libres
+  PAR_FACTE01:
+    descripcion: Facturas de venta - Mes de enero
+    modulo: Ventas
+    tipo_negocio: Desconocido
+    tags:
+      - ventas
+      - temporal
+  PAR_FACTE_CLIB01:
+    descripcion: Facturas de venta - Mes de enero
+    modulo: Ventas
+    tipo_negocio: Desconocido
+    tags:
+      - ventas
+      - temporal
+      - campos-libres
+  PAR_FACTF01:
+    descripcion: Facturas de venta - Mes de enero
+    modulo: Ventas
+    tipo_negocio: Desconocido
+    tags:
+      - ventas
+      - temporal
+  PAR_FACTF_CLIB01:
+    descripcion: Facturas de venta - Mes de enero
+    modulo: Ventas
+    tipo_negocio: Desconocido
+    tags:
+      - ventas
+      - temporal
+      - campos-libres
+  PAR_FACTG01:
+    descripcion: Facturas de venta - Mes de enero
+    modulo: Ventas
+    tipo_negocio: Desconocido
+    tags:
+      - ventas
+      - temporal
+  PAR_FACTG_CLIB01:
+    descripcion: Facturas de venta - Mes de enero
+    modulo: Ventas
+    tipo_negocio: Desconocido
+    tags:
+      - ventas
+      - temporal
+      - campos-libres
+  PAR_FACTP01:
+    descripcion: Facturas de venta - Mes de enero
+    modulo: Ventas
+    tipo_negocio: Desconocido
+    tags:
+      - ventas
+      - temporal
+  PAR_FACTP_CLIB01:
+    descripcion: Facturas de venta - Mes de enero
+    modulo: Ventas
+    tipo_negocio: Desconocido
+    tags:
+      - ventas
+      - temporal
+      - campos-libres
+  PAR_FACTR01:
+    descripcion: Facturas de venta - Mes de enero
+    modulo: Ventas
+    tipo_negocio: Desconocido
+    tags:
+      - ventas
+      - temporal
+  PAR_FACTR_CLIB01:
+    descripcion: Facturas de venta - Mes de enero
+    modulo: Ventas
+    tipo_negocio: Desconocido
+    tags:
+      - ventas
+      - temporal
+      - campos-libres
+  PAR_FACTT01:
+    descripcion: Facturas de venta - Mes de enero
+    modulo: Ventas
+    tipo_negocio: Desconocido
+    tags:
+      - ventas
+      - temporal
+  PAR_FACTT_CLIB01:
+    descripcion: Facturas de venta - Mes de enero
+    modulo: Ventas
+    tipo_negocio: Desconocido
+    tags:
+      - ventas
+      - temporal
+      - campos-libres
+  PAR_FACTV01:
+    descripcion: Facturas de venta - Mes de enero
+    modulo: Ventas
+    tipo_negocio: Desconocido
+    tags:
+      - ventas
+      - temporal
+  PAR_FACTV_CLIB01:
+    descripcion: Facturas de venta - Mes de enero
+    modulo: Ventas
+    tipo_negocio: Desconocido
+    tags:
+      - ventas
+      - temporal
+      - campos-libres
+  PAR_PED_AMAZON01:
+    descripcion: Tabla de administración empresarial - PAR_PED_AMAZON01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  PAR_PED_CLARO01:
+    descripcion: Tabla de administración empresarial - PAR_PED_CLARO01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  PAR_PED_TIEND01:
+    descripcion: Tabla de administración empresarial - PAR_PED_TIEND01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  PED_AMAZON01:
+    descripcion: Tabla de administración empresarial - PED_AMAZON01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  PED_CLARO01:
+    descripcion: Tabla de administración empresarial - PED_CLARO01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  PED_TIEND01:
+    descripcion: Tabla de administración empresarial - PED_TIEND01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  PERIODOS01:
+    descripcion: Tabla de administración empresarial - PERIODOS01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  POLI01:
+    descripcion: Tabla de administración empresarial - POLI01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  PRECIOS01:
+    descripcion: Tabla de administración empresarial - PRECIOS01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  PRECIO_X_PROD01:
+    descripcion: Tabla de administración empresarial - PRECIO_X_PROD01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  PRODSUST01:
+    descripcion: Tabla de administración empresarial - PRODSUST01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  PROD_X_CONC01:
+    descripcion: Tabla de administración empresarial - PROD_X_CONC01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  PROV01:
+    descripcion: Catálogo de proveedores - Mes de enero
+    modulo: Compras
+    tipo_negocio: Desconocido
+    tags:
+      - compras
+      - temporal
+  PROV_CLIB01:
+    descripcion: Catálogo de proveedores - Mes de enero
+    modulo: Compras
+    tipo_negocio: Desconocido
+    tags:
+      - compras
+      - temporal
+      - campos-libres
+  PRVPROD01:
+    descripcion: Tabla de administración empresarial - PRVPROD01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  RESACT01:
+    descripcion: Tabla de administración empresarial - RESACT01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  RESULT01:
+    descripcion: Tabla de administración empresarial - RESULT01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  TALLA01:
+    descripcion: Tabla de administración empresarial - TALLA01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  TBLCONTROL01:
+    descripcion: Tabla de administración empresarial - TBLCONTROL01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  TIPO_TERCEROS01:
+    descripcion: Tabla de administración empresarial - TIPO_TERCEROS01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  VEND01:
+    descripcion: Catálogo de vendedores - Mes de enero
+    modulo: Ventas
+    tipo_negocio: Desconocido
+    tags:
+      - ventas
+      - temporal
+  ZONA01:
+    descripcion: Tabla de administración empresarial - ZONA01
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+relaciones_inferidas:
+  - origen_patron: CVE_CLPV
+    destino_tabla: CLIE01
+    destino_campo: CLAVE
+    descripcion: Relación Cliente-Proveedor
+  - origen_patron: CVE_VEND
+    destino_tabla: VEND01
+    destino_campo: CVE_VEND
+    descripcion: Relación Vendedor

@@ -1,0 +1,761 @@
+tablas:
+  BENEF:
+    descripcion: Beneficiarios de pagos
+    modulo: Beneficiarios
+    tipo_negocio: Desconocido
+    tags:
+      - beneficiarios
+  COMD:
+    descripcion: Comisiones y cargos diversos
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+  CONTROL:
+    descripcion: Parámetros de control
+    modulo: Configuración
+    tipo_negocio: Desconocido
+    tags:
+      - configuración
+      - configuracion
+  CONTROLREGMOV:
+    descripcion: Control de registro de movimientos
+    modulo: Movimientos
+    tipo_negocio: Desconocido
+    tags:
+      - movimientos
+      - configuracion
+  CTAS:
+    descripcion: Catálogo de cuentas bancarias
+    modulo: Cuentas
+    tipo_negocio: Desconocido
+    tags:
+      - cuentas
+  CTECONC:
+    descripcion: Conciliación bancaria
+    modulo: Conciliación
+    tipo_negocio: Desconocido
+    tags:
+      - conciliación
+  FORMPAGO:
+    descripcion: Formas de pago
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+  HISTOR:
+    descripcion: Histórico de operaciones
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - historico
+  MONEDA:
+    descripcion: Catálogo de monedas
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+  MOVAUX:
+    descripcion: Movimientos auxiliares/temporales
+    modulo: Movimientos
+    tipo_negocio: Desconocido
+    tags:
+      - movimientos
+  MOVAUX2:
+    descripcion: Movimientos auxiliares/temporales
+    modulo: Movimientos
+    tipo_negocio: Desconocido
+    tags:
+      - movimientos
+  MOVS01:
+    descripcion: Movimientos bancarios - Mes de enero
+    modulo: Movimientos
+    tipo_negocio: Desconocido
+    tags:
+      - movimientos
+      - temporal
+  MOVS02:
+    descripcion: Movimientos bancarios - Mes de febrero
+    modulo: Movimientos
+    tipo_negocio: Desconocido
+    tags:
+      - movimientos
+      - temporal
+  MOVS03:
+    descripcion: Movimientos bancarios - Mes de marzo
+    modulo: Movimientos
+    tipo_negocio: Desconocido
+    tags:
+      - movimientos
+      - temporal
+  MOVS04:
+    descripcion: Movimientos bancarios - Mes de abril
+    modulo: Movimientos
+    tipo_negocio: Desconocido
+    tags:
+      - movimientos
+      - temporal
+  MOVS05:
+    descripcion: Movimientos bancarios - Mes de mayo
+    modulo: Movimientos
+    tipo_negocio: Desconocido
+    tags:
+      - movimientos
+      - temporal
+  MOVS06:
+    descripcion: Movimientos bancarios - Mes de junio
+    modulo: Movimientos
+    tipo_negocio: Desconocido
+    tags:
+      - movimientos
+      - temporal
+  MOVS07:
+    descripcion: Movimientos bancarios - Mes de julio
+    modulo: Movimientos
+    tipo_negocio: Desconocido
+    tags:
+      - movimientos
+      - temporal
+  MOVS08:
+    descripcion: Movimientos bancarios - Mes de agosto
+    modulo: Movimientos
+    tipo_negocio: Desconocido
+    tags:
+      - movimientos
+      - temporal
+  MOVS09:
+    descripcion: Movimientos bancarios - Mes de septiembre
+    modulo: Movimientos
+    tipo_negocio: Desconocido
+    tags:
+      - movimientos
+      - temporal
+  MOVS10:
+    descripcion: Movimientos bancarios - Mes de octubre
+    modulo: Movimientos
+    tipo_negocio: Desconocido
+    tags:
+      - movimientos
+      - temporal
+  MOVS11:
+    descripcion: Movimientos bancarios - Mes de noviembre
+    modulo: Movimientos
+    tipo_negocio: Desconocido
+    tags:
+      - movimientos
+      - temporal
+  MOVS12:
+    descripcion: Movimientos bancarios - Mes de diciembre
+    modulo: Movimientos
+    tipo_negocio: Desconocido
+    tags:
+      - movimientos
+      - temporal
+  MOVS13:
+    descripcion: Movimientos bancarios
+    modulo: Movimientos
+    tipo_negocio: Desconocido
+    tags:
+      - movimientos
+      - temporal
+  MOVS14:
+    descripcion: Movimientos bancarios
+    modulo: Movimientos
+    tipo_negocio: Desconocido
+    tags:
+      - movimientos
+      - temporal
+  MOVS15:
+    descripcion: Movimientos bancarios
+    modulo: Movimientos
+    tipo_negocio: Desconocido
+    tags:
+      - movimientos
+      - temporal
+  MOVS16:
+    descripcion: Movimientos bancarios
+    modulo: Movimientos
+    tipo_negocio: Desconocido
+    tags:
+      - movimientos
+      - temporal
+  MOVS17:
+    descripcion: Movimientos bancarios
+    modulo: Movimientos
+    tipo_negocio: Desconocido
+    tags:
+      - movimientos
+      - temporal
+  MOVS18:
+    descripcion: Movimientos bancarios
+    modulo: Movimientos
+    tipo_negocio: Desconocido
+    tags:
+      - movimientos
+      - temporal
+  MOVS19:
+    descripcion: Movimientos bancarios
+    modulo: Movimientos
+    tipo_negocio: Desconocido
+    tags:
+      - movimientos
+      - temporal
+  MOVS20:
+    descripcion: Movimientos bancarios
+    modulo: Movimientos
+    tipo_negocio: Desconocido
+    tags:
+      - movimientos
+      - temporal
+  MOVS21:
+    descripcion: Movimientos bancarios
+    modulo: Movimientos
+    tipo_negocio: Desconocido
+    tags:
+      - movimientos
+      - temporal
+  MOVS22:
+    descripcion: Movimientos bancarios
+    modulo: Movimientos
+    tipo_negocio: Desconocido
+    tags:
+      - movimientos
+      - temporal
+  MOVS23:
+    descripcion: Movimientos bancarios
+    modulo: Movimientos
+    tipo_negocio: Desconocido
+    tags:
+      - movimientos
+      - temporal
+  MOVS24:
+    descripcion: Movimientos bancarios
+    modulo: Movimientos
+    tipo_negocio: Desconocido
+    tags:
+      - movimientos
+      - temporal
+  MOVS25:
+    descripcion: Movimientos bancarios
+    modulo: Movimientos
+    tipo_negocio: Desconocido
+    tags:
+      - movimientos
+      - temporal
+  MOVS26:
+    descripcion: Movimientos bancarios
+    modulo: Movimientos
+    tipo_negocio: Desconocido
+    tags:
+      - movimientos
+      - temporal
+  MOVS27:
+    descripcion: Movimientos bancarios
+    modulo: Movimientos
+    tipo_negocio: Desconocido
+    tags:
+      - movimientos
+      - temporal
+  MOVS28:
+    descripcion: Movimientos bancarios
+    modulo: Movimientos
+    tipo_negocio: Desconocido
+    tags:
+      - movimientos
+      - temporal
+  MOVS29:
+    descripcion: Movimientos bancarios
+    modulo: Movimientos
+    tipo_negocio: Desconocido
+    tags:
+      - movimientos
+      - temporal
+  MOVS30:
+    descripcion: Movimientos bancarios
+    modulo: Movimientos
+    tipo_negocio: Desconocido
+    tags:
+      - movimientos
+      - temporal
+  MOVS31:
+    descripcion: Movimientos bancarios
+    modulo: Movimientos
+    tipo_negocio: Desconocido
+    tags:
+      - movimientos
+      - temporal
+  MOVS32:
+    descripcion: Movimientos bancarios
+    modulo: Movimientos
+    tipo_negocio: Desconocido
+    tags:
+      - movimientos
+      - temporal
+  PARAMEMP:
+    descripcion: Catálogo maestro (BANCO)
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - configuracion
+  PARMOVS01:
+    descripcion: Movimientos bancarios - Mes de enero
+    modulo: Movimientos
+    tipo_negocio: Desconocido
+    tags:
+      - movimientos
+      - temporal
+  PARMOVS02:
+    descripcion: Movimientos bancarios - Mes de febrero
+    modulo: Movimientos
+    tipo_negocio: Desconocido
+    tags:
+      - movimientos
+      - temporal
+  PARMOVS03:
+    descripcion: Movimientos bancarios - Mes de marzo
+    modulo: Movimientos
+    tipo_negocio: Desconocido
+    tags:
+      - movimientos
+      - temporal
+  PARMOVS04:
+    descripcion: Movimientos bancarios - Mes de abril
+    modulo: Movimientos
+    tipo_negocio: Desconocido
+    tags:
+      - movimientos
+      - temporal
+  PARMOVS05:
+    descripcion: Movimientos bancarios - Mes de mayo
+    modulo: Movimientos
+    tipo_negocio: Desconocido
+    tags:
+      - movimientos
+      - temporal
+  PARMOVS06:
+    descripcion: Movimientos bancarios - Mes de junio
+    modulo: Movimientos
+    tipo_negocio: Desconocido
+    tags:
+      - movimientos
+      - temporal
+  PARMOVS07:
+    descripcion: Movimientos bancarios - Mes de julio
+    modulo: Movimientos
+    tipo_negocio: Desconocido
+    tags:
+      - movimientos
+      - temporal
+  PARMOVS08:
+    descripcion: Movimientos bancarios - Mes de agosto
+    modulo: Movimientos
+    tipo_negocio: Desconocido
+    tags:
+      - movimientos
+      - temporal
+  PARMOVS09:
+    descripcion: Movimientos bancarios - Mes de septiembre
+    modulo: Movimientos
+    tipo_negocio: Desconocido
+    tags:
+      - movimientos
+      - temporal
+  PARMOVS10:
+    descripcion: Movimientos bancarios - Mes de octubre
+    modulo: Movimientos
+    tipo_negocio: Desconocido
+    tags:
+      - movimientos
+      - temporal
+  PARMOVS11:
+    descripcion: Movimientos bancarios - Mes de noviembre
+    modulo: Movimientos
+    tipo_negocio: Desconocido
+    tags:
+      - movimientos
+      - temporal
+  PARMOVS12:
+    descripcion: Movimientos bancarios - Mes de diciembre
+    modulo: Movimientos
+    tipo_negocio: Desconocido
+    tags:
+      - movimientos
+      - temporal
+  PARMOVS13:
+    descripcion: Movimientos bancarios
+    modulo: Movimientos
+    tipo_negocio: Desconocido
+    tags:
+      - movimientos
+      - temporal
+  PARMOVS14:
+    descripcion: Movimientos bancarios
+    modulo: Movimientos
+    tipo_negocio: Desconocido
+    tags:
+      - movimientos
+      - temporal
+  PARMOVS15:
+    descripcion: Movimientos bancarios
+    modulo: Movimientos
+    tipo_negocio: Desconocido
+    tags:
+      - movimientos
+      - temporal
+  PARMOVS16:
+    descripcion: Movimientos bancarios
+    modulo: Movimientos
+    tipo_negocio: Desconocido
+    tags:
+      - movimientos
+      - temporal
+  PARMOVS17:
+    descripcion: Movimientos bancarios
+    modulo: Movimientos
+    tipo_negocio: Desconocido
+    tags:
+      - movimientos
+      - temporal
+  PARMOVS18:
+    descripcion: Movimientos bancarios
+    modulo: Movimientos
+    tipo_negocio: Desconocido
+    tags:
+      - movimientos
+      - temporal
+  PARMOVS19:
+    descripcion: Movimientos bancarios
+    modulo: Movimientos
+    tipo_negocio: Desconocido
+    tags:
+      - movimientos
+      - temporal
+  PARMOVS20:
+    descripcion: Movimientos bancarios
+    modulo: Movimientos
+    tipo_negocio: Desconocido
+    tags:
+      - movimientos
+      - temporal
+  PARMOVS21:
+    descripcion: Movimientos bancarios
+    modulo: Movimientos
+    tipo_negocio: Desconocido
+    tags:
+      - movimientos
+      - temporal
+  PARMOVS22:
+    descripcion: Movimientos bancarios
+    modulo: Movimientos
+    tipo_negocio: Desconocido
+    tags:
+      - movimientos
+      - temporal
+  PARMOVS23:
+    descripcion: Movimientos bancarios
+    modulo: Movimientos
+    tipo_negocio: Desconocido
+    tags:
+      - movimientos
+      - temporal
+  PARMOVS24:
+    descripcion: Movimientos bancarios
+    modulo: Movimientos
+    tipo_negocio: Desconocido
+    tags:
+      - movimientos
+      - temporal
+  PARMOVS25:
+    descripcion: Movimientos bancarios
+    modulo: Movimientos
+    tipo_negocio: Desconocido
+    tags:
+      - movimientos
+      - temporal
+  PARMOVS26:
+    descripcion: Movimientos bancarios
+    modulo: Movimientos
+    tipo_negocio: Desconocido
+    tags:
+      - movimientos
+      - temporal
+  PARMOVS27:
+    descripcion: Movimientos bancarios
+    modulo: Movimientos
+    tipo_negocio: Desconocido
+    tags:
+      - movimientos
+      - temporal
+  PARMOVS28:
+    descripcion: Movimientos bancarios
+    modulo: Movimientos
+    tipo_negocio: Desconocido
+    tags:
+      - movimientos
+      - temporal
+  PARMOVS29:
+    descripcion: Movimientos bancarios
+    modulo: Movimientos
+    tipo_negocio: Desconocido
+    tags:
+      - movimientos
+      - temporal
+  PARMOVS30:
+    descripcion: Movimientos bancarios
+    modulo: Movimientos
+    tipo_negocio: Desconocido
+    tags:
+      - movimientos
+      - temporal
+  PARMOVS31:
+    descripcion: Movimientos bancarios
+    modulo: Movimientos
+    tipo_negocio: Desconocido
+    tags:
+      - movimientos
+      - temporal
+  PARMOVS32:
+    descripcion: Movimientos bancarios
+    modulo: Movimientos
+    tipo_negocio: Desconocido
+    tags:
+      - movimientos
+      - temporal
+  SEMAFORO:
+    descripcion: Registro de operaciones bancarias - SEMAFORO
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+  UUIDTIMBRES:
+    descripcion: Movimientos y transacciones (BANCO)
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+  UUIDTIMBRES01:
+    descripcion: Movimientos y transacciones (BANCO)
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  UUIDTIMBRES02:
+    descripcion: Movimientos y transacciones (BANCO)
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  UUIDTIMBRES03:
+    descripcion: Movimientos y transacciones (BANCO)
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  UUIDTIMBRES04:
+    descripcion: Movimientos y transacciones (BANCO)
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  UUIDTIMBRES05:
+    descripcion: Movimientos y transacciones (BANCO)
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  UUIDTIMBRES06:
+    descripcion: Movimientos y transacciones (BANCO)
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  UUIDTIMBRES07:
+    descripcion: Movimientos y transacciones (BANCO)
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  UUIDTIMBRES08:
+    descripcion: Movimientos y transacciones (BANCO)
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  UUIDTIMBRES09:
+    descripcion: Movimientos y transacciones (BANCO)
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  UUIDTIMBRES10:
+    descripcion: Movimientos y transacciones (BANCO)
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  UUIDTIMBRES11:
+    descripcion: Movimientos y transacciones (BANCO)
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  UUIDTIMBRES12:
+    descripcion: Movimientos y transacciones (BANCO)
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  UUIDTIMBRES13:
+    descripcion: Movimientos y transacciones (BANCO)
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  UUIDTIMBRES14:
+    descripcion: Movimientos y transacciones (BANCO)
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  UUIDTIMBRES15:
+    descripcion: Movimientos y transacciones (BANCO)
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  UUIDTIMBRES16:
+    descripcion: Movimientos y transacciones (BANCO)
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  UUIDTIMBRES17:
+    descripcion: Movimientos y transacciones (BANCO)
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  UUIDTIMBRES18:
+    descripcion: Movimientos y transacciones (BANCO)
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  UUIDTIMBRES19:
+    descripcion: Movimientos y transacciones (BANCO)
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  UUIDTIMBRES20:
+    descripcion: Movimientos y transacciones (BANCO)
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  UUIDTIMBRES21:
+    descripcion: Movimientos y transacciones (BANCO)
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  UUIDTIMBRES22:
+    descripcion: Movimientos y transacciones (BANCO)
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  UUIDTIMBRES23:
+    descripcion: Movimientos y transacciones (BANCO)
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  UUIDTIMBRES24:
+    descripcion: Movimientos y transacciones (BANCO)
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  UUIDTIMBRES25:
+    descripcion: Movimientos y transacciones (BANCO)
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  UUIDTIMBRES26:
+    descripcion: Movimientos y transacciones (BANCO)
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  UUIDTIMBRES27:
+    descripcion: Movimientos y transacciones (BANCO)
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  UUIDTIMBRES28:
+    descripcion: Movimientos y transacciones (BANCO)
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  UUIDTIMBRES29:
+    descripcion: Movimientos y transacciones (BANCO)
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  UUIDTIMBRES30:
+    descripcion: Movimientos y transacciones (BANCO)
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  UUIDTIMBRES31:
+    descripcion: Movimientos y transacciones (BANCO)
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal
+  UUIDTIMBRES32:
+    descripcion: Movimientos y transacciones (BANCO)
+    modulo: General
+    tipo_negocio: Desconocido
+    tags:
+      - general
+      - temporal

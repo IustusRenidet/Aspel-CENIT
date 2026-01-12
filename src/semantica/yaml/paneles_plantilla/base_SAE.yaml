@@ -1,0 +1,24 @@
+paneles:
+  tablero_director_ventas:
+    titulo: "Dirección Comercial"
+    descripcion: "Vista general de ingresos y clientes"
+    layout: 
+      - widget: "kpi_ventas"
+        metrica: "ventas_totales_mes"
+        tipo_viz: "tarjeta"
+        ancho: 4
+      
+      - widget: "kpi_facturas"
+        metrica: "conteo_facturas"
+        tipo_viz: "tarjeta"
+        ancho: 4
+
+      - widget: "kpi_cartera"
+        metrica: "deuda_clientes"
+        tipo_viz: "tarjeta"
+        ancho: 4
+
+      - widget: "grafico_top_clientes"
+        metrica: "top_clientes_ventas"
+        tipo_viz: "barras_horizontales"
+        ancho: 12
