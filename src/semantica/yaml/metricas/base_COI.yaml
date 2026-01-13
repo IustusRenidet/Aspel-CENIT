@@ -130,3 +130,305 @@ metricas:
       decimales: 2
       sufijo: ":1"
 
+  - id: coi_utilidad_neta_mes
+    nombre: "Utilidad Neta del Mes"
+    descripcion: "Ingresos menos gastos del periodo actual"
+    categoria: resultados
+    tipo: escalar
+    unidad: moneda
+    query_duckdb: |
+      SELECT 
+        (COALESCE(SUM(CASE WHEN CUENTA_CONTABLE LIKE '4%' THEN CAST(SALDO_ACTUAL AS DOUBLE) ELSE 0 END), 0) -
+         COALESCE(SUM(CASE WHEN CUENTA_CONTABLE LIKE '5%' OR CUENTA_CONTABLE LIKE '6%' THEN CAST(SALDO_ACTUAL AS DOUBLE) ELSE 0 END), 0)) as valor
+      FROM CUENTAS24
+    formato:
+      decimales: 2
+      prefijo: "$"
+    alertas:
+      warning: 0
+      critical: -50000
+
+  - id: coi_ingresos_totales
+    nombre: "Ingresos Totales"
+    descripcion: "Total de cuentas de ingresos (4xxx)"
+    categoria: resultados
+    tipo: escalar
+    unidad: moneda
+    query_duckdb: |
+      SELECT 
+        COALESCE(SUM(CAST(SALDO_ACTUAL AS DOUBLE)), 0) as valor
+      FROM CUENTAS24
+      WHERE CUENTA_CONTABLE LIKE '4%'
+    formato:
+      decimales: 2
+      prefijo: "$"
+
+  - id: coi_gastos_operativos
+    nombre: "Gastos Operativos"
+    descripcion: "Total de gastos de operación (5xxx)"
+    categoria: resultados
+    tipo: escalar
+    unidad: moneda
+    query_duckdb: |
+      SELECT 
+        COALESCE(SUM(CAST(SALDO_ACTUAL AS DOUBLE)), 0) as valor
+      FROM CUENTAS24
+      WHERE CUENTA_CONTABLE LIKE '5%'
+    formato:
+      decimales: 2
+      prefijo: "$"
+
+  - id: coi_costo_ventas
+    nombre: "Costo de Ventas"
+    descripcion: "Total de cuentas de costo (6xxx)"
+    categoria: resultados
+    tipo: escalar
+    unidad: moneda
+    query_duckdb: |
+      SELECT 
+        COALESCE(SUM(CAST(SALDO_ACTUAL AS DOUBLE)), 0) as valor
+      FROM CUENTAS24
+      WHERE CUENTA_CONTABLE LIKE '6%'
+    formato:
+      decimales: 2
+      prefijo: "$"
+
+  - id: coi_margen_operativo
+    nombre: "Margen Operativo"
+    descripcion: "Porcentaje de utilidad operativa sobre ingresos"
+    categoria: indicadores
+    tipo: escalar
+    unidad: porcentaje
+    query_duckdb: |
+      WITH ingresos AS (
+        SELECT COALESCE(SUM(CAST(SALDO_ACTUAL AS DOUBLE)), 0) as total
+        FROM CUENTAS24 WHERE CUENTA_CONTABLE LIKE '4%'
+      ),
+      gastos AS (
+        SELECT COALESCE(SUM(CAST(SALDO_ACTUAL AS DOUBLE)), 0) as total
+        FROM CUENTAS24 WHERE CUENTA_CONTABLE LIKE '5%' OR CUENTA_CONTABLE LIKE '6%'
+      )
+      SELECT 
+        CASE WHEN i.total > 0 THEN ((i.total - g.total) / i.total) * 100 ELSE 0 END as valor
+      FROM ingresos i, gastos g
+    formato:
+      decimales: 2
+      sufijo: "%"
+    alertas:
+      warning: 10
+      critical: 5
+
+  - id: coi_apalancamiento
+    nombre: "Índice de Apalancamiento"
+    descripcion: "Pasivo total / Activo total"
+    categoria: indicadores
+    tipo: escalar
+    unidad: ratio
+    query_duckdb: |
+      SELECT 
+        CASE 
+          WHEN SUM(CASE WHEN CUENTA_CONTABLE LIKE '1%' THEN CAST(SALDO_ACTUAL AS DOUBLE) ELSE 0 END) > 0 THEN
+            SUM(CASE WHEN CUENTA_CONTABLE LIKE '2%' THEN CAST(SALDO_ACTUAL AS DOUBLE) ELSE 0 END) /
+            SUM(CASE WHEN CUENTA_CONTABLE LIKE '1%' THEN CAST(SALDO_ACTUAL AS DOUBLE) ELSE 0 END)
+          ELSE 0
+        END as valor
+      FROM CUENTAS24
+    formato:
+      decimales: 2
+    alertas:
+      warning: 0.7
+      critical: 0.9
+
+  - id: coi_bancos_disponible
+    nombre: "Efectivo en Bancos"
+    descripcion: "Saldo disponible en cuentas bancarias (102xxx)"
+    categoria: tesoreria
+    tipo: escalar
+    unidad: moneda
+    query_duckdb: |
+      SELECT 
+        COALESCE(SUM(CAST(SALDO_ACTUAL AS DOUBLE)), 0) as valor
+      FROM CUENTAS24
+      WHERE CUENTA_CONTABLE LIKE '102%'
+    formato:
+      decimales: 2
+      prefijo: "$"
+
+  - id: coi_cuentas_por_cobrar
+    nombre: "Cuentas por Cobrar"
+    descripcion: "Saldo de clientes pendientes (105xxx)"
+    categoria: tesoreria
+    tipo: escalar
+    unidad: moneda
+    query_duckdb: |
+      SELECT 
+        COALESCE(SUM(CAST(SALDO_ACTUAL AS DOUBLE)), 0) as valor
+      FROM CUENTAS24
+      WHERE CUENTA_CONTABLE LIKE '105%'
+    formato:
+      decimales: 2
+      prefijo: "$"
+
+  - id: coi_cuentas_por_pagar
+    nombre: "Cuentas por Pagar"
+    descripcion: "Saldo de proveedores pendientes (201xxx)"
+    categoria: tesoreria
+    tipo: escalar
+    unidad: moneda
+    query_duckdb: |
+      SELECT 
+        COALESCE(SUM(CAST(SALDO_ACTUAL AS DOUBLE)), 0) as valor
+      FROM CUENTAS24
+      WHERE CUENTA_CONTABLE LIKE '201%'
+    formato:
+      decimales: 2
+      prefijo: "$"
+
+  - id: coi_rotacion_cuentas_cobrar
+    nombre: "Días de Cuentas por Cobrar"
+    descripcion: "Promedio de días de crédito a clientes"
+    categoria: indicadores
+    tipo: escalar
+    unidad: dias
+    query_duckdb: |
+      WITH ventas_anual AS (
+        SELECT COALESCE(SUM(CAST(SALDO_ACTUAL AS DOUBLE)), 1) as total
+        FROM CUENTAS24 WHERE CUENTA_CONTABLE LIKE '4%'
+      ),
+      cxc AS (
+        SELECT COALESCE(SUM(CAST(SALDO_ACTUAL AS DOUBLE)), 0) as total
+        FROM CUENTAS24 WHERE CUENTA_CONTABLE LIKE '105%'
+      )
+      SELECT (c.total / (v.total / 365)) as valor
+      FROM ventas_anual v, cxc c
+    formato:
+      decimales: 0
+      sufijo: " días"
+    alertas:
+      warning: 45
+      critical: 60
+
+  - id: coi_movimientos_mes_actual
+    nombre: "Movimientos del Mes"
+    descripcion: "Cantidad de registros contables del mes actual"
+    categoria: contabilidad
+    tipo: escalar
+    unidad: cantidad
+    query_duckdb: |
+      SELECT 
+        COUNT(*) as valor
+      FROM AUXILIAR24
+      WHERE EXTRACT(MONTH FROM FECHA) = EXTRACT(MONTH FROM CURRENT_DATE)
+        AND EXTRACT(YEAR FROM FECHA) = EXTRACT(YEAR FROM CURRENT_DATE)
+    formato:
+      decimales: 0
+
+  - id: coi_polizas_sin_cuadrar
+    nombre: "Pólizas Descuadradas"
+    descripcion: "Pólizas donde cargos no igualan abonos"
+    categoria: control
+    tipo: escalar
+    unidad: cantidad
+    query_duckdb: |
+      SELECT 
+        COUNT(DISTINCT p.NUMERO_POLIZA) as valor
+      FROM POLIZAS24 p
+      INNER JOIN AUXILIAR24 a ON p.NUMERO_POLIZA = a.NUMERO_POLIZA
+      GROUP BY p.NUMERO_POLIZA
+      HAVING SUM(CASE WHEN a.TIPO_MOVIMIENTO = 'C' THEN a.IMPORTE ELSE 0 END) <>
+             SUM(CASE WHEN a.TIPO_MOVIMIENTO = 'A' THEN a.IMPORTE ELSE 0 END)
+    formato:
+      decimales: 0
+    alertas:
+      warning: 1
+      critical: 5
+
+  - id: coi_cuentas_nivel_mayor
+    nombre: "Cuentas de Mayor"
+    descripcion: "Cuentas de primer nivel (mayor general)"
+    categoria: contabilidad
+    tipo: tabla
+    query_duckdb: |
+      SELECT 
+        CUENTA_CONTABLE as cuenta,
+        NOMBRE_CUENTA as nombre,
+        CAST(SALDO_ACTUAL AS DOUBLE) as saldo
+      FROM CUENTAS24
+      WHERE LENGTH(CUENTA_CONTABLE) <= 3
+      ORDER BY CUENTA_CONTABLE
+    columnas:
+      - campo: cuenta
+        nombre: "Cuenta"
+        tipo: texto
+      - campo: nombre
+        nombre: "Nombre"
+        tipo: texto
+      - campo: saldo
+        nombre: "Saldo"
+        tipo: moneda
+        formato:
+          decimales: 2
+          prefijo: "$"
+
+  - id: coi_distribucion_gastos
+    nombre: "Distribución de Gastos"
+    descripcion: "Desglose de gastos por subcuenta"
+    categoria: resultados
+    tipo: tabla
+    query_duckdb: |
+      SELECT 
+        SUBSTRING(CUENTA_CONTABLE, 1, 3) as categoria,
+        COUNT(*) as cuentas,
+        CAST(SUM(SALDO_ACTUAL) AS DOUBLE) as total
+      FROM CUENTAS24
+      WHERE CUENTA_CONTABLE LIKE '5%' OR CUENTA_CONTABLE LIKE '6%'
+      GROUP BY SUBSTRING(CUENTA_CONTABLE, 1, 3)
+      ORDER BY total DESC
+      LIMIT 10
+    columnas:
+      - campo: categoria
+        nombre: "Categoría"
+        tipo: texto
+      - campo: cuentas
+        nombre: "Cuentas"
+        tipo: numero
+      - campo: total
+        nombre: "Total"
+        tipo: moneda
+        formato:
+          decimales: 2
+          prefijo: "$"
+
+  - id: coi_antigüedad_polizas
+    nombre: "Pólizas por Mes"
+    descripcion: "Distribución de pólizas en los últimos meses"
+    categoria: contabilidad
+    tipo: tabla
+    query_duckdb: |
+      SELECT 
+        TO_CHAR(FECHA, 'YYYY-MM') as mes,
+        COUNT(*) as polizas,
+        SUM(CASE WHEN TIPO_POLIZA = 'I' THEN 1 ELSE 0 END) as ingresos,
+        SUM(CASE WHEN TIPO_POLIZA = 'E' THEN 1 ELSE 0 END) as egresos,
+        SUM(CASE WHEN TIPO_POLIZA = 'D' THEN 1 ELSE 0 END) as diario
+      FROM POLIZAS24
+      WHERE FECHA >= CURRENT_DATE - INTERVAL '6 months'
+      GROUP BY TO_CHAR(FECHA, 'YYYY-MM')
+      ORDER BY mes DESC
+    columnas:
+      - campo: mes
+        nombre: "Mes"
+        tipo: texto
+      - campo: polizas
+        nombre: "Total"
+        tipo: numero
+      - campo: ingresos
+        nombre: "Ingresos"
+        tipo: numero
+      - campo: egresos
+        nombre: "Egresos"
+        tipo: numero
+      - campo: diario
+        nombre: "Diario"
+        tipo: numero
+

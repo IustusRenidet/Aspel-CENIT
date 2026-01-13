@@ -148,3 +148,271 @@ metricas:
       decimales: 2
       prefijo: "$"
 
+  - id: banco_cuentas_activas
+    nombre: "Cuentas Bancarias Activas"
+    descripcion: "Total de cuentas en operación"
+    categoria: tesoreria
+    tipo: escalar
+    unidad: cantidad
+    query_duckdb: |
+      SELECT 
+        COUNT(*) as valor
+      FROM CTAS
+      WHERE STATUS = 'A'
+    formato:
+      decimales: 0
+
+  - id: banco_movimientos_por_tipo
+    nombre: "Movimientos por Tipo"
+    descripcion: "Distribución de ingresos y egresos"
+    categoria: tesoreria
+    tipo: tabla
+    query_duckdb: |
+      SELECT 
+        CASE 
+          WHEN TIPO_MOV = 'I' THEN 'Ingresos'
+          WHEN TIPO_MOV = 'E' THEN 'Egresos'
+          ELSE 'Otros'
+        END as tipo,
+        COUNT(*) as cantidad,
+        CAST(SUM(IMPORTE) AS DOUBLE) as total
+      FROM MOVS01
+      WHERE FECHA >= date_trunc('month', CURRENT_DATE)
+      GROUP BY TIPO_MOV
+      ORDER BY total DESC
+    columnas:
+      - campo: tipo
+        nombre: "Tipo"
+        tipo: texto
+      - campo: cantidad
+        nombre: "Cantidad"
+        tipo: numero
+      - campo: total
+        nombre: "Total"
+        tipo: moneda
+        formato:
+          decimales: 2
+          prefijo: "$"
+
+  - id: banco_flujo_semanal
+    nombre: "Flujo de Efectivo Semanal"
+    descripcion: "Movimientos de las últimas 4 semanas"
+    categoria: tesoreria
+    tipo: tabla
+    query_duckdb: |
+      SELECT 
+        EXTRACT(WEEK FROM FECHA) as semana,
+        COUNT(*) as movimientos,
+        CAST(SUM(CASE WHEN TIPO_MOV = 'I' THEN IMPORTE ELSE 0 END) AS DOUBLE) as ingresos,
+        CAST(SUM(CASE WHEN TIPO_MOV = 'E' THEN IMPORTE ELSE 0 END) AS DOUBLE) as egresos,
+        CAST(SUM(CASE WHEN TIPO_MOV = 'I' THEN IMPORTE ELSE -IMPORTE END) AS DOUBLE) as neto
+      FROM MOVS01
+      WHERE FECHA >= date('now', '-28 days')
+      GROUP BY EXTRACT(WEEK FROM FECHA)
+      ORDER BY semana DESC
+    columnas:
+      - campo: semana
+        nombre: "Semana"
+        tipo: numero
+      - campo: movimientos
+        nombre: "Movimientos"
+        tipo: numero
+      - campo: ingresos
+        nombre: "Ingresos"
+        tipo: moneda
+        formato:
+          decimales: 2
+          prefijo: "$"
+      - campo: egresos
+        nombre: "Egresos"
+        tipo: moneda
+        formato:
+          decimales: 2
+          prefijo: "$"
+      - campo: neto
+        nombre: "Neto"
+        tipo: moneda
+        formato:
+          decimales: 2
+          prefijo: "$"
+
+  - id: banco_cheques_emitidos_mes
+    nombre: "Cheques Emitidos en el Mes"
+    descripcion: "Total de cheques expedidos"
+    categoria: tesoreria
+    tipo: escalar
+    unidad: cantidad
+    query_duckdb: |
+      SELECT 
+        COUNT(*) as valor
+      FROM MOVS01
+      WHERE TIPO_PAGO = 'CHQ'
+        AND FECHA >= date_trunc('month', CURRENT_DATE)
+    formato:
+      decimales: 0
+
+  - id: banco_transferencias_mes
+    nombre: "Transferencias del Mes"
+    descripcion: "Total de transferencias bancarias"
+    categoria: tesoreria
+    tipo: escalar
+    unidad: cantidad
+    query_duckdb: |
+      SELECT 
+        COUNT(*) as valor
+      FROM MOVS01
+      WHERE TIPO_PAGO = 'TRF'
+        AND FECHA >= date_trunc('month', CURRENT_DATE)
+    formato:
+      decimales: 0
+
+  - id: banco_saldo_minimo
+    nombre: "Cuenta con Saldo Mínimo"
+    descripcion: "Cuenta con menor disponibilidad"
+    categoria: tesoreria
+    tipo: tabla
+    query_duckdb: |
+      SELECT 
+        NUM_CTA as cuenta,
+        NOMBRE as nombre,
+        CAST(SALDO_ACT AS DOUBLE) as saldo
+      FROM CTAS
+      WHERE STATUS = 'A'
+      ORDER BY saldo ASC
+      LIMIT 5
+    columnas:
+      - campo: cuenta
+        nombre: "Cuenta"
+        tipo: texto
+      - campo: nombre
+        nombre: "Nombre"
+        tipo: texto
+      - campo: saldo
+        nombre: "Saldo"
+        tipo: moneda
+        formato:
+          decimales: 2
+          prefijo: "$"
+
+  - id: banco_dias_efectivo
+    nombre: "Días de Efectivo"
+    descripcion: "Proyección de días con saldo actual"
+    categoria: indicadores
+    tipo: escalar
+    unidad: dias
+    query_duckdb: |
+      WITH promedio_egresos AS (
+        SELECT AVG(CAST(IMPORTE AS DOUBLE)) as promedio
+        FROM MOVS01
+        WHERE TIPO_MOV = 'E' 
+          AND FECHA >= date('now', '-30 days')
+      ),
+      saldo_actual AS (
+        SELECT SUM(CAST(SALDO_ACT AS DOUBLE)) as total
+        FROM CTAS
+        WHERE STATUS = 'A'
+      )
+      SELECT 
+        CASE 
+          WHEN pe.promedio > 0 THEN CAST(sa.total / pe.promedio AS INTEGER)
+          ELSE 999
+        END as valor
+      FROM promedio_egresos pe, saldo_actual sa
+    formato:
+      decimales: 0
+      sufijo: " días"
+    alertas:
+      warning: 30
+      critical: 15
+
+  - id: banco_conciliaciones_pendientes
+    nombre: "Conciliaciones Pendientes"
+    descripcion: "Movimientos sin conciliar por cuenta"
+    categoria: control
+    tipo: tabla
+    query_duckdb: |
+      SELECT 
+        c.NUM_CTA as cuenta,
+        c.NOMBRE as nombre,
+        COUNT(m.ID) as pendientes,
+        CAST(SUM(m.IMPORTE) AS DOUBLE) as importe_total
+      FROM CTAS c
+      LEFT JOIN MOVS01 m ON c.NUM_CTA = m.NUM_CTA AND m.STATUS = 'P'
+      WHERE c.STATUS = 'A'
+      GROUP BY c.NUM_CTA, c.NOMBRE
+      HAVING COUNT(m.ID) > 0
+      ORDER BY pendientes DESC
+    columnas:
+      - campo: cuenta
+        nombre: "Cuenta"
+        tipo: texto
+      - campo: nombre
+        nombre: "Nombre"
+        tipo: texto
+      - campo: pendientes
+        nombre: "Pendientes"
+        tipo: numero
+      - campo: importe_total
+        nombre: "Importe"
+        tipo: moneda
+        formato:
+          decimales: 2
+          prefijo: "$"
+
+  - id: banco_ingresos_vs_egresos
+    nombre: "Comparativo Ingresos vs Egresos"
+    descripcion: "Evolución mensual últimos 6 meses"
+    categoria: indicadores
+    tipo: tabla
+    query_duckdb: |
+      SELECT 
+        TO_CHAR(FECHA, 'YYYY-MM') as mes,
+        CAST(SUM(CASE WHEN TIPO_MOV = 'I' THEN IMPORTE ELSE 0 END) AS DOUBLE) as ingresos,
+        CAST(SUM(CASE WHEN TIPO_MOV = 'E' THEN IMPORTE ELSE 0 END) AS DOUBLE) as egresos,
+        CAST(SUM(CASE WHEN TIPO_MOV = 'I' THEN IMPORTE ELSE -IMPORTE END) AS DOUBLE) as diferencia
+      FROM MOVS01
+      WHERE FECHA >= date('now', '-6 months')
+      GROUP BY TO_CHAR(FECHA, 'YYYY-MM')
+      ORDER BY mes DESC
+    columnas:
+      - campo: mes
+        nombre: "Mes"
+        tipo: texto
+      - campo: ingresos
+        nombre: "Ingresos"
+        tipo: moneda
+        formato:
+          decimales: 2
+          prefijo: "$"
+      - campo: egresos
+        nombre: "Egresos"
+        tipo: moneda
+        formato:
+          decimales: 2
+          prefijo: "$"
+      - campo: diferencia
+        nombre: "Diferencia"
+        tipo: moneda
+        formato:
+          decimales: 2
+          prefijo: "$"
+
+  - id: banco_comisiones_mes
+    nombre: "Comisiones Bancarias del Mes"
+    descripcion: "Total de comisiones cobradas"
+    categoria: tesoreria
+    tipo: escalar
+    unidad: moneda
+    query_duckdb: |
+      SELECT 
+        COALESCE(SUM(CAST(IMPORTE AS DOUBLE)), 0) as valor
+      FROM MOVS01
+      WHERE CONCEPTO LIKE '%COMISION%'
+        AND FECHA >= date_trunc('month', CURRENT_DATE)
+    formato:
+      decimales: 2
+      prefijo: "$"
+    alertas:
+      warning: 5000
+      critical: 10000
+

@@ -487,3 +487,344 @@ metricas:
       tipo: umbral
       nivel_warning: 50
 
+  # ============================================
+  # ANÁLISIS DE PRODUCTOS Y RENTABILIDAD
+  # ============================================
+
+  - id: sae_productos_mas_rentables
+    nombre: "Top 20 Productos Más Rentables"
+    descripcion: "Productos con mayor margen de utilidad"
+    categoria: rentabilidad
+    tipo: tabla
+    query_duckdb: |
+      SELECT 
+        inv.CVE_ART as codigo,
+        inv.DESCR as producto,
+        CAST(inv.PRECIO AS DOUBLE) as precio,
+        CAST(inv.ULT_COSTO AS DOUBLE) as costo,
+        (CAST(inv.PRECIO AS DOUBLE) - CAST(inv.ULT_COSTO AS DOUBLE)) as margen,
+        CASE 
+          WHEN CAST(inv.PRECIO AS DOUBLE) > 0 THEN
+            ((CAST(inv.PRECIO AS DOUBLE) - CAST(inv.ULT_COSTO AS DOUBLE)) / CAST(inv.PRECIO AS DOUBLE)) * 100
+          ELSE 0
+        END as margen_porcentaje
+      FROM INVE01 inv
+      WHERE inv.STATUS = 'A'
+        AND CAST(inv.PRECIO AS DOUBLE) > 0
+        AND CAST(inv.ULT_COSTO AS DOUBLE) > 0
+      ORDER BY margen DESC
+      LIMIT 20
+
+  - id: sae_ventas_por_familia
+    nombre: "Ventas por Familia de Productos"
+    descripcion: "Distribución de ventas por familia/línea"
+    categoria: ventas
+    tipo: tabla
+    query_duckdb: |
+      SELECT 
+        inv.FAMILIA as familia,
+        COUNT(DISTINCT inv.CVE_ART) as productos,
+        SUM(CAST(inv.EXIST AS DOUBLE)) as existencia_total,
+        SUM(CAST(inv.EXIST AS DOUBLE) * CAST(inv.PRECIO AS DOUBLE)) as valor_inventario
+      FROM INVE01 inv
+      WHERE inv.STATUS = 'A'
+      GROUP BY inv.FAMILIA
+      ORDER BY valor_inventario DESC
+      LIMIT 15
+
+  - id: sae_comparativo_ventas_anio_anterior
+    nombre: "Comparativo vs Año Anterior"
+    descripcion: "Crecimiento de ventas respecto al año pasado"
+    categoria: ventas
+    tipo: escalar
+    unidad: porcentaje
+    query_duckdb: |
+      WITH ventas_actuales AS (
+        SELECT SUM(CAST(IMPORTE AS DOUBLE)) as total 
+        FROM FACTF01 
+        WHERE STATUS != 'C' 
+          AND FECHA >= date('now', 'start of year')
+      ),
+      ventas_anteriores AS (
+        SELECT SUM(CAST(IMPORTE AS DOUBLE)) as total 
+        FROM FACTF01 
+        WHERE STATUS != 'C' 
+          AND FECHA >= date('now', '-1 year', 'start of year')
+          AND FECHA < date('now', 'start of year')
+      )
+      SELECT 
+        CASE 
+          WHEN va.total > 0 THEN
+            ((vac.total - va.total) / va.total) * 100
+          ELSE 0
+        END as valor
+      FROM ventas_actuales vac, ventas_anteriores va
+    formato:
+      decimales: 1
+      sufijo: "%"
+
+  - id: sae_tasa_devolucion
+    nombre: "Tasa de Devoluciones"
+    descripcion: "Porcentaje de facturas con devoluciones"
+    categoria: calidad
+    tipo: escalar
+    unidad: porcentaje
+    query_duckdb: |
+      WITH total_facturas AS (
+        SELECT COUNT(*) as total FROM FACTF01 WHERE STATUS != 'C'
+      ),
+      facturas_devolucion AS (
+        SELECT COUNT(DISTINCT NUM_FACT) as devueltas 
+        FROM FACTF01 
+        WHERE STATUS = 'D' OR TIPO_DOC = 'NC'
+      )
+      SELECT 
+        CASE 
+          WHEN tf.total > 0 THEN (fd.devueltas * 100.0 / tf.total)
+          ELSE 0
+        END as valor
+      FROM total_facturas tf, facturas_devolucion fd
+    formato:
+      decimales: 2
+      sufijo: "%"
+    alerta:
+      tipo: umbral
+      nivel_warning: 5
+      nivel_critical: 10
+
+  - id: sae_pedidos_pendientes
+    nombre: "Pedidos Pendientes de Surtir"
+    descripcion: "Cantidad de pedidos sin completar"
+    categoria: operaciones
+    tipo: escalar
+    unidad: cantidad
+    query_duckdb: |
+      SELECT 
+        COUNT(*) as valor
+      FROM FACTF01
+      WHERE STATUS = 'P'
+        AND TIPO_DOC = 'PE'
+    formato:
+      decimales: 0
+    alerta:
+      tipo: umbral
+      nivel_warning: 20
+      nivel_critical: 50
+
+  - id: sae_ticket_promedio_anual
+    nombre: "Ticket Promedio Anual"
+    descripcion: "Importe promedio por factura en el año"
+    categoria: ventas
+    tipo: escalar
+    unidad: moneda
+    query_duckdb: |
+      SELECT 
+        COALESCE(
+          SUM(CAST(IMPORTE AS DOUBLE)) / NULLIF(COUNT(*), 0)
+        , 0) as valor
+      FROM FACTF01
+      WHERE STATUS != 'C'
+        AND FECHA >= date('now', 'start of year')
+    formato:
+      decimales: 2
+      prefijo: "$"
+
+  - id: sae_clientes_top_crecimiento
+    nombre: "Clientes con Mayor Crecimiento"
+    descripcion: "Top 10 clientes que más aumentaron sus compras"
+    categoria: clientes
+    tipo: tabla
+    query_duckdb: |
+      WITH ventas_actuales AS (
+        SELECT 
+          fac.CVE_CLPV as cliente,
+          SUM(CAST(fac.IMPORTE AS DOUBLE)) as total_actual
+        FROM FACTF01 fac
+        WHERE fac.STATUS != 'C'
+          AND fac.FECHA >= date('now', '-30 days')
+        GROUP BY fac.CVE_CLPV
+      ),
+      ventas_anteriores AS (
+        SELECT 
+          fac.CVE_CLPV as cliente,
+          SUM(CAST(fac.IMPORTE AS DOUBLE)) as total_anterior
+        FROM FACTF01 fac
+        WHERE fac.STATUS != 'C'
+          AND fac.FECHA >= date('now', '-60 days')
+          AND fac.FECHA < date('now', '-30 days')
+        GROUP BY fac.CVE_CLPV
+      )
+      SELECT 
+        cli.NOMBRE as nombre,
+        vac.total_actual as compras_recientes,
+        COALESCE(van.total_anterior, 0) as compras_anteriores,
+        (vac.total_actual - COALESCE(van.total_anterior, 0)) as crecimiento
+      FROM ventas_actuales vac
+      LEFT JOIN ventas_anteriores van ON vac.cliente = van.cliente
+      INNER JOIN CLIE01 cli ON vac.cliente = cli.CLAVE
+      WHERE vac.total_actual > COALESCE(van.total_anterior, 0)
+      ORDER BY crecimiento DESC
+      LIMIT 10
+
+  - id: sae_descuentos_otorgados
+    nombre: "Descuentos Totales Otorgados"
+    descripcion: "Suma de descuentos aplicados en el mes"
+    categoria: ventas
+    tipo: escalar
+    unidad: moneda
+    query_duckdb: |
+      SELECT 
+        COALESCE(SUM(CAST(DESCUENTO AS DOUBLE)), 0) as valor
+      FROM FACTF01
+      WHERE STATUS != 'C'
+        AND FECHA >= date_trunc('month', CURRENT_DATE)
+    formato:
+      decimales: 2
+      prefijo: "$"
+
+  - id: sae_porcentaje_descuento_promedio
+    nombre: "Porcentaje de Descuento Promedio"
+    descripcion: "Descuento promedio aplicado sobre ventas"
+    categoria: ventas
+    tipo: escalar
+    unidad: porcentaje
+    query_duckdb: |
+      SELECT 
+        CASE 
+          WHEN SUM(CAST(IMPORTE AS DOUBLE)) > 0 THEN
+            (SUM(CAST(DESCUENTO AS DOUBLE)) / SUM(CAST(IMPORTE AS DOUBLE))) * 100
+          ELSE 0
+        END as valor
+      FROM FACTF01
+      WHERE STATUS != 'C'
+        AND FECHA >= date_trunc('month', CURRENT_DATE)
+    formato:
+      decimales: 2
+      sufijo: "%"
+
+  - id: sae_productos_baja_rotacion
+    nombre: "Productos de Baja Rotación"
+    descripcion: "Artículos sin movimiento en 90+ días"
+    categoria: inventarios
+    tipo: tabla
+    query_duckdb: |
+      SELECT 
+        inv.CVE_ART as codigo,
+        inv.DESCR as producto,
+        CAST(inv.EXIST AS DOUBLE) as existencia,
+        CAST(inv.EXIST AS DOUBLE) * CAST(inv.ULT_COSTO AS DOUBLE) as valor_inmovilizado
+      FROM INVE01 inv
+      WHERE inv.STATUS = 'A'
+        AND CAST(inv.EXIST AS DOUBLE) > 0
+        AND NOT EXISTS (
+          SELECT 1 FROM MINVE01 mov 
+          WHERE mov.CVE_ART = inv.CVE_ART 
+            AND mov.FECHA_APLI >= date('now', '-90 days')
+        )
+      ORDER BY valor_inmovilizado DESC
+      LIMIT 20
+
+  - id: sae_ventas_por_vendedor
+    nombre: "Ventas por Vendedor (Mes)"
+    descripcion: "Distribución de ventas entre vendedores"
+    categoria: ventas
+    tipo: tabla
+    query_duckdb: |
+      SELECT 
+        ven.CVE_VEND as codigo,
+        ven.NOMBRE as vendedor,
+        COUNT(fac.NUM_FACT) as facturas,
+        SUM(CAST(fac.IMPORTE AS DOUBLE)) as total,
+        AVG(CAST(fac.IMPORTE AS DOUBLE)) as ticket_promedio
+      FROM FACTF01 fac
+      INNER JOIN VEND01 ven ON fac.CVE_VEND = ven.CVE_VEND
+      WHERE fac.STATUS != 'C'
+        AND fac.FECHA >= date_trunc('month', CURRENT_DATE)
+      GROUP BY ven.CVE_VEND, ven.NOMBRE
+      ORDER BY total DESC
+
+  - id: sae_eficiencia_vendedores
+    nombre: "Índice de Eficiencia de Vendedores"
+    descripcion: "Ventas por vendedor vs objetivo"
+    categoria: ventas
+    tipo: tabla
+    query_duckdb: |
+      SELECT 
+        ven.CVE_VEND as codigo,
+        ven.NOMBRE as vendedor,
+        SUM(CAST(fac.IMPORTE AS DOUBLE)) as ventas_reales,
+        CAST(ven.OBJETIVO AS DOUBLE) as objetivo,
+        CASE 
+          WHEN CAST(ven.OBJETIVO AS DOUBLE) > 0 THEN
+            (SUM(CAST(fac.IMPORTE AS DOUBLE)) / CAST(ven.OBJETIVO AS DOUBLE)) * 100
+          ELSE 0
+        END as porcentaje_objetivo
+      FROM FACTF01 fac
+      INNER JOIN VEND01 ven ON fac.CVE_VEND = ven.CVE_VEND
+      WHERE fac.STATUS != 'C'
+        AND fac.FECHA >= date_trunc('month', CURRENT_DATE)
+      GROUP BY ven.CVE_VEND, ven.NOMBRE, ven.OBJETIVO
+      ORDER BY porcentaje_objetivo DESC
+
+  - id: sae_tiempo_promedio_cobro
+    nombre: "Tiempo Promedio de Cobro"
+    descripcion: "Días entre facturación y cobro"
+    categoria: cxc
+    tipo: escalar
+    unidad: dias
+    query_duckdb: |
+      SELECT 
+        COALESCE(
+          AVG(CAST(julianday(FECHA_PAGO) - julianday(FECHA_EMISION) AS DOUBLE))
+        , 0) as valor
+      FROM CUEN_M01
+      WHERE FECHA_PAGO IS NOT NULL
+        AND FECHA_EMISION >= date('now', '-90 days')
+    formato:
+      decimales: 0
+      sufijo: " días"
+
+  - id: sae_productos_precio_desactualizado
+    nombre: "Productos con Precio Sin Actualizar"
+    descripcion: "Artículos con precio sin cambios en 180+ días"
+    categoria: inventarios
+    tipo: escalar
+    unidad: cantidad
+    query_duckdb: |
+      SELECT 
+        COUNT(*) as valor
+      FROM INVE01
+      WHERE STATUS = 'A'
+        AND (FECHA_ULT_PRECIO IS NULL 
+          OR FECHA_ULT_PRECIO < date('now', '-180 days'))
+    formato:
+      decimales: 0
+    alerta:
+      tipo: umbral
+      nivel_warning: 50
+      nivel_critical: 100
+
+  - id: sae_mermas_inventario
+    nombre: "Valor de Mermas y Ajustes"
+    descripcion: "Valor de movimientos de ajuste negativo"
+    categoria: inventarios
+    tipo: escalar
+    unidad: moneda
+    query_duckdb: |
+      SELECT 
+        COALESCE(
+          SUM(CAST(CANTIDAD AS DOUBLE) * CAST(COSTO AS DOUBLE))
+        , 0) as valor
+      FROM MINVE01
+      WHERE TIPO_MOV IN ('AJ', 'ME')
+        AND CAST(CANTIDAD AS DOUBLE) < 0
+        AND FECHA_APLI >= date_trunc('month', CURRENT_DATE)
+    formato:
+      decimales: 2
+      prefijo: "$"
+    alerta:
+      tipo: umbral
+      nivel_warning: 10000
+      nivel_critical: 50000
+
+

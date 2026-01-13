@@ -108,3 +108,317 @@ metricas:
       decimales: 2
       prefijo: "$"
 
+  - id: noi_empleados_activos
+    nombre: "Empleados Activos"
+    descripcion: "Total de empleados con nómina vigente"
+    categoria: organizacion
+    tipo: escalar
+    unidad: cantidad
+    query_duckdb: |
+      SELECT 
+        COUNT(DISTINCT CVE_EMPLEADO) as valor
+      FROM NWNOMINAS01
+      WHERE ESTATUS = 'A'
+    formato:
+      decimales: 0
+
+  - id: noi_promedio_percepciones
+    nombre: "Promedio de Percepciones"
+    descripcion: "Percepción promedio por empleado"
+    categoria: nomina
+    tipo: escalar
+    unidad: moneda
+    query_duckdb: |
+      SELECT 
+        COALESCE(AVG(CAST(TOTAL_PERCEPCIONES AS DOUBLE)), 0) as valor
+      FROM NWNOMINAS01
+    formato:
+      decimales: 2
+      prefijo: "$"
+
+  - id: noi_promedio_deducciones
+    nombre: "Promedio de Deducciones"
+    descripcion: "Deducción promedio por empleado"
+    categoria: nomina
+    tipo: escalar
+    unidad: moneda
+    query_duckdb: |
+      SELECT 
+        COALESCE(AVG(CAST(TOTAL_DEDUCCIONES AS DOUBLE)), 0) as valor
+      FROM NWNOMINAS01
+    formato:
+      decimales: 2
+      prefijo: "$"
+
+  - id: noi_ratio_percepcion_deduccion
+    nombre: "Ratio Percepción/Deducción"
+    descripcion: "Proporción entre percepciones y deducciones"
+    categoria: indicadores
+    tipo: escalar
+    unidad: ratio
+    query_duckdb: |
+      SELECT 
+        CASE 
+          WHEN SUM(CAST(TOTAL_DEDUCCIONES AS DOUBLE)) > 0 THEN
+            SUM(CAST(TOTAL_PERCEPCIONES AS DOUBLE)) / SUM(CAST(TOTAL_DEDUCCIONES AS DOUBLE))
+          ELSE 0
+        END as valor
+      FROM NWNOMINAS01
+    formato:
+      decimales: 2
+      sufijo: ":1"
+
+  - id: noi_costo_mensual_promedio
+    nombre: "Costo Mensual Promedio"
+    descripcion: "Promedio de costo de nómina por mes"
+    categoria: nomina
+    tipo: escalar
+    unidad: moneda
+    query_duckdb: |
+      SELECT 
+        COALESCE(AVG(total_mes), 0) as valor
+      FROM (
+        SELECT 
+          EXTRACT(MONTH FROM FECHA) as mes,
+          SUM(CAST(NETO AS DOUBLE)) as total_mes
+        FROM NWNOMINAS01
+        GROUP BY EXTRACT(MONTH FROM FECHA)
+      ) subq
+    formato:
+      decimales: 2
+      prefijo: "$"
+
+  - id: noi_top_departamentos_costo
+    nombre: "Departamentos con Mayor Costo"
+    descripcion: "Top 10 departamentos por costo de nómina"
+    categoria: organizacion
+    tipo: tabla
+    query_duckdb: |
+      SELECT 
+        dep.NOMBRE as departamento,
+        COUNT(DISTINCT nom.CVE_EMPLEADO) as empleados,
+        CAST(SUM(nom.NETO) AS DOUBLE) as total_nomina,
+        CAST(AVG(nom.NETO) AS DOUBLE) as promedio
+      FROM NWNOMINAS01 nom
+      INNER JOIN DEPTOS01 dep ON nom.CVE_DEPTO = dep.CVE_DEPTO
+      GROUP BY dep.NOMBRE
+      ORDER BY total_nomina DESC
+      LIMIT 10
+    columnas:
+      - campo: departamento
+        nombre: "Departamento"
+        tipo: texto
+      - campo: empleados
+        nombre: "Empleados"
+        tipo: numero
+      - campo: total_nomina
+        nombre: "Total"
+        tipo: moneda
+        formato:
+          decimales: 2
+          prefijo: "$"
+      - campo: promedio
+        nombre: "Promedio"
+        tipo: moneda
+        formato:
+          decimales: 2
+          prefijo: "$"
+
+  - id: noi_distribucion_salarios
+    nombre: "Distribución de Salarios"
+    descripcion: "Rangos salariales y cantidad de empleados"
+    categoria: nomina
+    tipo: tabla
+    query_duckdb: |
+      SELECT 
+        CASE 
+          WHEN CAST(NETO AS DOUBLE) < 5000 THEN 'Menos de $5,000'
+          WHEN CAST(NETO AS DOUBLE) < 10000 THEN '$5,000 - $10,000'
+          WHEN CAST(NETO AS DOUBLE) < 15000 THEN '$10,000 - $15,000'
+          WHEN CAST(NETO AS DOUBLE) < 20000 THEN '$15,000 - $20,000'
+          ELSE 'Más de $20,000'
+        END as rango_salarial,
+        COUNT(*) as empleados,
+        CAST(SUM(NETO) AS DOUBLE) as total
+      FROM NWNOMINAS01
+      GROUP BY 
+        CASE 
+          WHEN CAST(NETO AS DOUBLE) < 5000 THEN 'Menos de $5,000'
+          WHEN CAST(NETO AS DOUBLE) < 10000 THEN '$5,000 - $10,000'
+          WHEN CAST(NETO AS DOUBLE) < 15000 THEN '$10,000 - $15,000'
+          WHEN CAST(NETO AS DOUBLE) < 20000 THEN '$15,000 - $20,000'
+          ELSE 'Más de $20,000'
+        END
+      ORDER BY 
+        MIN(CAST(NETO AS DOUBLE))
+    columnas:
+      - campo: rango_salarial
+        nombre: "Rango"
+        tipo: texto
+      - campo: empleados
+        nombre: "Empleados"
+        tipo: numero
+      - campo: total
+        nombre: "Total"
+        tipo: moneda
+        formato:
+          decimales: 2
+          prefijo: "$"
+
+  - id: noi_empleados_por_departamento
+    nombre: "Empleados por Departamento"
+    descripcion: "Distribución de personal por área"
+    categoria: organizacion
+    tipo: tabla
+    query_duckdb: |
+      SELECT 
+        dep.NOMBRE as departamento,
+        COUNT(DISTINCT nom.CVE_EMPLEADO) as empleados
+      FROM NWNOMINAS01 nom
+      INNER JOIN DEPTOS01 dep ON nom.CVE_DEPTO = dep.CVE_DEPTO
+      GROUP BY dep.NOMBRE
+      ORDER BY empleados DESC
+    columnas:
+      - campo: departamento
+        nombre: "Departamento"
+        tipo: texto
+      - campo: empleados
+        nombre: "Empleados"
+        tipo: numero
+
+  - id: noi_nominas_por_mes
+    nombre: "Nóminas por Mes"
+    descripcion: "Total de nómina pagada por mes"
+    categoria: nomina
+    tipo: tabla
+    query_duckdb: |
+      SELECT 
+        TO_CHAR(FECHA, 'YYYY-MM') as mes,
+        COUNT(*) as registros,
+        CAST(SUM(TOTAL_PERCEPCIONES) AS DOUBLE) as percepciones,
+        CAST(SUM(TOTAL_DEDUCCIONES) AS DOUBLE) as deducciones,
+        CAST(SUM(NETO) AS DOUBLE) as neto
+      FROM NWNOMINAS01
+      WHERE FECHA >= CURRENT_DATE - INTERVAL '6 months'
+      GROUP BY TO_CHAR(FECHA, 'YYYY-MM')
+      ORDER BY mes DESC
+    columnas:
+      - campo: mes
+        nombre: "Mes"
+        tipo: texto
+      - campo: registros
+        nombre: "Registros"
+        tipo: numero
+      - campo: percepciones
+        nombre: "Percepciones"
+        tipo: moneda
+        formato:
+          decimales: 2
+          prefijo: "$"
+      - campo: deducciones
+        nombre: "Deducciones"
+        tipo: moneda
+        formato:
+          decimales: 2
+          prefijo: "$"
+      - campo: neto
+        nombre: "Neto"
+        tipo: moneda
+        formato:
+          decimales: 2
+          prefijo: "$"
+
+  - id: noi_horas_extra_totales
+    nombre: "Horas Extra Totales"
+    descripcion: "Total de horas extra trabajadas"
+    categoria: nomina
+    tipo: escalar
+    unidad: horas
+    query_duckdb: |
+      SELECT 
+        COALESCE(SUM(CAST(HORAS_EXTRA AS DOUBLE)), 0) as valor
+      FROM NWNOMINAS01
+    formato:
+      decimales: 0
+      sufijo: " hrs"
+
+  - id: noi_costo_horas_extra
+    nombre: "Costo de Horas Extra"
+    descripcion: "Importe total pagado por tiempo extra"
+    categoria: nomina
+    tipo: escalar
+    unidad: moneda
+    query_duckdb: |
+      SELECT 
+        COALESCE(SUM(CAST(IMPORTE_HORAS_EXTRA AS DOUBLE)), 0) as valor
+      FROM NWNOMINAS01
+    formato:
+      decimales: 2
+      prefijo: "$"
+
+  - id: noi_salarios_minimos
+    nombre: "Empleados con Salario Mínimo"
+    descripcion: "Cantidad de empleados en rango mínimo"
+    categoria: indicadores
+    tipo: escalar
+    unidad: cantidad
+    query_duckdb: |
+      SELECT 
+        COUNT(*) as valor
+      FROM NWNOMINAS01
+      WHERE CAST(NETO AS DOUBLE) < 8000
+    formato:
+      decimales: 0
+    alertas:
+      warning: 50
+      critical: 100
+
+  - id: noi_ausentismo
+    nombre: "Días de Ausentismo"
+    descripcion: "Total de faltas registradas"
+    categoria: indicadores
+    tipo: escalar
+    unidad: dias
+    query_duckdb: |
+      SELECT 
+        COALESCE(SUM(CAST(DIAS_FALTA AS DOUBLE)), 0) as valor
+      FROM NWNOMINAS01
+      WHERE FECHA >= CURRENT_DATE - INTERVAL '30 days'
+    formato:
+      decimales: 0
+      sufijo: " días"
+    alertas:
+      warning: 50
+      critical: 100
+
+  - id: noi_aguinaldo_estimado
+    nombre: "Aguinaldo Estimado"
+    descripcion: "Proyección de aguinaldo anual"
+    categoria: nomina
+    tipo: escalar
+    unidad: moneda
+    query_duckdb: |
+      SELECT 
+        COALESCE(SUM(CAST(NETO AS DOUBLE)) * 0.15, 0) as valor
+      FROM NWNOMINAS01
+      WHERE EXTRACT(YEAR FROM FECHA) = EXTRACT(YEAR FROM CURRENT_DATE)
+    formato:
+      decimales: 2
+      prefijo: "$"
+
+  - id: noi_indemnizaciones_mes
+    nombre: "Indemnizaciones del Mes"
+    descripcion: "Total de liquidaciones pagadas"
+    categoria: nomina
+    tipo: escalar
+    unidad: moneda
+    query_duckdb: |
+      SELECT 
+        COALESCE(SUM(CAST(INDEMNIZACION AS DOUBLE)), 0) as valor
+      FROM NWNOMINAS01
+      WHERE EXTRACT(MONTH FROM FECHA) = EXTRACT(MONTH FROM CURRENT_DATE)
+        AND TIPO_NOMINA = 'L'
+    formato:
+      decimales: 2
+      prefijo: "$"
+

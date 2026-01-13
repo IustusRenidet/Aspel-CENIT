@@ -128,26 +128,26 @@
     <div class="container">
         <div class="header">
             <h1>📊 Reporte de Validación del Diccionario</h1>
-            <p>Generado el 12/1/2026, 11:07:27 p.m.</p>
+            <p>Generado el 13/1/2026, 10:46:51 a.m.</p>
         </div>
         
         <div class="content">
             <div class="summary">
                 <div class="summary-card">
                     <h3>Total Métricas</h3>
-                    <div class="number">48</div>
+                    <div class="number">103</div>
                 </div>
                 <div class="summary-card success">
                     <h3>Métricas Válidas</h3>
-                    <div class="number">48</div>
+                    <div class="number">92</div>
                 </div>
                 <div class="summary-card error">
                     <h3>Con Errores</h3>
-                    <div class="number">0</div>
+                    <div class="number">11</div>
                 </div>
                 <div class="summary-card warning">
                     <h3>Con Warnings</h3>
-                    <div class="number">6</div>
+                    <div class="number">21</div>
                 </div>
             </div>
             <div class="sistema-section">
@@ -160,15 +160,15 @@
                     </div>
                     <div class="stat-item">
                         <div class="label">Métricas</div>
-                        <div class="value">24</div>
+                        <div class="value">39</div>
                     </div>
                     <div class="stat-item">
                         <div class="label">Válidas</div>
-                        <div class="value" style="color: #00b894;">24</div>
+                        <div class="value" style="color: #00b894;">36</div>
                     </div>
                     <div class="stat-item">
                         <div class="label">Tasa Éxito</div>
-                        <div class="value" style="color: #00b894;">100.0%</div>
+                        <div class="value" style="color: #00b894;">92.3%</div>
                     </div>
                 </div><div class="problems"><h3>⚠️ Problemas Detectados</h3>
                     <div class="problem-item warning">
@@ -180,7 +180,23 @@
                     <div class="problem-item warning">
                         <h4>sae_rotacion_inventario - Índice de Rotación de Inventario</h4><strong>⚠️ Warnings:</strong><ul><li>Campo no encontrado: MINVE01.FECHA_APLI</li></ul></div>
                     <div class="problem-item warning">
-                        <h4>sae_clientes_sin_compras_90dias - Clientes Inactivos (90+ días)</h4><strong>⚠️ Warnings:</strong><ul><li>Campo no encontrado: FACTF01.FECHA</li></ul></div></div></div>
+                        <h4>sae_clientes_sin_compras_90dias - Clientes Inactivos (90+ días)</h4><strong>⚠️ Warnings:</strong><ul><li>Campo no encontrado: FACTF01.FECHA</li></ul></div>
+                    <div class="problem-item warning">
+                        <h4>sae_productos_mas_rentables - Top 20 Productos Más Rentables</h4><strong>⚠️ Warnings:</strong><ul><li>Campo no encontrado: INVE01.PRECIO</li></ul></div>
+                    <div class="problem-item warning">
+                        <h4>sae_ventas_por_familia - Ventas por Familia de Productos</h4><strong>⚠️ Warnings:</strong><ul><li>Campo no encontrado: INVE01.FAMILIA</li><li>Campo no encontrado: INVE01.PRECIO</li></ul></div>
+                    <div class="problem-item">
+                        <h4>sae_comparativo_ventas_anio_anterior - Comparativo vs Año Anterior</h4><strong>❌ Errores:</strong><ul><li>Tabla no encontrada: VENTAS_ACTUALES</li><li>Tabla no encontrada: VA</li></ul><strong>⚠️ Warnings:</strong><ul><li>Campo no encontrado: VA.TOTAL</li><li>Campo no encontrado: VENTAS_ACTUALES.TOTAL</li></ul></div>
+                    <div class="problem-item">
+                        <h4>sae_tasa_devolucion - Tasa de Devoluciones</h4><strong>❌ Errores:</strong><ul><li>Tabla no encontrada: TOTAL_FACTURAS</li><li>Tabla no encontrada: FD</li></ul><strong>⚠️ Warnings:</strong><ul><li>Campo no encontrado: TOTAL_FACTURAS.TOTAL</li><li>Campo no encontrado: FD.DEVUELTAS</li></ul></div>
+                    <div class="problem-item">
+                        <h4>sae_clientes_top_crecimiento - Clientes con Mayor Crecimiento</h4><strong>❌ Errores:</strong><ul><li>Tabla no encontrada: VENTAS_ACTUALES</li><li>Tabla no encontrada: VENTAS_ANTERIORES</li></ul><strong>⚠️ Warnings:</strong><ul><li>Campo no encontrado: FACTF01.FECHA</li><li>Campo no encontrado: VENTAS_ACTUALES.TOTAL_ACTUAL</li><li>Campo no encontrado: VENTAS_ANTERIORES.TOTAL_ANTERIOR</li><li>Campo no encontrado: VENTAS_ACTUALES.CLIENTE</li><li>Campo no encontrado: VENTAS_ANTERIORES.CLIENTE</li></ul></div>
+                    <div class="problem-item warning">
+                        <h4>sae_productos_baja_rotacion - Productos de Baja Rotación</h4><strong>⚠️ Warnings:</strong><ul><li>Campo no encontrado: MINVE01.FECHA_APLI</li></ul></div>
+                    <div class="problem-item warning">
+                        <h4>sae_ventas_por_vendedor - Ventas por Vendedor (Mes)</h4><strong>⚠️ Warnings:</strong><ul><li>Campo no encontrado: FACTF01.NUM_FACT</li><li>Campo no encontrado: FACTF01.FECHA</li></ul></div>
+                    <div class="problem-item warning">
+                        <h4>sae_eficiencia_vendedores - Índice de Eficiencia de Vendedores</h4><strong>⚠️ Warnings:</strong><ul><li>Campo no encontrado: VEND01.OBJETIVO</li><li>Campo no encontrado: FACTF01.FECHA</li></ul></div></div></div>
             <div class="sistema-section">
                 <h2>Sistema COI</h2>
                 
@@ -191,17 +207,25 @@
                     </div>
                     <div class="stat-item">
                         <div class="label">Métricas</div>
-                        <div class="value">8</div>
+                        <div class="value">23</div>
                     </div>
                     <div class="stat-item">
                         <div class="label">Válidas</div>
-                        <div class="value" style="color: #00b894;">8</div>
+                        <div class="value" style="color: #00b894;">20</div>
                     </div>
                     <div class="stat-item">
                         <div class="label">Tasa Éxito</div>
-                        <div class="value" style="color: #00b894;">100.0%</div>
+                        <div class="value" style="color: #ff6b6b;">87.0%</div>
                     </div>
-                </div><div class="problems"><p style="color: #00b894; font-weight: 600;">✅ Todas las métricas son válidas</p></div></div>
+                </div><div class="problems"><h3>⚠️ Problemas Detectados</h3>
+                    <div class="problem-item">
+                        <h4>coi_margen_operativo - Margen Operativo</h4><strong>❌ Errores:</strong><ul><li>Tabla no encontrada: INGRESOS</li><li>Tabla no encontrada: G</li></ul><strong>⚠️ Warnings:</strong><ul><li>Campo no encontrado: INGRESOS.TOTAL</li><li>Campo no encontrado: G.TOTAL</li></ul></div>
+                    <div class="problem-item">
+                        <h4>coi_rotacion_cuentas_cobrar - Días de Cuentas por Cobrar</h4><strong>❌ Errores:</strong><ul><li>Tabla no encontrada: VENTAS_ANUAL</li><li>Tabla no encontrada: C</li></ul><strong>⚠️ Warnings:</strong><ul><li>Campo no encontrado: C.TOTAL</li><li>Campo no encontrado: VENTAS_ANUAL.TOTAL</li></ul></div>
+                    <div class="problem-item">
+                        <h4>coi_movimientos_mes_actual - Movimientos del Mes</h4><strong>❌ Errores:</strong><ul><li>Tabla no encontrada: FECHA</li><li>Tabla no encontrada: CURRENT_DATE</li></ul></div>
+                    <div class="problem-item warning">
+                        <h4>coi_polizas_sin_cuadrar - Pólizas Descuadradas</h4><strong>⚠️ Warnings:</strong><ul><li>Campo no encontrado: POLIZAS24.NUMERO_POLIZA</li><li>Campo no encontrado: AUXILIAR24.NUMERO_POLIZA</li><li>Campo no encontrado: AUXILIAR24.TIPO_MOVIMIENTO</li><li>Campo no encontrado: AUXILIAR24.IMPORTE</li></ul></div></div></div>
             <div class="sistema-section">
                 <h2>Sistema NOI</h2>
                 
@@ -212,19 +236,29 @@
                     </div>
                     <div class="stat-item">
                         <div class="label">Métricas</div>
-                        <div class="value">7</div>
+                        <div class="value">22</div>
                     </div>
                     <div class="stat-item">
                         <div class="label">Válidas</div>
-                        <div class="value" style="color: #00b894;">7</div>
+                        <div class="value" style="color: #00b894;">19</div>
                     </div>
                     <div class="stat-item">
                         <div class="label">Tasa Éxito</div>
-                        <div class="value" style="color: #00b894;">100.0%</div>
+                        <div class="value" style="color: #ff6b6b;">86.4%</div>
                     </div>
                 </div><div class="problems"><h3>⚠️ Problemas Detectados</h3>
                     <div class="problem-item warning">
-                        <h4>noi_costo_nomina_departamento - Costo de Nómina por Departamento</h4><strong>⚠️ Warnings:</strong><ul><li>Campo no encontrado: NWNOMINAS01.ID</li><li>Campo no encontrado: NWNOMINAS01.NETO</li><li>Campo no encontrado: NWNOMINAS01.CVE_DEPTO</li><li>Campo no encontrado: DEPTOS01.CVE_DEPTO</li></ul></div></div></div>
+                        <h4>noi_costo_nomina_departamento - Costo de Nómina por Departamento</h4><strong>⚠️ Warnings:</strong><ul><li>Campo no encontrado: NWNOMINAS01.ID</li><li>Campo no encontrado: NWNOMINAS01.NETO</li><li>Campo no encontrado: NWNOMINAS01.CVE_DEPTO</li><li>Campo no encontrado: DEPTOS01.CVE_DEPTO</li></ul></div>
+                    <div class="problem-item">
+                        <h4>noi_costo_mensual_promedio - Costo Mensual Promedio</h4><strong>❌ Errores:</strong><ul><li>Tabla no encontrada: FECHA</li></ul></div>
+                    <div class="problem-item warning">
+                        <h4>noi_top_departamentos_costo - Departamentos con Mayor Costo</h4><strong>⚠️ Warnings:</strong><ul><li>Campo no encontrado: NWNOMINAS01.CVE_EMPLEADO</li><li>Campo no encontrado: NWNOMINAS01.NETO</li><li>Campo no encontrado: NWNOMINAS01.CVE_DEPTO</li><li>Campo no encontrado: DEPTOS01.CVE_DEPTO</li></ul></div>
+                    <div class="problem-item warning">
+                        <h4>noi_empleados_por_departamento - Empleados por Departamento</h4><strong>⚠️ Warnings:</strong><ul><li>Campo no encontrado: NWNOMINAS01.CVE_EMPLEADO</li><li>Campo no encontrado: NWNOMINAS01.CVE_DEPTO</li><li>Campo no encontrado: DEPTOS01.CVE_DEPTO</li></ul></div>
+                    <div class="problem-item">
+                        <h4>noi_aguinaldo_estimado - Aguinaldo Estimado</h4><strong>❌ Errores:</strong><ul><li>Tabla no encontrada: FECHA</li><li>Tabla no encontrada: CURRENT_DATE</li></ul></div>
+                    <div class="problem-item">
+                        <h4>noi_indemnizaciones_mes - Indemnizaciones del Mes</h4><strong>❌ Errores:</strong><ul><li>Tabla no encontrada: FECHA</li><li>Tabla no encontrada: CURRENT_DATE</li></ul></div></div></div>
             <div class="sistema-section">
                 <h2>Sistema BANCO</h2>
                 
@@ -235,17 +269,23 @@
                     </div>
                     <div class="stat-item">
                         <div class="label">Métricas</div>
-                        <div class="value">9</div>
+                        <div class="value">19</div>
                     </div>
                     <div class="stat-item">
                         <div class="label">Válidas</div>
-                        <div class="value" style="color: #00b894;">9</div>
+                        <div class="value" style="color: #00b894;">17</div>
                     </div>
                     <div class="stat-item">
                         <div class="label">Tasa Éxito</div>
-                        <div class="value" style="color: #00b894;">100.0%</div>
+                        <div class="value" style="color: #ff6b6b;">89.5%</div>
                     </div>
-                </div><div class="problems"><p style="color: #00b894; font-weight: 600;">✅ Todas las métricas son válidas</p></div></div>
+                </div><div class="problems"><h3>⚠️ Problemas Detectados</h3>
+                    <div class="problem-item">
+                        <h4>banco_flujo_semanal - Flujo de Efectivo Semanal</h4><strong>❌ Errores:</strong><ul><li>Tabla no encontrada: FECHA</li></ul></div>
+                    <div class="problem-item">
+                        <h4>banco_dias_efectivo - Días de Efectivo</h4><strong>❌ Errores:</strong><ul><li>Tabla no encontrada: PROMEDIO_EGRESOS</li><li>Tabla no encontrada: SA</li></ul><strong>⚠️ Warnings:</strong><ul><li>Campo no encontrado: PROMEDIO_EGRESOS.PROMEDIO</li><li>Campo no encontrado: SA.TOTAL</li></ul></div>
+                    <div class="problem-item warning">
+                        <h4>banco_conciliaciones_pendientes - Conciliaciones Pendientes</h4><strong>⚠️ Warnings:</strong><ul><li>Campo no encontrado: CTAS.NOMBRE</li><li>Campo no encontrado: MOVS01.ID</li><li>Campo no encontrado: MOVS01.IMPORTE</li><li>Campo no encontrado: MOVS01.NUM_CTA</li></ul></div></div></div>
             <div class="sistema-section">
                 <h2>📈 Cobertura del Diccionario</h2>
                 <table class="cobertura-table">
