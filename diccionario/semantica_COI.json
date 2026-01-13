@@ -1,6 +1,6 @@
 {
   "sistema": "COI",
-  "generado_en": "2026-01-12T21:56:03.029Z",
+  "generado_en": "2026-01-13T03:00:26.402Z",
   "version": "2.0.0",
   "tablas": {
     "ACTIVOS05": {
@@ -35775,5 +35775,407 @@
         }
       }
     }
-  }
+  },
+  "relaciones_inferidas": [
+    {
+      "tabla_origen": "AUXILIAR",
+      "campo_origen": "NUM_POLIZ",
+      "tabla_destino": "POLIZAS",
+      "campo_destino": "NUM_POLIZ",
+      "descripcion": "Relación inferida por patrón NUM_POLIZ",
+      "confianza": "media"
+    },
+    {
+      "tabla_origen": "AUXILIAR",
+      "campo_origen": "NUM_CTA",
+      "tabla_destino": "CTAS_PRODSERV",
+      "campo_destino": "NUM_CTA",
+      "descripcion": "Cuenta bancaria",
+      "confianza": "alta"
+    },
+    {
+      "tabla_origen": "AUXILIAR",
+      "campo_origen": "NUM_CTA",
+      "tabla_destino": "CTAING",
+      "campo_destino": "NUM_CTA",
+      "descripcion": "Relación inferida por patrón NUM_CTA",
+      "confianza": "media"
+    },
+    {
+      "tabla_origen": "AUXILIAR",
+      "campo_origen": "NUM_CTA",
+      "tabla_destino": "CTANIF",
+      "campo_destino": "NUM_CTA",
+      "descripcion": "Relación inferida por patrón NUM_CTA",
+      "confianza": "media"
+    },
+    {
+      "tabla_origen": "AUXILIAR",
+      "campo_origen": "NUM_CTA",
+      "tabla_destino": "CTARUB",
+      "campo_destino": "NUM_CTA",
+      "descripcion": "Relación inferida por patrón NUM_CTA",
+      "confianza": "media"
+    },
+    {
+      "tabla_origen": "AUXILIAR",
+      "campo_origen": "NUM_CTA",
+      "tabla_destino": "CTATER",
+      "campo_destino": "NUM_CTA",
+      "descripcion": "Relación inferida por patrón NUM_CTA",
+      "confianza": "media"
+    },
+    {
+      "tabla_origen": "AUXILIAR",
+      "campo_origen": "NUM_CTA",
+      "tabla_destino": "ETIQ_CTAS_POLDINAMICA",
+      "campo_destino": "NUM_CTA",
+      "descripcion": "Relación inferida por patrón NUM_CTA",
+      "confianza": "media"
+    },
+    {
+      "tabla_origen": "AUXILIAR",
+      "campo_origen": "NUM_CTA",
+      "tabla_destino": "ETIQ_CTAS_SIGO",
+      "campo_destino": "NUM_CTA",
+      "descripcion": "Relación inferida por patrón NUM_CTA",
+      "confianza": "media"
+    },
+    {
+      "tabla_origen": "COMPLEMENTOSPAGOS",
+      "campo_origen": "NUM_POLIZ",
+      "tabla_destino": "POLIZAS",
+      "campo_destino": "NUM_POLIZ",
+      "descripcion": "Relación inferida por patrón NUM_POLIZ",
+      "confianza": "media"
+    },
+    {
+      "tabla_origen": "CTANIF",
+      "campo_origen": "ID_NIF",
+      "tabla_destino": "EDOFINNIFS",
+      "campo_destino": "ID_NIF",
+      "descripcion": "Relación inferida por patrón ID_NIF",
+      "confianza": "media"
+    },
+    {
+      "tabla_origen": "CTANIF",
+      "campo_origen": "ID_NIF",
+      "tabla_destino": "NIFS",
+      "campo_destino": "ID_NIF",
+      "descripcion": "Relación inferida por patrón ID_NIF",
+      "confianza": "media"
+    },
+    {
+      "tabla_origen": "CUENTAS",
+      "campo_origen": "NUM_CTA",
+      "tabla_destino": "CTAS_PRODSERV",
+      "campo_destino": "NUM_CTA",
+      "descripcion": "Cuenta bancaria",
+      "confianza": "alta"
+    },
+    {
+      "tabla_origen": "CUENTAS",
+      "campo_origen": "NUM_CTA",
+      "tabla_destino": "CTAING",
+      "campo_destino": "NUM_CTA",
+      "descripcion": "Relación inferida por patrón NUM_CTA",
+      "confianza": "media"
+    },
+    {
+      "tabla_origen": "CUENTAS",
+      "campo_origen": "NUM_CTA",
+      "tabla_destino": "CTANIF",
+      "campo_destino": "NUM_CTA",
+      "descripcion": "Relación inferida por patrón NUM_CTA",
+      "confianza": "media"
+    },
+    {
+      "tabla_origen": "CUENTAS",
+      "campo_origen": "NUM_CTA",
+      "tabla_destino": "CTARUB",
+      "campo_destino": "NUM_CTA",
+      "descripcion": "Relación inferida por patrón NUM_CTA",
+      "confianza": "media"
+    },
+    {
+      "tabla_origen": "CUENTAS",
+      "campo_origen": "NUM_CTA",
+      "tabla_destino": "CTATER",
+      "campo_destino": "NUM_CTA",
+      "descripcion": "Relación inferida por patrón NUM_CTA",
+      "confianza": "media"
+    },
+    {
+      "tabla_origen": "CUENTAS",
+      "campo_origen": "NUM_CTA",
+      "tabla_destino": "ETIQ_CTAS_POLDINAMICA",
+      "campo_destino": "NUM_CTA",
+      "descripcion": "Relación inferida por patrón NUM_CTA",
+      "confianza": "media"
+    },
+    {
+      "tabla_origen": "CUENTAS",
+      "campo_origen": "NUM_CTA",
+      "tabla_destino": "ETIQ_CTAS_SIGO",
+      "campo_destino": "NUM_CTA",
+      "descripcion": "Relación inferida por patrón NUM_CTA",
+      "confianza": "media"
+    },
+    {
+      "tabla_origen": "EDOFINNIFS",
+      "campo_origen": "ID_NIF",
+      "tabla_destino": "CTANIF",
+      "campo_destino": "ID_NIF",
+      "descripcion": "Relación inferida por patrón ID_NIF",
+      "confianza": "media"
+    },
+    {
+      "tabla_origen": "EDOFINNIFS",
+      "campo_origen": "ID_NIF",
+      "tabla_destino": "NIFS",
+      "campo_destino": "ID_NIF",
+      "descripcion": "Relación inferida por patrón ID_NIF",
+      "confianza": "media"
+    },
+    {
+      "tabla_origen": "NIFS",
+      "campo_origen": "ID_NIF",
+      "tabla_destino": "CTANIF",
+      "campo_destino": "ID_NIF",
+      "descripcion": "Relación inferida por patrón ID_NIF",
+      "confianza": "media"
+    },
+    {
+      "tabla_origen": "NIFS",
+      "campo_origen": "ID_NIF",
+      "tabla_destino": "EDOFINNIFS",
+      "campo_destino": "ID_NIF",
+      "descripcion": "Relación inferida por patrón ID_NIF",
+      "confianza": "media"
+    },
+    {
+      "tabla_origen": "PRESUP",
+      "campo_origen": "NUM_CTA",
+      "tabla_destino": "CTAS_PRODSERV",
+      "campo_destino": "NUM_CTA",
+      "descripcion": "Cuenta bancaria",
+      "confianza": "alta"
+    },
+    {
+      "tabla_origen": "PRESUP",
+      "campo_origen": "NUM_CTA",
+      "tabla_destino": "CTAING",
+      "campo_destino": "NUM_CTA",
+      "descripcion": "Relación inferida por patrón NUM_CTA",
+      "confianza": "media"
+    },
+    {
+      "tabla_origen": "PRESUP",
+      "campo_origen": "NUM_CTA",
+      "tabla_destino": "CTANIF",
+      "campo_destino": "NUM_CTA",
+      "descripcion": "Relación inferida por patrón NUM_CTA",
+      "confianza": "media"
+    },
+    {
+      "tabla_origen": "PRESUP",
+      "campo_origen": "NUM_CTA",
+      "tabla_destino": "CTARUB",
+      "campo_destino": "NUM_CTA",
+      "descripcion": "Relación inferida por patrón NUM_CTA",
+      "confianza": "media"
+    },
+    {
+      "tabla_origen": "PRESUP",
+      "campo_origen": "NUM_CTA",
+      "tabla_destino": "CTATER",
+      "campo_destino": "NUM_CTA",
+      "descripcion": "Relación inferida por patrón NUM_CTA",
+      "confianza": "media"
+    },
+    {
+      "tabla_origen": "PRESUP",
+      "campo_origen": "NUM_CTA",
+      "tabla_destino": "ETIQ_CTAS_POLDINAMICA",
+      "campo_destino": "NUM_CTA",
+      "descripcion": "Relación inferida por patrón NUM_CTA",
+      "confianza": "media"
+    },
+    {
+      "tabla_origen": "PRESUP",
+      "campo_origen": "NUM_CTA",
+      "tabla_destino": "ETIQ_CTAS_SIGO",
+      "campo_destino": "NUM_CTA",
+      "descripcion": "Relación inferida por patrón NUM_CTA",
+      "confianza": "media"
+    },
+    {
+      "tabla_origen": "PRESUPDP",
+      "campo_origen": "NUM_CTA",
+      "tabla_destino": "CTAS_PRODSERV",
+      "campo_destino": "NUM_CTA",
+      "descripcion": "Cuenta bancaria",
+      "confianza": "alta"
+    },
+    {
+      "tabla_origen": "PRESUPDP",
+      "campo_origen": "NUM_CTA",
+      "tabla_destino": "CTAING",
+      "campo_destino": "NUM_CTA",
+      "descripcion": "Relación inferida por patrón NUM_CTA",
+      "confianza": "media"
+    },
+    {
+      "tabla_origen": "PRESUPDP",
+      "campo_origen": "NUM_CTA",
+      "tabla_destino": "CTANIF",
+      "campo_destino": "NUM_CTA",
+      "descripcion": "Relación inferida por patrón NUM_CTA",
+      "confianza": "media"
+    },
+    {
+      "tabla_origen": "PRESUPDP",
+      "campo_origen": "NUM_CTA",
+      "tabla_destino": "CTARUB",
+      "campo_destino": "NUM_CTA",
+      "descripcion": "Relación inferida por patrón NUM_CTA",
+      "confianza": "media"
+    },
+    {
+      "tabla_origen": "PRESUPDP",
+      "campo_origen": "NUM_CTA",
+      "tabla_destino": "CTATER",
+      "campo_destino": "NUM_CTA",
+      "descripcion": "Relación inferida por patrón NUM_CTA",
+      "confianza": "media"
+    },
+    {
+      "tabla_origen": "PRESUPDP",
+      "campo_origen": "NUM_CTA",
+      "tabla_destino": "ETIQ_CTAS_POLDINAMICA",
+      "campo_destino": "NUM_CTA",
+      "descripcion": "Relación inferida por patrón NUM_CTA",
+      "confianza": "media"
+    },
+    {
+      "tabla_origen": "PRESUPDP",
+      "campo_origen": "NUM_CTA",
+      "tabla_destino": "ETIQ_CTAS_SIGO",
+      "campo_destino": "NUM_CTA",
+      "descripcion": "Relación inferida por patrón NUM_CTA",
+      "confianza": "media"
+    },
+    {
+      "tabla_origen": "SALDOS",
+      "campo_origen": "NUM_CTA",
+      "tabla_destino": "CTAS_PRODSERV",
+      "campo_destino": "NUM_CTA",
+      "descripcion": "Cuenta bancaria",
+      "confianza": "alta"
+    },
+    {
+      "tabla_origen": "SALDOS",
+      "campo_origen": "NUM_CTA",
+      "tabla_destino": "CTAING",
+      "campo_destino": "NUM_CTA",
+      "descripcion": "Relación inferida por patrón NUM_CTA",
+      "confianza": "media"
+    },
+    {
+      "tabla_origen": "SALDOS",
+      "campo_origen": "NUM_CTA",
+      "tabla_destino": "CTANIF",
+      "campo_destino": "NUM_CTA",
+      "descripcion": "Relación inferida por patrón NUM_CTA",
+      "confianza": "media"
+    },
+    {
+      "tabla_origen": "SALDOS",
+      "campo_origen": "NUM_CTA",
+      "tabla_destino": "CTARUB",
+      "campo_destino": "NUM_CTA",
+      "descripcion": "Relación inferida por patrón NUM_CTA",
+      "confianza": "media"
+    },
+    {
+      "tabla_origen": "SALDOS",
+      "campo_origen": "NUM_CTA",
+      "tabla_destino": "CTATER",
+      "campo_destino": "NUM_CTA",
+      "descripcion": "Relación inferida por patrón NUM_CTA",
+      "confianza": "media"
+    },
+    {
+      "tabla_origen": "SALDOS",
+      "campo_origen": "NUM_CTA",
+      "tabla_destino": "ETIQ_CTAS_POLDINAMICA",
+      "campo_destino": "NUM_CTA",
+      "descripcion": "Relación inferida por patrón NUM_CTA",
+      "confianza": "media"
+    },
+    {
+      "tabla_origen": "SALDOS",
+      "campo_origen": "NUM_CTA",
+      "tabla_destino": "ETIQ_CTAS_SIGO",
+      "campo_destino": "NUM_CTA",
+      "descripcion": "Relación inferida por patrón NUM_CTA",
+      "confianza": "media"
+    },
+    {
+      "tabla_origen": "SALDOSDP",
+      "campo_origen": "NUM_CTA",
+      "tabla_destino": "CTAS_PRODSERV",
+      "campo_destino": "NUM_CTA",
+      "descripcion": "Cuenta bancaria",
+      "confianza": "alta"
+    },
+    {
+      "tabla_origen": "SALDOSDP",
+      "campo_origen": "NUM_CTA",
+      "tabla_destino": "CTAING",
+      "campo_destino": "NUM_CTA",
+      "descripcion": "Relación inferida por patrón NUM_CTA",
+      "confianza": "media"
+    },
+    {
+      "tabla_origen": "SALDOSDP",
+      "campo_origen": "NUM_CTA",
+      "tabla_destino": "CTANIF",
+      "campo_destino": "NUM_CTA",
+      "descripcion": "Relación inferida por patrón NUM_CTA",
+      "confianza": "media"
+    },
+    {
+      "tabla_origen": "SALDOSDP",
+      "campo_origen": "NUM_CTA",
+      "tabla_destino": "CTARUB",
+      "campo_destino": "NUM_CTA",
+      "descripcion": "Relación inferida por patrón NUM_CTA",
+      "confianza": "media"
+    },
+    {
+      "tabla_origen": "SALDOSDP",
+      "campo_origen": "NUM_CTA",
+      "tabla_destino": "CTATER",
+      "campo_destino": "NUM_CTA",
+      "descripcion": "Relación inferida por patrón NUM_CTA",
+      "confianza": "media"
+    },
+    {
+      "tabla_origen": "SALDOSDP",
+      "campo_origen": "NUM_CTA",
+      "tabla_destino": "ETIQ_CTAS_POLDINAMICA",
+      "campo_destino": "NUM_CTA",
+      "descripcion": "Relación inferida por patrón NUM_CTA",
+      "confianza": "media"
+    },
+    {
+      "tabla_origen": "SALDOSDP",
+      "campo_origen": "NUM_CTA",
+      "tabla_destino": "ETIQ_CTAS_SIGO",
+      "campo_destino": "NUM_CTA",
+      "descripcion": "Relación inferida por patrón NUM_CTA",
+      "confianza": "media"
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "sistema": "BANCO",
-  "generado_en": "2026-01-12T21:56:03.920Z",
+  "generado_en": "2026-01-13T03:00:27.636Z",
   "version": "2.0.0",
   "tablas": {
     "BENEF": {
@@ -19363,5 +19363,135 @@
         }
       }
     }
-  }
+  },
+  "relaciones_inferidas": [
+    {
+      "tabla_origen": "BENEF",
+      "campo_origen": "NUM_REG",
+      "tabla_destino": "CONTROLREGMOV",
+      "campo_destino": "NUM_REG",
+      "descripcion": "Relación inferida por patrón NUM_REG",
+      "confianza": "media"
+    },
+    {
+      "tabla_origen": "CONTROL",
+      "campo_origen": "NUM_EMP",
+      "tabla_destino": "PARAMEMP",
+      "campo_destino": "NUM_EMP",
+      "descripcion": "Relación inferida por patrón NUM_EMP",
+      "confianza": "media"
+    },
+    {
+      "tabla_origen": "CTAS",
+      "campo_origen": "NUM_REG",
+      "tabla_destino": "CONTROLREGMOV",
+      "campo_destino": "NUM_REG",
+      "descripcion": "Relación inferida por patrón NUM_REG",
+      "confianza": "media"
+    },
+    {
+      "tabla_origen": "CTAS",
+      "campo_origen": "NUM_CTA",
+      "tabla_destino": "CTAS",
+      "campo_destino": "NUM_CTA",
+      "descripcion": "Cuenta bancaria",
+      "confianza": "alta"
+    },
+    {
+      "tabla_origen": "CTECONC",
+      "campo_origen": "NUM_REG",
+      "tabla_destino": "CONTROLREGMOV",
+      "campo_destino": "NUM_REG",
+      "descripcion": "Relación inferida por patrón NUM_REG",
+      "confianza": "media"
+    },
+    {
+      "tabla_origen": "CTECONC",
+      "campo_origen": "NUM_CTA",
+      "tabla_destino": "CTAS",
+      "campo_destino": "NUM_CTA",
+      "descripcion": "Cuenta bancaria",
+      "confianza": "alta"
+    },
+    {
+      "tabla_origen": "FORMPAGO",
+      "campo_origen": "NUM_REG",
+      "tabla_destino": "CONTROLREGMOV",
+      "campo_destino": "NUM_REG",
+      "descripcion": "Relación inferida por patrón NUM_REG",
+      "confianza": "media"
+    },
+    {
+      "tabla_origen": "MONEDA",
+      "campo_origen": "NUM_REG",
+      "tabla_destino": "CONTROLREGMOV",
+      "campo_destino": "NUM_REG",
+      "descripcion": "Relación inferida por patrón NUM_REG",
+      "confianza": "media"
+    },
+    {
+      "tabla_origen": "MOVAUX",
+      "campo_origen": "NUM_REG",
+      "tabla_destino": "CONTROLREGMOV",
+      "campo_destino": "NUM_REG",
+      "descripcion": "Relación inferida por patrón NUM_REG",
+      "confianza": "media"
+    },
+    {
+      "tabla_origen": "MOVAUX",
+      "campo_origen": "NUM_CTA",
+      "tabla_destino": "CTAS",
+      "campo_destino": "NUM_CTA",
+      "descripcion": "Cuenta bancaria",
+      "confianza": "alta"
+    },
+    {
+      "tabla_origen": "MOVAUX2",
+      "campo_origen": "NUM_CTA",
+      "tabla_destino": "CTAS",
+      "campo_destino": "NUM_CTA",
+      "descripcion": "Cuenta bancaria",
+      "confianza": "alta"
+    },
+    {
+      "tabla_origen": "MOVS",
+      "campo_origen": "NUM_REG",
+      "tabla_destino": "CONTROLREGMOV",
+      "campo_destino": "NUM_REG",
+      "descripcion": "Relación inferida por patrón NUM_REG",
+      "confianza": "media"
+    },
+    {
+      "tabla_origen": "PARMOVS",
+      "campo_origen": "NUM_MOV",
+      "tabla_destino": "CONTROLREGMOV",
+      "campo_destino": "NUM_MOV",
+      "descripcion": "Relación inferida por patrón NUM_MOV",
+      "confianza": "media"
+    },
+    {
+      "tabla_origen": "PARMOVS",
+      "campo_origen": "NUM_MOV",
+      "tabla_destino": "MOVAUX",
+      "campo_destino": "NUM_MOV",
+      "descripcion": "Relación inferida por patrón NUM_MOV",
+      "confianza": "media"
+    },
+    {
+      "tabla_origen": "PARMOVS",
+      "campo_origen": "NUM_MOV",
+      "tabla_destino": "MOVAUX2",
+      "campo_destino": "NUM_MOV",
+      "descripcion": "Relación inferida por patrón NUM_MOV",
+      "confianza": "media"
+    },
+    {
+      "tabla_origen": "PARMOVS",
+      "campo_origen": "NUM_MOV",
+      "tabla_destino": "MOVS",
+      "campo_destino": "NUM_MOV",
+      "descripcion": "Relación inferida por patrón NUM_MOV",
+      "confianza": "media"
+    }
+  ]
 }

@@ -1,90 +1,150 @@
-# Metricas Base - Sistema BANCO
-# version: 1.0.0
+# Métricas Base - Sistema BANCO
+# version: 2.0.0
 # sistema: BANCO
-# descripcion: Metricas fundamentales para bancos y conciliacion
 
 metadata:
   sistema: BANCO
-  version: 1.0.0
-  generado_en: "2026-01-12"
-  descripcion: "Metricas base para Aspel BANCO - Operaciones bancarias"
+  version: 2.0.0
+  descripcion: "Métricas base para Aspel BANCO - Usando tablas reales"
   tablas_principales:
-    - CTAS
-    - MOVS01
-    - BENEF
-    - CTECONC
+    - CTAS   # Catálogo de cuentas bancarias
+    - MOVS01 # Movimientos bancarios
 
 metricas:
-  - id: ban_saldo_total
-    nombre: "Saldo Total Disponibilidad"
-    descripcion: "Suma de saldos de todas las cuentas bancarias activas"
-    categoria: saldos
+  - id: banco_saldo_total
+    nombre: "Saldo Total en Bancos"
+    descripcion: "Suma de saldos de todas las cuentas bancarias"
+    categoria: tesoreria
     tipo: escalar
     unidad: moneda
     query_duckdb: |
-      SELECT
-        COALESCE(SUM(SALDO), 0) as valor
+      SELECT 
+        COALESCE(SUM(CAST(SALDO_ACT AS DOUBLE)), 0) as valor
       FROM CTAS
       WHERE STATUS = 'A'
-        AND TIPO_CTA = 'Cheques'
     formato:
       decimales: 2
       prefijo: "$"
 
-  - id: ban_ingresos_mes
+  - id: banco_movimientos_mes
+    nombre: "Movimientos del Mes"
+    descripcion: "Total de transacciones bancarias del mes"
+    categoria: tesoreria
+    tipo: escalar
+    unidad: cantidad
+    query_duckdb: |
+      SELECT 
+        COUNT(*) as valor
+      FROM MOVS01
+      WHERE FECHA >= date_trunc('month', CURRENT_DATE)
+    formato:
+      decimales: 0
+
+  - id: banco_saldo_por_cuenta
+    nombre: "Saldo por Cuenta Bancaria"
+    descripcion: "Detalle de saldos de cada cuenta"
+    categoria: tesoreria
+    tipo: tabla
+    query_duckdb: |
+      SELECT 
+        NUM_CTA as cuenta,
+        NOMBRE as nombre,
+        CAST(SALDO_ACT AS DOUBLE) as saldo
+      FROM CTAS
+      WHERE STATUS = 'A'
+      ORDER BY saldo DESC
+
+  - id: banco_ingresos_mes
     nombre: "Ingresos del Mes"
-    descripcion: "Total de abonos del mes en cuentas bancarias"
-    categoria: movimientos
+    descripcion: "Total de movimientos de ingreso"
+    categoria: tesoreria
     tipo: escalar
     unidad: moneda
     query_duckdb: |
-      SELECT
-        COALESCE(SUM(MONTO), 0) as valor
+      SELECT 
+        COALESCE(SUM(CAST(IMPORTE AS DOUBLE)), 0) as valor
       FROM MOVS01
-      WHERE TIPO_MOV = 'Abono'
-        AND STATUS != 'C'
+      WHERE TIPO_MOV = 'I'
         AND FECHA >= date_trunc('month', CURRENT_DATE)
-        AND FECHA < date_trunc('month', CURRENT_DATE) + INTERVAL '1 month'
     formato:
       decimales: 2
       prefijo: "$"
 
-  - id: ban_egresos_mes
+  - id: banco_egresos_mes
     nombre: "Egresos del Mes"
-    descripcion: "Total de cargos del mes en cuentas bancarias"
-    categoria: movimientos
+    descripcion: "Total de movimientos de egreso"
+    categoria: tesoreria
     tipo: escalar
     unidad: moneda
     query_duckdb: |
-      SELECT
-        COALESCE(SUM(MONTO), 0) as valor
+      SELECT 
+        COALESCE(SUM(CAST(IMPORTE AS DOUBLE)), 0) as valor
       FROM MOVS01
-      WHERE TIPO_MOV = 'Cargo'
-        AND STATUS != 'C'
+      WHERE TIPO_MOV = 'E'
         AND FECHA >= date_trunc('month', CURRENT_DATE)
-        AND FECHA < date_trunc('month', CURRENT_DATE) + INTERVAL '1 month'
     formato:
       decimales: 2
       prefijo: "$"
 
-  - id: ban_flujo_diario
-    nombre: "Flujo de Efectivo Diario"
-    descripcion: "Flujo diario de movimientos (abonos y cargos)"
-    categoria: movimientos
-    tipo: serie
+  - id: banco_flujo_neto_mes
+    nombre: "Flujo Neto del Mes"
+    descripcion: "Diferencia entre ingresos y egresos"
+    categoria: tesoreria
+    tipo: escalar
     unidad: moneda
     query_duckdb: |
-      SELECT
-        FECHA as fecha,
-        SUM(MONTO) as valor
+      SELECT 
+        COALESCE(
+          SUM(CASE WHEN TIPO_MOV = 'I' THEN CAST(IMPORTE AS DOUBLE) ELSE 0 END) -
+          SUM(CASE WHEN TIPO_MOV = 'E' THEN CAST(IMPORTE AS DOUBLE) ELSE 0 END)
+        , 0) as valor
       FROM MOVS01
-      WHERE STATUS != 'C'
-      GROUP BY FECHA
-      ORDER BY FECHA
+      WHERE FECHA >= date_trunc('month', CURRENT_DATE)
     formato:
       decimales: 2
       prefijo: "$"
-    visual:
-      tipo: linea
-      color: "#0E7C86"
+
+  - id: banco_cheques_pendientes
+    nombre: "Cheques Pendientes"
+    descripcion: "Movimientos no conciliados"
+    categoria: tesoreria
+    tipo: escalar
+    unidad: cantidad
+    query_duckdb: |
+      SELECT 
+        COUNT(*) as valor
+      FROM MOVS01
+      WHERE STATUS = 'P'
+    formato:
+      decimales: 0
+
+  - id: banco_cuenta_mayor_saldo
+    nombre: "Cuenta con Mayor Saldo"
+    descripcion: "Identificar cuenta con más recursos"
+    categoria: tesoreria
+    tipo: tabla
+    query_duckdb: |
+      SELECT 
+        NUM_CTA as cuenta,
+        NOMBRE as nombre,
+        CAST(SALDO_ACT AS DOUBLE) as saldo
+      FROM CTAS
+      WHERE STATUS = 'A'
+      ORDER BY saldo DESC
+      LIMIT 1
+
+  - id: banco_promedio_transacciones
+    nombre: "Promedio de Transacciones"
+    descripcion: "Importe promedio por movimiento"
+    categoria: tesoreria
+    tipo: escalar
+    unidad: moneda
+    query_duckdb: |
+      SELECT 
+        COALESCE(AVG(CAST(IMPORTE AS DOUBLE)), 0) as valor
+      FROM MOVS01
+      WHERE FECHA >= date('now', '-30 days')
+    formato:
+      decimales: 2
+      prefijo: "$"
 

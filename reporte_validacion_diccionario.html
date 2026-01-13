@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporte de Validación del Diccionario - 2026-01-13</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        .header h1 { font-size: 32px; margin-bottom: 10px; }
+        .header p { opacity: 0.9; }
+        .content { padding: 30px; }
+        .summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        .summary-card {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .summary-card.success { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+        .summary-card.warning { background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); }
+        .summary-card.error { background: linear-gradient(135deg, #ff0844 0%, #ffb199 100%); }
+        .summary-card h3 { font-size: 14px; opacity: 0.9; margin-bottom: 10px; }
+        .summary-card .number { font-size: 36px; font-weight: bold; }
+        .sistema-section {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        .sistema-section h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .stat-item {
+            background: white;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 4px solid #667eea;
+        }
+        .stat-item .label { font-size: 12px; color: #666; margin-bottom: 5px; }
+        .stat-item .value { font-size: 24px; font-weight: bold; color: #333; }
+        .problems {
+            background: white;
+            border-radius: 6px;
+            padding: 15px;
+            margin-top: 15px;
+        }
+        .problem-item {
+            padding: 10px;
+            margin-bottom: 10px;
+            border-left: 4px solid #ff6b6b;
+            background: #fff5f5;
+            border-radius: 4px;
+        }
+        .problem-item.warning { border-left-color: #ffa500; background: #fff9f0; }
+        .problem-item h4 { color: #333; margin-bottom: 8px; }
+        .problem-item ul { margin-left: 20px; margin-top: 5px; }
+        .problem-item li { margin: 3px 0; color: #666; }
+        .cobertura-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .cobertura-table th, .cobertura-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .cobertura-table th {
+            background: #667eea;
+            color: white;
+            font-weight: 600;
+        }
+        .cobertura-table tr:hover { background: #f8f9fa; }
+        .badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .badge.success { background: #d4edda; color: #155724; }
+        .badge.warning { background: #fff3cd; color: #856404; }
+        .badge.error { background: #f8d7da; color: #721c24; }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 Reporte de Validación del Diccionario</h1>
+            <p>Generado el 12/1/2026, 11:07:27 p.m.</p>
+        </div>
+        
+        <div class="content">
+            <div class="summary">
+                <div class="summary-card">
+                    <h3>Total Métricas</h3>
+                    <div class="number">48</div>
+                </div>
+                <div class="summary-card success">
+                    <h3>Métricas Válidas</h3>
+                    <div class="number">48</div>
+                </div>
+                <div class="summary-card error">
+                    <h3>Con Errores</h3>
+                    <div class="number">0</div>
+                </div>
+                <div class="summary-card warning">
+                    <h3>Con Warnings</h3>
+                    <div class="number">6</div>
+                </div>
+            </div>
+            <div class="sistema-section">
+                <h2>Sistema SAE</h2>
+                
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="label">Tablas</div>
+                        <div class="value">203</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="label">Métricas</div>
+                        <div class="value">24</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="label">Válidas</div>
+                        <div class="value" style="color: #00b894;">24</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="label">Tasa Éxito</div>
+                        <div class="value" style="color: #00b894;">100.0%</div>
+                    </div>
+                </div><div class="problems"><h3>⚠️ Problemas Detectados</h3>
+                    <div class="problem-item warning">
+                        <h4>sae_top_clientes_mes - Top 10 Clientes del Mes</h4><strong>⚠️ Warnings:</strong><ul><li>Campo no encontrado: FACTF01.NUM_FACT</li><li>Campo no encontrado: FACTF01.FECHA</li></ul></div>
+                    <div class="problem-item warning">
+                        <h4>sae_top_vendedores_mes - Top 10 Vendedores del Mes</h4><strong>⚠️ Warnings:</strong><ul><li>Campo no encontrado: FACTF01.NUM_FACT</li><li>Campo no encontrado: FACTF01.FECHA</li></ul></div>
+                    <div class="problem-item warning">
+                        <h4>sae_top_proveedores_mes - Top 10 Proveedores del Mes</h4><strong>⚠️ Warnings:</strong><ul><li>Campo no encontrado: PROV01.CVE_PROV</li><li>Campo no encontrado: COMPC01.NUM_COMP</li><li>Campo no encontrado: COMPC01.CVE_PROV</li><li>Campo no encontrado: COMPC01.FECHA_APLI</li></ul></div>
+                    <div class="problem-item warning">
+                        <h4>sae_rotacion_inventario - Índice de Rotación de Inventario</h4><strong>⚠️ Warnings:</strong><ul><li>Campo no encontrado: MINVE01.FECHA_APLI</li></ul></div>
+                    <div class="problem-item warning">
+                        <h4>sae_clientes_sin_compras_90dias - Clientes Inactivos (90+ días)</h4><strong>⚠️ Warnings:</strong><ul><li>Campo no encontrado: FACTF01.FECHA</li></ul></div></div></div>
+            <div class="sistema-section">
+                <h2>Sistema COI</h2>
+                
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="label">Tablas</div>
+                        <div class="value">219</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="label">Métricas</div>
+                        <div class="value">8</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="label">Válidas</div>
+                        <div class="value" style="color: #00b894;">8</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="label">Tasa Éxito</div>
+                        <div class="value" style="color: #00b894;">100.0%</div>
+                    </div>
+                </div><div class="problems"><p style="color: #00b894; font-weight: 600;">✅ Todas las métricas son válidas</p></div></div>
+            <div class="sistema-section">
+                <h2>Sistema NOI</h2>
+                
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="label">Tablas</div>
+                        <div class="value">2005</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="label">Métricas</div>
+                        <div class="value">7</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="label">Válidas</div>
+                        <div class="value" style="color: #00b894;">7</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="label">Tasa Éxito</div>
+                        <div class="value" style="color: #00b894;">100.0%</div>
+                    </div>
+                </div><div class="problems"><h3>⚠️ Problemas Detectados</h3>
+                    <div class="problem-item warning">
+                        <h4>noi_costo_nomina_departamento - Costo de Nómina por Departamento</h4><strong>⚠️ Warnings:</strong><ul><li>Campo no encontrado: NWNOMINAS01.ID</li><li>Campo no encontrado: NWNOMINAS01.NETO</li><li>Campo no encontrado: NWNOMINAS01.CVE_DEPTO</li><li>Campo no encontrado: DEPTOS01.CVE_DEPTO</li></ul></div></div></div>
+            <div class="sistema-section">
+                <h2>Sistema BANCO</h2>
+                
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="label">Tablas</div>
+                        <div class="value">110</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="label">Métricas</div>
+                        <div class="value">9</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="label">Válidas</div>
+                        <div class="value" style="color: #00b894;">9</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="label">Tasa Éxito</div>
+                        <div class="value" style="color: #00b894;">100.0%</div>
+                    </div>
+                </div><div class="problems"><p style="color: #00b894; font-weight: 600;">✅ Todas las métricas son válidas</p></div></div>
+            <div class="sistema-section">
+                <h2>📈 Cobertura del Diccionario</h2>
+                <table class="cobertura-table">
+                    <thead>
+                        <tr>
+                            <th>Sistema</th>
+                            <th>Total Tablas</th>
+                            <th>Con Descripción</th>
+                            <th>Con Módulo</th>
+                            <th>Con Tags</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>SAE</strong></td>
+                            <td>342</td>
+                            <td><span class="badge success">100.0%</span> (342)</td>
+                            <td><span class="badge warning">69.0%</span> (236)</td>
+                            <td><span class="badge success">100.0%</span> (342)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>COI</strong></td>
+                            <td>219</td>
+                            <td><span class="badge success">100.0%</span> (219)</td>
+                            <td><span class="badge success">100.0%</span> (219)</td>
+                            <td><span class="badge success">100.0%</span> (219)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>NOI</strong></td>
+                            <td>2005</td>
+                            <td><span class="badge success">100.0%</span> (2005)</td>
+                            <td><span class="badge success">100.0%</span> (2005)</td>
+                            <td><span class="badge success">100.0%</span> (2005)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>BANCO</strong></td>
+                            <td>110</td>
+                            <td><span class="badge success">100.0%</span> (110)</td>
+                            <td><span class="badge warning">64.5%</span> (71)</td>
+                            <td><span class="badge success">100.0%</span> (110)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Generado por scripts/validar_diccionario.js - Aspel-CENIT</p>
+        </div>
+    </div>
+</body>
+</html>

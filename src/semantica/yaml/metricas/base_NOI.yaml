@@ -1,67 +1,110 @@
-# Metricas Base - Sistema NOI
-# version: 1.0.0
+# Métricas Base - Sistema NOI (Nómina)
+# version: 2.0.0
 # sistema: NOI
-# descripcion: Metricas fundamentales para nomina y recursos humanos
 
 metadata:
   sistema: NOI
-  version: 1.0.0
-  generado_en: "2026-01-12"
-  descripcion: "Metricas base para Aspel NOI - Nomina y RRHH"
+  version: 2.0.0
+  descripcion: "Métricas base para Aspel NOI - Usando tablas reales"
   tablas_principales:
-    - NWNOMINAS01
-    - TRAB01
+    - NWNOMINAS01  # Nóminas
+    - DEPTOS01     # Departamentos
 
 metricas:
-  - id: noi_nomina_total_periodo
-    nombre: "Nomina Total (Periodo)"
-    descripcion: "Total de percepciones pagadas en el periodo actual"
+  - id: noi_registros_nomina
+    nombre: "Registros de Nómina"
+    descripcion: "Total de registros en nóminas"
+    categoria: nomina
+    tipo: escalar
+    unidad: cantidad
+    query_duckdb: |
+      SELECT 
+        COUNT(*) as valor
+      FROM NWNOMINAS01
+    formato:
+      decimales: 0
+
+  - id: noi_nomina_total
+    nombre: "Total Nómina Acumulado"
+    descripcion: "Suma de todos los pagos de nómina"
     categoria: nomina
     tipo: escalar
     unidad: moneda
     query_duckdb: |
-      SELECT
-        COALESCE(SUM(PERCEPCIONES), 0) as valor
+      SELECT 
+        COALESCE(SUM(CAST(NETO AS DOUBLE)), 0) as valor
       FROM NWNOMINAS01
-      WHERE STATUS != 'C'
-        AND FECHA_PAGO >= date_trunc('month', CURRENT_DATE)
-        AND FECHA_PAGO < date_trunc('month', CURRENT_DATE) + INTERVAL '1 month'
     formato:
       decimales: 2
       prefijo: "$"
 
-  - id: noi_empleados_activos
-    nombre: "Empleados Activos"
-    descripcion: "Conteo de empleados activos en el padron"
-    categoria: plantilla
+  - id: noi_departamentos_activos
+    nombre: "Departamentos Activos"
+    descripcion: "Total de departamentos registrados"
+    categoria: organizacion
     tipo: escalar
     unidad: cantidad
     query_duckdb: |
-      SELECT
+      SELECT 
         COUNT(*) as valor
-      FROM TRAB01
-      WHERE STATUS = 'A'
+      FROM DEPTOS01
     formato:
       decimales: 0
 
-  - id: noi_nomina_por_departamento
-    nombre: "Nomina por Departamento"
-    descripcion: "Total de nomina agrupada por departamento"
+  - id: noi_promedio_neto
+    nombre: "Promedio Neto por Registro"
+    descripcion: "Promedio de pago neto en nómina"
+    categoria: nomina
+    tipo: escalar
+    unidad: moneda
+    query_duckdb: |
+      SELECT 
+        COALESCE(AVG(CAST(NETO AS DOUBLE)), 0) as valor
+      FROM NWNOMINAS01
+    formato:
+      decimales: 2
+      prefijo: "$"
+
+  - id: noi_costo_nomina_departamento
+    nombre: "Costo de Nómina por Departamento"
+    descripcion: "Total pagado por departamento"
     categoria: nomina
     tipo: tabla
     query_duckdb: |
-      SELECT
-        NUM_DEPTO as departamento,
-        SUM(TOTAL) as valor
+      SELECT 
+        dep.NOMBRE as departamento,
+        COUNT(nom.ID) as empleados,
+        SUM(CAST(nom.NETO AS DOUBLE)) as total
+      FROM NWNOMINAS01 nom
+      INNER JOIN DEPTOS01 dep ON nom.CVE_DEPTO = dep.CVE_DEPTO
+      GROUP BY dep.NOMBRE
+      ORDER BY total DESC
+
+  - id: noi_total_percepciones
+    nombre: "Total Percepciones"
+    descripcion: "Suma de todas las percepciones"
+    categoria: nomina
+    tipo: escalar
+    unidad: moneda
+    query_duckdb: |
+      SELECT 
+        COALESCE(SUM(CAST(TOTAL_PERCEPCIONES AS DOUBLE)), 0) as valor
       FROM NWNOMINAS01
-      WHERE STATUS != 'C'
-      GROUP BY NUM_DEPTO
-      ORDER BY valor DESC
     formato:
-      columnas:
-        - nombre: departamento
-          tipo: texto
-        - nombre: valor
-          tipo: moneda
-          decimales: 2
+      decimales: 2
+      prefijo: "$"
+
+  - id: noi_total_deducciones
+    nombre: "Total Deducciones"
+    descripcion: "Suma de todas las deducciones"
+    categoria: nomina
+    tipo: escalar
+    unidad: moneda
+    query_duckdb: |
+      SELECT 
+        COALESCE(SUM(CAST(TOTAL_DEDUCCIONES AS DOUBLE)), 0) as valor
+      FROM NWNOMINAS01
+    formato:
+      decimales: 2
+      prefijo: "$"
 

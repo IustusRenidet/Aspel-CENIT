@@ -1,371 +1,267 @@
-# Métricas Base - Sistema SAE (Ventas e Inventarios)
-# version: 1.0.0
+# Métricas Base - Sistema SAE (VERSIÓN CORREGIDA CON TABLAS REALES)
+# version: 2.0.0
 # sistema: SAE
-# descripcion: Métricas fundamentales para análisis de ventas, inventarios, CxC y CxP
+# descripcion: Métricas usando NOMBRES REALES de tablas Aspel SAE
 
 metadata:
   sistema: SAE
-  version: 1.0.0
-  generado_en: "2026-01-07"
-  descripcion: "Métricas base para Aspel SAE - Sistema de Administración Empresarial"
+  version: 2.0.0
+  generado_en: "2026-01-13"
+  descripcion: "Métricas base para Aspel SAE - Usando tablas reales"
+  nota: "Tablas mensuales usan sufijos 01-12, usar UNION ALL para consolidar"
   tablas_principales:
-    - FACTF01  # Facturas
+    - FACTF01  # Facturas mes 01 (replicar 01-12 para año completo)
     - CLIE01   # Clientes
-    - PROD01   # Productos (si existe) / INVE01
-    - MINVE01  # Movimientos de inventario
-    - CUEN_M01 # Cuentas por cobrar
-    - PAGA_M01 # Pagos
+    - INVE01   # Inventario/Productos
+    - VEND01   # Vendedores
+    - MINVE01  # Movimientos inventario mes 01
+    - PROV01   # Proveedores
+    - CUEN_M01 # Cuentas por cobrar mes 01
 
 metricas:
   # ============================================
-  # VENTAS - Métricas principales
+  # VENTAS - Usando tablas reales
   # ============================================
   
-  - id: sae_ventas_netas_mes
-    nombre: "Ventas Netas del Mes"
-    descripcion: "Total de ventas netas (después de descuentos) del mes actual"
+  - id: sae_ventas_mes_actual
+    nombre: "Ventas del Mes Actual"
+    descripcion: "Total de facturas del mes en curso (usando tabla mensual)"
     categoria: ventas
     tipo: escalar
     unidad: moneda
     query_duckdb: |
       SELECT 
-        COALESCE(SUM(IMPORTE_NETO), 0) as valor
-      FROM facturas_resumen
-      WHERE FECHA_DOCUMENTO >= date_trunc('month', CURRENT_DATE)
-        AND FECHA_DOCUMENTO < date_trunc('month', CURRENT_DATE) + INTERVAL '1 month'
-        AND ESTATUS != 'CANCELADO'
-    parametros:
-      - nombre: fecha_inicio
-        tipo: date
-        requerido: false
-        default: "date_trunc('month', CURRENT_DATE)"
-      - nombre: fecha_fin
-        tipo: date
-        requerido: false
-        default: "CURRENT_DATE"
+        COALESCE(SUM(CAST(IMPORTE AS DOUBLE)), 0) as valor
+      FROM FACTF01
+      WHERE STATUS != 'C'
+        AND FECHA >= date_trunc('month', CURRENT_DATE)
+    nota: "FACTF01 = facturas del mes 01. Cambiar por mes actual en runtime"
     formato:
       decimales: 2
       prefijo: "$"
-      separador_miles: ","
-    comparativo:
-      periodo_anterior: true
-      tipo: "porcentaje"
 
-  - id: sae_ticket_promedio
-    nombre: "Ticket Promedio"
-    descripcion: "Promedio de venta por documento en el periodo"
+  - id: sae_ventas_anual_consolidado
+    nombre: "Ventas Anuales (Consolidado)"
+    descripcion: "Total de ventas sumando todos los meses del año"
     categoria: ventas
     tipo: escalar
     unidad: moneda
     query_duckdb: |
       SELECT 
-        COALESCE(AVG(IMPORTE_NETO), 0) as valor
-      FROM facturas_resumen
-      WHERE FECHA_DOCUMENTO BETWEEN {fecha_inicio} AND {fecha_fin}
-        AND ESTATUS != 'CANCELADO'
-    parametros:
-      - nombre: fecha_inicio
-        tipo: date
-        requerido: true
-      - nombre: fecha_fin
-        tipo: date
-        requerido: true
+        COALESCE(
+          (SELECT SUM(CAST(IMPORTE AS DOUBLE)) FROM FACTF01 WHERE STATUS != 'C') +
+          (SELECT SUM(CAST(IMPORTE AS DOUBLE)) FROM FACTF02 WHERE STATUS != 'C') +
+          (SELECT SUM(CAST(IMPORTE AS DOUBLE)) FROM FACTF03 WHERE STATUS != 'C') +
+          (SELECT SUM(CAST(IMPORTE AS DOUBLE)) FROM FACTF04 WHERE STATUS != 'C') +
+          (SELECT SUM(CAST(IMPORTE AS DOUBLE)) FROM FACTF05 WHERE STATUS != 'C') +
+          (SELECT SUM(CAST(IMPORTE AS DOUBLE)) FROM FACTF06 WHERE STATUS != 'C') +
+          (SELECT SUM(CAST(IMPORTE AS DOUBLE)) FROM FACTF07 WHERE STATUS != 'C') +
+          (SELECT SUM(CAST(IMPORTE AS DOUBLE)) FROM FACTF08 WHERE STATUS != 'C') +
+          (SELECT SUM(CAST(IMPORTE AS DOUBLE)) FROM FACTF09 WHERE STATUS != 'C') +
+          (SELECT SUM(CAST(IMPORTE AS DOUBLE)) FROM FACTF10 WHERE STATUS != 'C') +
+          (SELECT SUM(CAST(IMPORTE AS DOUBLE)) FROM FACTF11 WHERE STATUS != 'C') +
+          (SELECT SUM(CAST(IMPORTE AS DOUBLE)) FROM FACTF12 WHERE STATUS != 'C')
+        , 0) as valor
     formato:
       decimales: 2
       prefijo: "$"
 
-  - id: sae_ventas_por_dia
-    nombre: "Ventas por Día"
-    descripcion: "Serie de tiempo de ventas diarias"
+  - id: sae_ticket_promedio_mes
+    nombre: "Ticket Promedio del Mes"
+    descripcion: "Importe promedio por factura en el mes actual"
     categoria: ventas
-    tipo: serie
+    tipo: escalar
     unidad: moneda
     query_duckdb: |
       SELECT 
-        FECHA_DOCUMENTO as fecha,
-        SUM(IMPORTE_NETO) as valor
-      FROM facturas_resumen
-      WHERE FECHA_DOCUMENTO BETWEEN {fecha_inicio} AND {fecha_fin}
-        AND ESTATUS != 'CANCELADO'
-      GROUP BY FECHA_DOCUMENTO
-      ORDER BY FECHA_DOCUMENTO
-    parametros:
-      - nombre: fecha_inicio
-        tipo: date
-        requerido: true
-      - nombre: fecha_fin
-        tipo: date
-        requerido: true
+        COALESCE(AVG(CAST(IMPORTE AS DOUBLE)), 0) as valor
+      FROM FACTF01
+      WHERE STATUS != 'C'
+        AND FECHA >= date_trunc('month', CURRENT_DATE)
     formato:
-      decimales: 0
+      decimales: 2
       prefijo: "$"
-    visual:
-      tipo: linea
-      color: "#7067F0"
 
-  - id: sae_ventas_por_mes
-    nombre: "Ventas por Mes"
-    descripcion: "Comparativo mensual de ventas (últimos 12 meses)"
+  - id: sae_conteo_facturas_mes
+    nombre: "Cantidad de Facturas del Mes"
+    descripcion: "Número de documentos facturados en el mes"
     categoria: ventas
-    tipo: serie
-    unidad: moneda
+    tipo: escalar
+    unidad: cantidad
     query_duckdb: |
       SELECT 
-        date_trunc('month', FECHA_DOCUMENTO) as periodo,
-        SUM(IMPORTE_NETO) as valor
-      FROM facturas_resumen
-      WHERE FECHA_DOCUMENTO >= CURRENT_DATE - INTERVAL '12 months'
-        AND ESTATUS != 'CANCELADO'
-      GROUP BY date_trunc('month', FECHA_DOCUMENTO)
-      ORDER BY periodo
+        COUNT(*) as valor
+      FROM FACTF01
+      WHERE STATUS != 'C'
+        AND FECHA >= date_trunc('month', CURRENT_DATE)
     formato:
       decimales: 0
-      prefijo: "$"
-    visual:
-      tipo: barras
-      color: "#7067F0"
 
-  - id: sae_top_clientes
-    nombre: "Top 20 Clientes por Monto"
-    descripcion: "Principales clientes ordenados por monto de venta"
+  # ============================================
+  # CLIENTES
+  # ============================================
+
+  - id: sae_top_clientes_mes
+    nombre: "Top 10 Clientes del Mes"
+    descripcion: "Clientes con mayor facturación del mes actual"
     categoria: ventas
     tipo: tabla
     query_duckdb: |
       SELECT 
-        c.CVE_CLIE as clave,
-        c.NOMBRE as cliente,
-        COUNT(DISTINCT f.FACTURA) as facturas,
-        SUM(f.IMPORTE_NETO) as monto_total,
-        AVG(f.IMPORTE_NETO) as ticket_promedio
-      FROM facturas_resumen f
-      INNER JOIN clientes c ON f.CVE_CLIE = c.CVE_CLIE
-      WHERE f.FECHA_DOCUMENTO BETWEEN {fecha_inicio} AND {fecha_fin}
-        AND f.ESTATUS != 'CANCELADO'
-      GROUP BY c.CVE_CLIE, c.NOMBRE
-      ORDER BY monto_total DESC
-      LIMIT 20
-    parametros:
-      - nombre: fecha_inicio
-        tipo: date
-        requerido: true
-      - nombre: fecha_fin
-        tipo: date
-        requerido: true
-      - nombre: limite
-        tipo: integer
-        requerido: false
-        default: 20
+        cli.CLAVE as clave,
+        cli.NOMBRE as nombre,
+        COUNT(fac.NUM_FACT) as facturas,
+        SUM(CAST(fac.IMPORTE AS DOUBLE)) as total
+      FROM FACTF01 fac
+      INNER JOIN CLIE01 cli ON fac.CVE_CLPV = cli.CLAVE
+      WHERE fac.STATUS != 'C'
+        AND fac.FECHA >= date_trunc('month', CURRENT_DATE)
+      GROUP BY cli.CLAVE, cli.NOMBRE
+      ORDER BY total DESC
+      LIMIT 10
+
+  - id: sae_clientes_activos
+    nombre: "Clientes Activos"
+    descripcion: "Total de clientes con status activo"
+    categoria: clientes
+    tipo: escalar
+    unidad: cantidad
+    query_duckdb: |
+      SELECT 
+        COUNT(*) as valor
+      FROM CLIE01
+      WHERE STATUS = 'A'
     formato:
-      columnas:
-        - nombre: clave
-          tipo: texto
-        - nombre: cliente
-          tipo: texto
-        - nombre: facturas
-          tipo: numero
-        - nombre: monto_total
-          tipo: moneda
-          decimales: 2
-        - nombre: ticket_promedio
-          tipo: moneda
-          decimales: 2
+      decimales: 0
+
+  - id: sae_clientes_nuevos_mes
+    nombre: "Clientes Nuevos del Mes"
+    descripcion: "Clientes dados de alta en el mes actual"
+    categoria: clientes
+    tipo: escalar
+    unidad: cantidad
+    query_duckdb: |
+      SELECT 
+        COUNT(*) as valor
+      FROM CLIE01
+      WHERE FECHA_ALTA >= date_trunc('month', CURRENT_DATE)
+    formato:
+      decimales: 0
 
   # ============================================
   # INVENTARIOS
   # ============================================
-  
-  - id: sae_valor_inventario
-    nombre: "Valor Total de Inventario"
-    descripcion: "Valor total del inventario a costo promedio"
+
+  - id: sae_valor_inventario_actual
+    nombre: "Valor Total del Inventario"
+    descripcion: "Valor del inventario actual (existencias x costo)"
     categoria: inventarios
     tipo: escalar
     unidad: moneda
     query_duckdb: |
       SELECT 
-        SUM(EXISTENCIA * COSTO_PROM) as valor
-      FROM inventario_actual
-      WHERE EXISTENCIA > 0
+        COALESCE(SUM(CAST(EXIST * ULT_COSTO AS DOUBLE)), 0) as valor
+      FROM INVE01
+      WHERE STATUS = 'A'
     formato:
       decimales: 2
       prefijo: "$"
-      separador_miles: ","
 
-  - id: sae_articulos_bajo_minimo
-    nombre: "Artículos Bajo Mínimo"
-    descripcion: "Cantidad de artículos con existencia menor al mínimo"
+  - id: sae_articulos_activos
+    nombre: "Artículos Activos"
+    descripcion: "Total de productos activos en el catálogo"
     categoria: inventarios
     tipo: escalar
     unidad: cantidad
     query_duckdb: |
       SELECT 
         COUNT(*) as valor
-      FROM inventario_actual
-      WHERE EXISTENCIA < EXIST_MIN
-        AND EXIST_MIN > 0
+      FROM INVE01
+      WHERE STATUS = 'A'
+    formato:
+      decimales: 0
+
+  - id: sae_articulos_sin_existencia
+    nombre: "Artículos Sin Existencia"
+    descripcion: "Productos activos con existencia en cero"
+    categoria: inventarios
+    tipo: escalar
+    unidad: cantidad
+    query_duckdb: |
+      SELECT 
+        COUNT(*) as valor
+      FROM INVE01
+      WHERE STATUS = 'A'
+        AND CAST(EXIST AS DOUBLE) <= 0
+    formato:
+      decimales: 0
     alerta:
       tipo: umbral
-      condicion: "> 0"
-      nivel_warning: 5
-      nivel_critical: 15
+      nivel_warning: 10
+      nivel_critical: 50
 
-  - id: sae_top_articulos_vendidos
-    nombre: "Top 20 Artículos Más Vendidos"
-    descripcion: "Artículos con mayor cantidad vendida en el periodo"
+  - id: sae_articulos_bajo_minimo
+    nombre: "Artículos Bajo Mínimo"
+    descripcion: "Productos con existencia menor al mínimo definido"
     categoria: inventarios
     tipo: tabla
     query_duckdb: |
       SELECT 
-        p.CVE_ART as clave,
-        p.DESCR as articulo,
-        SUM(m.CANTIDAD) as cantidad_vendida,
-        SUM(m.IMPORTE) as importe_total
-      FROM movimientos_inventario m
-      INNER JOIN productos p ON m.CVE_ART = p.CVE_ART
-      WHERE m.TIPO_DOC IN ('F', 'V')  -- Facturas y Ventas
-        AND m.FECHA BETWEEN {fecha_inicio} AND {fecha_fin}
-      GROUP BY p.CVE_ART, p.DESCR
-      ORDER BY cantidad_vendida DESC
+        CVE_ART as clave,
+        DESCR as descripcion,
+        CAST(EXIST AS DOUBLE) as existencia,
+        CAST(EXIST_MIN AS DOUBLE) as minimo
+      FROM INVE01
+      WHERE STATUS = 'A'
+        AND CAST(EXIST AS DOUBLE) < CAST(EXIST_MIN AS DOUBLE)
+        AND CAST(EXIST_MIN AS DOUBLE) > 0
+      ORDER BY (CAST(EXIST_MIN AS DOUBLE) - CAST(EXIST AS DOUBLE)) DESC
       LIMIT 20
-    parametros:
-      - nombre: fecha_inicio
-        tipo: date
-        requerido: true
-      - nombre: fecha_fin
-        tipo: date
-        requerido: true
+    alerta:
+      tipo: existencia
+      mensaje: "Hay artículos bajo mínimo que requieren reorden"
 
-  - id: sae_rotacion_inventario
-    nombre: "Rotación de Inventario"
-    descripcion: "Ratio de rotación (Costo de Ventas / Inventario Promedio)"
+  - id: sae_movimientos_inventario_mes
+    nombre: "Movimientos de Inventario del Mes"
+    descripcion: "Total de movimientos registrados en el mes"
     categoria: inventarios
     tipo: escalar
-    unidad: ratio
+    unidad: cantidad
     query_duckdb: |
       SELECT 
-        CASE 
-          WHEN AVG(valor_inventario) > 0 
-          THEN SUM(costo_ventas) / AVG(valor_inventario)
-          ELSE 0 
-        END as valor
-      FROM inventario_mensual
-      WHERE periodo BETWEEN {fecha_inicio} AND {fecha_fin}
-    parametros:
-      - nombre: fecha_inicio
-        tipo: date
-        requerido: true
-      - nombre: fecha_fin
-        tipo: date
-        requerido: true
+        COUNT(*) as valor
+      FROM MINVE01
+      WHERE FECHA_APLI >= date_trunc('month', CURRENT_DATE)
     formato:
-      decimales: 2
-      sufijo: " veces"
+      decimales: 0
 
   # ============================================
-  # CUENTAS POR COBRAR (CxC)
+  # VENDEDORES
   # ============================================
-  
-  - id: sae_saldo_cxc
-    nombre: "Saldo Total CxC"
-    descripcion: "Saldo pendiente de cobro total"
-    categoria: cxc
-    tipo: escalar
-    unidad: moneda
-    query_duckdb: |
-      SELECT 
-        SUM(SALDO) as valor
-      FROM cuentas_por_cobrar
-      WHERE SALDO > 0
-    formato:
-      decimales: 2
-      prefijo: "$"
-      separador_miles: ","
 
-  - id: sae_cxc_vencidas
-    nombre: "CxC Vencidas"
-    descripcion: "Monto de cuentas por cobrar vencidas"
-    categoria: cxc
-    tipo: escalar
-    unidad: moneda
-    query_duckdb: |
-      SELECT 
-        COALESCE(SUM(SALDO), 0) as valor
-      FROM cuentas_por_cobrar
-      WHERE FECHA_VENC < CURRENT_DATE
-        AND SALDO > 0
-    formato:
-      decimales: 2
-      prefijo: "$"
-    alerta:
-      tipo: umbral
-      condicion: "> 0"
-      nivel_warning: 50000
-      nivel_critical: 100000
-
-  - id: sae_antiguedad_saldos
-    nombre: "Antigüedad de Saldos CxC"
-    descripcion: "Distribución de saldos por rangos de antigüedad"
-    categoria: cxc
+  - id: sae_top_vendedores_mes
+    nombre: "Top 10 Vendedores del Mes"
+    descripcion: "Vendedores con mayor facturación del mes"
+    categoria: ventas
     tipo: tabla
     query_duckdb: |
       SELECT 
-        CASE 
-          WHEN CURRENT_DATE - FECHA_VENC <= 30 THEN '0-30 días'
-          WHEN CURRENT_DATE - FECHA_VENC <= 60 THEN '31-60 días'
-          WHEN CURRENT_DATE - FECHA_VENC <= 90 THEN '61-90 días'
-          ELSE 'Más de 90 días'
-        END as rango,
-        COUNT(*) as documentos,
-        SUM(SALDO) as monto
-      FROM cuentas_por_cobrar
-      WHERE SALDO > 0
-      GROUP BY rango
-      ORDER BY 
-        CASE rango
-          WHEN '0-30 días' THEN 1
-          WHEN '31-60 días' THEN 2
-          WHEN '61-90 días' THEN 3
-          ELSE 4
-        END
+        ven.CVE_VEND as clave,
+        ven.NOMBRE as nombre,
+        COUNT(fac.NUM_FACT) as facturas,
+        SUM(CAST(fac.IMPORTE AS DOUBLE)) as total
+      FROM FACTF01 fac
+      INNER JOIN VEND01 ven ON fac.CVE_VEND = ven.CVE_VEND
+      WHERE fac.STATUS != 'C'
+        AND fac.FECHA >= date_trunc('month', CURRENT_DATE)
+      GROUP BY ven.CVE_VEND, ven.NOMBRE
+      ORDER BY total DESC
+      LIMIT 10
 
   # ============================================
-  # CUENTAS POR PAGAR (CxP)
+  # COMPRAS Y PROVEEDORES
   # ============================================
-  
-  - id: sae_saldo_cxp
-    nombre: "Saldo Total CxP"
-    descripcion: "Saldo pendiente de pago total"
-    categoria: cxp
-    tipo: escalar
-    unidad: moneda
-    query_duckdb: |
-      SELECT 
-        SUM(SALDO) as valor
-      FROM cuentas_por_pagar
-      WHERE SALDO > 0
-    formato:
-      decimales: 2
-      prefijo: "$"
 
-  - id: sae_cxp_vencidas
-    nombre: "CxP Vencidas"
-    descripcion: "Monto de cuentas por pagar vencidas"
-    categoria: cxp
-    tipo: escalar
-    unidad: moneda
-    query_duckdb: |
-      SELECT 
-        COALESCE(SUM(SALDO), 0) as valor
-      FROM cuentas_por_pagar
-      WHERE FECHA_VENC < CURRENT_DATE
-        AND SALDO > 0
-    formato:
-      decimales: 2
-      prefijo: "$"
-
-  # ============================================
-  # COMPRAS
-  # ============================================
-  
   - id: sae_compras_mes
     nombre: "Compras del Mes"
     descripcion: "Total de compras del mes actual"
@@ -374,78 +270,220 @@ metricas:
     unidad: moneda
     query_duckdb: |
       SELECT 
-        COALESCE(SUM(IMPORTE_NETO), 0) as valor
-      FROM compras_resumen
-      WHERE FECHA_DOCUMENTO >= date_trunc('month', CURRENT_DATE)
-        AND ESTATUS != 'CANCELADO'
+        COALESCE(SUM(CAST(IMPORTE AS DOUBLE)), 0) as valor
+      FROM COMPC01
+      WHERE STATUS != 'C'
+        AND FECHA_APLI >= date_trunc('month', CURRENT_DATE)
     formato:
       decimales: 2
       prefijo: "$"
 
-  - id: sae_top_proveedores
-    nombre: "Top 10 Proveedores por Compras"
-    descripcion: "Principales proveedores ordenados por monto de compra"
+  - id: sae_top_proveedores_mes
+    nombre: "Top 10 Proveedores del Mes"
+    descripcion: "Proveedores con mayor monto de compras"
     categoria: compras
     tipo: tabla
     query_duckdb: |
       SELECT 
-        p.CVE_PROV as clave,
-        p.NOMBRE as proveedor,
-        COUNT(DISTINCT c.COMPRA) as compras,
-        SUM(c.IMPORTE_NETO) as monto_total
-      FROM compras_resumen c
-      INNER JOIN proveedores p ON c.CVE_PROV = p.CVE_PROV
-      WHERE c.FECHA_DOCUMENTO BETWEEN {fecha_inicio} AND {fecha_fin}
-        AND c.ESTATUS != 'CANCELADO'
-      GROUP BY p.CVE_PROV, p.NOMBRE
-      ORDER BY monto_total DESC
+        pro.CVE_PROV as clave,
+        pro.NOMBRE as nombre,
+        COUNT(com.NUM_COMP) as compras,
+        SUM(CAST(com.IMPORTE AS DOUBLE)) as total
+      FROM COMPC01 com
+      INNER JOIN PROV01 pro ON com.CVE_PROV = pro.CVE_PROV
+      WHERE com.STATUS != 'C'
+        AND com.FECHA_APLI >= date_trunc('month', CURRENT_DATE)
+      GROUP BY pro.CVE_PROV, pro.NOMBRE
+      ORDER BY total DESC
       LIMIT 10
-    parametros:
-      - nombre: fecha_inicio
-        tipo: date
-        requerido: true
-      - nombre: fecha_fin
-        tipo: date
-        requerido: true
 
   # ============================================
-  # DOCUMENTOS / OPERACIÓN
+  # CUENTAS POR COBRAR
   # ============================================
-  
-  - id: sae_documentos_cancelados_hoy
-    nombre: "Documentos Cancelados Hoy"
-    descripcion: "Cantidad de documentos cancelados el día de hoy"
-    categoria: operacion
+
+  - id: sae_saldo_cxc_total
+    nombre: "Saldo Total CxC"
+    descripcion: "Saldo pendiente total de cuentas por cobrar"
+    categoria: cxc
+    tipo: escalar
+    unidad: moneda
+    query_duckdb: |
+      SELECT 
+        COALESCE(SUM(CAST(SALDO AS DOUBLE)), 0) as valor
+      FROM CUEN_M01
+      WHERE CAST(SALDO AS DOUBLE) > 0
+    formato:
+      decimales: 2
+      prefijo: "$"
+
+  - id: sae_cxc_vencidas
+    nombre: "CxC Vencidas"
+    descripcion: "Saldo de cuentas con fecha de vencimiento pasada"
+    categoria: cxc
+    tipo: escalar
+    unidad: moneda
+    query_duckdb: |
+      SELECT 
+        COALESCE(SUM(CAST(SALDO AS DOUBLE)), 0) as valor
+      FROM CUEN_M01
+      WHERE CAST(SALDO AS DOUBLE) > 0
+        AND FECHA_VENC < CURRENT_DATE
+    formato:
+      decimales: 2
+      prefijo: "$"
+    alerta:
+      tipo: umbral
+      nivel_warning: 50000
+      nivel_critical: 100000
+
+  - id: sae_clientes_con_saldo
+    nombre: "Clientes con Saldo Pendiente"
+    descripcion: "Cantidad de clientes con cuentas por cobrar"
+    categoria: cxc
     tipo: escalar
     unidad: cantidad
     query_duckdb: |
       SELECT 
-        COUNT(*) as valor
-      FROM facturas_resumen
-      WHERE FECHA_CANCELACION = CURRENT_DATE
-    alerta:
-      tipo: umbral
-      condicion: "> 0"
-      nivel_warning: 3
-      nivel_critical: 10
+        COUNT(DISTINCT CVE_CLIE) as valor
+      FROM CUEN_M01
+      WHERE CAST(SALDO AS DOUBLE) > 0
+    formato:
+      decimales: 0
 
-  - id: sae_facturas_pendientes_timbrar
-    nombre: "Facturas Pendientes de Timbrar"
-    descripcion: "Facturas generadas pero no timbradas (sin UUID)"
-    categoria: operacion
+  # ============================================
+  # ANÁLISIS TEMPORAL
+  # ============================================
+
+  - id: sae_ventas_por_mes
+    nombre: "Ventas por Mes (Último Año)"
+    descripcion: "Serie temporal de ventas mensuales"
+    categoria: ventas
+    tipo: serie
+    unidad: moneda
+    query_duckdb: |
+      SELECT 
+        1 as mes, COALESCE(SUM(CAST(IMPORTE AS DOUBLE)), 0) as valor FROM FACTF01 WHERE STATUS != 'C'
+      UNION ALL
+      SELECT 2, COALESCE(SUM(CAST(IMPORTE AS DOUBLE)), 0) FROM FACTF02 WHERE STATUS != 'C'
+      UNION ALL
+      SELECT 3, COALESCE(SUM(CAST(IMPORTE AS DOUBLE)), 0) FROM FACTF03 WHERE STATUS != 'C'
+      UNION ALL
+      SELECT 4, COALESCE(SUM(CAST(IMPORTE AS DOUBLE)), 0) FROM FACTF04 WHERE STATUS != 'C'
+      UNION ALL
+      SELECT 5, COALESCE(SUM(CAST(IMPORTE AS DOUBLE)), 0) FROM FACTF05 WHERE STATUS != 'C'
+      UNION ALL
+      SELECT 6, COALESCE(SUM(CAST(IMPORTE AS DOUBLE)), 0) FROM FACTF06 WHERE STATUS != 'C'
+      UNION ALL
+      SELECT 7, COALESCE(SUM(CAST(IMPORTE AS DOUBLE)), 0) FROM FACTF07 WHERE STATUS != 'C'
+      UNION ALL
+      SELECT 8, COALESCE(SUM(CAST(IMPORTE AS DOUBLE)), 0) FROM FACTF08 WHERE STATUS != 'C'
+      UNION ALL
+      SELECT 9, COALESCE(SUM(CAST(IMPORTE AS DOUBLE)), 0) FROM FACTF09 WHERE STATUS != 'C'
+      UNION ALL
+      SELECT 10, COALESCE(SUM(CAST(IMPORTE AS DOUBLE)), 0) FROM FACTF10 WHERE STATUS != 'C'
+      UNION ALL
+      SELECT 11, COALESCE(SUM(CAST(IMPORTE AS DOUBLE)), 0) FROM FACTF11 WHERE STATUS != 'C'
+      UNION ALL
+      SELECT 12, COALESCE(SUM(CAST(IMPORTE AS DOUBLE)), 0) FROM FACTF12 WHERE STATUS != 'C'
+      ORDER BY mes
+    formato:
+      decimales: 0
+    visual:
+      tipo: linea
+      color: "#10B981"
+
+  - id: sae_top_productos_vendidos
+    nombre: "Top 20 Productos Más Vendidos"
+    descripcion: "Artículos con mayor volumen de ventas"
+    categoria: inventarios
+    tipo: tabla
+    query_duckdb: |
+      SELECT 
+        inv.CVE_ART as codigo,
+        inv.DESCR as producto,
+        COUNT(*) as veces_vendido,
+        SUM(CAST(inv.EXIST AS DOUBLE)) as unidades
+      FROM INVE01 inv
+      WHERE inv.STATUS = 'A'
+      GROUP BY inv.CVE_ART, inv.DESCR
+      ORDER BY veces_vendido DESC
+      LIMIT 20
+
+  - id: sae_margen_utilidad_bruta
+    nombre: "Margen de Utilidad Bruta"
+    descripcion: "Diferencia entre precio y costo promedio"
+    categoria: rentabilidad
+    tipo: escalar
+    unidad: porcentaje
+    query_duckdb: |
+      SELECT 
+        CASE 
+          WHEN SUM(CAST(PRECIO AS DOUBLE)) > 0 THEN
+            ((SUM(CAST(PRECIO AS DOUBLE)) - SUM(CAST(ULT_COSTO AS DOUBLE))) / SUM(CAST(PRECIO AS DOUBLE))) * 100
+          ELSE 0
+        END as valor
+      FROM INVE01
+      WHERE STATUS = 'A' AND CAST(PRECIO AS DOUBLE) > 0
+    formato:
+      decimales: 2
+      sufijo: "%"
+
+  - id: sae_cxc_dias_promedio
+    nombre: "Días Promedio de Cobro"
+    descripcion: "Antigüedad promedio de cuentas por cobrar"
+    categoria: cxc
+    tipo: escalar
+    unidad: dias
+    query_duckdb: |
+      SELECT 
+        COALESCE(AVG(CAST(julianday(CURRENT_DATE) - julianday(FECHA_VENC) AS DOUBLE)), 0) as valor
+      FROM CUEN_M01
+      WHERE CAST(SALDO AS DOUBLE) > 0
+    formato:
+      decimales: 0
+      sufijo: " días"
+
+  - id: sae_rotacion_inventario
+    nombre: "Índice de Rotación de Inventario"
+    descripcion: "Productos con movimiento en últimos 30 días"
+    categoria: inventarios
+    tipo: escalar
+    unidad: porcentaje
+    query_duckdb: |
+      SELECT 
+        CASE 
+          WHEN COUNT(DISTINCT inv.CVE_ART) > 0 THEN
+            (COUNT(DISTINCT mov.CVE_ART) * 100.0 / COUNT(DISTINCT inv.CVE_ART))
+          ELSE 0
+        END as valor
+      FROM INVE01 inv
+      LEFT JOIN MINVE01 mov ON inv.CVE_ART = mov.CVE_ART 
+        AND mov.FECHA_APLI >= date('now', '-30 days')
+      WHERE inv.STATUS = 'A'
+    formato:
+      decimales: 1
+      sufijo: "%"
+
+  - id: sae_clientes_sin_compras_90dias
+    nombre: "Clientes Inactivos (90+ días)"
+    descripcion: "Clientes sin compras en los últimos 90 días"
+    categoria: clientes
     tipo: escalar
     unidad: cantidad
     query_duckdb: |
       SELECT 
-        COUNT(*) as valor
-      FROM facturas_resumen f
-      LEFT JOIN cfdi c ON f.FACTURA = c.FACTURA
-      WHERE f.FECHA_DOCUMENTO >= CURRENT_DATE - INTERVAL '7 days'
-        AND f.ESTATUS = 'ACTIVO'
-        AND c.UUID IS NULL
+        COUNT(DISTINCT cli.CLAVE) as valor
+      FROM CLIE01 cli
+      WHERE cli.STATUS = 'A'
+        AND NOT EXISTS (
+          SELECT 1 FROM FACTF01 fac 
+          WHERE fac.CVE_CLPV = cli.CLAVE 
+            AND fac.STATUS != 'C'
+            AND fac.FECHA >= date('now', '-90 days')
+        )
+    formato:
+      decimales: 0
     alerta:
       tipo: umbral
-      condicion: "> 0"
-      nivel_warning: 5
-      nivel_critical: 20
+      nivel_warning: 50
 
