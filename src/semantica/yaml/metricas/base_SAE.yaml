@@ -20,6 +20,237 @@ metadata:
 
 metricas:
   # ============================================
+  # MÉTRICAS ESTILO LOOKER STUDIO - KPIs con comparativos
+  # ============================================
+  
+  - id: sae_venta_neta_comparativo
+    nombre: "Venta Neta con Comparativo"
+    descripcion: "Venta neta del periodo actual vs mismo periodo año anterior"
+    categoria: kpi
+    tipo: escalar
+    consulta: |
+      SELECT 
+        SUM(IMP_TOT1) as venta_neta_actual,
+        (SELECT SUM(IMP_TOT1) FROM FACTF01_anterior WHERE YEAR(FEC_APLI) = YEAR(CURRENT_DATE)-1) as venta_neta_anterior,
+        ROUND(((SUM(IMP_TOT1) - (SELECT SUM(IMP_TOT1) FROM FACTF01_anterior WHERE YEAR(FEC_APLI) = YEAR(CURRENT_DATE)-1)) / 
+               (SELECT SUM(IMP_TOT1) FROM FACTF01_anterior WHERE YEAR(FEC_APLI) = YEAR(CURRENT_DATE)-1)) * 100, 1) as porcentaje_cambio
+      FROM FACTF01 
+      WHERE YEAR(FEC_APLI) = YEAR(CURRENT_DATE)
+    formato:
+      tipo: moneda
+      decimales: 2
+      incluir_comparativo: true
+    tags:
+      - venta
+      - comparativo
+      - kpi
+      
+  - id: sae_ticket_promedio_tendencia
+    nombre: "Ticket Promedio con Tendencia"
+    descripcion: "Ticket promedio actual con comparativo vs periodo anterior"
+    categoria: kpi
+    tipo: escalar
+    consulta: |
+      SELECT 
+        ROUND(AVG(IMP_TOT1), 2) as ticket_actual,
+        (SELECT ROUND(AVG(IMP_TOT1), 2) FROM FACTF01_anterior WHERE YEAR(FEC_APLI) = YEAR(CURRENT_DATE)-1) as ticket_anterior,
+        ROUND(((AVG(IMP_TOT1) - (SELECT AVG(IMP_TOT1) FROM FACTF01_anterior WHERE YEAR(FEC_APLI) = YEAR(CURRENT_DATE)-1)) / 
+               (SELECT AVG(IMP_TOT1) FROM FACTF01_anterior WHERE YEAR(FEC_APLI) = YEAR(CURRENT_DATE)-1)) * 100, 1) as porcentaje_cambio
+      FROM FACTF01 
+      WHERE YEAR(FEC_APLI) = YEAR(CURRENT_DATE)
+    formato:
+      tipo: moneda
+      decimales: 2
+      incluir_comparativo: true
+    tags:
+      - ticket
+      - promedio
+      - kpi
+
+  - id: sae_top_clientes_completo
+    nombre: "Top Clientes - Performance Completo"
+    descripcion: "Top clientes con venta, descuentos, costo, utilidad y número de operaciones"
+    categoria: performance
+    tipo: tabla
+    consulta: |
+      SELECT 
+        c.NOMBRE as Cliente,
+        SUM(f.IMP_TOT1) as Venta,
+        SUM(f.DESCUENTO) as Descuentos,
+        SUM(f.COSTO_TOTAL) as Costo,
+        SUM(f.IMP_TOT1 - f.COSTO_TOTAL) as Utilidad,
+        COUNT(DISTINCT f.NUM_FACT) as Num_Operaciones,
+        ROUND(AVG(f.IMP_TOT1), 0) as Ticket_Promedio
+      FROM FACTF01 f
+      INNER JOIN CLIE01 c ON f.CVE_CLPV = c.CLAVE
+      WHERE YEAR(f.FEC_APLI) = YEAR(CURRENT_DATE)
+      GROUP BY c.NOMBRE
+      ORDER BY Venta DESC
+      LIMIT 20
+    formato:
+      tipo: tabla_performance
+      columnas_moneda: [Venta, Descuentos, Costo, Utilidad, Ticket_Promedio]
+    tags:
+      - clientes
+      - performance
+      - top
+
+  - id: sae_top_vendedores_performance
+    nombre: "Top Vendedores - Performance"
+    descripcion: "Performance de vendedores con métricas completas"
+    categoria: performance
+    tipo: tabla
+    consulta: |
+      SELECT 
+        v.NOMBRE as Vendedor,
+        SUM(f.IMP_TOT1) as Venta,
+        SUM(f.DESCUENTO) as Descuentos,
+        SUM(f.COSTO_TOTAL) as Costo,
+        SUM(f.IMP_TOT1 - f.COSTO_TOTAL) as Utilidad,
+        COUNT(DISTINCT f.NUM_FACT) as Num_Operaciones,
+        ROUND(SUM(f.IMP_TOT1) / COUNT(DISTINCT f.NUM_FACT), 0) as Productividad
+      FROM FACTF01 f
+      INNER JOIN VEND01 v ON f.CVE_VEND = v.CLAVE
+      WHERE YEAR(f.FEC_APLI) = YEAR(CURRENT_DATE)
+      GROUP BY v.NOMBRE
+      ORDER BY Venta DESC
+      LIMIT 15
+    formato:
+      tipo: tabla_performance
+      columnas_moneda: [Venta, Descuentos, Costo, Utilidad, Productividad]
+    tags:
+      - vendedores
+      - performance
+
+  - id: sae_ventas_por_grupo_producto
+    nombre: "Ventas por Grupo de Producto"
+    descripcion: "Distribución de ventas por grupos con porcentajes"
+    categoria: breakdown
+    tipo: tabla
+    consulta: |
+      SELECT 
+        i.GRUPO as Grupo,
+        SUM(m.IMPORTE) as Venta,
+        ROUND((SUM(m.IMPORTE) / (SELECT SUM(IMPORTE) FROM MINVE01 WHERE TIPO_DOC = 'F')) * 100, 1) as Porcentaje,
+        COUNT(DISTINCT m.NUM_MOV) as Num_Documentos
+      FROM MINVE01 m
+      INNER JOIN INVE01 i ON m.CVE_ART = i.CVE_ART
+      WHERE m.TIPO_DOC = 'F' AND YEAR(m.FECHA_DOC) = YEAR(CURRENT_DATE)
+      GROUP BY i.GRUPO
+      ORDER BY Venta DESC
+    formato:
+      tipo: breakdown
+      incluir_porcentaje: true
+      grafica: pie
+    tags:
+      - productos
+      - breakdown
+      - grupos
+
+  - id: sae_ventas_por_condicion_pago
+    nombre: "Ventas por Condición de Pago"
+    descripcion: "Distribución por tipo de pago con porcentajes"
+    categoria: breakdown
+    tipo: tabla
+    consulta: |
+      SELECT 
+        COND_PAGO as Condicion,
+        SUM(IMP_TOT1) as Venta,
+        ROUND((SUM(IMP_TOT1) / (SELECT SUM(IMP_TOT1) FROM FACTF01)) * 100, 1) as Porcentaje,
+        COUNT(*) as Num_Facturas
+      FROM FACTF01
+      WHERE YEAR(FEC_APLI) = YEAR(CURRENT_DATE)
+      GROUP BY COND_PAGO
+      ORDER BY Venta DESC
+    formato:
+      tipo: breakdown
+      incluir_porcentaje: true
+    tags:
+      - pago
+      - breakdown
+
+  - id: sae_ventas_diarias_con_dia
+    nombre: "Ventas Diarias con Día de Semana"
+    descripcion: "Ventas diarias incluyendo nombre del día"
+    categoria: temporal
+    tipo: tabla
+    consulta: |
+      SELECT 
+        FEC_APLI as Fecha,
+        CASE DAYOFWEEK(FEC_APLI)
+          WHEN 1 THEN 'Domingo'
+          WHEN 2 THEN 'Lunes'
+          WHEN 3 THEN 'Martes'
+          WHEN 4 THEN 'Miércoles'
+          WHEN 5 THEN 'Jueves'
+          WHEN 6 THEN 'Viernes'
+          WHEN 7 THEN 'Sábado'
+        END as Dia_Semana,
+        SUM(IMP_TOT1) as Venta,
+        COUNT(*) as Num_Facturas,
+        ROUND(AVG(IMP_TOT1), 0) as Ticket_Promedio
+      FROM FACTF01
+      WHERE FEC_APLI >= DATE_SUB(CURRENT_DATE, INTERVAL 30 DAY)
+      GROUP BY FEC_APLI, DAYOFWEEK(FEC_APLI)
+      ORDER BY FEC_APLI DESC
+    formato:
+      tipo: temporal_diario
+      incluir_dia_semana: true
+    tags:
+      - ventas
+      - temporal
+      - diario
+
+  - id: sae_margen_por_grupo
+    nombre: "Margen por Grupo de Producto"
+    descripcion: "Análisis de margen por grupo de productos"
+    categoria: rentabilidad
+    tipo: tabla
+    consulta: |
+      SELECT 
+        i.GRUPO as Grupo,
+        SUM(m.IMPORTE) as Venta,
+        SUM(m.COSTO) as Costo,
+        SUM(m.IMPORTE - m.COSTO) as Utilidad,
+        ROUND(((SUM(m.IMPORTE - m.COSTO) / SUM(m.IMPORTE)) * 100), 1) as Margen_Pct
+      FROM MINVE01 m
+      INNER JOIN INVE01 i ON m.CVE_ART = i.CVE_ART
+      WHERE m.TIPO_DOC = 'F' AND YEAR(m.FECHA_DOC) = YEAR(CURRENT_DATE)
+      GROUP BY i.GRUPO
+      ORDER BY Margen_Pct DESC
+    formato:
+      tipo: tabla_margen
+      incluir_porcentaje: true
+    tags:
+      - margen
+      - rentabilidad
+      - grupos
+
+  - id: sae_productividad_vendedores
+    nombre: "Productividad de Vendedores"
+    descripcion: "Métricas de productividad por vendedor"
+    categoria: kpi
+    tipo: tabla
+    consulta: |
+      SELECT 
+        v.NOMBRE as Vendedor,
+        COUNT(DISTINCT f.CVE_CLPV) as Num_Clientes,
+        COUNT(DISTINCT f.NUM_FACT) as Num_Operaciones,
+        SUM(f.IMP_TOT1) as Venta_Total,
+        ROUND(SUM(f.IMP_TOT1) / COUNT(DISTINCT f.NUM_FACT), 0) as Productividad
+      FROM FACTF01 f
+      INNER JOIN VEND01 v ON f.CVE_VEND = v.CLAVE
+      WHERE YEAR(f.FEC_APLI) = YEAR(CURRENT_DATE)
+      GROUP BY v.NOMBRE
+      ORDER BY Productividad DESC
+    formato:
+      tipo: tabla_kpi
+    tags:
+      - vendedores
+      - productividad
+      - kpi
+  
+  # ============================================
   # VENTAS - Usando tablas reales
   # ============================================
   

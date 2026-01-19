@@ -361,13 +361,20 @@
         
         .table-result td {
             border-bottom: 1px solid #e9ecef;
-            background: white;
-            color: #333;
+            background: white !important;
+            color: #000 !important;
             transition: background 0.2s ease;
+            font-size: 0.95em;
+            font-weight: 400;
+        }
+        
+        .table-result tbody {
+            background: white;
         }
         
         .table-result tr:hover td {
-            background: #f8f9ff;
+            background: #f0f0f0 !important;
+            color: #000 !important;
         }
         
         .table-result tr:last-child td:first-child {
@@ -380,6 +387,83 @@
         
         .table-result tr:last-child td {
             border-bottom: none;
+        }
+        
+        /* Estilos para KPIs con comparativos estilo Looker Studio */
+        .kpi-card {
+            background: white;
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+            margin-bottom: 20px;
+        }
+        
+        .kpi-header {
+            font-size: 0.9em;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .kpi-value {
+            font-size: 3em;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+            line-height: 1;
+        }
+        
+        .kpi-comparison {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1em;
+            font-weight: 600;
+        }
+        
+        .kpi-comparison.positive {
+            color: #10b981;
+        }
+        
+        .kpi-comparison.negative {
+            color: #ef4444;
+        }
+        
+        .kpi-arrow {
+            font-size: 1.5em;
+        }
+        
+        .kpi-subtext {
+            font-size: 0.85em;
+            color: #888;
+            margin-left: 5px;
+        }
+        
+        /* Tabla con porcentajes tipo breakdown */
+        .breakdown-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .breakdown-table td {
+            padding: 12px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .breakdown-bar {
+            height: 8px;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            border-radius: 4px;
+            margin-top: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .breakdown-percentage {
+            font-weight: 700;
+            color: #667eea;
+            font-size: 1.1em;
         }
     </style>
 </head>
@@ -541,69 +625,159 @@
                 const valueDiv = document.createElement('div');
                 valueDiv.className = 'metric-value';
                 
-                if (data.tipo === 'tabla' && Array.isArray(data.resultado)) {
-                    // Renderizar tabla
+                // ============================================
+                // RENDERIZAR KPI CON COMPARATIVO (Looker Style)
+                // ============================================
+                if (metricaId.includes('comparativo') || metricaId.includes('tendencia')) {
+                    if (data.resultado && data.resultado.length > 0) {
+                        const result = data.resultado[0];
+                        
+                        const kpiCard = document.createElement('div');
+                        kpiCard.className = 'kpi-card';
+                        
+                        // Valor principal
+                        const valor = result.venta_neta_actual || result.ticket_actual || 0;
+                        const valorAnterior = result.venta_neta_anterior || result.ticket_anterior || 0;
+                        const porcentaje = result.porcentaje_cambio || 0;
+                        
+                        const kpiValue = document.createElement('div');
+                        kpiValue.className = 'kpi-value';
+                        kpiValue.textContent = '$' + valor.toLocaleString('es-MX', {
+                            minimumFractionDigits: 0,
+                            maximumFractionDigits: 0
+                        });
+                        
+                        // Comparativo
+                        const kpiComparison = document.createElement('div');
+                        kpiComparison.className = 'kpi-comparison ' + (porcentaje >= 0 ? 'positive' : 'negative');
+                        
+                        const arrow = document.createElement('span');
+                        arrow.className = 'kpi-arrow';
+                        arrow.textContent = porcentaje >= 0 ? '↑' : '↓';
+                        
+                        const percentage = document.createElement('span');
+                        percentage.textContent = Math.abs(porcentaje).toFixed(1) + '%';
+                        
+                        const subtext = document.createElement('span');
+                        subtext.className = 'kpi-subtext';
+                        subtext.textContent = 'VS año pasado';
+                        
+                        kpiComparison.appendChild(arrow);
+                        kpiComparison.appendChild(percentage);
+                        kpiComparison.appendChild(subtext);
+                        
+                        kpiCard.appendChild(kpiValue);
+                        kpiCard.appendChild(kpiComparison);
+                        
+                        valueDiv.appendChild(kpiCard);
+                    }
+                }
+                // ============================================
+                // RENDERIZAR TABLA CON BREAKDOWN Y PORCENTAJES
+                // ============================================
+                else if (data.tipo === 'tabla' && Array.isArray(data.resultado)) {
+                    // Verificar si tiene columna de porcentaje para breakdown
+                    const tieneBreakdown = data.resultado.length > 0 && 
+                                          ('Porcentaje' in data.resultado[0] || 'porcentaje' in data.resultado[0]);
+                    
                     const table = document.createElement('table');
-                    table.className = 'table-result';
+                    table.className = tieneBreakdown ? 'breakdown-table' : 'table-result';
                     
                     if (data.resultado.length > 0) {
-                        const thead = document.createElement('thead');
-                        const headerRow = document.createElement('tr');
-                        Object.keys(data.resultado[0]).forEach(key => {
-                            const th = document.createElement('th');
-                            th.textContent = key.replace(/_/g, ' ').toUpperCase();
-                            headerRow.appendChild(th);
-                        });
-                        thead.appendChild(headerRow);
-                        table.appendChild(thead);
+                        // Si NO es breakdown, usar tabla normal con header
+                        if (!tieneBreakdown) {
+                            const thead = document.createElement('thead');
+                            const headerRow = document.createElement('tr');
+                            Object.keys(data.resultado[0]).forEach(key => {
+                                const th = document.createElement('th');
+                                th.textContent = key.replace(/_/g, ' ').toUpperCase();
+                                headerRow.appendChild(th);
+                            });
+                            thead.appendChild(headerRow);
+                            table.appendChild(thead);
+                        }
                         
                         const tbody = document.createElement('tbody');
                         data.resultado.forEach(row => {
                             const tr = document.createElement('tr');
-                            Object.values(row).forEach((value, idx) => {
-                                const td = document.createElement('td');
-                                // Formatear valores numéricos
-                                if (typeof value === 'number') {
-                                    if (value > 1000) {
-                                        td.textContent = value.toLocaleString('es-MX', {
-                                            minimumFractionDigits: 0,
-                                            maximumFractionDigits: 2
-                                        });
+                            
+                            if (tieneBreakdown) {
+                                // Formato breakdown con barra visual
+                                const tdNombre = document.createElement('td');
+                                tdNombre.style.backgroundColor = 'white';
+                                tdNombre.style.color = '#000';
+                                tdNombre.style.fontWeight = '600';
+                                
+                                const nombre = row.Grupo || row.Condicion || row.grupo || row.condicion || '';
+                                const porcentaje = row.Porcentaje || row.porcentaje || 0;
+                                
+                                tdNombre.innerHTML = `
+                                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                                        <span>${nombre}</span>
+                                        <span class="breakdown-percentage">${porcentaje}%</span>
+                                    </div>
+                                    <div class="breakdown-bar" style="width: ${Math.min(porcentaje, 100)}%;"></div>
+                                `;
+                                tr.appendChild(tdNombre);
+                                
+                                const tdVenta = document.createElement('td');
+                                tdVenta.style.backgroundColor = 'white';
+                                tdVenta.style.color = '#000';
+                                tdVenta.style.textAlign = 'right';
+                                tdVenta.style.fontWeight = '600';
+                                tdVenta.textContent = '$' + (row.Venta || row.venta || 0).toLocaleString('es-MX');
+                                tr.appendChild(tdVenta);
+                            } else {
+                                // Tabla normal - FORZAR VISIBILIDAD
+                                Object.values(row).forEach((value, idx) => {
+                                    const td = document.createElement('td');
+                                    // FORZAR ESTILOS INLINE CON !important
+                                    td.setAttribute('style', 'background-color: white !important; color: #000 !important; padding: 12px !important; font-size: 14px !important;');
+                                    
+                                    // Formatear valores
+                                    if (typeof value === 'number') {
+                                        if (value > 1000) {
+                                            td.textContent = value.toLocaleString('es-MX', {
+                                                minimumFractionDigits: 0,
+                                                maximumFractionDigits: 2
+                                            });
+                                        } else {
+                                            td.textContent = value.toString();
+                                        }
+                                    } else if (value === null || value === undefined) {
+                                        td.textContent = '';
                                     } else {
-                                        td.textContent = value;
+                                        td.textContent = String(value);
                                     }
-                                } else {
-                                    td.textContent = value;
-                                }
-                                tr.appendChild(td);
-                            });
+                                    tr.appendChild(td);
+                                });
+                            }
                             tbody.appendChild(tr);
                         });
                         table.appendChild(tbody);
-                        
-                        valueDiv.appendChild(table);
-                        
-                        // Agregar gráfica si es apropiado
-                        if (deberiaGenerarGrafica(metricaId, data.resultado)) {
-                            const chartContainer = document.createElement('div');
-                            chartContainer.style.marginTop = '20px';
-                            chartContainer.style.position = 'relative';
-                            chartContainer.style.height = '250px';
-                            
-                            const canvas = document.createElement('canvas');
-                            canvas.id = `chart-${metricaId}`;
-                            chartContainer.appendChild(canvas);
-                            valueDiv.appendChild(chartContainer);
-                            
-                            setTimeout(() => generarGrafica(metricaId, data), 100);
-                        }
-                    } else {
-                        valueDiv.textContent = 'Sin datos';
-                        valueDiv.style.fontSize = '1em';
-                        valueDiv.style.color = '#999';
                     }
-                } else {
-                    // Valor escalar
+                    
+                    valueDiv.appendChild(table);
+                    
+                    // Agregar gráfica si es apropiado (solo para tablas no-breakdown)
+                    if (!tieneBreakdown && deberiaGenerarGrafica(metricaId, data.resultado)) {
+                        const chartContainer = document.createElement('div');
+                        chartContainer.style.marginTop = '20px';
+                        chartContainer.style.position = 'relative';
+                        chartContainer.style.height = '250px';
+                        
+                        const canvas = document.createElement('canvas');
+                        canvas.id = `chart-${metricaId}`;
+                        chartContainer.appendChild(canvas);
+                        valueDiv.appendChild(chartContainer);
+                        
+                        setTimeout(() => generarGrafica(metricaId, data), 100);
+                    }
+                }
+                // ============================================
+                // VALOR ESCALAR
+                // ============================================
+                else {
                     const valor = data.valor !== undefined ? data.valor : data.resultado;
                     const formato = data.formato || {};
                     

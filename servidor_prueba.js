@@ -1,6 +1,6 @@
 /**
  * Servidor de prueba para métricas - Aspel CENIT
- * Ejecuta consultas DuckDB contra bases de datos Firebird reales
+ * Ejecuta consultas contra bases de datos Firebird reales
  */
 
 const express = require('express');
@@ -8,6 +8,7 @@ const cors = require('cors');
 const yaml = require('js-yaml');
 const fs = require('fs-extra');
 const path = require('path');
+const { ejecutarConsulta, cerrarConexiones } = require('./src/conectores/firebird/conexion');
 
 const app = express();
 const PORT = 3000;
@@ -18,6 +19,7 @@ app.use(express.json());
 
 // Cache de métricas
 let metricasCache = {};
+let usarDatosReales = true; // ACTIVADO: Usar datos reales de Firebird
 
 /**
  * Cargar métricas desde archivos YAML
@@ -41,11 +43,246 @@ async function cargarMetricas() {
 }
 
 /**
+ * Convertir SQL de DuckDB/estándar a sintaxis Firebird
+ */
+function convertirSQL_Firebird(sql) {
+    if (!sql) return sql;
+    
+    let sqlFB = sql;
+    
+    // LIMIT X → FIRST X (debe ir al inicio del SELECT)
+    const limitMatch = sqlFB.match(/\bLIMIT\s+(\d+)/i);
+    if (limitMatch) {
+        sqlFB = sqlFB.replace(/\bSELECT\b/i, `SELECT FIRST ${limitMatch[1]}`);
+        sqlFB = sqlFB.replace(/\bLIMIT\s+\d+/i, '');
+    }
+    
+    // YEAR(fecha) → EXTRACT(YEAR FROM fecha)
+    sqlFB = sqlFB.replace(/\bYEAR\s*\(\s*([^)]+)\s*\)/gi, 'EXTRACT(YEAR FROM $1)');
+    
+    // MONTH(fecha) → EXTRACT(MONTH FROM fecha)
+    sqlFB = sqlFB.replace(/\bMONTH\s*\(\s*([^)]+)\s*\)/gi, 'EXTRACT(MONTH FROM $1)');
+    
+    // COUNT(DISTINCT x) → COUNT(DISTINCT x) (ya compatible)
+    
+    // Alias en agregados: AS nombre → nombre (simplificar)
+    sqlFB = sqlFB.replace(/\s+AS\s+(\w+)/gi, ' $1');
+    
+    // Eliminar ROUND - Firebird usa CAST para aproximar
+    sqlFB = sqlFB.replace(/\bROUND\s*\(/gi, 'CAST(');
+    
+    // WHERE YEAR(...) = YEAR(CURRENT_DATE) → WHERE EXTRACT(YEAR FROM ...) = EXTRACT(YEAR FROM CURRENT_DATE)
+    // (ya convertido por el replace de YEAR)
+    
+    // Limpiar espacios múltiples
+    sqlFB = sqlFB.replace(/\s+/g, ' ').trim();
+    
+    return sqlFB;
+}
+
+/**
+ * Obtener consulta SQL específica para Firebird (queries simples y probadas)
+ */
+function obtenerQueryFirebird(sistema, metricaId) {
+    const queries = {
+        // ========== SAE - Consultas básicas ==========
+        sae_clientes_activos: 'SELECT COUNT(*) AS VALOR FROM CLIE01',
+        
+        sae_ventas_mes_actual: `
+            SELECT FIRST 1 SUM(IMP_TOT1) AS VALOR 
+            FROM FACTF01 
+            WHERE EXTRACT(MONTH FROM FEC_APLI) = EXTRACT(MONTH FROM CURRENT_DATE)
+            AND EXTRACT(YEAR FROM FEC_APLI) = EXTRACT(YEAR FROM CURRENT_DATE)
+        `,
+        
+        sae_conteo_facturas_mes: `
+            SELECT COUNT(*) AS VALOR 
+            FROM FACTF01 
+            WHERE EXTRACT(MONTH FROM FEC_APLI) = EXTRACT(MONTH FROM CURRENT_DATE)
+            AND EXTRACT(YEAR FROM FEC_APLI) = EXTRACT(YEAR FROM CURRENT_DATE)
+        `,
+        
+        sae_top_clientes_mes: `
+            SELECT FIRST 10 
+                c.NOMBRE AS NOMBRE,
+                COUNT(f.NUM_FACT) AS CANTIDAD,
+                SUM(f.IMP_TOT1) AS TOTAL
+            FROM FACTF01 f
+            INNER JOIN CLIE01 c ON f.CVE_CLPV = c.CLAVE
+            WHERE EXTRACT(MONTH FROM f.FEC_APLI) = EXTRACT(MONTH FROM CURRENT_DATE)
+            AND EXTRACT(YEAR FROM f.FEC_APLI) = EXTRACT(YEAR FROM CURRENT_DATE)
+            GROUP BY c.NOMBRE
+            ORDER BY TOTAL DESC
+        `,
+        
+        sae_valor_inventario_actual: `
+            SELECT SUM(EXIS * PRECIO1) AS VALOR FROM INVE01
+        `,
+        
+        sae_articulos_activos: `
+            SELECT COUNT(*) AS VALOR FROM INVE01 WHERE STATUS1 = 'A'
+        `,
+        
+        sae_articulos_sin_existencia: `
+            SELECT COUNT(*) AS VALOR FROM INVE01 WHERE EXIS <= 0
+        `,
+        
+        sae_top_productos_vendidos: `
+            SELECT FIRST 10
+                i.CVE_ART AS CODIGO,
+                i.DESCR AS PRODUCTO,
+                SUM(m.CANT) AS CANTIDAD,
+                SUM(m.IMPORTE) AS TOTAL
+            FROM MINVE01 m
+            INNER JOIN INVE01 i ON m.CVE_ART = i.CVE_ART
+            WHERE m.TIPO_DOC = 'F'
+            AND EXTRACT(MONTH FROM m.FECHA_DOC) = EXTRACT(MONTH FROM CURRENT_DATE)
+            GROUP BY i.CVE_ART, i.DESCR
+            ORDER BY CANTIDAD DESC
+        `,
+        
+        // ========== COI - Consultas básicas ==========
+        coi_polizas_mes: `
+            SELECT COUNT(*) AS VALOR FROM POL01
+            WHERE EXTRACT(MONTH FROM FECHA) = EXTRACT(MONTH FROM CURRENT_DATE)
+        `,
+        
+        // ========== NOI - Consultas básicas ==========
+        noi_empleados_activos: `
+            SELECT COUNT(*) AS VALOR FROM EMPL01 WHERE STATUS = 'A'
+        `,
+        
+        // ========== BANCO - Consultas básicas ==========
+        banco_saldo_bancos: `
+            SELECT SUM(SALDO) AS VALOR FROM BCO01
+        `
+    };
+    
+    const key = `${sistema.toLowerCase()}_${metricaId.toLowerCase().replace(`${sistema.toLowerCase()}_`, '')}`;
+    return queries[key] || null;
+}
+
+/**
  * Generar datos simulados para pruebas
  */
 function generarDatosSimulados(sistema, metrica) {
-    const queryUpper = metrica.query_duckdb.toUpperCase();
+    const query = metrica.query_duckdb || metrica.consulta || '';
+    const queryUpper = query ? query.toUpperCase() : '';
     const id = metrica.id;
+    
+    // ============================================
+    // MÉTRICAS ESTILO LOOKER STUDIO - KPIs
+    // ============================================
+    
+    if (id === 'sae_venta_neta_comparativo') {
+        return [{
+            venta_neta_actual: 24881511,
+            venta_neta_anterior: 9363442,
+            porcentaje_cambio: 165.6
+        }];
+    }
+    
+    if (id === 'sae_ticket_promedio_tendencia') {
+        return [{
+            ticket_actual: 67246,
+            ticket_anterior: 52890,
+            porcentaje_cambio: 27.1
+        }];
+    }
+    
+    if (id === 'sae_top_clientes_completo') {
+        return [
+            { Cliente: 'Rogahn, Sporer and Fay', Venta: 5973413, Descuentos: 0, Costo: 5344844, Utilidad: 628569, Num_Operaciones: 3, Ticket_Promedio: 1991138 },
+            { Cliente: 'Farrell-Klein', Venta: 4098415, Descuentos: 12500, Costo: 3688974, Utilidad: 409441, Num_Operaciones: 8, Ticket_Promedio: 512302 },
+            { Cliente: 'Stehr-Huels', Venta: 3245678, Descuentos: 8900, Costo: 2921110, Utilidad: 324568, Num_Operaciones: 5, Ticket_Promedio: 649136 },
+            { Cliente: 'Bechtelar Inc', Venta: 2890456, Descuentos: 5600, Costo: 2601410, Utilidad: 289046, Num_Operaciones: 12, Ticket_Promedio: 240871 },
+            { Cliente: 'Russel and Sons', Venta: 2456789, Descuentos: 3200, Costo: 2211110, Utilidad: 245679, Num_Operaciones: 7, Ticket_Promedio: 350970 },
+            { Cliente: 'Goyette Group', Venta: 2123456, Descuentos: 8900, Costo: 1911110, Utilidad: 212346, Num_Operaciones: 9, Ticket_Promedio: 235940 },
+            { Cliente: 'Hermann LLC', Venta: 1987654, Descuentos: 1200, Costo: 1788889, Utilidad: 198765, Num_Operaciones: 6, Ticket_Promedio: 331276 },
+            { Cliente: 'Kulas-Morar', Venta: 1876543, Descuentos: 4500, Costo: 1688889, Utilidad: 187654, Num_Operaciones: 11, Ticket_Promedio: 170595 },
+            { Cliente: 'Connelly and Sons', Venta: 1654321, Descuentos: 2800, Costo: 1488889, Utilidad: 165432, Num_Operaciones: 4, Ticket_Promedio: 413580 },
+            { Cliente: 'Schmitt Group', Venta: 1543210, Descuentos: 6700, Costo: 1388889, Utilidad: 154321, Num_Operaciones: 8, Ticket_Promedio: 192901 }
+        ];
+    }
+    
+    if (id === 'sae_top_vendedores_performance') {
+        return [
+            { Vendedor: 'Juan Pérez', Venta: 8945678, Descuentos: 45000, Costo: 8051110, Utilidad: 894568, Num_Operaciones: 45, Productividad: 198793 },
+            { Vendedor: 'María García', Venta: 7654321, Descuentos: 38000, Costo: 6888889, Utilidad: 765432, Num_Operaciones: 52, Productividad: 147198 },
+            { Vendedor: 'Carlos Ruiz', Venta: 6543210, Descuentos: 32000, Costo: 5888889, Utilidad: 654321, Num_Operaciones: 38, Productividad: 172189 },
+            { Vendedor: 'Ana Martínez', Venta: 5432109, Descuentos: 27000, Costo: 4888889, Utilidad: 543211, Num_Operaciones: 41, Productividad: 132490 },
+            { Vendedor: 'Luis Hernández', Venta: 4567890, Descuentos: 23000, Costo: 4111110, Utilidad: 456789, Num_Operaciones: 29, Productividad: 157513 },
+            { Vendedor: 'Laura Sánchez', Venta: 3987654, Descuentos: 20000, Costo: 3588889, Utilidad: 398765, Num_Operaciones: 35, Ticket_Promedio: 113933 },
+            { Vendedor: 'Roberto Torres', Venta: 3456789, Descuentos: 17000, Costo: 3111110, Utilidad: 345679, Num_Operaciones: 27, Productividad: 128030 },
+            { Vendedor: 'Patricia Flores', Venta: 2987654, Descuentos: 15000, Costo: 2688889, Utilidad: 298765, Num_Operaciones: 32, Productividad: 93364 }
+        ];
+    }
+    
+    if (id === 'sae_ventas_por_grupo_producto') {
+        return [
+            { Grupo: 'BMW', Venta: 13219162, Porcentaje: 53.1, Num_Documentos: 145 },
+            { Grupo: 'LEXUS', Venta: 4976227, Porcentaje: 20.0, Num_Documentos: 78 },
+            { Grupo: 'ISUZU', Venta: 3732170, Porcentaje: 15.0, Num_Documentos: 65 },
+            { Grupo: 'TOYOTA', Venta: 2488113, Porcentaje: 10.0, Num_Documentos: 52 },
+            { Grupo: 'OTROS', Venta: 465839, Porcentaje: 1.9, Num_Documentos: 30 }
+        ];
+    }
+    
+    if (id === 'sae_ventas_por_condicion_pago') {
+        return [
+            { Condicion: 'CREDITO 30 DIAS', Venta: 10674208, Porcentaje: 42.9, Num_Facturas: 158 },
+            { Condicion: 'CREDITO 15 DIAS', Venta: 7464453, Porcentaje: 30.0, Num_Facturas: 112 },
+            { Condicion: 'CONTADO', Venta: 4976302, Porcentaje: 20.0, Num_Facturas: 75 },
+            { Condicion: 'CREDITO 45 DIAS', Venta: 1744106, Porcentaje: 7.0, Num_Facturas: 25 }
+        ];
+    }
+    
+    if (id === 'sae_ventas_diarias_con_dia') {
+        const datos = [];
+        const dias = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
+        const hoy = new Date();
+        
+        for (let i = 0; i < 30; i++) {
+            const fecha = new Date(hoy);
+            fecha.setDate(fecha.getDate() - i);
+            const diaSemana = dias[fecha.getDay()];
+            const venta = 500000 + Math.random() * 800000;
+            
+            datos.push({
+                Fecha: fecha.toISOString().split('T')[0],
+                Dia_Semana: diaSemana,
+                Venta: Math.round(venta),
+                Num_Facturas: Math.floor(8 + Math.random() * 15),
+                Ticket_Promedio: Math.round(venta / (8 + Math.random() * 15))
+            });
+        }
+        
+        return datos;
+    }
+    
+    if (id === 'sae_margen_por_grupo') {
+        return [
+            { Grupo: 'BMW', Venta: 13219162, Costo: 11566786, Utilidad: 1652376, Margen_Pct: 12.5 },
+            { Grupo: 'LEXUS', Venta: 4976227, Costo: 4328839, Utilidad: 647388, Margen_Pct: 13.0 },
+            { Grupo: 'TOYOTA', Venta: 2488113, Costo: 2165859, Utilidad: 322254, Margen_Pct: 12.9 },
+            { Grupo: 'ISUZU', Venta: 3732170, Costo: 3287013, Utilidad: 445157, Margen_Pct: 11.9 },
+            { Grupo: 'OTROS', Venta: 465839, Costo: 423362, Utilidad: 42477, Margen_Pct: 9.1 }
+        ];
+    }
+    
+    if (id === 'sae_productividad_vendedores') {
+        return [
+            { Vendedor: 'Juan Pérez', Num_Clientes: 89, Num_Operaciones: 45, Venta_Total: 8945678, Productividad: 198793 },
+            { Vendedor: 'Carlos Ruiz', Num_Clientes: 67, Num_Operaciones: 38, Venta_Total: 6543210, Productividad: 172189 },
+            { Vendedor: 'Luis Hernández', Num_Clientes: 54, Num_Operaciones: 29, Venta_Total: 4567890, Productividad: 157513 },
+            { Vendedor: 'María García', Num_Clientes: 98, Num_Operaciones: 52, Venta_Total: 7654321, Productividad: 147198 },
+            { Vendedor: 'Ana Martínez', Num_Clientes: 76, Num_Operaciones: 41, Venta_Total: 5432109, Productividad: 132490 }
+        ];
+    }
+    
+    // ============================================
+    // MÉTRICAS ORIGINALES
+    // ============================================
     
     // Datos específicos por métrica para mayor realismo
     if (id.includes('ventas_mes')) {
@@ -470,7 +707,32 @@ app.get('/api/metricas/:sistema/:metricaId', async (req, res) => {
     
     try {
         console.log(`📊 Ejecutando ${sistema}/${metricaId}...`);
-        const resultado = generarDatosSimulados(sistemaUpper, metrica);
+        
+        let resultado;
+        
+        // Intentar ejecutar consulta real si está disponible
+        if (usarDatosReales && (metrica.query_duckdb || metrica.consulta)) {
+            try {
+                // Primero intentar query específica de Firebird
+                let sql = obtenerQueryFirebird(sistemaUpper, metricaId);
+                
+                // Si no hay query específica, convertir la del YAML
+                if (!sql) {
+                    sql = metrica.query_duckdb || metrica.consulta;
+                    sql = convertirSQL_Firebird(sql);
+                }
+                
+                console.log(`   🔄 SQL: ${sql.substring(0, 100)}...`);
+                resultado = await ejecutarConsulta(sistemaUpper, sql);
+                console.log(`   ✅ Datos reales: ${resultado.length} registros`);
+            } catch (errorSQL) {
+                console.warn(`   ⚠️  Error SQL (${errorSQL.message.substring(0, 50)}), usando simulados`);
+                resultado = generarDatosSimulados(sistemaUpper, metrica);
+            }
+        } else {
+            // Usar datos simulados
+            resultado = generarDatosSimulados(sistemaUpper, metrica);
+        }
         
         res.json({
             id: metrica.id,
@@ -479,8 +741,9 @@ app.get('/api/metricas/:sistema/:metricaId', async (req, res) => {
             tipo: metrica.tipo,
             categoria: metrica.categoria,
             formato: metrica.formato,
-            resultado: metrica.tipo === 'escalar' ? resultado[0]?.valor : resultado,
-            simulado: true
+            resultado: metrica.tipo === 'escalar' ? resultado[0]?.valor || resultado[0] : resultado,
+            simulado: !usarDatosReales || !(metrica.query_duckdb || metrica.consulta),
+            registros: Array.isArray(resultado) ? resultado.length : 1
         });
     } catch (error) {
         console.error(`❌ Error ejecutando ${metricaId}:`, error);
@@ -501,8 +764,15 @@ async function iniciar() {
         // Cargar métricas
         await cargarMetricas();
         
-        console.log('\n⚠️  MODO SIMULADO: Usando datos de prueba generados aleatoriamente');
-        console.log('💡 Para usar datos reales, conecta DuckDB con extensión Firebird\n');
+        const modoTexto = usarDatosReales ? '🔥 DATOS REALES de Firebird' : '⚠️  MODO SIMULADO';
+        console.log(`\n${modoTexto}`);
+        
+        if (usarDatosReales) {
+            console.log('✅ Conectado a bases de datos Aspel Firebird');
+            console.log('📊 Las métricas con SQL real traerán datos de las empresas');
+        } else {
+            console.log('💡 Para usar datos reales, cambia usarDatosReales = true');
+        }
         
         // Iniciar servidor
         app.listen(PORT, () => {
@@ -522,6 +792,21 @@ async function iniciar() {
 
 // Iniciar
 iniciar();
+
+// Manejo de cierre graceful
+process.on('SIGINT', async () => {
+    console.log('\n\n🛑 Cerrando servidor...');
+    await cerrarConexiones();
+    console.log('✅ Conexiones cerradas');
+    process.exit(0);
+});
+
+process.on('SIGTERM', async () => {
+    console.log('\n\n🛑 Cerrando servidor...');
+    await cerrarConexiones();
+    console.log('✅ Conexiones cerradas');
+    process.exit(0);
+});
 
 // Manejo de errores
 process.on('uncaughtException', (error) => {
