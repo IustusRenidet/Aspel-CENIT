@@ -1,0 +1,958 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CENIT IA — Dashboards Inteligentes Aspel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Archivo+Black&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gridstack@10.3.1/dist/gridstack.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/gridstack@10.3.1/dist/gridstack-all.js"></script>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <!-- ▌SIDEBAR ▐ -->
+      <nav id="sidebar">
+        <div class="sidebar-brand">
+          <span class="brand-icon">⬡</span>
+          <span class="brand-text">CENIT<em>IA</em></span>
+        </div>
+
+        <ul class="nav-menu" id="nav-menu">
+          <li class="nav-item active" data-view="inicio">
+            <span class="nav-icon">◈</span> Inicio
+          </li>
+          <li class="nav-item" data-view="builder">
+            <span class="nav-icon">✦</span> Constructor IA
+          </li>
+          <li class="nav-item" data-view="dashboards">
+            <span class="nav-icon">▦</span> Mis Dashboards
+          </li>
+          <li class="nav-item" data-view="conexiones">
+            <span class="nav-icon">⬡</span> Conexiones
+          </li>
+          <li class="nav-item" data-view="explorador">
+            <span class="nav-icon">◎</span> Explorador
+          </li>
+          <li class="nav-item" data-view="studio">
+            <span class="nav-icon">⚙</span> Widget Studio
+          </li>
+          <li class="nav-item" data-view="mis-widgets">
+            <span class="nav-icon">★</span> Mis Widgets
+          </li>
+          <li class="nav-item" data-view="canvas">
+            <span class="nav-icon">⊞</span> Canvas Editor
+          </li>
+        </ul>
+
+        <div class="sidebar-footer">
+          <div class="status-global">
+            <span class="dot" id="dot-global"></span>
+            <span id="status-global-text">Verificando...</span>
+          </div>
+        </div>
+      </nav>
+
+      <!-- ▌MAIN ▐ -->
+      <main id="main-area">
+        <!-- ══ INICIO ══ -->
+        <section id="view-inicio" class="view active">
+          <div class="view-header">
+            <div>
+              <h1>Panel de control</h1>
+              <p class="view-sub">
+                Estado de sistemas Aspel y acciones rápidas
+              </p>
+            </div>
+            <button class="btn btn-ghost" id="btn-reload-context">
+              ↺ Recargar contexto
+            </button>
+          </div>
+
+          <div id="sistemas-cards" class="sistemas-grid">
+            <!-- Se llena dinámicamente -->
+          </div>
+
+          <div class="quick-actions">
+            <h2>Acciones rápidas</h2>
+            <div class="qa-grid">
+              <button class="qa-card" data-goto="builder">
+                <span class="qa-icon">✦</span>
+                <strong>Nuevo Dashboard IA</strong>
+                <small>Describe tu objetivo y el motor lo arma</small>
+              </button>
+              <button class="qa-card" data-goto="dashboards">
+                <span class="qa-icon">▦</span>
+                <strong>Ver mis dashboards</strong>
+                <small>Dashboards guardados y favoritos</small>
+              </button>
+              <button class="qa-card" data-goto="conexiones">
+                <span class="qa-icon">⬡</span>
+                <strong>Configurar conexiones</strong>
+                <small>Ruta a tus bases de datos Firebird</small>
+              </button>
+              <button class="qa-card" data-goto="explorador">
+                <span class="qa-icon">◎</span>
+                <strong>Explorar tablas</strong>
+                <small>Métricas y esquema de cada sistema</small>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- ══ CONSTRUCTOR IA ══ -->
+        <section id="view-builder" class="view hidden">
+          <div class="view-header">
+            <div>
+              <h1>Constructor IA de Dashboards</h1>
+              <p class="view-sub">
+                Describe tu necesidad y el motor inteligente arma el dashboard
+              </p>
+            </div>
+          </div>
+
+          <!-- FASE 1: FORMULARIO -->
+          <div id="builder-fase-input" class="builder-card">
+            <form id="builder-form">
+              <label class="form-label">¿Qué quieres visualizar?</label>
+              <textarea
+                id="builder-objetivo"
+                class="form-textarea"
+                rows="4"
+                placeholder="Ejemplos:
+• Estado de resultados del mes actual
+• Ventas por cliente con utilidad y margen
+• Flujo de caja y conciliación bancaria
+• Nómina: costos por departamento y turnos"
+                required
+              ></textarea>
+
+              <div class="builder-options">
+                <div class="option-group">
+                  <label class="form-label">Sistemas a incluir</label>
+                  <div class="checkbox-row">
+                    <label class="check-pill"
+                      ><input
+                        type="checkbox"
+                        name="sistemas"
+                        value="SAE"
+                        checked
+                      />
+                      SAE</label
+                    >
+                    <label class="check-pill"
+                      ><input
+                        type="checkbox"
+                        name="sistemas"
+                        value="COI"
+                        checked
+                      />
+                      COI</label
+                    >
+                    <label class="check-pill"
+                      ><input
+                        type="checkbox"
+                        name="sistemas"
+                        value="NOI"
+                        checked
+                      />
+                      NOI</label
+                    >
+                    <label class="check-pill"
+                      ><input
+                        type="checkbox"
+                        name="sistemas"
+                        value="BANCO"
+                        checked
+                      />
+                      BANCO</label
+                    >
+                  </div>
+                </div>
+
+                <div class="option-group">
+                  <label class="form-label"
+                    >Widgets máximos: <strong id="slider-val">8</strong></label
+                  >
+                  <input
+                    type="range"
+                    id="slider-widgets"
+                    min="2"
+                    max="16"
+                    value="8"
+                    class="slider"
+                  />
+                </div>
+
+                <div class="option-group">
+                  <label class="form-label">Visualización preferida</label>
+                  <div class="checkbox-row">
+                    <label class="check-pill"
+                      ><input
+                        type="radio"
+                        name="vizPref"
+                        value="auto"
+                        checked
+                      />
+                      Auto</label
+                    >
+                    <label class="check-pill"
+                      ><input type="radio" name="vizPref" value="tabla" />
+                      Tablas</label
+                    >
+                    <label class="check-pill"
+                      ><input type="radio" name="vizPref" value="grafica" />
+                      Gráficas</label
+                    >
+                    <label class="check-pill"
+                      ><input type="radio" name="vizPref" value="kpi" />
+                      KPIs</label
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <button
+                  type="submit"
+                  class="btn btn-primary"
+                  id="btn-construir"
+                >
+                  <span class="btn-icon">✦</span> Construir con IA
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- FASE 2: WIDGETS SUGERIDOS -->
+          <div id="builder-fase-widgets" class="hidden">
+            <div class="fase-header">
+              <div>
+                <h2>Widgets sugeridos por el motor IA</h2>
+                <p id="builder-meta-text" class="view-sub"></p>
+              </div>
+              <div class="fase-actions">
+                <button class="btn btn-ghost" id="btn-volver-form">
+                  ← Atrás
+                </button>
+                <button class="btn btn-secondary" id="btn-ejecutar-todo">
+                  ▶ Ejecutar todos
+                </button>
+                <button class="btn btn-primary" id="btn-guardar-dashboard">
+                  ✦ Guardar dashboard
+                </button>
+              </div>
+            </div>
+
+            <div id="widgets-sugeridos" class="widgets-grid"></div>
+          </div>
+
+          <!-- FASE 3: DASHBOARD EJECUTADO -->
+          <div id="builder-fase-dashboard" class="hidden">
+            <div class="fase-header">
+              <div>
+                <h2 id="dashboard-titulo-activo">Dashboard</h2>
+                <p id="dashboard-meta-activo" class="view-sub"></p>
+              </div>
+              <div class="fase-actions">
+                <button class="btn btn-ghost" id="btn-volver-widgets">
+                  ← Sugerencias
+                </button>
+                <button class="btn btn-ghost" id="btn-imprimir">
+                  ⎙ Imprimir
+                </button>
+                <button class="btn btn-primary" id="btn-guardar-dashboard-2">
+                  ✦ Guardar
+                </button>
+              </div>
+            </div>
+            <div id="dashboard-activo" class="dashboard-grid"></div>
+          </div>
+        </section>
+
+        <!-- ══ WIDGET STUDIO ══ -->
+        <section id="view-studio" class="view hidden">
+          <div class="view-header">
+            <div>
+              <h1>Widget Studio</h1>
+              <p class="view-sub">
+                Construye cualquier análisis a tu medida — elige columnas,
+                filtros y visualización sin límites
+              </p>
+            </div>
+          </div>
+
+          <!-- Tabs del Studio -->
+          <div class="studio-tabs">
+            <button class="studio-tab active" data-tab="asistente">
+              ✦ Asistente IA
+            </button>
+            <button class="studio-tab" data-tab="plantillas">
+              ⬡ Por plantilla
+            </button>
+            <button class="studio-tab" data-tab="sql">⌨ SQL libre</button>
+          </div>
+
+          <!-- ── TAB: Asistente IA ── -->
+          <div id="studio-tab-asistente" class="studio-pane">
+            <!-- Hero de entrada -->
+            <div class="asistente-hero">
+              <div class="asistente-hero-icon">✦</div>
+              <h2 class="asistente-hero-titulo">¿Qué quieres analizar hoy?</h2>
+              <p class="asistente-hero-sub">
+                Descríbelo con tus palabras — sin necesidad de saber
+                programación ni SQL
+              </p>
+              <div class="asistente-ejemplos">
+                <button
+                  class="ej-pill"
+                  data-texto="Estado de resultados de COI con presupuesto vs real del mes de junio 2025, mostrando nombre de cuenta, saldo y variación"
+                >
+                  Estado de resultados COI vs presupuesto junio
+                </button>
+                <button
+                  class="ej-pill"
+                  data-texto="Ventas de SAE del mes de enero 2025, quiero ver el nombre del cliente, total, utilidad y margen"
+                >
+                  Ventas SAE enero con utilidad y margen
+                </button>
+                <button
+                  class="ej-pill"
+                  data-texto="Cuentas de mayor de COI con saldos acumulados del ejercicio 2025, nivel 1"
+                >
+                  Saldos de cuentas de mayor COI 2025
+                </button>
+                <button
+                  class="ej-pill"
+                  data-texto="Pólizas de ingreso de COI del mes de marzo 2025, quiero fecha, número y concepto"
+                >
+                  Pólizas de ingreso COI marzo 2025
+                </button>
+                <button
+                  class="ej-pill"
+                  data-texto="Auxiliar de la cuenta 401 en COI del mes de junio 2025"
+                >
+                  Auxiliar cuenta 401 COI junio
+                </button>
+              </div>
+            </div>
+
+            <!-- Input libre -->
+            <div class="asistente-input-area">
+              <textarea
+                id="asistente-texto"
+                class="asistente-textarea"
+                rows="3"
+                placeholder="Ej: Dame el estado de resultados de COI con presupuesto acumulado vs saldo real del mes de junio 2025, mostrando el nombre de la cuenta, el número, el saldo del mes y la variación…"
+              ></textarea>
+              <button
+                class="btn btn-primary btn-asistente"
+                id="btn-asistente-analizar"
+              >
+                <span class="btn-icon">✦</span> Analizar y ejecutar
+              </button>
+            </div>
+
+            <!-- Resultado del asistente -->
+            <div id="asistente-resultado-area" class="hidden">
+              <!-- Tarjeta: qué entendió la IA -->
+              <div id="asistente-interpretacion-card" class="ai-card">
+                <div class="ai-card-header">
+                  <span class="ai-badge">IA</span>
+                  <span
+                    id="asistente-confianza-bar"
+                    class="ai-confianza"
+                  ></span>
+                  <button
+                    class="btn btn-ghost btn-xs"
+                    id="btn-asistente-editar"
+                  >
+                    ✎ Ajustar
+                  </button>
+                </div>
+                <ul id="asistente-decisiones" class="ai-decisiones"></ul>
+              </div>
+
+              <!-- Panel de ajuste fino (oculto por defecto) -->
+              <div id="asistente-ajuste-panel" class="asistente-ajuste hidden">
+                <h4>Ajusta los detalles detectados</h4>
+                <div
+                  id="asistente-ajuste-controles"
+                  class="studio-config-grid"
+                ></div>
+                <div class="studio-actions">
+                  <button
+                    class="btn btn-primary btn-xs"
+                    id="btn-asistente-reaplicar"
+                  >
+                    ↺ Re-ejecutar con ajustes
+                  </button>
+                  <button
+                    class="btn btn-ghost btn-xs"
+                    id="btn-asistente-cerrar-ajuste"
+                  >
+                    Cerrar
+                  </button>
+                </div>
+              </div>
+
+              <!-- Barra viz + acciones -->
+              <div class="studio-viz-bar" id="asistente-viz-bar">
+                <div class="viz-toggler" id="asistente-viz-toggle">
+                  <button class="viz-btn active" data-viz="tabla">
+                    ⊞ Tabla
+                  </button>
+                  <button class="viz-btn" data-viz="barra">▊ Barras</button>
+                  <button class="viz-btn" data-viz="linea">╱ Línea</button>
+                  <button class="viz-btn" data-viz="pastel">◑ Pastel</button>
+                  <button class="viz-btn" data-viz="kpi">◈ KPI</button>
+                  <button class="viz-btn" data-viz="reporte">☰ Reporte</button>
+                </div>
+                <div class="studio-resultado-actions">
+                  <button class="btn btn-ghost" id="btn-asistente-csv">
+                    ↓ CSV
+                  </button>
+                  <button class="btn btn-ghost" id="btn-asistente-guardar-widget">
+                    ★ Guardar Widget
+                  </button>
+                  <button class="btn btn-primary" id="btn-asistente-add">
+                    + Al dashboard
+                  </button>
+                </div>
+              </div>
+
+              <!-- Resultado renderizado -->
+              <div
+                id="asistente-resultado-container"
+                class="studio-resultado"
+              ></div>
+
+              <!-- Meta info -->
+              <div id="asistente-meta" class="asistente-meta"></div>
+
+              <!-- Sugerencias de refinamiento -->
+              <div
+                id="asistente-sugerencias-ref"
+                class="asistente-sug-ref hidden"
+              >
+                <p class="sug-ref-titulo">💡 Puedes pedirme ajustes:</p>
+                <div id="asistente-sug-pills" class="asistente-ejemplos"></div>
+              </div>
+            </div>
+            <!-- /resultado-area -->
+          </div>
+          <!-- /tab asistente -->
+
+          <!-- ── TAB: Plantillas ── -->
+          <div id="studio-tab-plantillas" class="studio-pane">
+            <!-- PASO 1: Elegir plantilla -->
+            <div class="studio-paso">
+              <div class="paso-header">
+                <span class="paso-num">1</span>
+                <h3>Selecciona el tipo de análisis</h3>
+              </div>
+              <div id="studio-templates-grid" class="studio-templates">
+                <!-- Generado dinámicamente -->
+              </div>
+            </div>
+
+            <!-- PASO 2: Configurar -->
+            <div id="studio-paso-config" class="studio-paso hidden">
+              <div class="paso-header">
+                <span class="paso-num">2</span>
+                <h3 id="studio-paso2-titulo">Configura el análisis</h3>
+              </div>
+
+              <div class="studio-config-grid">
+                <!-- Filtros -->
+                <div class="studio-filtros">
+                  <h4>Parámetros</h4>
+                  <div id="studio-filtros-container">
+                    <!-- Generado dinámicamente según plantilla -->
+                  </div>
+                </div>
+
+                <!-- Selector de columnas -->
+                <div class="studio-cols">
+                  <h4>Columnas a mostrar</h4>
+                  <div id="studio-columnas-container" class="studio-checkboxes">
+                    <!-- Generado dinámicamente -->
+                  </div>
+                  <div class="studio-cols-actions">
+                    <button class="btn btn-ghost btn-xs" id="btn-cols-all">
+                      ☑ Todas
+                    </button>
+                    <button class="btn btn-ghost btn-xs" id="btn-cols-none">
+                      ☐ Ninguna
+                    </button>
+                    <button class="btn btn-ghost btn-xs" id="btn-cols-default">
+                      ★ Default
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- SQL Preview -->
+              <details class="studio-sql-preview">
+                <summary>⌨ Ver SQL generado</summary>
+                <div class="studio-sql-block">
+                  <button class="btn btn-ghost btn-xs" id="btn-copiar-sql">
+                    ⎘ Copiar
+                  </button>
+                  <pre id="studio-sql-display">
+— Haz clic en Previsualizar para generar el SQL —</pre
+                  >
+                </div>
+              </details>
+
+              <div class="studio-actions">
+                <button class="btn btn-secondary" id="btn-studio-preview">
+                  ⟳ Previsualizar (5 filas)
+                </button>
+                <button class="btn btn-primary" id="btn-studio-ejecutar">
+                  ▶ Ejecutar completo
+                </button>
+              </div>
+            </div>
+
+            <!-- PASO 3: Resultados -->
+            <div id="studio-paso-resultado" class="studio-paso hidden">
+              <div class="paso-header">
+                <span class="paso-num">3</span>
+                <h3>Resultados — <span id="studio-resultado-meta"></span></h3>
+              </div>
+
+              <div class="studio-viz-bar">
+                <div class="viz-toggler" id="studio-viz-toggle">
+                  <button class="viz-btn active" data-viz="tabla">
+                    ⊞ Tabla
+                  </button>
+                  <button class="viz-btn" data-viz="barra">▊ Barras</button>
+                  <button class="viz-btn" data-viz="linea">╱ Línea</button>
+                  <button class="viz-btn" data-viz="pastel">◑ Pastel</button>
+                  <button class="viz-btn" data-viz="kpi">◈ KPI</button>
+                  <button class="viz-btn" data-viz="reporte">☰ Reporte</button>
+                </div>
+                <div class="studio-resultado-actions">
+                  <button class="btn btn-ghost" id="btn-studio-csv">
+                    ↓ CSV
+                  </button>
+                  <button class="btn btn-primary" id="btn-studio-add">
+                    + Agregar al dashboard
+                  </button>
+                </div>
+              </div>
+
+              <div id="studio-resultado-container" class="studio-resultado">
+                <!-- Resultado renderizado -->
+              </div>
+            </div>
+          </div>
+          <!-- /tab plantillas -->
+
+          <!-- ── TAB: SQL Libre ── -->
+          <div id="studio-tab-sql" class="studio-pane hidden">
+            <div class="studio-paso">
+              <div class="paso-header">
+                <span class="paso-num">⌨</span>
+                <h3>SQL Libre — consulta directa a Firebird</h3>
+              </div>
+              <p class="view-sub">
+                Solo se permiten consultas SELECT. No se pueden ejecutar DROP,
+                DELETE, ALTER, etc.
+              </p>
+              <div class="studio-sql-libre-form">
+                <div class="form-row">
+                  <label class="form-label">Sistema</label>
+                  <select id="sql-libre-sistema" class="form-select">
+                    <option value="COI">COI</option>
+                    <option value="SAE">SAE</option>
+                    <option value="NOI">NOI</option>
+                    <option value="BANCO">BANCO</option>
+                  </select>
+                </div>
+                <div class="form-row">
+                  <label class="form-label">Consulta SQL</label>
+                  <textarea
+                    id="sql-libre-input"
+                    class="form-textarea form-textarea-code"
+                    rows="8"
+                    placeholder="SELECT FIRST 100&#10;  c.NUM_CTA, c.NOMBRE, s.INICIAL&#10;FROM CUENTAS25 c&#10;JOIN SALDOS25 s ON s.NUM_CTA = c.NUM_CTA&#10;WHERE c.NIVEL = 1&#10;ORDER BY c.NUM_CTA"
+                  ></textarea>
+                </div>
+                <!-- Panel de parámetros :nombre detectados automáticamente -->
+                <div id="sql-params-panel" class="sql-params-panel hidden">
+                  <div class="sql-params-header">
+                    <span class="sql-params-icon">｢｣</span>
+                    <span>Parámetros detectados</span>
+                    <span class="sql-params-hint"
+                      >El query usa <code>:nombre</code> — define los valores
+                      aquí</span
+                    >
+                  </div>
+                  <div id="sql-params-inputs" class="sql-params-inputs"></div>
+                </div>
+                <div class="studio-actions">
+                  <button class="btn btn-primary" id="btn-sql-libre-ejecutar">
+                    ▶ Ejecutar SQL
+                  </button>
+                  <button class="btn btn-secondary hidden" id="btn-sql-guardar-widget">
+                    ★ Guardar Widget
+                  </button>
+                </div>
+              </div>
+              <div id="sql-libre-resultado" class="studio-resultado"></div>
+            </div>
+          </div>
+          <!-- /tab sql -->
+        </section>
+
+        <!-- ══ CANVAS EDITOR ══ -->
+        <section id="view-canvas" class="view hidden">
+          <div class="canvas-topbar">
+            <div class="canvas-topbar-left">
+              <button class="btn btn-ghost btn-icon" id="btn-canvas-library" title="Librería de widgets">☰</button>
+              <input id="canvas-nombre" class="canvas-nombre-input" type="text" placeholder="Nombre del dashboard..." value="Mi Canvas"/>
+            </div>
+            <div class="canvas-topbar-right">
+              <button class="btn btn-ghost" id="btn-canvas-run-all" title="Ejecutar todos los widgets">▶ Ejecutar todo</button>
+              <button class="btn btn-ghost" id="btn-canvas-clear" title="Limpiar canvas">✕ Limpiar</button>
+              <button class="btn btn-primary" id="btn-canvas-save">💾 Guardar</button>
+            </div>
+          </div>
+          <div class="canvas-body">
+            <!-- Widget Library Sidebar -->
+            <aside class="canvas-sidebar" id="canvas-sidebar">
+              <div class="canvas-lib-header">
+                <span>Mis Widgets</span>
+                <button class="btn btn-ghost btn-xs" id="btn-lib-refresh" title="Recargar">↺</button>
+              </div>
+              <div class="canvas-library" id="canvas-library">
+                <div class="lib-loading">Cargando...</div>
+              </div>
+            </aside>
+            <!-- Grid Canvas -->
+            <div class="canvas-main" id="canvas-main">
+              <div class="grid-stack" id="canvas-grid"></div>
+              <div class="canvas-empty" id="canvas-empty">
+                <div class="canvas-empty-icon">⊞</div>
+                <h3>Canvas vacío</h3>
+                <p>Agrega widgets desde la librería de la izquierda</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ══ MIS WIDGETS ══ -->
+        <section id="view-mis-widgets" class="view hidden">
+          <div class="view-header">
+            <div>
+              <h1>Mis Widgets</h1>
+              <p class="view-sub">Consultas personalizadas guardadas — ejecútalas, edita su vizualización y agrégalas a dashboards</p>
+            </div>
+          </div>
+          <div id="mis-widgets-vacio" class="mis-widgets-vacio hidden">
+            <p>No tienes widgets guardados todavía.</p>
+            <p>Ejecuta una consulta en <strong>Widget Studio → SQL Libre</strong> o en el <strong>Asistente IA</strong> y usa el botón <em>★ Guardar Widget</em>.</p>
+          </div>
+          <div id="mis-widgets-lista" class="mis-widgets-grid"></div>
+        </section>
+
+        <!-- ══ MIS DASHBOARDS ══ -->
+        <section id="view-dashboards" class="view hidden">
+          <div class="view-header">
+            <div>
+              <h1>Mis Dashboards</h1>
+              <p class="view-sub">
+                Dashboards guardados — carga uno para verlo en vivo
+              </p>
+            </div>
+            <button class="btn btn-primary" data-goto="builder">+ Nuevo</button>
+          </div>
+          <div id="paneles-lista" class="paneles-grid">
+            <!-- Dinámico -->
+          </div>
+        </section>
+
+        <!-- ══ CONEXIONES ══ -->
+        <section id="view-conexiones" class="view hidden">
+          <div class="view-header">
+            <div>
+              <h1>Configuración de Conexiones</h1>
+              <p class="view-sub">
+                Configura las rutas y credenciales de tus bases de datos Aspel
+                Firebird
+              </p>
+            </div>
+            <button class="btn btn-secondary" id="btn-probar-todas">
+              ⬡ Probar todas
+            </button>
+          </div>
+
+          <div class="conexiones-tabs">
+            <button class="cx-tab active" data-sistema="SAE">SAE</button>
+            <button class="cx-tab" data-sistema="COI">COI</button>
+            <button class="cx-tab" data-sistema="NOI">NOI</button>
+            <button class="cx-tab" data-sistema="BANCO">BANCO</button>
+          </div>
+
+          <div id="conexion-panel" class="conexion-panel">
+            <!-- Dinámico -->
+          </div>
+        </section>
+
+        <!-- ══ EXPLORADOR ══ -->
+        <section id="view-explorador" class="view hidden">
+          <div class="view-header">
+            <div>
+              <h1>Explorador de Métricas</h1>
+              <p class="view-sub">
+                Navega las métricas disponibles por sistema y ejecútalas ad-hoc
+              </p>
+            </div>
+          </div>
+
+          <div class="explorer-toolbar">
+            <div class="select-group">
+              <label>Sistema</label>
+              <select id="exp-sistema">
+                <option value="">— Todos —</option>
+                <option value="SAE">SAE</option>
+                <option value="COI">COI</option>
+                <option value="NOI">NOI</option>
+                <option value="BANCO">BANCO</option>
+              </select>
+            </div>
+            <div class="select-group flex-1">
+              <label>Buscar métrica</label>
+              <input
+                type="text"
+                id="exp-buscar"
+                placeholder="ventas, utilidad, cartera..."
+              />
+            </div>
+            <button class="btn btn-secondary" id="btn-exp-buscar">
+              Buscar
+            </button>
+          </div>
+
+          <div id="exp-resultados" class="exp-grid"></div>
+
+          <!-- Modal ejecución ad-hoc -->
+          <div id="modal-ejecutar" class="modal-overlay hidden">
+            <div class="modal-box">
+              <div class="modal-header">
+                <h3 id="modal-titulo">Ejecutar métrica</h3>
+                <button class="modal-close" id="modal-close">✕</button>
+              </div>
+              <div class="modal-body">
+                <p id="modal-descripcion"></p>
+                <div class="viz-toggler" id="modal-viz-toggle">
+                  <button class="viz-btn active" data-viz="tabla">
+                    ⊞ Tabla
+                  </button>
+                  <button class="viz-btn" data-viz="barra">▊ Barras</button>
+                  <button class="viz-btn" data-viz="linea">╱ Línea</button>
+                  <button class="viz-btn" data-viz="pastel">◑ Pastel</button>
+                  <button class="viz-btn" data-viz="kpi">◈ KPI</button>
+                </div>
+                <div id="modal-resultado" class="modal-resultado"></div>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-primary" id="modal-btn-ejecutar">
+                  ▶ Ejecutar
+                </button>
+                <button class="btn btn-ghost" id="modal-btn-cerrar">
+                  Cerrar
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- Toast notifications -->
+    <div id="toast-container"></div>
+
+    <!-- Modal guardar dashboard -->
+    <div id="modal-guardar" class="modal-overlay hidden">
+      <div class="modal-box modal-sm">
+        <div class="modal-header">
+          <h3>Guardar Dashboard</h3>
+          <button class="modal-close" id="modal-guardar-close">✕</button>
+        </div>
+        <div class="modal-body">
+          <label class="form-label">Nombre del dashboard</label>
+          <input
+            type="text"
+            id="input-nombre-panel"
+            class="form-input"
+            placeholder="Ej: Reporte mensual de ventas"
+          />
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary" id="modal-guardar-confirm">
+            Guardar
+          </button>
+          <button class="btn btn-ghost" id="modal-guardar-cancel">
+            Cancelar
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal: Guardar como Widget personalizado -->
+    <div id="modal-guardar-widget" class="modal-overlay hidden">
+      <div class="modal-box modal-widget">
+        <div class="modal-header">
+          <h3>★ Guardar como Widget</h3>
+          <button class="modal-close" id="mw-btn-cerrar">✕</button>
+        </div>
+        <div class="modal-body">
+          <div class="modal-field">
+            <label class="form-label">Nombre del widget *</label>
+            <input type="text" id="mw-nombre" class="form-input" placeholder="Ej: Estado de resultados junio" maxlength="120"/>
+          </div>
+          <div class="modal-field">
+            <label class="form-label">Descripción (opcional)</label>
+            <input type="text" id="mw-descripcion" class="form-input" placeholder="Para qué sirve este widget..." maxlength="400"/>
+          </div>
+          <div class="modal-field">
+            <label class="form-label">Visualización predeterminada</label>
+            <div class="viz-toggler" id="mw-viz-toggle">
+              <button class="viz-btn active" data-viz="tabla">⊞ Tabla</button>
+              <button class="viz-btn" data-viz="barra">▊ Barras</button>
+              <button class="viz-btn" data-viz="linea">╱ Línea</button>
+              <button class="viz-btn" data-viz="pastel">◑ Pastel</button>
+              <button class="viz-btn" data-viz="kpi">◈ KPI</button>
+            </div>
+          </div>
+          <div class="modal-field">
+            <label class="form-label">Color primario</label>
+            <div class="color-picker-row">
+              <input type="color" id="mw-color" value="#6366f1" class="color-input"/>
+              <span class="color-presets">
+                <button class="color-dot" data-color="#6366f1" style="background:#6366f1" title="Índigo"></button>
+                <button class="color-dot" data-color="#22c55e" style="background:#22c55e" title="Verde"></button>
+                <button class="color-dot" data-color="#f59e0b" style="background:#f59e0b" title="Ámbar"></button>
+                <button class="color-dot" data-color="#ef4444" style="background:#ef4444" title="Rojo"></button>
+                <button class="color-dot" data-color="#3b82f6" style="background:#3b82f6" title="Azul"></button>
+                <button class="color-dot" data-color="#a855f7" style="background:#a855f7" title="Violeta"></button>
+              </span>
+            </div>
+          </div>
+          <div class="modal-field" id="mw-columnas-field">
+            <label class="form-label">Columnas visibles</label>
+            <div id="mw-columnas" class="columnas-check-grid"></div>
+          </div>
+          <div class="modal-field hidden" id="mw-params-field">
+            <label class="form-label">Parámetros dinámicos detectados</label>
+            <div id="mw-params-list" class="params-dinamicos-list"></div>
+            <p class="hint-text">Al re-ejecutar este widget podrás cambiar estos valores</p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-ghost" id="mw-btn-cancelar">Cancelar</button>
+          <button class="btn btn-primary" id="mw-btn-guardar">★ Guardar Widget</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal: Ejecutar widget guardado (params dinámicos) -->
+    <div id="modal-ejecutar-widget" class="modal-overlay hidden">
+      <div class="modal-box modal-sm">
+        <div class="modal-header">
+          <h3 id="mej-titulo">Ejecutar Widget</h3>
+          <button class="modal-close" id="mej-btn-cerrar">✕</button>
+        </div>
+        <div class="modal-body">
+          <div id="mej-params-container"></div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-ghost" id="mej-btn-cancelar">Cancelar</button>
+          <button class="btn btn-primary" id="mej-btn-ejecutar">▶ Ejecutar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal: Canvas Params -->
+    <div id="modal-canvas-params" class="modal-overlay hidden">
+      <div class="modal-box modal-sm">
+        <div class="modal-header">
+          <h3>⚙ Parámetros — <span id="mcp-titulo"></span></h3>
+          <button class="modal-close" id="mcp-btn-cerrar">✕</button>
+        </div>
+        <div class="modal-body">
+          <div id="mcp-form" class="mcp-form"></div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-ghost" id="mcp-btn-cancelar">Cancelar</button>
+          <button class="btn btn-primary" id="mcp-btn-confirmar">▶ Ejecutar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal: Canvas Customize Widget -->
+    <div id="modal-canvas-customize" class="modal-overlay hidden">
+      <div class="modal-box modal-widget">
+        <div class="modal-header">
+          <h3>✎ Personalizar Widget</h3>
+          <button class="modal-close" id="mcc-btn-cerrar">✕</button>
+        </div>
+        <div class="modal-body">
+          <div class="modal-field">
+            <label class="form-label">Título del widget</label>
+            <input type="text" id="mcc-titulo" class="form-input" placeholder="Nombre del widget"/>
+          </div>
+          <div class="modal-field">
+            <label class="form-label">Visualización</label>
+            <div class="viz-toggler" id="mcc-viz-toggle">
+              <button class="viz-btn active" data-viz="tabla">⊞ Tabla</button>
+              <button class="viz-btn" data-viz="barra">▊ Barras</button>
+              <button class="viz-btn" data-viz="linea">╱ Línea</button>
+              <button class="viz-btn" data-viz="area">▲ Área</button>
+              <button class="viz-btn" data-viz="pastel">◑ Pastel</button>
+              <button class="viz-btn" data-viz="kpi">◈ KPI</button>
+            </div>
+          </div>
+          <div class="modal-field">
+            <label class="form-label">Color de acento</label>
+            <div class="color-picker-row">
+              <input type="color" id="mcc-color" value="#00b4c5" class="color-input"/>
+              <span class="color-presets">
+                <button class="color-dot" data-color="#00b4c5" style="background:#00b4c5" title="Cian"></button>
+                <button class="color-dot" data-color="#6366f1" style="background:#6366f1" title="Índigo"></button>
+                <button class="color-dot" data-color="#22c55e" style="background:#22c55e" title="Verde"></button>
+                <button class="color-dot" data-color="#f59e0b" style="background:#f59e0b" title="Ámbar"></button>
+                <button class="color-dot" data-color="#ef4444" style="background:#ef4444" title="Rojo"></button>
+                <button class="color-dot" data-color="#a855f7" style="background:#a855f7" title="Violeta"></button>
+                <button class="color-dot" data-color="#3b82f6" style="background:#3b82f6" title="Azul"></button>
+                <button class="color-dot" data-color="#f97316" style="background:#f97316" title="Naranja"></button>
+              </span>
+            </div>
+          </div>
+          <div class="modal-field hidden" id="mcc-cols-section">
+            <label class="form-label">Columna de etiqueta (eje X)</label>
+            <select id="mcc-label-col" class="form-select"></select>
+            <label class="form-label" style="margin-top:12px">Columnas de valores</label>
+            <div id="mcc-value-cols" class="columnas-check-grid"></div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-ghost" id="mcc-btn-cancelar">Cancelar</button>
+          <button class="btn btn-primary" id="mcc-btn-aplicar">✓ Aplicar</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="/app.js" defer></script>
+    <script src="/canvas.js" defer></script>
+  </body>
+</html>

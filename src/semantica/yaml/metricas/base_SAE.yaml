@@ -36,6 +36,18 @@ metricas:
                (SELECT SUM(IMP_TOT1) FROM FACTF01_anterior WHERE YEAR(FEC_APLI) = YEAR(CURRENT_DATE)-1)) * 100, 1) as porcentaje_cambio
       FROM FACTF01 
       WHERE YEAR(FEC_APLI) = YEAR(CURRENT_DATE)
+    query_duckdb: |
+      SELECT
+        SUM(CASE WHEN YEAR(FEC_APLI) = YEAR(CURRENT_DATE) THEN IMP_TOT1 ELSE 0 END) as venta_neta_actual,
+        SUM(CASE WHEN YEAR(FEC_APLI) = YEAR(CURRENT_DATE) - 1 THEN IMP_TOT1 ELSE 0 END) as venta_neta_anterior,
+        ROUND(
+          (SUM(CASE WHEN YEAR(FEC_APLI) = YEAR(CURRENT_DATE) THEN IMP_TOT1 ELSE 0 END) -
+           SUM(CASE WHEN YEAR(FEC_APLI) = YEAR(CURRENT_DATE) - 1 THEN IMP_TOT1 ELSE 0 END)) * 100.0 /
+          NULLIF(SUM(CASE WHEN YEAR(FEC_APLI) = YEAR(CURRENT_DATE) - 1 THEN IMP_TOT1 ELSE 0 END), 0)
+        , 1) as porcentaje_cambio
+      FROM FACTF01
+      WHERE YEAR(FEC_APLI) >= YEAR(CURRENT_DATE) - 1
+        AND STATUS != 'C'
     formato:
       tipo: moneda
       decimales: 2
@@ -58,6 +70,18 @@ metricas:
                (SELECT AVG(IMP_TOT1) FROM FACTF01_anterior WHERE YEAR(FEC_APLI) = YEAR(CURRENT_DATE)-1)) * 100, 1) as porcentaje_cambio
       FROM FACTF01 
       WHERE YEAR(FEC_APLI) = YEAR(CURRENT_DATE)
+    query_duckdb: |
+      SELECT
+        ROUND(AVG(CASE WHEN YEAR(FEC_APLI) = YEAR(CURRENT_DATE) THEN IMP_TOT1 END), 2) as ticket_actual,
+        ROUND(AVG(CASE WHEN YEAR(FEC_APLI) = YEAR(CURRENT_DATE) - 1 THEN IMP_TOT1 END), 2) as ticket_anterior,
+        ROUND(
+          (AVG(CASE WHEN YEAR(FEC_APLI) = YEAR(CURRENT_DATE) THEN IMP_TOT1 END) -
+           AVG(CASE WHEN YEAR(FEC_APLI) = YEAR(CURRENT_DATE) - 1 THEN IMP_TOT1 END)) * 100.0 /
+          NULLIF(AVG(CASE WHEN YEAR(FEC_APLI) = YEAR(CURRENT_DATE) - 1 THEN IMP_TOT1 END), 0)
+        , 1) as porcentaje_cambio
+      FROM FACTF01
+      WHERE YEAR(FEC_APLI) >= YEAR(CURRENT_DATE) - 1
+        AND STATUS != 'C'
     formato:
       tipo: moneda
       decimales: 2
@@ -84,6 +108,22 @@ metricas:
       FROM FACTF01 f
       INNER JOIN CLIE01 c ON f.CVE_CLPV = c.CLAVE
       WHERE YEAR(f.FEC_APLI) = YEAR(CURRENT_DATE)
+      GROUP BY c.NOMBRE
+      ORDER BY Venta DESC
+      LIMIT 20
+    query_duckdb: |
+      SELECT
+        c.NOMBRE as Cliente,
+        SUM(f.IMP_TOT1) as Venta,
+        SUM(f.DESCUENTO) as Descuentos,
+        SUM(f.COSTO_TOTAL) as Costo,
+        SUM(f.IMP_TOT1 - f.COSTO_TOTAL) as Utilidad,
+        COUNT(DISTINCT f.NUM_FACT) as Num_Operaciones,
+        ROUND(AVG(f.IMP_TOT1), 0) as Ticket_Promedio
+      FROM FACTF01 f
+      INNER JOIN CLIE01 c ON f.CVE_CLPV = c.CLAVE
+      WHERE YEAR(f.FEC_APLI) = YEAR(CURRENT_DATE)
+        AND f.STATUS != 'C'
       GROUP BY c.NOMBRE
       ORDER BY Venta DESC
       LIMIT 20
@@ -115,6 +155,22 @@ metricas:
       GROUP BY v.NOMBRE
       ORDER BY Venta DESC
       LIMIT 15
+    query_duckdb: |
+      SELECT
+        v.NOMBRE as Vendedor,
+        SUM(f.IMP_TOT1) as Venta,
+        SUM(f.DESCUENTO) as Descuentos,
+        SUM(f.COSTO_TOTAL) as Costo,
+        SUM(f.IMP_TOT1 - f.COSTO_TOTAL) as Utilidad,
+        COUNT(DISTINCT f.NUM_FACT) as Num_Operaciones,
+        ROUND(SUM(f.IMP_TOT1) / COUNT(DISTINCT f.NUM_FACT), 0) as Productividad
+      FROM FACTF01 f
+      INNER JOIN VEND01 v ON f.CVE_VEND = v.CLAVE
+      WHERE YEAR(f.FEC_APLI) = YEAR(CURRENT_DATE)
+        AND f.STATUS != 'C'
+      GROUP BY v.NOMBRE
+      ORDER BY Venta DESC
+      LIMIT 15
     formato:
       tipo: tabla_performance
       columnas_moneda: [Venta, Descuentos, Costo, Utilidad, Productividad]
@@ -136,6 +192,18 @@ metricas:
       FROM MINVE01 m
       INNER JOIN INVE01 i ON m.CVE_ART = i.CVE_ART
       WHERE m.TIPO_DOC = 'F' AND YEAR(m.FECHA_DOC) = YEAR(CURRENT_DATE)
+      GROUP BY i.GRUPO
+      ORDER BY Venta DESC
+    query_duckdb: |
+      SELECT
+        i.GRUPO as Grupo,
+        SUM(m.IMPORTE) as Venta,
+        ROUND(SUM(m.IMPORTE) * 100.0 / NULLIF((SELECT SUM(IMPORTE) FROM MINVE01 WHERE TIPO_DOC = 'F' AND YEAR(FECHA_DOC) = YEAR(CURRENT_DATE)), 0), 1) as Porcentaje,
+        COUNT(DISTINCT m.NUM_MOV) as Num_Documentos
+      FROM MINVE01 m
+      INNER JOIN INVE01 i ON m.CVE_ART = i.CVE_ART
+      WHERE m.TIPO_DOC = 'F'
+        AND YEAR(m.FECHA_DOC) = YEAR(CURRENT_DATE)
       GROUP BY i.GRUPO
       ORDER BY Venta DESC
     formato:
@@ -160,6 +228,17 @@ metricas:
         COUNT(*) as Num_Facturas
       FROM FACTF01
       WHERE YEAR(FEC_APLI) = YEAR(CURRENT_DATE)
+      GROUP BY COND_PAGO
+      ORDER BY Venta DESC
+    query_duckdb: |
+      SELECT
+        COND_PAGO as Condicion,
+        SUM(IMP_TOT1) as Venta,
+        ROUND(SUM(IMP_TOT1) * 100.0 / NULLIF((SELECT SUM(IMP_TOT1) FROM FACTF01 WHERE YEAR(FEC_APLI) = YEAR(CURRENT_DATE) AND STATUS != 'C'), 0), 1) as Porcentaje,
+        COUNT(*) as Num_Facturas
+      FROM FACTF01
+      WHERE YEAR(FEC_APLI) = YEAR(CURRENT_DATE)
+        AND STATUS != 'C'
       GROUP BY COND_PAGO
       ORDER BY Venta DESC
     formato:
@@ -193,6 +272,18 @@ metricas:
       WHERE FEC_APLI >= DATE_SUB(CURRENT_DATE, INTERVAL 30 DAY)
       GROUP BY FEC_APLI, DAYOFWEEK(FEC_APLI)
       ORDER BY FEC_APLI DESC
+    query_duckdb: |
+      SELECT
+        FEC_APLI as Fecha,
+        SUM(IMP_TOT1) as Venta,
+        COUNT(*) as Num_Facturas,
+        ROUND(AVG(IMP_TOT1), 0) as Ticket_Promedio
+      FROM FACTF01
+      WHERE FEC_APLI >= CURRENT_DATE - 30
+        AND STATUS != 'C'
+      GROUP BY FEC_APLI
+      ORDER BY FEC_APLI DESC
+      LIMIT 30
     formato:
       tipo: temporal_diario
       incluir_dia_semana: true
@@ -218,6 +309,19 @@ metricas:
       WHERE m.TIPO_DOC = 'F' AND YEAR(m.FECHA_DOC) = YEAR(CURRENT_DATE)
       GROUP BY i.GRUPO
       ORDER BY Margen_Pct DESC
+    query_duckdb: |
+      SELECT
+        i.GRUPO as Grupo,
+        SUM(m.IMPORTE) as Venta,
+        SUM(m.COSTO) as Costo,
+        SUM(m.IMPORTE - m.COSTO) as Utilidad,
+        ROUND(SUM(m.IMPORTE - m.COSTO) * 100.0 / NULLIF(SUM(m.IMPORTE), 0), 1) as Margen_Pct
+      FROM MINVE01 m
+      INNER JOIN INVE01 i ON m.CVE_ART = i.CVE_ART
+      WHERE m.TIPO_DOC = 'F'
+        AND YEAR(m.FECHA_DOC) = YEAR(CURRENT_DATE)
+      GROUP BY i.GRUPO
+      ORDER BY Margen_Pct DESC
     formato:
       tipo: tabla_margen
       incluir_porcentaje: true
@@ -241,6 +345,19 @@ metricas:
       FROM FACTF01 f
       INNER JOIN VEND01 v ON f.CVE_VEND = v.CLAVE
       WHERE YEAR(f.FEC_APLI) = YEAR(CURRENT_DATE)
+      GROUP BY v.NOMBRE
+      ORDER BY Productividad DESC
+    query_duckdb: |
+      SELECT
+        v.NOMBRE as Vendedor,
+        COUNT(DISTINCT f.CVE_CLPV) as Num_Clientes,
+        COUNT(DISTINCT f.NUM_FACT) as Num_Operaciones,
+        SUM(f.IMP_TOT1) as Venta_Total,
+        ROUND(SUM(f.IMP_TOT1) / COUNT(DISTINCT f.NUM_FACT), 0) as Productividad
+      FROM FACTF01 f
+      INNER JOIN VEND01 v ON f.CVE_VEND = v.CLAVE
+      WHERE YEAR(f.FEC_APLI) = YEAR(CURRENT_DATE)
+        AND f.STATUS != 'C'
       GROUP BY v.NOMBRE
       ORDER BY Productividad DESC
     formato:

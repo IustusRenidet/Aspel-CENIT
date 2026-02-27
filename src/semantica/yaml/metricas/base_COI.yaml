@@ -432,3 +432,140 @@ metricas:
         nombre: "Diario"
         tipo: numero
 
+
+  # ──────────────────────────────────────────────────────────
+  # Estado de Resultados con Presupuesto (YTD al mes actual)
+  # ──────────────────────────────────────────────────────────
+
+  - id: coi_estado_resultados_vs_presupuesto
+    nombre: "Estado de Resultados vs Presupuesto"
+    descripcion: "Saldo acumulado y del mes de cuentas de resultado (4-7) contra presupuesto. Ejercicio en curso."
+    categoria: resultado
+    sistema: COI
+    tipo: tabla
+    tags: [estado_resultados, presupuesto, resultado, ingresos, gastos, costos]
+    query_duckdb: |
+      SELECT FIRST 500
+        c.NUM_CTA                     AS "Cuenta",
+        c.NOMBRE                      AS "Nombre",
+        CAST(c.NIVEL AS INTEGER)      AS "Nivel",
+        COALESCE(s.CARGO01+s.CARGO02+s.CARGO03+s.CARGO04+s.CARGO05+s.CARGO06+
+                 s.CARGO07+s.CARGO08+s.CARGO09+s.CARGO10+s.CARGO11+s.CARGO12,0) AS "Total_Cargos",
+        COALESCE(s.ABONO01+s.ABONO02+s.ABONO03+s.ABONO04+s.ABONO05+s.ABONO06+
+                 s.ABONO07+s.ABONO08+s.ABONO09+s.ABONO10+s.ABONO11+s.ABONO12,0) AS "Total_Abonos",
+        CASE WHEN c.NATURALEZA = 2
+          THEN COALESCE(s.ABONO01+s.ABONO02+s.ABONO03+s.ABONO04+s.ABONO05+s.ABONO06+
+                        s.ABONO07+s.ABONO08+s.ABONO09+s.ABONO10+s.ABONO11+s.ABONO12,0)
+              -COALESCE(s.CARGO01+s.CARGO02+s.CARGO03+s.CARGO04+s.CARGO05+s.CARGO06+
+                        s.CARGO07+s.CARGO08+s.CARGO09+s.CARGO10+s.CARGO11+s.CARGO12,0)
+          ELSE COALESCE(s.CARGO01+s.CARGO02+s.CARGO03+s.CARGO04+s.CARGO05+s.CARGO06+
+                        s.CARGO07+s.CARGO08+s.CARGO09+s.CARGO10+s.CARGO11+s.CARGO12,0)
+              -COALESCE(s.ABONO01+s.ABONO02+s.ABONO03+s.ABONO04+s.ABONO05+s.ABONO06+
+                        s.ABONO07+s.ABONO08+s.ABONO09+s.ABONO10+s.ABONO11+s.ABONO12,0)
+        END                           AS "Saldo_Anual",
+        COALESCE(p.PRESUP01+p.PRESUP02+p.PRESUP03+p.PRESUP04+p.PRESUP05+p.PRESUP06+
+                 p.PRESUP07+p.PRESUP08+p.PRESUP09+p.PRESUP10+p.PRESUP11+p.PRESUP12,0) AS "Presup_Anual",
+        (CASE WHEN c.NATURALEZA = 2
+          THEN COALESCE(s.ABONO01+s.ABONO02+s.ABONO03+s.ABONO04+s.ABONO05+s.ABONO06+
+                        s.ABONO07+s.ABONO08+s.ABONO09+s.ABONO10+s.ABONO11+s.ABONO12,0)
+              -COALESCE(s.CARGO01+s.CARGO02+s.CARGO03+s.CARGO04+s.CARGO05+s.CARGO06+
+                        s.CARGO07+s.CARGO08+s.CARGO09+s.CARGO10+s.CARGO11+s.CARGO12,0)
+          ELSE COALESCE(s.CARGO01+s.CARGO02+s.CARGO03+s.CARGO04+s.CARGO05+s.CARGO06+
+                        s.CARGO07+s.CARGO08+s.CARGO09+s.CARGO10+s.CARGO11+s.CARGO12,0)
+              -COALESCE(s.ABONO01+s.ABONO02+s.ABONO03+s.ABONO04+s.ABONO05+s.ABONO06+
+                        s.ABONO07+s.ABONO08+s.ABONO09+s.ABONO10+s.ABONO11+s.ABONO12,0)
+        END)
+        - COALESCE(p.PRESUP01+p.PRESUP02+p.PRESUP03+p.PRESUP04+p.PRESUP05+p.PRESUP06+
+                   p.PRESUP07+p.PRESUP08+p.PRESUP09+p.PRESUP10+p.PRESUP11+p.PRESUP12,0)
+                                      AS "Variacion_Anual"
+      FROM CUENTAS25 c
+      JOIN SALDOS25 s ON s.NUM_CTA = c.NUM_CTA AND s.EJERCICIO = 2025
+      LEFT JOIN PRESUP25 p ON p.NUM_CTA = c.NUM_CTA AND p.EJERCICIO = 2025
+      WHERE (c.NUM_CTA STARTING WITH '4'
+          OR c.NUM_CTA STARTING WITH '5'
+          OR c.NUM_CTA STARTING WITH '6'
+          OR c.NUM_CTA STARTING WITH '7')
+        AND c.NIVEL = 1
+      ORDER BY c.NUM_CTA
+    columnas:
+      - campo: cuenta
+        nombre: "Cuenta"
+        tipo: texto
+      - campo: nombre
+        nombre: "Nombre"
+        tipo: texto
+      - campo: nivel
+        nombre: "Nivel"
+        tipo: numero
+      - campo: saldo_anual
+        nombre: "Saldo Anual"
+        tipo: moneda
+        formato:
+          decimales: 2
+          prefijo: "$"
+      - campo: presup_anual
+        nombre: "Presupuesto"
+        tipo: moneda
+        formato:
+          decimales: 2
+          prefijo: "$"
+      - campo: variacion_anual
+        nombre: "Variación"
+        tipo: moneda
+        formato:
+          decimales: 2
+          prefijo: "$"
+
+  - id: coi_cuentas_mayor_completo
+    nombre: "Cuentas de Mayor — Saldos Completos"
+    descripcion: "Lista completa de cuentas de mayor (nivel 1) con saldo inicial y acumulado del ejercicio"
+    categoria: cuentas
+    sistema: COI
+    tipo: tabla
+    tags: [cuentas, mayor, saldos, balance]
+    query_duckdb: |
+      SELECT FIRST 500
+        c.NUM_CTA                     AS "Cuenta",
+        c.NOMBRE                      AS "Nombre",
+        CAST(c.NIVEL AS INTEGER)      AS "Nivel",
+        CASE c.NATURALEZA WHEN 2 THEN 'Acreedora' WHEN 1 THEN 'Deudora' ELSE '' END AS "Naturaleza",
+        c.CTA_RAIZ                    AS "Raiz",
+        COALESCE(s.INICIAL,0)         AS "Saldo_Inicial",
+        CASE WHEN c.NATURALEZA = 2
+          THEN COALESCE(s.INICIAL,0)
+              +COALESCE(s.ABONO01+s.ABONO02+s.ABONO03+s.ABONO04+s.ABONO05+s.ABONO06+
+                        s.ABONO07+s.ABONO08+s.ABONO09+s.ABONO10+s.ABONO11+s.ABONO12,0)
+              -COALESCE(s.CARGO01+s.CARGO02+s.CARGO03+s.CARGO04+s.CARGO05+s.CARGO06+
+                        s.CARGO07+s.CARGO08+s.CARGO09+s.CARGO10+s.CARGO11+s.CARGO12,0)
+          ELSE COALESCE(s.INICIAL,0)
+              +COALESCE(s.CARGO01+s.CARGO02+s.CARGO03+s.CARGO04+s.CARGO05+s.CARGO06+
+                        s.CARGO07+s.CARGO08+s.CARGO09+s.CARGO10+s.CARGO11+s.CARGO12,0)
+              -COALESCE(s.ABONO01+s.ABONO02+s.ABONO03+s.ABONO04+s.ABONO05+s.ABONO06+
+                        s.ABONO07+s.ABONO08+s.ABONO09+s.ABONO10+s.ABONO11+s.ABONO12,0)
+        END                           AS "Saldo_Acumulado"
+      FROM CUENTAS25 c
+      JOIN SALDOS25 s ON s.NUM_CTA = c.NUM_CTA AND s.EJERCICIO = 2025
+      WHERE c.NIVEL = 1
+      ORDER BY c.NUM_CTA
+    columnas:
+      - campo: cuenta
+        nombre: "Cuenta"
+        tipo: texto
+      - campo: nombre
+        nombre: "Nombre"
+        tipo: texto
+      - campo: naturaleza
+        nombre: "Naturaleza"
+        tipo: texto
+      - campo: saldo_inicial
+        nombre: "Saldo Inicial"
+        tipo: moneda
+        formato:
+          decimales: 2
+          prefijo: "$"
+      - campo: saldo_acumulado
+        nombre: "Saldo Acumulado"
+        tipo: moneda
+        formato:
+          decimales: 2
+          prefijo: "$"

@@ -1,144 +1,115 @@
+'use strict';
+
 /**
- * Conexión a bases de datos Firebird de Aspel
- * Usando node-firebird (puro JavaScript)
+ * Conector Firebird para bases de datos Aspel
+ * Lee la configuración desde config/conexiones_aspel.json (editable por el usuario)
  */
 
 const Firebird = require('node-firebird');
+const path = require('path');
 
-// Configuración de rutas de bases de datos Aspel
-const BASES_ASPEL = {
-    SAE: "C:\\Program Files (x86)\\Common Files\\Aspel\\Sistemas Aspel\\SAE9.00\\Empresa01\\Datos\\SAE90EMPRE01.FDB",
-    BANCO: "C:\\Program Files (x86)\\Common Files\\Aspel\\Sistemas Aspel\\BAN6.00\\Datos\\Empresa01\\BAN60EMPRE01.FDB",
-    COI: "C:\\Program Files (x86)\\Common Files\\Aspel\\Sistemas Aspel\\COI10.00\\Datos\\Empresa1\\COI10EMPRE1.FDB",
-    NOI: "C:\\Program Files (x86)\\Common Files\\Aspel\\Sistemas Aspel\\NOI11.00\\Datos\\Empresa01\\NOI11EMPRE01.FDB"
-};
+// Lazy-load para evitar dependencia circular
+let _configService = null;
+function getConfigService() {
+    if (!_configService) {
+        const ConexionesAspel = require('../../servicios/conexiones_aspel');
+        _configService = new ConexionesAspel();
+    }
+    return _configService;
+}
 
 // Pool de conexiones por sistema
 const pools = {};
 
-/**
- * Obtener configuración de conexión
- */
+/** Lee config del sistema desde el archivo de usuario */
 function obtenerConfig(sistema) {
-    return {
-        host: '127.0.0.1',
-        port: 3050,
-        database: BASES_ASPEL[sistema],
-        user: 'SYSDBA',
-        password: 'masterkey',
-        lowercase_keys: false,
-        role: null,
-        pageSize: 4096
-    };
+    try {
+        const cfg = getConfigService().obtenerSistema(sistema);
+        return {
+            host: cfg.host || '127.0.0.1',
+            port: Number(cfg.port) || 3050,
+            database: cfg.database,
+            user: cfg.user || 'SYSDBA',
+            password: cfg.password || 'masterkey',
+            lowercase_keys: false,
+            role: cfg.role || null,
+            pageSize: Number(cfg.pageSize) || 4096
+        };
+    } catch (_) {
+        const FALLBACK = {
+            SAE: 'C:\\Program Files (x86)\\Common Files\\Aspel\\Sistemas Aspel\\SAE9.00\\Empresa01\\Datos\\SAE90EMPRE01.FDB',
+            COI: 'C:\\Program Files (x86)\\Common Files\\Aspel\\Sistemas Aspel\\COI10.00\\Datos\\Empresa1\\COI10EMPRE1.FDB',
+            NOI: 'C:\\Program Files (x86)\\Common Files\\Aspel\\Sistemas Aspel\\NOI11.00\\Datos\\Empresa01\\NOI11EMPRE01.FDB',
+            BANCO: 'C:\\Program Files (x86)\\Common Files\\Aspel\\Sistemas Aspel\\BAN6.00\\Datos\\Empresa01\\BAN60EMPRE01.FDB'
+        };
+        return { host: '127.0.0.1', port: 3050, database: FALLBACK[sistema] || '', user: 'SYSDBA', password: 'masterkey', lowercase_keys: false, role: null, pageSize: 4096 };
+    }
 }
 
-/**
- * Obtener o crear pool de conexiones
- */
+/** Obtener o crear pool de conexiones */
 function obtenerPool(sistema) {
-    const sistemaUpper = sistema.toUpperCase();
-    
-    if (!BASES_ASPEL[sistemaUpper]) {
-        throw new Error(`Sistema ${sistema} no configurado`);
+    const s = String(sistema).toUpperCase();
+    if (!pools[s]) {
+        const config = obtenerConfig(s);
+        pools[s] = Firebird.pool(5, config);
+        console.log(`[Firebird] Pool creado → ${s} (${path.basename(config.database)})`);
     }
-    
-    if (!pools[sistemaUpper]) {
-        const config = obtenerConfig(sistemaUpper);
-        pools[sistemaUpper] = Firebird.pool(5, config); // Pool de 5 conexiones
-        console.log(`✅ Pool creado para ${sistemaUpper}`);
-    }
-    
-    return pools[sistemaUpper];
+    return pools[s];
 }
 
-/**
- * Ejecutar consulta SQL
- */
+/** Destruir pool de un sistema (se recrea con nueva config) */
+function limpiarPool(sistema) {
+    const s = String(sistema).toUpperCase();
+    if (pools[s]) {
+        try { pools[s].destroy(); } catch (_) { }
+        delete pools[s];
+        console.log(`[Firebird] Pool destruido → ${s}`);
+    }
+}
+
+/** Ejecutar consulta SQL en un sistema Aspel */
 function ejecutarConsulta(sistema, sql, params = []) {
     return new Promise((resolve, reject) => {
         const pool = obtenerPool(sistema);
-        
         pool.get((err, db) => {
-            if (err) {
-                return reject(err);
-            }
-            
-            db.query(sql, params, (err, result) => {
+            if (err) return reject(new Error(`[${sistema}] Conexión fallida: ${err.message}`));
+            db.query(sql, params, (err2, result) => {
                 db.detach();
-                
-                if (err) {
-                    return reject(err);
-                }
-                
-                resolve(result);
+                if (err2) return reject(new Error(`[${sistema}] SQL error: ${err2.message}`));
+                resolve(result || []);
             });
         });
     });
 }
 
-/**
- * Cerrar todos los pools
- */
+/** Cerrar todos los pools */
 function cerrarConexiones() {
     return new Promise((resolve) => {
-        const sistemasActivos = Object.keys(pools);
+        const activos = Object.keys(pools);
+        if (activos.length === 0) return resolve();
         let cerrados = 0;
-        
-        if (sistemasActivos.length === 0) {
-            return resolve();
-        }
-        
-        sistemasActivos.forEach(sistema => {
-            pools[sistema].destroy(() => {
-                console.log(`✅ Pool cerrado: ${sistema}`);
-                delete pools[sistema];
-                cerrados++;
-                
-                if (cerrados === sistemasActivos.length) {
-                    resolve();
-                }
-            });
+        activos.forEach((s) => {
+            try {
+                pools[s].destroy(() => { delete pools[s]; cerrados++; if (cerrados === activos.length) resolve(); });
+            } catch (_) { delete pools[s]; cerrados++; if (cerrados === activos.length) resolve(); }
         });
     });
 }
 
-/**
- * Probar conexión
- */
+/** Probar conexión a un sistema */
 function probarConexion(sistema) {
     return new Promise((resolve) => {
-        const config = obtenerConfig(sistema.toUpperCase());
-        
+        let config;
+        try { config = obtenerConfig(sistema.toUpperCase()); } catch (e) { return resolve({ exito: false, mensaje: e.message }); }
         Firebird.attach(config, (err, db) => {
-            if (err) {
-                return resolve({ 
-                    exito: false, 
-                    mensaje: err.message 
-                });
-            }
-            
-            db.query('SELECT FIRST 1 * FROM RDB$DATABASE', [], (err, result) => {
+            if (err) return resolve({ exito: false, mensaje: err.message });
+            db.query('SELECT FIRST 1 RDB$RELATION_NAME FROM RDB$RELATIONS', [], (err2) => {
                 db.detach();
-                
-                if (err) {
-                    return resolve({ 
-                        exito: false, 
-                        mensaje: err.message 
-                    });
-                }
-                
-                resolve({ 
-                    exito: true, 
-                    mensaje: `Conexión exitosa a ${sistema}` 
-                });
+                if (err2) return resolve({ exito: false, mensaje: err2.message });
+                resolve({ exito: true, mensaje: `Conexión exitosa a ${sistema.toUpperCase()}` });
             });
         });
     });
 }
 
-module.exports = {
-    ejecutarConsulta,
-    cerrarConexiones,
-    probarConexion,
-    BASES_ASPEL
-};
+module.exports = { ejecutarConsulta, cerrarConexiones, probarConexion, limpiarPool };

@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "actualizado_en": "2026-02-27T17:53:50.615Z",
+  "sistemas": {
+    "SAE": {
+      "host": "127.0.0.1",
+      "port": 3050,
+      "database": "C:\\Program Files (x86)\\Common Files\\Aspel\\Sistemas Aspel\\SAE9.00\\Empresa01\\Datos\\SAE90EMPRE01.FDB",
+      "user": "SYSDBA",
+      "password": "masterkey",
+      "pageSize": 4096,
+      "role": null,
+      "enabled": true
+    },
+    "COI": {
+      "host": "127.0.0.1",
+      "port": 3050,
+      "database": "C:\\Program Files (x86)\\Common Files\\Aspel\\Sistemas Aspel\\COI10.00\\Datos\\Empresa1\\COI10EMPRE1.FDB",
+      "user": "SYSDBA",
+      "password": "masterkey",
+      "pageSize": 4096,
+      "role": null,
+      "enabled": true
+    },
+    "NOI": {
+      "host": "127.0.0.1",
+      "port": 3050,
+      "database": "C:\\Program Files (x86)\\Common Files\\Aspel\\Sistemas Aspel\\NOI11.00\\Datos\\Empresa01\\NOI11EMPRE01.FDB",
+      "user": "SYSDBA",
+      "password": "masterkey",
+      "pageSize": 4096,
+      "role": null,
+      "enabled": true
+    },
+    "BANCO": {
+      "host": "127.0.0.1",
+      "port": 3050,
+      "database": "C:\\Program Files (x86)\\Common Files\\Aspel\\Sistemas Aspel\\BAN6.00\\Datos\\Empresa01\\BAN60EMPRE01.FDB",
+      "user": "SYSDBA",
+      "password": "masterkey",
+      "pageSize": 4096,
+      "role": null,
+      "enabled": true
+    }
+  }
+}

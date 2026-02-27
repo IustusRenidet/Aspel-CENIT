@@ -1,0 +1,7 @@
+Error: EXIT code=0
+    at process.exit ([eval]:4:49)
+    at Server.<anonymous> (C:\Users\Frida Sophia\Desktop\DESARROLLOS\Aspel-CENIT\src\servidor.js:65:13)
+    at Object.onceWrapper (node:events:633:28)
+    at Server.emit (node:events:519:28)
+    at emitCloseNT (node:net:2419:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)

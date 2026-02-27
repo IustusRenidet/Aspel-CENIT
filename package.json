@@ -10,6 +10,10 @@
     }
   ],
   "scripts": {
+    "start": "node src/servidor.js",
+    "start:api": "node src/servidor.js",
+    "start:mcp": "node src/mcp/agente_inteligente_mcp.js",
+    "dev": "node --watch src/servidor.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -25,6 +29,7 @@
   },
   "homepage": "https://github.com/IustusRenidet/Aspel-CENIT#readme",
   "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.27.1",
     "ajv": "^8.17.1",
     "ajv-formats": "^3.0.1",
     "body-parser": "^2.2.0",
@@ -34,6 +39,7 @@
     "fs-extra": "^11.3.3",
     "js-yaml": "^4.1.1",
     "mongodb": "^6.20.0",
-    "node-firebird": "^1.1.9"
+    "node-firebird": "^1.1.9",
+    "zod": "^3.25.76"
   }
 }
