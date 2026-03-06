@@ -107,18 +107,18 @@ function addTileToCanvas(widget) {
   const id = genTileId();
   const tile = {
     id,
-    nombre:           widget.nombre || widget.name || 'Widget',
-    sistema:          widget.sistema || 'COI',
-    sql:              widget.sql || null,
+    nombre: widget.nombre || widget.name || 'Widget',
+    sistema: widget.sistema || 'COI',
+    sql: widget.sql || null,
     params_dinamicos: widget.params_dinamicos || [],
-    params_values:    widget.params_values || buildDefaultParams(widget.params_dinamicos || []),
-    viz:              widget.tipo_viz || 'tabla',
-    color:            widget.color_primario || '#6366f1',
-    labelCol:         null,
-    valueCols:        [],
-    _allCols:         [],
-    _lastData:        null,
-    _widget_id:       widget.id,
+    params_values: widget.params_values || buildDefaultParams(widget.params_dinamicos || []),
+    viz: widget.tipo_viz || 'tabla',
+    color: widget.color_primario || '#6366f1',
+    labelCol: null,
+    valueCols: [],
+    _allCols: [],
+    _lastData: null,
+    _widget_id: widget.id,
     w: 6, h: 4, x: 0, y: 0
   };
 
@@ -255,9 +255,9 @@ function abrirParamsModal(tileId) {
 function buildParamField(name, currentVal) {
   const ln = name.toLowerCase();
   const MESES = [
-    ['1','Enero'],['2','Febrero'],['3','Marzo'],['4','Abril'],
-    ['5','Mayo'],['6','Junio'],['7','Julio'],['8','Agosto'],
-    ['9','Septiembre'],['10','Octubre'],['11','Noviembre'],['12','Diciembre']
+    ['1', 'Enero'], ['2', 'Febrero'], ['3', 'Marzo'], ['4', 'Abril'],
+    ['5', 'Mayo'], ['6', 'Junio'], ['7', 'Julio'], ['8', 'Agosto'],
+    ['9', 'Septiembre'], ['10', 'Octubre'], ['11', 'Noviembre'], ['12', 'Diciembre']
   ];
   const curStr = String(currentVal ?? '');
 
@@ -266,28 +266,28 @@ function buildParamField(name, currentVal) {
     return `<div class="mcp-field">
       <label class="form-label">Mes <code>:${esc(name)}</code></label>
       <select class="form-select mcp-input" data-param="${esc(name)}">
-        ${MESES.map(([v,l]) => `<option value="${v}" ${curStr===v?'selected':''}>${l}</option>`).join('')}
+        ${MESES.map(([v, l]) => `<option value="${v}" ${curStr === v ? 'selected' : ''}>${l}</option>`).join('')}
       </select></div>`;
   }
 
   // Año
   if (['ejercicio', 'ano', 'anio', 'year'].includes(ln)) {
     const now = new Date().getFullYear();
-    const years = Array.from({length: now - 2014}, (_, i) => now + 1 - i);
+    const years = Array.from({ length: now - 2014 }, (_, i) => now + 1 - i);
     return `<div class="mcp-field">
       <label class="form-label">Año <code>:${esc(name)}</code></label>
       <select class="form-select mcp-input" data-param="${esc(name)}">
-        ${years.map(y => `<option value="${y}" ${curStr===String(y)?'selected':''}>${y}</option>`).join('')}
+        ${years.map(y => `<option value="${y}" ${curStr === String(y) ? 'selected' : ''}>${y}</option>`).join('')}
       </select></div>`;
   }
 
   // Tipo póliza
   if (['tipo', 'tipo_pol', 'tipo_poliza'].includes(ln)) {
-    const opts = [['todas','Todas'],['I','Ingreso (I)'],['E','Egreso (E)'],['D','Diario (D)']];
+    const opts = [['todas', 'Todas'], ['I', 'Ingreso (I)'], ['E', 'Egreso (E)'], ['D', 'Diario (D)']];
     return `<div class="mcp-field">
       <label class="form-label">Tipo de póliza <code>:${esc(name)}</code></label>
       <select class="form-select mcp-input" data-param="${esc(name)}">
-        ${opts.map(([v,l]) => `<option value="${v}" ${curStr===v?'selected':''}>${l}</option>`).join('')}
+        ${opts.map(([v, l]) => `<option value="${v}" ${curStr === v ? 'selected' : ''}>${l}</option>`).join('')}
       </select></div>`;
   }
 
@@ -297,7 +297,7 @@ function buildParamField(name, currentVal) {
       <label class="form-label">Nivel de cuenta <code>:${esc(name)}</code></label>
       <select class="form-select mcp-input" data-param="${esc(name)}">
         <option value="">Todos</option>
-        ${[1,2,3,4,5,6].map(n => `<option value="${n}" ${curStr===String(n)?'selected':''}>${n}</option>`).join('')}
+        ${[1, 2, 3, 4, 5, 6].map(n => `<option value="${n}" ${curStr === String(n) ? 'selected' : ''}>${n}</option>`).join('')}
       </select></div>`;
   }
 
@@ -307,9 +307,9 @@ function buildParamField(name, currentVal) {
       <label class="form-label">Estatus <code>:${esc(name)}</code></label>
       <select class="form-select mcp-input" data-param="${esc(name)}">
         <option value="">Todos</option>
-        <option value="A" ${curStr==='A'?'selected':''}>Activo (A)</option>
-        <option value="C" ${curStr==='C'?'selected':''}>Cancelado (C)</option>
-        <option value="S" ${curStr==='S'?'selected':''}>Suspendido (S)</option>
+        <option value="A" ${curStr === 'A' ? 'selected' : ''}>Activo (A)</option>
+        <option value="C" ${curStr === 'C' ? 'selected' : ''}>Cancelado (C)</option>
+        <option value="S" ${curStr === 'S' ? 'selected' : ''}>Suspendido (S)</option>
       </select></div>`;
   }
 
@@ -319,8 +319,8 @@ function buildParamField(name, currentVal) {
       <label class="form-label">Naturaleza <code>:${esc(name)}</code></label>
       <select class="form-select mcp-input" data-param="${esc(name)}">
         <option value="">Todas</option>
-        <option value="D" ${curStr==='D'?'selected':''}>Deudora (D)</option>
-        <option value="A" ${curStr==='A'?'selected':''}>Acreedora (A)</option>
+        <option value="D" ${curStr === 'D' ? 'selected' : ''}>Deudora (D)</option>
+        <option value="A" ${curStr === 'A' ? 'selected' : ''}>Acreedora (A)</option>
       </select></div>`;
   }
 
@@ -411,8 +411,8 @@ function aplicarCustomizacion() {
   if (!tile) return;
 
   tile.nombre = document.getElementById('mcc-titulo').value.trim() || tile.nombre;
-  tile.color  = document.getElementById('mcc-color').value;
-  tile.viz    = modal.querySelector('#mcc-viz-toggle .viz-btn.active')?.dataset.viz || tile.viz;
+  tile.color = document.getElementById('mcc-color').value;
+  tile.viz = modal.querySelector('#mcc-viz-toggle .viz-btn.active')?.dataset.viz || tile.viz;
 
   const labelSel = document.getElementById('mcc-label-col');
   if (labelSel) tile.labelCol = labelSel.value;
@@ -475,17 +475,17 @@ async function guardarCanvas() {
   const layout = gs ? gs.save(false) : [];
 
   const tilesArr = Object.values(canvasState.tiles).map(t => ({
-    id:               t.id,
-    nombre:           t.nombre,
-    sistema:          t.sistema,
-    sql:              t.sql,
+    id: t.id,
+    nombre: t.nombre,
+    sistema: t.sistema,
+    sql: t.sql,
     params_dinamicos: t.params_dinamicos,
-    params_values:    t.params_values,
-    viz:              t.viz,
-    color:            t.color,
-    labelCol:         t.labelCol,
-    valueCols:        t.valueCols,
-    _widget_id:       t._widget_id
+    params_values: t.params_values,
+    viz: t.viz,
+    color: t.color,
+    labelCol: t.labelCol,
+    valueCols: t.valueCols,
+    _widget_id: t._widget_id
   }));
 
   const payload = {
@@ -529,23 +529,23 @@ async function cargarLibreria() {
 
     lib.innerHTML = widgets.map(w => {
       const hasParams = w.params_dinamicos?.length > 0;
-      const vizIcons = { tabla:'⊞', barra:'▊', linea:'╱', pastel:'◑', kpi:'◈', area:'▲' };
+      const vizIcons = { tabla: '⊞', barra: '▊', linea: '╱', pastel: '◑', kpi: '◈', area: '▲' };
       return `<div class="lib-item">
         <div class="lib-item-top">
           <span class="lib-viz-icon">${vizIcons[w.tipo_viz] || '⊞'}</span>
           <span class="lib-item-name" title="${esc(w.nombre)}">${esc(w.nombre)}</span>
-          <span class="badge badge-${(w.sistema||'').toLowerCase()}">${esc(w.sistema||'?')}</span>
+          <span class="badge badge-${(w.sistema || '').toLowerCase()}">${esc(w.sistema || '?')}</span>
         </div>
         ${w.descripcion ? `<p class="lib-item-desc">${esc(w.descripcion.slice(0, 50))}${w.descripcion.length > 50 ? '…' : ''}</p>` : ''}
         ${hasParams ? `<div class="lib-params">${w.params_dinamicos.map(p => `<code>:${esc(p)}</code>`).join(' ')}</div>` : ''}
         <button class="btn btn-sm btn-primary lib-add-btn"
           data-wid="${esc(w.id)}"
           data-nombre="${esc(w.nombre)}"
-          data-sistema="${esc(w.sistema||'')}"
-          data-sql="${esc(w.sql||'')}"
-          data-color="${esc(w.color_primario||'#6366f1')}"
-          data-viz="${esc(w.tipo_viz||'tabla')}"
-          data-params='${JSON.stringify(w.params_dinamicos||[])}'
+          data-sistema="${esc(w.sistema || '')}"
+          data-sql="${esc(w.sql || '')}"
+          data-color="${esc(w.color_primario || '#6366f1')}"
+          data-viz="${esc(w.tipo_viz || 'tabla')}"
+          data-params='${JSON.stringify(w.params_dinamicos || [])}'
           title="Agregar al canvas">+ Agregar</button>
       </div>`;
     }).join('');
@@ -553,14 +553,14 @@ async function cargarLibreria() {
     lib.querySelectorAll('.lib-add-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         let params_din = [];
-        try { params_din = JSON.parse(btn.dataset.params || '[]'); } catch(_) {}
+        try { params_din = JSON.parse(btn.dataset.params || '[]'); } catch (_) { }
         addTileToCanvas({
-          id:               btn.dataset.wid,
-          nombre:           btn.dataset.nombre,
-          sistema:          btn.dataset.sistema,
-          sql:              btn.dataset.sql,
-          tipo_viz:         btn.dataset.viz,
-          color_primario:   btn.dataset.color,
+          id: btn.dataset.wid,
+          nombre: btn.dataset.nombre,
+          sistema: btn.dataset.sistema,
+          sql: btn.dataset.sql,
+          tipo_viz: btn.dataset.viz,
+          color_primario: btn.dataset.color,
           params_dinamicos: params_din
         });
       });
@@ -575,7 +575,7 @@ async function cargarLibreria() {
 // Intercepta la función navegar de app.js para inicializar el canvas
 document.addEventListener('DOMContentLoaded', () => {
   const originalNavegar = window.navegar;
-  window.navegar = function(vista) {
+  window.navegar = function (vista) {
     originalNavegar(vista);
     if (vista === 'canvas') {
       setTimeout(() => {

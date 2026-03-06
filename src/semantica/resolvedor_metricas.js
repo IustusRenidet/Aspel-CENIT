@@ -6,6 +6,23 @@
  */
 
 const CargadorYAML = require('./cargador_yaml');
+const analizadorCalidad = require('./calidad_datos');
+
+// ── Extrae nombres de tabla de la cláusula FROM de una query SQL ─────────────
+function _extraerTablasDeQuery(sql) {
+  const tablas = new Set();
+  // Captura el token inmediatamente después de FROM, JOIN, o JOIN ... ON
+  const re = /\b(?:FROM|JOIN)\s+([\w$#]+)/gi;
+  let m;
+  while ((m = re.exec(sql)) !== null) {
+    const candidato = m[1].toUpperCase();
+    // Excluir palabras clave SQL que puedan seguir a FROM en subqueries
+    if (!/^(SELECT|WHERE|WITH|DUAL|TEMP|TMP)$/i.test(candidato)) {
+      tablas.add(candidato);
+    }
+  }
+  return [...tablas];
+}
 
 class ResolvedorMetricas {
   constructor(duckdbConnection = null) {
@@ -31,7 +48,7 @@ class ResolvedorMetricas {
   async resolver(metricaId, parametros = {}, sistema = null) {
     // Buscar la métrica
     const metrica = await this.cargador.buscarMetrica(metricaId, sistema);
-    
+
     if (!metrica) {
       throw new Error(`Métrica no encontrada: ${metricaId}`);
     }
@@ -51,7 +68,7 @@ class ResolvedorMetricas {
     // Formatear resultado
     const resultado = this.formatearResultado(metrica, datos);
 
-    return {
+    const respuesta = {
       metrica_id: metrica.id,
       nombre: metrica.nombre,
       descripcion: metrica.descripcion,
@@ -66,6 +83,16 @@ class ResolvedorMetricas {
         query_ejecutado: query
       }
     };
+
+    // ── Diagnóstico para resultados vacíos ──────────────────────────────────
+    if (Array.isArray(datos) && datos.length === 0) {
+      respuesta.diagnostico_cero_resultados = await this._diagnosticarCeroResultados(
+        query,
+        metrica.sistema || sistema
+      );
+    }
+
+    return respuesta;
   }
 
   /**
@@ -84,7 +111,7 @@ class ResolvedorMetricas {
       // Validar tipo
       if (param.nombre in parametros) {
         const valor = parametros[param.nombre];
-        
+
         if (!this.validarTipoParametro(valor, param.tipo)) {
           errores.push(
             `Parámetro "${param.nombre}" debe ser de tipo ${param.tipo}, recibido: ${typeof valor}`
@@ -147,10 +174,10 @@ class ResolvedorMetricas {
     // Reemplazar placeholders {nombre}
     for (const [nombre, valor] of Object.entries(parametros)) {
       const placeholder = `{${nombre}}`;
-      
+
       // Si el valor parece ser una expresión SQL, no lo escapamos
-      if (typeof valor === 'string' && 
-          (valor.includes('(') || valor.includes('CURRENT_DATE') || valor.includes('EXTRACT'))) {
+      if (typeof valor === 'string' &&
+        (valor.includes('(') || valor.includes('CURRENT_DATE') || valor.includes('EXTRACT'))) {
         query = query.replace(new RegExp(placeholder, 'g'), valor);
       } else {
         // Escapar valor según tipo
@@ -243,13 +270,13 @@ class ResolvedorMetricas {
     switch (metrica.tipo) {
       case 'escalar':
         return this.formatearEscalar(metrica, datos);
-      
+
       case 'serie':
         return this.formatearSerie(metrica, datos);
-      
+
       case 'tabla':
         return this.formatearTabla(metrica, datos);
-      
+
       default:
         return datos;
     }
@@ -299,18 +326,18 @@ class ResolvedorMetricas {
     return {
       filas: datos.map(fila => {
         const filaFormateada = {};
-        
+
         for (const [columna, valor] of Object.entries(fila)) {
           const config = columnasConfig.find(c => c.nombre === columna);
-          
+
           filaFormateada[columna] = {
             valor,
-            valor_formateado: config 
+            valor_formateado: config
               ? this.aplicarFormatoColumna(valor, config)
               : valor
           };
         }
-        
+
         return filaFormateada;
       }),
       columnas: columnasConfig
@@ -382,7 +409,7 @@ class ResolvedorMetricas {
 
     if (alerta.tipo === 'umbral') {
       const nivel = this.evaluarUmbral(valor, alerta);
-      
+
       if (nivel) {
         return {
           activa: true,
@@ -434,6 +461,69 @@ class ResolvedorMetricas {
     if (condicion.includes('!=')) return valor !== umbral;
 
     return false;
+  }
+
+  /**
+   * Genera un mensaje diagnóstico cuando una query retorna 0 filas.
+   * Intenta consultar calidad de datos en Firebird; si no está disponible,
+   * devuelve un mensaje genérico basado en la query.
+   *
+   * @param {string} query    La query SQL que produjo 0 resultados
+   * @param {string} sistema  Sistema Aspel (SAE, COI, etc.)
+   * @returns {Promise<string>}
+   * @private
+   */
+  async _diagnosticarCeroResultados(query, sistema) {
+    const tablas = _extraerTablasDeQuery(query);
+    if (tablas.length === 0) {
+      return 'La consulta no retornó registros. Verifica los filtros aplicados.';
+    }
+
+    // Sin sistema no podemos consultar Firebird
+    if (!sistema) {
+      return `La(s) tabla(s) ${tablas.join(', ')} no retornaron registros. Verifica los filtros aplicados.`;
+    }
+
+    const resultados = [];
+
+    for (const tabla of tablas.slice(0, 3)) {   // máximo 3 tablas para no ser costoso
+      try {
+        const disponible = await analizadorCalidad.firebirdDisponible(sistema);
+        if (!disponible) {
+          resultados.push(
+            `La tabla ${tabla} no retornó registros para los filtros aplicados.`
+          );
+          continue;
+        }
+
+        const info = await analizadorCalidad.analizarTabla(sistema, tabla);
+
+        if (!info.disponible) {
+          resultados.push(`La tabla ${tabla} no existe o no es accesible en ${sistema}.`);
+          continue;
+        }
+
+        if (info.completitud_promedio === 0 || info.completitud_promedio === null) {
+          resultados.push(`La tabla ${tabla} parece estar vacía en ${sistema}.`);
+        } else if (info.completitud_promedio < 50) {
+          resultados.push(
+            `La tabla ${tabla} tiene baja completitud de datos (${info.completitud_promedio}%). ` +
+            `Los filtros aplicados pueden estar excluyendo registros por valores nulos.`
+          );
+        } else {
+          resultados.push(
+            `La tabla ${tabla} tiene ${info.completitud_promedio}% de completitud. ` +
+            `Los filtros de fecha/importe pueden estar fuera del rango de datos disponibles.`
+          );
+        }
+      } catch {
+        resultados.push(
+          `La tabla ${tabla} no retornó registros para los filtros aplicados.`
+        );
+      }
+    }
+
+    return resultados.join(' | ') || 'La consulta no retornó registros. Verifica los filtros aplicados.';
   }
 
   /**

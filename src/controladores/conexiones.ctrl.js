@@ -2,8 +2,11 @@
 
 const ConexionesAspel = require('../servicios/conexiones_aspel');
 const { probarConexion, limpiarPool } = require('../conectores/firebird/conexion');
+const ConstructorDiccionario = require('../semantica/constructor_diccionario');
+const InteligenciaAspel = require('../servicios/inteligencia_aspel');
 
 const servicio = new ConexionesAspel();
+const inteligencia = new InteligenciaAspel();
 
 function manejarError(res, error, status = 500) {
     return res.status(status).json({ ok: false, error: error.message || 'Error interno' });
@@ -38,9 +41,77 @@ async function actualizar(req, res) {
         // Resetear pool para que tome la nueva config
         try { limpiarPool(sistema); } catch (_) { }
 
-        return res.json({ ok: true, mensaje: `Conexión ${sistema} actualizada`, data: servicio.ocultarSecreto(actualizado) });
+        // Intentar refrescar el diccionario técnico con la nueva conexión
+        let esquema_info = { esquema_actualizado: false };
+        try {
+            const constructor = new ConstructorDiccionario();
+            const dic = await constructor.refrescarSiConectado(sistema);
+            if (dic.origen_datos === 'live') {
+                await inteligencia.recargar();
+                esquema_info = { esquema_actualizado: true, tablas: dic.tablas, campos: dic.campos };
+            } else {
+                esquema_info = { esquema_actualizado: false, motivo: 'Firebird no disponible aún' };
+            }
+        } catch (e) {
+            esquema_info = { esquema_actualizado: false, motivo: e.message };
+        }
+
+        return res.json({
+            ok: true,
+            mensaje: `Conexión ${sistema} actualizada`,
+            data: servicio.ocultarSecreto(actualizado),
+            ...esquema_info
+        });
     } catch (error) {
         return manejarError(res, error, 400);
+    }
+}
+
+/** POST /api/conexiones/:sistema/sincronizar-esquema → forzar sincronización del diccionario técnico */
+async function sincronizarEsquema(req, res) {
+    try {
+        const sistema = req.params.sistema.toUpperCase();
+
+        // Leer baseline actual para calcular diffs
+        const fs = require('fs');
+        const path = require('path');
+        const catalogoPath = path.join(__dirname, '../../diccionario', `catalogo_tecnico_${sistema}.json`);
+        let tablas_antes = 0, campos_antes = 0;
+        try {
+            const catalogo = JSON.parse(fs.readFileSync(catalogoPath, 'utf8'));
+            const tabls = catalogo.tablas || catalogo;
+            tablas_antes = Array.isArray(tabls) ? tabls.length : Object.keys(tabls).length;
+            campos_antes = Array.isArray(tabls)
+                ? tabls.reduce((s, t) => s + (t.campos?.length || 0), 0)
+                : Object.values(tabls).reduce((s, t) => s + (t.campos?.length || 0), 0);
+        } catch (_) { /* sin baseline previo */ }
+
+        const constructor = new ConstructorDiccionario();
+        const dic = await constructor.refrescarSiConectado(sistema);
+
+        if (!dic.ok || dic.origen_datos !== 'live') {
+            return res.status(502).json({
+                ok: false,
+                sistema,
+                origen_datos: dic.origen_datos,
+                motivo: 'No se pudo conectar a Firebird para leer el esquema en vivo'
+            });
+        }
+
+        await inteligencia.recargar();
+
+        return res.json({
+            ok: true,
+            sistema,
+            origen_datos: dic.origen_datos,
+            tablas: dic.tablas,
+            campos: dic.campos,
+            tablas_nuevas: dic.tablas - tablas_antes,
+            campos_nuevos: dic.campos - campos_antes,
+            tablas_eliminadas: Math.max(0, tablas_antes - dic.tablas)
+        });
+    } catch (error) {
+        return manejarError(res, error, 500);
     }
 }
 
@@ -76,4 +147,4 @@ async function probarTodas(_req, res) {
     }
 }
 
-module.exports = { obtenerTodas, obtenerUna, actualizar, probarUna, probarTodas };
+module.exports = { obtenerTodas, obtenerUna, actualizar, probarUna, probarTodas, sincronizarEsquema };

@@ -1,5 +1,7 @@
 const InteligenciaAspel = require('../servicios/inteligencia_aspel');
 const EjecutorMetricas = require('../servicios/ejecutor_metricas');
+const analizador = require('../semantica/calidad_datos');
+const generadorQueries = require('../servicios/generador_queries');
 
 const inteligencia = new InteligenciaAspel();
 const ejecutor = new EjecutorMetricas();
@@ -55,20 +57,18 @@ async function listarSistemas(_req, res) {
 
 async function listarMetricas(req, res) {
   try {
-    const metricas = await inteligencia.listarMetricas({
+    const resultado = await inteligencia.listarMetricas({
       sistema: req.query.sistema,
       categoria: req.query.categoria,
       tipo: req.query.tipo,
+      modulo: req.query.modulo,
       texto: req.query.texto || req.query.q,
-      limite: req.query.limite,
+      page: req.query.page,
+      limit: req.query.limit || req.query.limite,
       incluir_query: req.query.incluir_query === 'true'
     });
 
-    return res.json({
-      ok: true,
-      total: metricas.length,
-      data: metricas
-    });
+    return res.json({ ok: true, ...resultado });
   } catch (error) {
     return manejarError(res, error);
   }
@@ -236,10 +236,41 @@ async function describirTabla(req, res) {
   }
 }
 
+async function calidadTabla(req, res) {
+  const { sistema, tabla } = req.params;
+
+  try {
+    // Verificar disponibilidad antes de correr queries costosas
+    const disponible = await analizador.firebirdDisponible(sistema);
+    if (!disponible) {
+      return res.json({
+        ok: true,
+        disponible: false,
+        motivo: `Conexión Firebird no disponible para ${sistema.toUpperCase()}`
+      });
+    }
+
+    const resultado = await analizador.analizarTablaCompleto(sistema, tabla);
+    return res.json({ ok: true, data: resultado });
+  } catch (error) {
+    return manejarError(res, error);
+  }
+}
+
 async function recargarContexto(_req, res) {
   try {
     await inteligencia.recargar();
     return res.json({ ok: true, mensaje: 'Contexto recargado correctamente' });
+  } catch (error) {
+    return manejarError(res, error);
+  }
+}
+
+async function generarQueryNL(req, res) {
+  try {
+    const { descripcion, sistema } = req.body;
+    const resultado = await generadorQueries.generarQuery(sistema, descripcion);
+    return res.json({ ok: true, ...resultado });
   } catch (error) {
     return manejarError(res, error);
   }
@@ -257,5 +288,7 @@ module.exports = {
   ejecutarDashboard,
   listarTablas,
   describirTabla,
-  recargarContexto
+  calidadTabla,
+  recargarContexto,
+  generarQueryNL,
 };

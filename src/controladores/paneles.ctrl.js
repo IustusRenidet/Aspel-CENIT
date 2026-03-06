@@ -8,9 +8,32 @@ function manejarError(res, error, status = 500) {
     return res.status(status).json({ ok: false, error: error.message || 'Error interno' });
 }
 
-async function listar(_req, res) {
+function parsePaginacion(query) {
+    const limit = Math.max(1, Math.min(Number(query.limit) || 20, 100));
+    const page = Math.max(1, Number(query.page) || 1);
+    return { page, limit, offset: (page - 1) * limit };
+}
+
+async function listar(req, res) {
     try {
-        return res.json({ ok: true, data: servicio.listar() });
+        const { page, limit, offset } = parsePaginacion(req.query);
+        const q = req.query.q ? String(req.query.q).toLowerCase() : null;
+
+        let data = servicio.listar();
+
+        // Filtro por texto (nombre u objetivo)
+        if (q) {
+            data = data.filter((p) =>
+                (p.nombre || '').toLowerCase().includes(q) ||
+                (p.objetivo || '').toLowerCase().includes(q)
+            );
+        }
+
+        const total = data.length;
+        const totalPages = Math.ceil(total / limit) || 1;
+        const paginados = data.slice(offset, offset + limit);
+
+        return res.json({ ok: true, data: paginados, total, page, limit, totalPages });
     } catch (error) {
         return manejarError(res, error);
     }

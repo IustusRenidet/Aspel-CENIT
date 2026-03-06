@@ -219,6 +219,67 @@ const VIZ_RULES = [
     { viz: 'tabla', palabras: ['tabla', 'listado', 'lista', 'detalle', 'desglose', 'grid'] },
 ];
 
+// ─────────────────────────────────────────────────────────────
+// STEMMING ESPAÑOL SIMPLE
+// raíz (4-6 letras) → variantes consideradas equivalentes
+// Se usa para expandir la detección de columnas y filtros.
+// ─────────────────────────────────────────────────────────────
+const STEM_MAP = {
+    'vent': ['ventas', 'venta', 'vendido', 'vendidos', 'vender', 'vendio', 'vendieron'],
+    'compr': ['compra', 'compras', 'comprar', 'comprado', 'comprados', 'compraron'],
+    'factur': ['factura', 'facturas', 'facturar', 'facturacion', 'facturado'],
+    'cobr': ['cobro', 'cobros', 'cobrar', 'cobrado', 'cobranza', 'cobraron'],
+    'pag': ['pago', 'pagos', 'pagar', 'pagado', 'pagaron'],
+    'sald': ['saldo', 'saldos', 'saldado'],
+    'utilid': ['utilidad', 'utilidades', 'utilidad bruta', 'utilidad neta'],
+    'marg': ['margen', 'margenes', 'margen bruto'],
+    'invent': ['inventario', 'inventarios', 'stock', 'existencia', 'existencias'],
+    'proveeds': ['proveedor', 'proveedores'],
+    'clien': ['cliente', 'clientes', 'clave cliente'],
+    'vended': ['vendedor', 'vendedores', 'asesor', 'agente ventas'],
+    'poliz': ['poliza', 'polizas', 'póliza', 'pólizas', 'asiento', 'asientos'],
+    'presup': ['presupuesto', 'presupuestos', 'ppto', 'budget'],
+    'vari': ['variacion', 'variación', 'variaciones', 'diferencia', 'desviacion'],
+};
+
+// Índice inverso: variante → raíz (construido en arranque)
+const _STEM_INDEX = (() => {
+    const idx = new Map();
+    for (const [raiz, variantes] of Object.entries(STEM_MAP)) {
+        for (const v of variantes) idx.set(v, raiz);
+        idx.set(raiz, raiz);
+    }
+    return idx;
+})();
+
+/** Devuelve la raíz del término si existe en el STEM_INDEX, si no el término mismo */
+function stemOf(term) {
+    return _STEM_INDEX.get(term) || term;
+}
+
+/** Versión stem-aware de `contains`: verdadera si el texto contiene la frase
+ *  O si algún token del texto comparte raíz con algún token de la frase */
+function stemContains(texto, frase) {
+    if (contains(texto, frase)) return true;
+    // tokeniza frase y texto, cruza por raíz
+    const fraseTokens = frase.split(/\s+/);
+    const textoTokens = texto.split(/\s+/);
+    const raicesFrase = new Set(fraseTokens.map(stemOf));
+    return textoTokens.some(t => raicesFrase.has(stemOf(t)));
+}
+
+// ─────────────────────────────────────────────────────────────
+// TÉRMINOS DE EXCLUSIÓN → códigos de estatus a filtrar
+// ─────────────────────────────────────────────────────────────
+const EXCLUSION_TERMS = [
+    { patrones: [/\bsin\s+cancelad/, /\bexcluir\s+cancelad/, /\bexcluyendo\s+cancelad/, /\bno\s+cancelad/], codigos: ['CANCEL', 'CA'] },
+    { patrones: [/\bsin\s+devoluc/, /\bexcluir\s+devoluc/, /\bexcluyendo\s+devoluc/], codigos: ['DEV', 'DEVOL', 'NC'] },
+    { patrones: [/\bsin\s+notas?\s+cr/, /\bexcluir\s+notas?\s+cr/], codigos: ['NC', 'NCC'] },
+    { patrones: [/\bsin\s+pendient/, /\bexcluir\s+pendient/, /\bexcluyendo\s+pendient/], codigos: ['PEND', 'P'] },
+    { patrones: [/\bsolo\s+(?:las\s+)?vigentes?/, /\bnicamente\s+vigentes?/], codigos: ['CANCEL', 'CA', 'DEV'] },
+    { patrones: [/\bsin\s+cerrad/, /\bexcluir\s+cerrad/, /\bexcluyendo\s+cerrad/], codigos: ['CER', 'CERR'] },
+];
+
 // ═══════════════════════════════════════════════════════════
 //  FUNCIONES DE ANÁLISIS
 // ═══════════════════════════════════════════════════════════
@@ -321,7 +382,38 @@ function detectarFechas(texto, mes, ano) {
     };
 }
 
-/** Puntea los templates contra el texto y devuelve el mejor */
+/** Analiza qué dimensiones faltan para producir diagnóstico de baja confianza */
+function _diagnosticarFallos(texto, mejorPuntaje) {
+    const sugs = [];
+    // ¿Se mencionó algún sistema?
+    const tieneSistema =
+        /\b(sae|coi|noi|banco)\b/.test(texto) ||
+        ['ventas', 'facturas', 'poliza', 'polizas', 'auxiliar', 'balanza',
+            'nomina', 'nominas', 'cheque', 'estado de resultado'].some(p => texto.includes(p));
+    if (!tieneSistema)
+        sugs.push('No detecté sistema (SAE/COI/NOI/BANCO) — menciona el sistema o el módulo (ej. "ventas SAE", "contabilidad COI")');
+
+    // ¿Se mencionó algún periodo?
+    const tienePeriodo =
+        /\b(enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre|\bmes\b|periodo|trimestre|anio|ano|20\d{2}|este mes|mes actual|hoy|ayer)\b/.test(texto);
+    if (!tienePeriodo)
+        sugs.push('No detecté periodo de tiempo — menciona mes, año o rango (ej. "enero 2025", "del mes 1 al 3", "últimos 30 días")');
+
+    // ¿Se mencionó algún tipo de reporte?
+    const tieneReporte =
+        /\b(venta|ventas|factura|facturas|poliza|saldo|saldos|estado|balanza|auxiliar|reporte|listado|detalle|analisis|resumen|cobro|cobranza|inventario|nomina|banco)\b/.test(texto);
+    if (!tieneReporte)
+        sugs.push('No detecté tipo de reporte — describe qué datos necesitas (ej. "ventas", "pólizas", "cuentas por cobrar")');
+
+    // Si el puntaje fue muy bajo también, añade pista genérica
+    if (mejorPuntaje < 5)
+        sugs.push('La descripción es muy corta o genérica — agrega más contexto de negocio');
+
+    return sugs;
+}
+
+/** Puntea los templates contra el texto y siempre devuelve el mejor candidato.
+ *  Incluye `sugerencias_fallo` cuando confianza < 40. */
 function puntuarTemplates(texto) {
     const resultados = REGLAS_TEMPLATE.map(t => {
         let puntaje = 0;
@@ -331,18 +423,34 @@ function puntuarTemplates(texto) {
         return { ...t, puntaje };
     }).sort((a, b) => b.puntaje - a.puntaje);
 
-    return resultados[0].puntaje >= 15 ? resultados[0] : null;
+    const mejor = resultados[0];
+    const confianza = Math.min(100, Math.round((mejor.puntaje / 200) * 100));
+
+    if (mejor.puntaje < 15) {
+        // Sin match mínimo: devuelve objeto especial (ok:false se maneja en interpretar)
+        return {
+            _sinMatch: true,
+            puntaje: mejor.puntaje,
+            sugerencias_fallo: _diagnosticarFallos(texto, mejor.puntaje)
+        };
+    }
+
+    const resultado = { ...mejor };
+    if (confianza < 40) {
+        resultado.sugerencias_fallo = _diagnosticarFallos(texto, mejor.puntaje);
+    }
+    return resultado;
 }
 
-/** Detecta columnas pedidas explícitamente */
+/** Detecta columnas pedidas explícitamente (con stemming español simple) */
 function detectarColumnas(texto, templateId) {
     const template = COLUMNAS_KEYWORDS;
     const activas = new Set();
 
-    // Detectar por keywords
+    // Detectar por keywords — usa stemContains para matchear variantes morfológicas
     for (const [colId, frases] of Object.entries(template)) {
         for (const frase of frases) {
-            if (contains(texto, frase)) {
+            if (stemContains(texto, frase)) {
                 activas.add(colId);
                 // Añadir complementos automáticos
                 const comps = COMPLEMENTOS[colId] || [];
@@ -408,6 +516,151 @@ function detectarCanceladas(texto) {
         return 'si';
     }
     return 'no';
+}
+
+// ═══════════════════════════════════════════════════════════
+//  DETECCIÓN DE FILTROS DE NEGOCIO COMPUESTOS
+// ═══════════════════════════════════════════════════════════
+
+/**
+ * detectarFiltrosNegocio(texto) → filtros_adicionales[]
+ *
+ * Detecta cuatro clases de filtros:
+ *  · umbral   → { tipo:'umbral',    campo, operador, valor }
+ *  · topN     → { tipo:'top_n',     limite, orden }
+ *  · rango    → { tipo:'rango_fecha', fecha_inicio, fecha_fin }
+ *  · exclusion→ { tipo:'exclusion',  excluir: [] }
+ */
+function detectarFiltrosNegocio(texto) {
+    const filtros = [];
+
+    // ── 1. UMBRAL NUMÉRICO ───────────────────────────────────
+    // Mapeo de campos de negocio reconocibles en el texto
+    const CAMPOS_UMBRAL = [
+        [/(saldo\s+(?:de\s+)?(?:cliente|clientes)?|saldo\s+por\s+cobrar)/, 'saldo'],
+        [/total\s+(?:de\s+)?(?:venta|ventas)?/, 'total'],
+        [/monto/, 'monto'],
+        [/importe/, 'importe'],
+        [/precio/, 'precio'],
+        [/deuda/, 'deuda'],
+        [/cartera/, 'cartera'],
+        [/utilidad/, 'utilidad'],
+        [/venta[s]?/, 'ventas'],
+        [/compra[s]?/, 'compras'],
+        [/factura[s]?/, 'factura'],
+    ];
+
+    const MULT_MAP = { mil: 1e3, miles: 1e3, millon: 1e6, millones: 1e6, mdp: 1e6 };
+
+    // Operadores: símbolo + lenguaje natural
+    const OP_PATS = [
+        [/(?:mayor\s+(?:a|que)|mas\s+de|superior\s+a|>=|>\s*)/, '>='],
+        [/(?:menor\s+(?:a|que)|menos\s+de|inferior\s+a|<=|<\s*)/, '<='],
+        [/(?:igual\s+a|==?)/, '='],
+    ];
+
+    // Detecta patrón: [campo?] [operador] [número] [multiplicador?]
+    // IMPORTANTE: millon(es) debe ir ANTES de mil(es) para que el alternador no engulla el prefijo
+    const numRe = /([\d,.]+)\s*(millon(?:es)?|mil(?:es)?|mdp)?/g;
+    let m;
+    while ((m = numRe.exec(texto)) !== null) {
+        let val = parseFloat(m[1].replace(/,/g, ''));
+        if (!Number.isFinite(val)) continue;
+        // Excluir años (1900-2199) y números de un solo dígito sin multiplicador
+        if (!m[2] && ((val >= 1900 && val <= 2199) || val < 2)) continue;
+        if (m[2] && MULT_MAP[m[2]]) val *= MULT_MAP[m[2]];
+
+        // Buscar operador justo antes del número (ventana de 40 chars)
+        const ventana = texto.slice(Math.max(0, m.index - 40), m.index);
+        let operador = null;
+        for (const [re, op] of OP_PATS) {
+            if (re.test(ventana)) { operador = op; break; }
+        }
+        if (!operador) continue; // sin operador no es un filtro
+
+        // Buscar campo en ventana extendida (80 chars)
+        const ventanaCampo = texto.slice(Math.max(0, m.index - 80), m.index);
+        let campo = 'valor';
+        for (const [re, nombre] of CAMPOS_UMBRAL) {
+            if (re.test(ventanaCampo)) { campo = nombre; break; }
+        }
+
+        filtros.push({ tipo: 'umbral', campo, operador, valor: val });
+    }
+
+    // ── 2. TOP N ─────────────────────────────────────────────
+    // "top 10 productos", "los 5 mejores vendedores", "primeros 20"
+    const topRe = /(?:top\s+(\d+)|los?\s+(\d+)\s+(?:mejores?|mayores?|principales?|primeros?)|(?:primeros?|mejores?)\s+(\d+))/g;
+    while ((m = topRe.exec(texto)) !== null) {
+        const n = Number(m[1] || m[2] || m[3]);
+        if (n > 0 && n <= 10000) {
+            // No duplicar si ya hay uno
+            if (!filtros.some(f => f.tipo === 'top_n')) {
+                const ordenPat = /(?:peores?|menores?|ultimos?|infracc)/;
+                filtros.push({ tipo: 'top_n', limite: n, orden: ordenPat.test(texto) ? 'asc' : 'desc' });
+            }
+        }
+    }
+    // "los N menores" (bottom-N)
+    const botRe = /(?:los?\s+(\d+)\s+(?:peores?|menores?|ultimos?)|(?:ultimos?|peores?)\s+(\d+))/g;
+    while ((m = botRe.exec(texto)) !== null) {
+        const n = Number(m[1] || m[2]);
+        if (n > 0 && !filtros.some(f => f.tipo === 'top_n')) {
+            filtros.push({ tipo: 'top_n', limite: n, orden: 'asc' });
+        }
+    }
+
+    // ── 3. RANGO DE FECHAS ───────────────────────────────────
+    // "entre enero y marzo", "de enero a marzo 2024", "del mes 1 al 3"
+    const hoy = new Date();
+    const anoActual = hoy.getFullYear();
+
+    const mesKeys = Object.keys(MESES).join('|');
+    const rangoNombreRe = new RegExp(
+        `de(?:l)?\\s+(${mesKeys})\\s+(?:a(?:l)?|hasta|y)\\s+(${mesKeys})(?:\\s+(20\\d{2}))?` +
+        `|entre\\s+(${mesKeys})\\s+y\\s+(${mesKeys})(?:\\s+(20\\d{2}))?`,
+        'g'
+    );
+    while ((m = rangoNombreRe.exec(texto)) !== null) {
+        const mesIniNom = m[1] || m[4];
+        const mesFinNom = m[2] || m[5];
+        const ano = Number(m[3] || m[6] || anoActual);
+        const mi = MESES[mesIniNom];
+        const mf = MESES[mesFinNom];
+        if (mi && mf) {
+            const ini = `${ano}-${String(mi).padStart(2, '0')}-01`;
+            const ult = new Date(ano, mf, 0);
+            const fin = ult.toISOString().slice(0, 10);
+            filtros.push({ tipo: 'rango_fecha', fecha_inicio: ini, fecha_fin: fin });
+        }
+    }
+
+    // "del mes N al M"
+    const rangoNumRe = /del?\s+mes\s+(\d{1,2})\s+al?\s+(\d{1,2})(?:\s+(?:de\s+)?(20\d{2}))?/g;
+    while ((m = rangoNumRe.exec(texto)) !== null) {
+        const mi = Number(m[1]), mf = Number(m[2]);
+        const ano = Number(m[3] || anoActual);
+        if (mi >= 1 && mi <= 12 && mf >= 1 && mf <= 12 && !filtros.some(f => f.tipo === 'rango_fecha')) {
+            const ini = `${ano}-${String(mi).padStart(2, '0')}-01`;
+            const ult = new Date(ano, mf, 0);
+            filtros.push({ tipo: 'rango_fecha', fecha_inicio: ini, fecha_fin: ult.toISOString().slice(0, 10) });
+        }
+    }
+
+    // ── 4. EXCLUSIONES ───────────────────────────────────────
+    for (const { patrones, codigos } of EXCLUSION_TERMS) {
+        if (patrones.some(re => re.test(texto))) {
+            const yaExiste = filtros.find(f => f.tipo === 'exclusion');
+            if (yaExiste) {
+                // Unir sin duplicar
+                codigos.forEach(c => { if (!yaExiste.excluir.includes(c)) yaExiste.excluir.push(c); });
+            } else {
+                filtros.push({ tipo: 'exclusion', excluir: [...codigos] });
+            }
+        }
+    }
+
+    return filtros;
 }
 
 // ═══════════════════════════════════════════════════════════
@@ -514,10 +767,11 @@ function interpretar(texto) {
 
     // 1. ── Detectar template ──────────────────────────────────
     const templateGanador = puntuarTemplates(norm);
-    if (!templateGanador) {
+    if (templateGanador._sinMatch) {
         return {
             ok: false,
             error: 'No pude identificar qué tipo de análisis necesitas. Prueba describir con más detalle.',
+            sugerencias_fallo: templateGanador.sugerencias_fallo || [],
             sugerencias: [
                 '📊 "Estado de resultados de COI vs presupuesto del mes de junio"',
                 '💰 "Ventas de SAE del mes pasado con cliente y total"',
@@ -563,13 +817,26 @@ function interpretar(texto) {
         };
     }
 
-    // 4. ── Detectar columnas ──────────────────────────────────
+    // 4. ── Detectar filtros de negocio compuestos ─────────────
+    const filtros_adicionales = detectarFiltrosNegocio(norm);
+
+    // 4b. Si hay un rango de fecha en filtros_adicionales y sistema es SAE,
+    //     sobrescribe las fechas calculadas por detectarFechas (más fino)
+    if (sistema === 'SAE') {
+        const rangoFiltro = filtros_adicionales.find(f => f.tipo === 'rango_fecha');
+        if (rangoFiltro) {
+            params.fecha_ini = rangoFiltro.fecha_inicio;
+            params.fecha_fin = rangoFiltro.fecha_fin;
+        }
+    }
+
+    // 5. ── Detectar columnas ──────────────────────────────────
     const columnas = detectarColumnas(norm, tipo);
 
-    // 5. ── Detectar viz ───────────────────────────────────────
+    // 6. ── Detectar viz ───────────────────────────────────────
     const viz = detectarViz(norm) || 'tabla';
 
-    // 6. ── Generar explicación amigable ───────────────────────
+    // 7. ── Generar explicación amigable ───────────────────────
     const decisiones = generarExplicacion(tipo, params, columnas, viz);
 
     return {
@@ -578,8 +845,10 @@ function interpretar(texto) {
         sistema,
         params,
         columnas,
+        filtros_adicionales,
         viz,
         confianza,
+        ...(templateGanador.sugerencias_fallo ? { sugerencias_fallo: templateGanador.sugerencias_fallo } : {}),
         interpretacion: {
             texto_original: texto,
             entendido: decisiones[1]?.replace(/\*\*/g, '') || tipo,

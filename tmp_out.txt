@@ -1,0 +1,23 @@
+============================================================
+ CENIT ASP - API Inteligente + Constructor de Dashboards
+============================================================
+Servidor:  http://localhost:3000
+Salud API: http://localhost:3000/api/health
+API Docs:  http://localhost:3000/api/docs
+Comando principal: npm start
+============================================================
+[ETL] Job registrado: precalentar_populares (0 * * * *)
+[ETL] Job registrado: validar_conexiones (*/5 * * * *)
+[Firebird] Pool creado → SAE (SAE90EMPRE01.FDB)
+[Firebird] Pool creado → COI (COI10EMPRE1.FDB)
+[Firebird] Pool creado → NOI (NOI11EMPRE01.FDB)
+[Firebird] Pool creado → BANCO (BAN60EMPRE01.FDB)
+[duckdb/indice] Caché analítica inicializada → C:\Users\Frida Sophia\Desktop\DESARROLLOS\Aspel-CENIT\config\cenit_cache.duckdb
+💾 Diccionario guardado en: diccionario\catalogo_tecnico_SAE.json
+[Diccionario] SAE: live (203 tablas, 3966 campos)
+💾 Diccionario guardado en: diccionario\catalogo_tecnico_BANCO.json
+[Diccionario] BANCO: live (110 tablas, 3698 campos)
+💾 Diccionario guardado en: diccionario\catalogo_tecnico_COI.json
+[Diccionario] COI: live (219 tablas, 6759 campos)
+💾 Diccionario guardado en: diccionario\catalogo_tecnico_NOI.json
+[Diccionario] NOI: live (2005 tablas, 48880 campos)

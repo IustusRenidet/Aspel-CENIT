@@ -6,8 +6,14 @@
  */
 
 const { ejecutarConsulta } = require('../conectores/firebird/conexion');
+const { leerTablas, leerCampos } = require('../conectores/firebird/lector_esquema');
 const { interpretar } = require('../servicios/interprete_nlp');
 const widgetsCustom = require('../servicios/widgets_custom_service');
+// resolverParamsSQL: importado desde el servicio para evitar duplicación
+const { resolverParamsSQL } = widgetsCustom;
+
+const fs = require('fs');
+const path = require('path');
 
 // ─────────────────────────────────────────────────────────────────────────────
 // CATALOG DE TEMPLATES
@@ -256,12 +262,12 @@ function buildSQL_PolizasPeriodo({ ejercicio, mes, tipo, columnas }) {
     // Columnas reales de POLIZAS{yy} — verificadas contra esquema Firebird
     const colDef = {
         tipo_poliza: `p.TIPO_POLI    AS "Tipo"`,
-        num_poliz:   `p.NUM_POLIZ    AS "Numero"`,
-        fecha:       `p.FECHA_POL    AS "Fecha"`,
-        concepto:    `p.CONCEP_PO    AS "Concepto"`,
-        contabiliz:  `p.CONTABILIZ   AS "Contabilizada"`,
-        origen:      `p.ORIGEN       AS "Origen"`,
-        uuid:        `p.UUID         AS "UUID"`,
+        num_poliz: `p.NUM_POLIZ    AS "Numero"`,
+        fecha: `p.FECHA_POL    AS "Fecha"`,
+        concepto: `p.CONCEP_PO    AS "Concepto"`,
+        contabiliz: `p.CONTABILIZ   AS "Contabilizada"`,
+        origen: `p.ORIGEN       AS "Origen"`,
+        uuid: `p.UUID         AS "UUID"`,
     };
 
     const selectCols = (columnas && columnas.length > 0 ? columnas : ['tipo_poliza', 'num_poliz', 'fecha', 'concepto', 'contabiliz'])
@@ -309,18 +315,18 @@ function buildSQL_VentasDetalle({ fecha_ini, fecha_fin, cliente, vendedor, cance
 
     // Columnas reales de FACTV01 y CLIE01 — verificadas contra esquema SAE Firebird
     const colDef = {
-        folio:      `f.FOLIO             AS "Folio"`,
-        tipo_doc:   `f.TIP_DOC           AS "Tipo"`,
-        cve_doc:    `f.CVE_DOC           AS "Cve_Doc"`,
-        fecha:      `f.FECHA_DOC         AS "Fecha"`,
-        cliente:    `f.CVE_CLPV          AS "Clave_Cliente"`,
+        folio: `f.FOLIO             AS "Folio"`,
+        tipo_doc: `f.TIP_DOC           AS "Tipo"`,
+        cve_doc: `f.CVE_DOC           AS "Cve_Doc"`,
+        fecha: `f.FECHA_DOC         AS "Fecha"`,
+        cliente: `f.CVE_CLPV          AS "Clave_Cliente"`,
         nombre_cli: `c.NOMBRE            AS "Nombre_Cliente"`,
-        vendedor:   `f.CVE_VEND          AS "Vendedor"`,
-        subtotal:   `f.IMP_TOT1          AS "Subtotal"`,
-        descuento:  `COALESCE(f.DES_TOT, 0) AS "Descuento"`,
-        iva:        `f.IMP_TOT3          AS "IVA"`,
-        total:      `f.IMPORTE           AS "Total"`,
-        status:     `f.STATUS            AS "Status"`,
+        vendedor: `f.CVE_VEND          AS "Vendedor"`,
+        subtotal: `f.IMP_TOT1          AS "Subtotal"`,
+        descuento: `COALESCE(f.DES_TOT, 0) AS "Descuento"`,
+        iva: `f.IMP_TOT3          AS "IVA"`,
+        total: `f.IMPORTE           AS "Total"`,
+        status: `f.STATUS            AS "Status"`,
     };
 
     const selectCols = (columnas && columnas.length > 0 ? columnas : ['folio', 'fecha', 'cliente', 'nombre_cli', 'vendedor', 'subtotal', 'descuento', 'iva', 'total'])
@@ -596,33 +602,6 @@ exports.interpretar = async (req, res) => {
 };
 
 /** POST /api/widget-studio/sql-libre  →  ejecuta SQL personalizado */
-/**
- * Convierte parámetros nombrados (:nombre) a posicionales (?)
- * y construye el array de valores para node-firebird.
- * Ignora ocurrencias dentro de comentarios SQL (bloques y lineas --)
- * para evitar que :parametros dentro de comentarios cuenten como ?
- * El mismo :nombre puede aparecer múltiples veces; cada ocurrencia
- * fuera de comentario genera un ? y añade el valor al array.
- */
-function resolverParamsSQL(sql, paramsObj = {}) {
-    const values = [];
-    // La alternación captura primero comentarios (no los toca) y en caso contrario
-    // reemplaza :nombre por ? y añade el valor al array.
-    const sqlResolved = sql.replace(
-        /(\/\*[\s\S]*?\*\/|--[^\r\n]*)|:([a-zA-Z_][a-zA-Z0-9_]*)/g,
-        (match, comment, name) => {
-            if (comment) return comment; // preservar comentario intacto
-            const key = name.toLowerCase();
-            let val = paramsObj[key];
-            if (val === undefined || val === '') val = null;
-            if (val !== null && !isNaN(val)) val = Number(val);
-            values.push(val);
-            return '?';
-        }
-    );
-    return { sql: sqlResolved, values };
-}
-
 exports.ejecutarSQLLibre = async (req, res) => {
     const { sql, sistema = 'COI', params_sql } = req.body;
     if (!sql || !sql.trim()) {
@@ -668,13 +647,17 @@ exports.listarMisWidgets = (req, res) => {
 };
 
 /** POST /api/widget-studio/mis-widgets */
-exports.guardarMiWidget = (req, res) => {
+exports.guardarMiWidget = async (req, res) => {
     const datos = req.body;
     if (!datos || !String(datos.nombre || '').trim()) {
         return res.status(400).json({ ok: false, error: 'El campo nombre es obligatorio' });
     }
-    const widget = widgetsCustom.guardar(datos);
-    res.json({ ok: true, widget });
+    try {
+        const widget = await widgetsCustom.guardar(datos);
+        res.json({ ok: true, widget });
+    } catch (err) {
+        res.status(400).json({ ok: false, error: err.message });
+    }
 };
 
 /** DELETE /api/widget-studio/mis-widgets/:id */
@@ -686,36 +669,258 @@ exports.eliminarMiWidget = (req, res) => {
 
 /**
  * POST /api/widget-studio/mis-widgets/:id/ejecutar
- * Ejecuta el SQL guardado del widget (con params dinámicos opcionales desde el body).
+ * Delega al servicio WidgetsCustomService.ejecutarWidget() que valida SQL,
+ * convierte tipos y ejecuta con parámetros preparados.
  */
 exports.ejecutarMiWidget = async (req, res) => {
-    const widget = widgetsCustom.obtener(req.params.id);
-    if (!widget) return res.status(404).json({ ok: false, error: 'Widget no encontrado' });
-    if (!widget.sql) return res.status(400).json({ ok: false, error: 'Este widget no tiene SQL asociado' });
+    const parametros = {
+        ...(req.body?.params_sql || {}),
+        ...(req.body?.params || {})
+    };
+    try {
+        const resultado = await widgetsCustom.ejecutarWidget(req.params.id, parametros);
+        res.json({ ok: true, data: resultado });
+    } catch (err) {
+        const status = /no encontrado/i.test(err.message) ? 404 : 200;
+        res.status(status).json({ ok: false, error: err.message });
+    }
+};
 
-    // Params del request sobrescriben los guardados (para dinámicos)
-    const paramsFinales = { ...widget.params_sql, ...(req.body && req.body.params_sql ? req.body.params_sql : {}) };
+// ─────────────────────────────────────────────────────────────────────────────
+// AUTOCOMPLETADO DE ESQUEMA
+// ─────────────────────────────────────────────────────────────────────────────
+
+/** Carga catálogo técnico + semántico de un sistema desde archivo de cache */
+function _leerCacheEsquema(sistema) {
+    const s = sistema.toUpperCase();
+    const catPath = path.join(__dirname, '../../diccionario', `catalogo_tecnico_${s}.json`);
+    const semPath = path.join(__dirname, '../../diccionario', `semantica_${s}.json`);
+    const cat = JSON.parse(fs.readFileSync(catPath, 'utf8'));
+    let sem = null;
+    try { sem = JSON.parse(fs.readFileSync(semPath, 'utf8')); } catch (_) { /* opcional */ }
+    return { cat, sem };
+}
+
+/**
+ * GET /api/widget-studio/tablas/:sistema
+ * Devuelve todas las tablas con sus campos.
+ * Intenta Firebird en vivo; si falla usa el diccionario en caché.
+ */
+exports.getTablasSistema = async (req, res) => {
+    const sistema = (req.params.sistema || 'SAE').toUpperCase();
+    let origen = 'live';
+    let tablasRaw = [], camposRaw = [];
+
+    // ── 1. Intentar Firebird en vivo ────────────────────────
+    try {
+        [tablasRaw, camposRaw] = await Promise.all([
+            leerTablas(sistema),
+            leerCampos(sistema)
+        ]);
+    } catch (_) {
+        origen = 'cache';
+    }
+
+    // ── 2. Enriquecer con semántica ─────────────────────────
+    let sem = null;
+    try {
+        const { sem: s } = _leerCacheEsquema(sistema);
+        sem = s;
+    } catch (_) { /* sin semántica */ }
+
+    let tablas;
+
+    if (origen === 'live') {
+        // Agrupar campos por tabla
+        const camposPorTabla = {};
+        for (const c of camposRaw) {
+            (camposPorTabla[c.tabla] = camposPorTabla[c.tabla] || []).push(c);
+        }
+
+        tablas = tablasRaw.map(t => {
+            const semT = sem?.tablas?.[t.tabla] || {};
+            const campos = (camposPorTabla[t.tabla] || []).map(c => {
+                const semC = semT.campos?.[c.campo] || {};
+                return {
+                    nombre: c.campo,
+                    tipo: c.tipo,
+                    descripcion: semC.descripcion || null,
+                    tipo_semantico: semC.tipo_semantico || null,
+                    posicion: c.posicion
+                };
+            });
+            return {
+                nombre: t.tabla,
+                descripcion: semT.descripcion || null,
+                modulo: semT.modulo || null,
+                campos
+            };
+        });
+    } else {
+        // Fallback: usar catálogo en caché
+        try {
+            const { cat } = _leerCacheEsquema(sistema);
+            const tablasObj = cat.tablas || {};
+            tablas = Object.values(tablasObj).map(t => {
+                const semT = sem?.tablas?.[t.nombre] || {};
+                return {
+                    nombre: t.nombre,
+                    descripcion: semT.descripcion || t.descripcion || null,
+                    modulo: semT.modulo || null,
+                    campos: (t.campos || []).map(c => {
+                        const semC = semT.campos?.[c.nombre] || {};
+                        return {
+                            nombre: c.nombre,
+                            tipo: c.tipo_detalle || c.tipo_base || null,
+                            descripcion: semC.descripcion || null,
+                            tipo_semantico: semC.tipo_semantico || null,
+                            posicion: c.posicion ?? 0
+                        };
+                    })
+                };
+            });
+        } catch (cacheErr) {
+            return res.status(503).json({
+                ok: false,
+                error: `Firebird no disponible y no hay caché para ${sistema}: ${cacheErr.message}`
+            });
+        }
+    }
+
+    return res.json({ ok: true, sistema, origen, total: tablas.length, tablas });
+};
+
+/**
+ * GET /api/widget-studio/tabla/:sistema/:nombre/campos
+ * Devuelve los campos de una tabla específica con tipos y descripción semántica.
+ * Intenta Firebird en vivo; si falla usa el diccionario en caché.
+ */
+exports.getCamposTablaSistema = async (req, res) => {
+    const sistema = (req.params.sistema || 'SAE').toUpperCase();
+    const nombre = (req.params.nombre || '').toUpperCase();
+    if (!nombre) return res.status(400).json({ ok: false, error: 'Nombre de tabla requerido' });
+
+    let origen = 'live';
+    let campos = [];
+
+    // ── Intentar Firebird en vivo ───────────────────────────
+    try {
+        const rows = await leerCampos(sistema, nombre);
+        if (!rows.length) throw new Error('sin_filas');
+        campos = rows.map(c => ({ nombre: c.campo, tipo_tecnico: c.tipo, posicion: c.posicion, tipo_semantico: null, descripcion: null }));
+    } catch (_) {
+        origen = 'cache';
+    }
+
+    // ── Si falla, usar caché ────────────────────────────────
+    if (origen === 'cache') {
+        try {
+            const { cat } = _leerCacheEsquema(sistema);
+            const tbl = (cat.tablas || {})[nombre];
+            if (!tbl) {
+                // Sugerir tablas similares
+                const prefix = nombre.slice(0, 4);
+                const similares = Object.keys(cat.tablas || {})
+                    .filter(k => k.startsWith(prefix))
+                    .slice(0, 5);
+                return res.status(404).json({
+                    ok: false,
+                    error: `Tabla ${nombre} no existe en ${sistema}`,
+                    tablas_similares: similares
+                });
+            }
+            campos = (tbl.campos || []).map(c => ({
+                nombre: c.nombre,
+                tipo_tecnico: c.tipo_detalle || c.tipo_base || null,
+                tipo_semantico: null,
+                descripcion: null,
+                posicion: c.posicion ?? 0
+            }));
+        } catch (e) {
+            return res.status(503).json({ ok: false, error: `Sin datos de esquema para ${sistema}: ${e.message}` });
+        }
+    }
+
+    // ── Enriquecer con semántica ────────────────────────────
+    try {
+        const { sem: s } = _leerCacheEsquema(sistema);
+        const semT = s?.tablas?.[nombre]?.campos || {};
+        campos = campos.map(c => {
+            const semC = semT[c.nombre] || {};
+            return { ...c, tipo_semantico: semC.tipo_semantico || c.tipo_semantico, descripcion: semC.descripcion || c.descripcion };
+        });
+    } catch (_) { /* semántica opcional */ }
+
+    return res.json({ ok: true, sistema, tabla: nombre, origen, campos });
+};
+
+/**
+ * POST /api/widget-studio/preview-sql
+ * Ejecuta las primeras 5 filas del SQL proporcionado.
+ * En caso de tabla no encontrada, sugiere tablas similares del catálogo.
+ */
+exports.previewSQLEstudio = async (req, res) => {
+    const { sql, sistema } = req.body;
+    const sistemaFinal = (sistema || 'SAE').toUpperCase();
+    const t0 = Date.now();
+
+    // Limitar a FIRST 5 para preview (reemplaza FIRST N existente o lo agrega)
+    const sqlConFirst = sql.trim().replace(
+        /^(\s*SELECT\s+)(FIRST\s+\d+\s+)?/i,
+        (_, sel) => `${sel}FIRST 5 `
+    );
 
     try {
-        const { sql: sqlResuelto, values } = resolverParamsSQL(widget.sql, paramsFinales);
-        const filas = await ejecutarConsulta(widget.sistema, sqlResuelto, values);
+        const filas = await ejecutarConsulta(sistemaFinal, sqlConFirst);
         const filasNorm = (filas || []).map(fila => {
             const norm = {};
             for (const [k, v] of Object.entries(fila)) norm[k.toLowerCase()] = v;
             return norm;
         });
-        // Actualizar timestamp del widget
-        widgetsCustom.guardar({ ...widget, actualizado_en: new Date().toISOString() });
-        res.json({
+
+        const columnas_detectadas = Object.keys(filasNorm[0] || {}).map(nombre => {
+            const val = filasNorm[0]?.[nombre];
+            const tipo = (val instanceof Date) ? 'fecha'
+                : (typeof val === 'number') ? 'numero'
+                    : 'texto';
+            return { nombre, tipo };
+        });
+
+        return res.json({
             ok: true,
-            data: {
-                filas: filasNorm,
-                total_filas: filasNorm.length,
-                columnas_resultado: Object.keys(filasNorm[0] || {}),
-                widget
-            }
+            columnas_detectadas,
+            filas_muestra: filasNorm,
+            tiempo_ms: Date.now() - t0,
+            origen: 'live'
         });
     } catch (err) {
-        res.status(200).json({ ok: false, error: err.message });
+        const msg = err.message || '';
+
+        // Detectar "Table unknown NOMBRE" típico de Firebird
+        const matchTabla = msg.match(/Table unknown\s+([A-Z0-9_$]+)/i)
+            || msg.match(/Dynamic SQL Error.*?\b([A-Z][A-Z0-9_$]{2,})\b.*not found/i);
+
+        if (matchTabla) {
+            const tablaDesconocida = matchTabla[1].toUpperCase();
+            let similares = [];
+            try {
+                const { cat } = _leerCacheEsquema(sistemaFinal);
+                const allTablas = Object.keys(cat.tablas || {});
+                const prefix = tablaDesconocida.slice(0, 4);
+                similares = allTablas
+                    .filter(t => t.startsWith(prefix) || t.includes(prefix))
+                    .slice(0, 5);
+            } catch (_) { /* catálogo no disponible */ }
+
+            return res.status(400).json({
+                ok: false,
+                error: `La tabla ${tablaDesconocida} no existe en ${sistemaFinal}.${similares.length ? ` Tablas similares: ${similares.join(', ')}` : ''}`,
+                tabla_desconocida: tablaDesconocida,
+                tablas_similares: similares,
+                origen: 'live'
+            });
+        }
+
+        return res.status(400).json({ ok: false, error: msg, origen: 'live' });
     }
 };

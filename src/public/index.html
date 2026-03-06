@@ -11,56 +11,100 @@
       rel="stylesheet"
     />
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gridstack@10.3.1/dist/gridstack.min.css"/>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/gridstack@10.3.1/dist/gridstack.min.css"
+    />
     <script src="https://cdn.jsdelivr.net/npm/gridstack@10.3.1/dist/gridstack-all.js"></script>
     <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
     <div id="app">
       <!-- ▌SIDEBAR ▐ -->
-      <nav id="sidebar">
+      <nav id="sidebar" role="navigation" aria-label="Menú principal">
         <div class="sidebar-brand">
-          <span class="brand-icon">⬡</span>
+          <span class="brand-icon" aria-hidden="true">⬡</span>
           <span class="brand-text">CENIT<em>IA</em></span>
         </div>
 
-        <ul class="nav-menu" id="nav-menu">
-          <li class="nav-item active" data-view="inicio">
-            <span class="nav-icon">◈</span> Inicio
+        <ul
+          class="nav-menu"
+          id="nav-menu"
+          role="menubar"
+          aria-label="Navegación principal"
+        >
+          <li
+            class="nav-item active"
+            data-view="inicio"
+            role="menuitem"
+            tabindex="0"
+            aria-current="page"
+          >
+            <span class="nav-icon" aria-hidden="true">◈</span> Inicio
           </li>
-          <li class="nav-item" data-view="builder">
-            <span class="nav-icon">✦</span> Constructor IA
+          <li class="nav-item" data-view="builder" role="menuitem" tabindex="0">
+            <span class="nav-icon" aria-hidden="true">✦</span> Constructor IA
           </li>
-          <li class="nav-item" data-view="dashboards">
-            <span class="nav-icon">▦</span> Mis Dashboards
+          <li
+            class="nav-item"
+            data-view="dashboards"
+            role="menuitem"
+            tabindex="0"
+          >
+            <span class="nav-icon" aria-hidden="true">▦</span> Mis Dashboards
           </li>
-          <li class="nav-item" data-view="conexiones">
-            <span class="nav-icon">⬡</span> Conexiones
+          <li
+            class="nav-item"
+            data-view="conexiones"
+            role="menuitem"
+            tabindex="0"
+          >
+            <span class="nav-icon" aria-hidden="true">⬡</span> Conexiones
           </li>
-          <li class="nav-item" data-view="explorador">
-            <span class="nav-icon">◎</span> Explorador
+          <li
+            class="nav-item"
+            data-view="explorador"
+            role="menuitem"
+            tabindex="0"
+          >
+            <span class="nav-icon" aria-hidden="true">◎</span> Explorador
           </li>
-          <li class="nav-item" data-view="studio">
-            <span class="nav-icon">⚙</span> Widget Studio
+          <li class="nav-item" data-view="studio" role="menuitem" tabindex="0">
+            <span class="nav-icon" aria-hidden="true">⚙</span> Widget Studio
           </li>
-          <li class="nav-item" data-view="mis-widgets">
-            <span class="nav-icon">★</span> Mis Widgets
+          <li
+            class="nav-item"
+            data-view="mis-widgets"
+            role="menuitem"
+            tabindex="0"
+          >
+            <span class="nav-icon" aria-hidden="true">★</span> Mis Widgets
           </li>
-          <li class="nav-item" data-view="canvas">
-            <span class="nav-icon">⊞</span> Canvas Editor
+          <li class="nav-item" data-view="canvas" role="menuitem" tabindex="0">
+            <span class="nav-icon" aria-hidden="true">⊞</span> Canvas Editor
           </li>
         </ul>
 
         <div class="sidebar-footer">
           <div class="status-global">
-            <span class="dot" id="dot-global"></span>
-            <span id="status-global-text">Verificando...</span>
+            <span class="dot" id="dot-global" aria-hidden="true"></span>
+            <span id="status-global-text" role="status" aria-live="polite"
+              >Verificando...</span
+            >
           </div>
+          <button
+            id="btn-dark-mode"
+            aria-label="Alternar tema claro / oscuro"
+            title="Alternar tema"
+            type="button"
+          >
+            🌙
+          </button>
         </div>
       </nav>
 
       <!-- ▌MAIN ▐ -->
-      <main id="main-area">
+      <main id="main-area" role="main">
         <!-- ══ INICIO ══ -->
         <section id="view-inicio" class="view active">
           <div class="view-header">
@@ -418,7 +462,10 @@
                   <button class="btn btn-ghost" id="btn-asistente-csv">
                     ↓ CSV
                   </button>
-                  <button class="btn btn-ghost" id="btn-asistente-guardar-widget">
+                  <button
+                    class="btn btn-ghost"
+                    id="btn-asistente-guardar-widget"
+                  >
                     ★ Guardar Widget
                   </button>
                   <button class="btn btn-primary" id="btn-asistente-add">
@@ -602,7 +649,10 @@
                   <button class="btn btn-primary" id="btn-sql-libre-ejecutar">
                     ▶ Ejecutar SQL
                   </button>
-                  <button class="btn btn-secondary hidden" id="btn-sql-guardar-widget">
+                  <button
+                    class="btn btn-secondary hidden"
+                    id="btn-sql-guardar-widget"
+                  >
                     ★ Guardar Widget
                   </button>
                 </div>
@@ -617,13 +667,39 @@
         <section id="view-canvas" class="view hidden">
           <div class="canvas-topbar">
             <div class="canvas-topbar-left">
-              <button class="btn btn-ghost btn-icon" id="btn-canvas-library" title="Librería de widgets">☰</button>
-              <input id="canvas-nombre" class="canvas-nombre-input" type="text" placeholder="Nombre del dashboard..." value="Mi Canvas"/>
+              <button
+                class="btn btn-ghost btn-icon"
+                id="btn-canvas-library"
+                title="Librería de widgets"
+              >
+                ☰
+              </button>
+              <input
+                id="canvas-nombre"
+                class="canvas-nombre-input"
+                type="text"
+                placeholder="Nombre del dashboard..."
+                value="Mi Canvas"
+              />
             </div>
             <div class="canvas-topbar-right">
-              <button class="btn btn-ghost" id="btn-canvas-run-all" title="Ejecutar todos los widgets">▶ Ejecutar todo</button>
-              <button class="btn btn-ghost" id="btn-canvas-clear" title="Limpiar canvas">✕ Limpiar</button>
-              <button class="btn btn-primary" id="btn-canvas-save">💾 Guardar</button>
+              <button
+                class="btn btn-ghost"
+                id="btn-canvas-run-all"
+                title="Ejecutar todos los widgets"
+              >
+                ▶ Ejecutar todo
+              </button>
+              <button
+                class="btn btn-ghost"
+                id="btn-canvas-clear"
+                title="Limpiar canvas"
+              >
+                ✕ Limpiar
+              </button>
+              <button class="btn btn-primary" id="btn-canvas-save">
+                💾 Guardar
+              </button>
             </div>
           </div>
           <div class="canvas-body">
@@ -631,7 +707,13 @@
             <aside class="canvas-sidebar" id="canvas-sidebar">
               <div class="canvas-lib-header">
                 <span>Mis Widgets</span>
-                <button class="btn btn-ghost btn-xs" id="btn-lib-refresh" title="Recargar">↺</button>
+                <button
+                  class="btn btn-ghost btn-xs"
+                  id="btn-lib-refresh"
+                  title="Recargar"
+                >
+                  ↺
+                </button>
               </div>
               <div class="canvas-library" id="canvas-library">
                 <div class="lib-loading">Cargando...</div>
@@ -654,12 +736,23 @@
           <div class="view-header">
             <div>
               <h1>Mis Widgets</h1>
-              <p class="view-sub">Consultas personalizadas guardadas — ejecútalas, edita su vizualización y agrégalas a dashboards</p>
+              <p class="view-sub">
+                Consultas personalizadas guardadas — ejecútalas, edita su
+                vizualización y agrégalas a dashboards
+              </p>
             </div>
+            <button class="btn btn-primary" id="btn-nuevo-widget">
+              + Nuevo Widget
+            </button>
           </div>
           <div id="mis-widgets-vacio" class="mis-widgets-vacio hidden">
             <p>No tienes widgets guardados todavía.</p>
-            <p>Ejecuta una consulta en <strong>Widget Studio → SQL Libre</strong> o en el <strong>Asistente IA</strong> y usa el botón <em>★ Guardar Widget</em>.</p>
+            <p>
+              Ejecuta una consulta en
+              <strong>Widget Studio → SQL Libre</strong> o en el
+              <strong>Asistente IA</strong> y usa el botón
+              <em>★ Guardar Widget</em>.
+            </p>
           </div>
           <div id="mis-widgets-lista" class="mis-widgets-grid"></div>
         </section>
@@ -745,11 +838,23 @@
           <div id="exp-resultados" class="exp-grid"></div>
 
           <!-- Modal ejecución ad-hoc -->
-          <div id="modal-ejecutar" class="modal-overlay hidden">
+          <div
+            id="modal-ejecutar"
+            class="modal-overlay hidden"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modal-titulo"
+          >
             <div class="modal-box">
               <div class="modal-header">
                 <h3 id="modal-titulo">Ejecutar métrica</h3>
-                <button class="modal-close" id="modal-close">✕</button>
+                <button
+                  class="modal-close"
+                  id="modal-close"
+                  aria-label="Cerrar"
+                >
+                  ✕
+                </button>
               </div>
               <div class="modal-body">
                 <p id="modal-descripcion"></p>
@@ -779,14 +884,31 @@
     </div>
 
     <!-- Toast notifications -->
-    <div id="toast-container"></div>
+    <div
+      id="toast-container"
+      role="status"
+      aria-live="polite"
+      aria-atomic="true"
+    ></div>
 
     <!-- Modal guardar dashboard -->
-    <div id="modal-guardar" class="modal-overlay hidden">
+    <div
+      id="modal-guardar"
+      class="modal-overlay hidden"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-guardar-title"
+    >
       <div class="modal-box modal-sm">
         <div class="modal-header">
-          <h3>Guardar Dashboard</h3>
-          <button class="modal-close" id="modal-guardar-close">✕</button>
+          <h3 id="modal-guardar-title">Guardar Dashboard</h3>
+          <button
+            class="modal-close"
+            id="modal-guardar-close"
+            aria-label="Cerrar"
+          >
+            ✕
+          </button>
         </div>
         <div class="modal-body">
           <label class="form-label">Nombre del dashboard</label>
@@ -808,108 +930,354 @@
       </div>
     </div>
 
-    <!-- Modal: Guardar como Widget personalizado -->
-    <div id="modal-guardar-widget" class="modal-overlay hidden">
-      <div class="modal-box modal-widget">
-        <div class="modal-header">
-          <h3>★ Guardar como Widget</h3>
-          <button class="modal-close" id="mw-btn-cerrar">✕</button>
+    <!-- Modal: Wizard creación de Widget (4 pasos) -->
+    <div
+      id="modal-guardar-widget"
+      class="modal-overlay hidden"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="wz-dialog-title"
+    >
+      <div class="modal-box modal-wizard">
+        <!-- Indicador de pasos -->
+        <div class="wz-header">
+          <h2 id="wz-dialog-title" class="sr-only">
+            Asistente de creación de widget
+          </h2>
+          <div class="wz-steps" role="tablist" aria-label="Pasos del asistente">
+            <div class="wz-step active" id="wz-step-ind-1">
+              <span class="wz-step-num">1</span>
+              <span class="wz-step-label">Describir</span>
+            </div>
+            <div class="wz-connector"></div>
+            <div class="wz-step" id="wz-step-ind-2">
+              <span class="wz-step-num">2</span>
+              <span class="wz-step-label">Datos</span>
+            </div>
+            <div class="wz-connector"></div>
+            <div class="wz-step" id="wz-step-ind-3">
+              <span class="wz-step-num">3</span>
+              <span class="wz-step-label">Apariencia</span>
+            </div>
+            <div class="wz-connector"></div>
+            <div class="wz-step" id="wz-step-ind-4">
+              <span class="wz-step-num">4</span>
+              <span class="wz-step-label">Guardar</span>
+            </div>
+          </div>
+          <button
+            class="modal-close"
+            id="mw-btn-cerrar"
+            aria-label="Cerrar asistente"
+          >
+            ✕
+          </button>
         </div>
-        <div class="modal-body">
+
+        <!-- Paso 1: Lenguaje natural -->
+        <div id="wz-panel-1" class="wz-panel">
+          <h4 class="wz-panel-title">¿Qué quieres analizar?</h4>
+          <textarea
+            id="wz-nl-input"
+            class="form-input wz-nl-input"
+            rows="3"
+            placeholder="Ej: ventas del mes actual por vendedor en barras"
+          ></textarea>
+          <button class="btn btn-primary" id="wz-btn-interpretar">
+            ✦ Interpretar con IA
+          </button>
+          <div id="wz-metricas-ia" class="wz-metricas-ia hidden"></div>
+          <div class="wz-sep">— o crea uno desde cero —</div>
+          <button class="btn btn-ghost" id="wz-btn-personalizado">
+            ⚙ Widget personalizado con SQL
+          </button>
+        </div>
+
+        <!-- Paso 2: Fuente de datos -->
+        <div id="wz-panel-2" class="wz-panel hidden">
+          <h4 class="wz-panel-title">Fuente de datos</h4>
+          <div class="modal-field">
+            <label class="form-label">Sistema</label>
+            <select id="wz-sistema" class="form-select">
+              <option value="SAE">SAE — Comercial</option>
+              <option value="COI">COI — Contabilidad</option>
+              <option value="NOI">NOI — Nómina</option>
+              <option value="BANCO">BANCO — Tesorería</option>
+            </select>
+          </div>
+
+          <!-- ── Autocompletado de tabla / campos ── -->
+          <div class="modal-field">
+            <label class="form-label"
+              >Tabla
+              <small class="form-hint"
+                >— opcional, para ver campos disponibles</small
+              ></label
+            >
+            <div class="wz-tabla-row">
+              <select id="wz-tabla-select" class="form-select" disabled>
+                <option value="">— presiona ↺ para cargar tablas —</option>
+              </select>
+              <button
+                class="btn btn-ghost btn-sm"
+                id="wz-btn-cargar-tablas"
+                title="Cargar tablas del sistema"
+              >
+                ↺ Cargar
+              </button>
+            </div>
+          </div>
+          <div
+            id="wz-campos-panel"
+            class="wz-campos-panel hidden"
+            role="group"
+            aria-label="Campos de la tabla"
+          >
+            <div class="wz-campos-header">
+              <span class="wz-campos-label">Campos disponibles</span>
+              <label class="toggle-label wz-check-all-label">
+                <input type="checkbox" id="wz-check-todos" /> Todos
+              </label>
+              <button
+                class="btn btn-primary btn-xs"
+                id="wz-btn-insertar-campos"
+              >
+                ↳ Insertar en SQL
+              </button>
+            </div>
+            <div id="wz-campos-lista" class="wz-campos-lista"></div>
+          </div>
+          <!-- ── / Autocompletado ── -->
+
+          <div class="modal-field">
+            <label class="form-label">SQL personalizado</label>
+            <textarea
+              id="wz-sql"
+              class="form-input wz-sql-input"
+              rows="6"
+              spellcheck="false"
+              autocomplete="off"
+              placeholder="SELECT FIRST 10 * FROM ADMCLIENTES01"
+            ></textarea>
+          </div>
+          <button class="btn btn-primary" id="wz-btn-preview">
+            ⚡ Vista previa (5 filas)
+          </button>
+          <div id="wz-preview-area" class="wz-preview-area hidden">
+            <div id="wz-preview-tabla"></div>
+            <div id="wz-cols-detectadas" class="wz-cols-badges"></div>
+            <span id="wz-viz-hint" class="viz-rec-hint hidden"></span>
+          </div>
+        </div>
+
+        <!-- Paso 3: Apariencia -->
+        <div id="wz-panel-3" class="wz-panel hidden">
+          <h4 class="wz-panel-title">Personalizar apariencia</h4>
           <div class="modal-field">
             <label class="form-label">Nombre del widget *</label>
-            <input type="text" id="mw-nombre" class="form-input" placeholder="Ej: Estado de resultados junio" maxlength="120"/>
+            <input
+              type="text"
+              id="wz-nombre"
+              class="form-input"
+              maxlength="120"
+              placeholder="Ej: Ventas por vendedor"
+            />
           </div>
           <div class="modal-field">
             <label class="form-label">Descripción (opcional)</label>
-            <input type="text" id="mw-descripcion" class="form-input" placeholder="Para qué sirve este widget..." maxlength="400"/>
+            <input
+              type="text"
+              id="wz-descripcion"
+              class="form-input"
+              maxlength="400"
+              placeholder="Para qué sirve este widget..."
+            />
           </div>
           <div class="modal-field">
-            <label class="form-label">Visualización predeterminada</label>
-            <div class="viz-toggler" id="mw-viz-toggle">
+            <label class="form-label">Visualización</label>
+            <div class="viz-toggler" id="wz-viz-toggle">
               <button class="viz-btn active" data-viz="tabla">⊞ Tabla</button>
               <button class="viz-btn" data-viz="barra">▊ Barras</button>
               <button class="viz-btn" data-viz="linea">╱ Línea</button>
               <button class="viz-btn" data-viz="pastel">◑ Pastel</button>
               <button class="viz-btn" data-viz="kpi">◈ KPI</button>
             </div>
+            <span id="wz-viz-rec" class="viz-rec-hint hidden"></span>
+          </div>
+          <div class="wz-ejes-row hidden" id="wz-ejes-section">
+            <div class="modal-field">
+              <label class="form-label">Eje X / Dimensión</label>
+              <select id="wz-eje-x" class="form-select"></select>
+            </div>
+            <div class="modal-field">
+              <label class="form-label">Métrica / Valores</label>
+              <select id="wz-eje-y" class="form-select"></select>
+            </div>
           </div>
           <div class="modal-field">
             <label class="form-label">Color primario</label>
             <div class="color-picker-row">
-              <input type="color" id="mw-color" value="#6366f1" class="color-input"/>
-              <span class="color-presets">
-                <button class="color-dot" data-color="#6366f1" style="background:#6366f1" title="Índigo"></button>
-                <button class="color-dot" data-color="#22c55e" style="background:#22c55e" title="Verde"></button>
-                <button class="color-dot" data-color="#f59e0b" style="background:#f59e0b" title="Ámbar"></button>
-                <button class="color-dot" data-color="#ef4444" style="background:#ef4444" title="Rojo"></button>
-                <button class="color-dot" data-color="#3b82f6" style="background:#3b82f6" title="Azul"></button>
-                <button class="color-dot" data-color="#a855f7" style="background:#a855f7" title="Violeta"></button>
+              <input
+                type="color"
+                id="wz-color"
+                value="#6366f1"
+                class="color-input"
+              />
+              <span class="color-presets" id="wz-color-presets">
+                <button
+                  class="color-dot"
+                  data-color="#6366f1"
+                  style="background: #6366f1"
+                  title="Índigo"
+                ></button>
+                <button
+                  class="color-dot"
+                  data-color="#22c55e"
+                  style="background: #22c55e"
+                  title="Verde"
+                ></button>
+                <button
+                  class="color-dot"
+                  data-color="#f59e0b"
+                  style="background: #f59e0b"
+                  title="Ámbar"
+                ></button>
+                <button
+                  class="color-dot"
+                  data-color="#ef4444"
+                  style="background: #ef4444"
+                  title="Rojo"
+                ></button>
+                <button
+                  class="color-dot"
+                  data-color="#3b82f6"
+                  style="background: #3b82f6"
+                  title="Azul"
+                ></button>
+                <button
+                  class="color-dot"
+                  data-color="#a855f7"
+                  style="background: #a855f7"
+                  title="Violeta"
+                ></button>
               </span>
             </div>
           </div>
-          <div class="modal-field" id="mw-columnas-field">
-            <label class="form-label">Columnas visibles</label>
-            <div id="mw-columnas" class="columnas-check-grid"></div>
-          </div>
-          <div class="modal-field hidden" id="mw-params-field">
-            <label class="form-label">Parámetros dinámicos detectados</label>
-            <div id="mw-params-list" class="params-dinamicos-list"></div>
-            <p class="hint-text">Al re-ejecutar este widget podrás cambiar estos valores</p>
-          </div>
         </div>
-        <div class="modal-footer">
-          <button class="btn btn-ghost" id="mw-btn-cancelar">Cancelar</button>
-          <button class="btn btn-primary" id="mw-btn-guardar">★ Guardar Widget</button>
+
+        <!-- Paso 4: Vista previa y guardar -->
+        <div id="wz-panel-4" class="wz-panel hidden">
+          <h4 class="wz-panel-title">Vista previa y guardar</h4>
+          <div id="wz-summary" class="wz-summary"></div>
+          <div id="wz-final-preview" class="wz-final-preview"></div>
+        </div>
+
+        <!-- Footer de navegación -->
+        <div class="modal-footer wz-footer">
+          <div>
+            <button class="btn btn-ghost hidden" id="wz-btn-atras">
+              ← Atrás
+            </button>
+          </div>
+          <div style="display: flex; gap: 8px; align-items: center">
+            <button class="btn btn-ghost" id="mw-btn-cancelar">Cancelar</button>
+            <button class="btn btn-primary" id="wz-btn-siguiente">
+              Siguiente →
+            </button>
+            <button class="btn btn-primary hidden" id="mw-btn-guardar">
+              ★ Guardar Widget
+            </button>
+            <button class="btn btn-ghost hidden" id="wz-btn-agregar-panel">
+              + Al panel actual
+            </button>
+          </div>
         </div>
       </div>
     </div>
 
     <!-- Modal: Ejecutar widget guardado (params dinámicos) -->
-    <div id="modal-ejecutar-widget" class="modal-overlay hidden">
+    <div
+      id="modal-ejecutar-widget"
+      class="modal-overlay hidden"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="mej-titulo"
+    >
       <div class="modal-box modal-sm">
         <div class="modal-header">
           <h3 id="mej-titulo">Ejecutar Widget</h3>
-          <button class="modal-close" id="mej-btn-cerrar">✕</button>
+          <button class="modal-close" id="mej-btn-cerrar" aria-label="Cerrar">
+            ✕
+          </button>
         </div>
         <div class="modal-body">
           <div id="mej-params-container"></div>
         </div>
         <div class="modal-footer">
           <button class="btn btn-ghost" id="mej-btn-cancelar">Cancelar</button>
-          <button class="btn btn-primary" id="mej-btn-ejecutar">▶ Ejecutar</button>
+          <button class="btn btn-primary" id="mej-btn-ejecutar">
+            ▶ Ejecutar
+          </button>
         </div>
       </div>
     </div>
 
     <!-- Modal: Canvas Params -->
-    <div id="modal-canvas-params" class="modal-overlay hidden">
+    <div
+      id="modal-canvas-params"
+      class="modal-overlay hidden"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="mcp-dialog-title"
+    >
       <div class="modal-box modal-sm">
         <div class="modal-header">
-          <h3>⚙ Parámetros — <span id="mcp-titulo"></span></h3>
-          <button class="modal-close" id="mcp-btn-cerrar">✕</button>
+          <h3 id="mcp-dialog-title">
+            <span aria-hidden="true">⚙</span> Parámetros —
+            <span id="mcp-titulo"></span>
+          </h3>
+          <button class="modal-close" id="mcp-btn-cerrar" aria-label="Cerrar">
+            ✕
+          </button>
         </div>
         <div class="modal-body">
           <div id="mcp-form" class="mcp-form"></div>
         </div>
         <div class="modal-footer">
           <button class="btn btn-ghost" id="mcp-btn-cancelar">Cancelar</button>
-          <button class="btn btn-primary" id="mcp-btn-confirmar">▶ Ejecutar</button>
+          <button class="btn btn-primary" id="mcp-btn-confirmar">
+            ▶ Ejecutar
+          </button>
         </div>
       </div>
     </div>
 
     <!-- Modal: Canvas Customize Widget -->
-    <div id="modal-canvas-customize" class="modal-overlay hidden">
+    <div
+      id="modal-canvas-customize"
+      class="modal-overlay hidden"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="mcc-dialog-title"
+    >
       <div class="modal-box modal-widget">
         <div class="modal-header">
-          <h3>✎ Personalizar Widget</h3>
-          <button class="modal-close" id="mcc-btn-cerrar">✕</button>
+          <h3 id="mcc-dialog-title">
+            <span aria-hidden="true">✎</span> Personalizar Widget
+          </h3>
+          <button class="modal-close" id="mcc-btn-cerrar" aria-label="Cerrar">
+            ✕
+          </button>
         </div>
         <div class="modal-body">
           <div class="modal-field">
             <label class="form-label">Título del widget</label>
-            <input type="text" id="mcc-titulo" class="form-input" placeholder="Nombre del widget"/>
+            <input
+              type="text"
+              id="mcc-titulo"
+              class="form-input"
+              placeholder="Nombre del widget"
+            />
           </div>
           <div class="modal-field">
             <label class="form-label">Visualización</label>
@@ -925,34 +1293,83 @@
           <div class="modal-field">
             <label class="form-label">Color de acento</label>
             <div class="color-picker-row">
-              <input type="color" id="mcc-color" value="#00b4c5" class="color-input"/>
+              <input
+                type="color"
+                id="mcc-color"
+                value="#00b4c5"
+                class="color-input"
+              />
               <span class="color-presets">
-                <button class="color-dot" data-color="#00b4c5" style="background:#00b4c5" title="Cian"></button>
-                <button class="color-dot" data-color="#6366f1" style="background:#6366f1" title="Índigo"></button>
-                <button class="color-dot" data-color="#22c55e" style="background:#22c55e" title="Verde"></button>
-                <button class="color-dot" data-color="#f59e0b" style="background:#f59e0b" title="Ámbar"></button>
-                <button class="color-dot" data-color="#ef4444" style="background:#ef4444" title="Rojo"></button>
-                <button class="color-dot" data-color="#a855f7" style="background:#a855f7" title="Violeta"></button>
-                <button class="color-dot" data-color="#3b82f6" style="background:#3b82f6" title="Azul"></button>
-                <button class="color-dot" data-color="#f97316" style="background:#f97316" title="Naranja"></button>
+                <button
+                  class="color-dot"
+                  data-color="#00b4c5"
+                  style="background: #00b4c5"
+                  title="Cian"
+                ></button>
+                <button
+                  class="color-dot"
+                  data-color="#6366f1"
+                  style="background: #6366f1"
+                  title="Índigo"
+                ></button>
+                <button
+                  class="color-dot"
+                  data-color="#22c55e"
+                  style="background: #22c55e"
+                  title="Verde"
+                ></button>
+                <button
+                  class="color-dot"
+                  data-color="#f59e0b"
+                  style="background: #f59e0b"
+                  title="Ámbar"
+                ></button>
+                <button
+                  class="color-dot"
+                  data-color="#ef4444"
+                  style="background: #ef4444"
+                  title="Rojo"
+                ></button>
+                <button
+                  class="color-dot"
+                  data-color="#a855f7"
+                  style="background: #a855f7"
+                  title="Violeta"
+                ></button>
+                <button
+                  class="color-dot"
+                  data-color="#3b82f6"
+                  style="background: #3b82f6"
+                  title="Azul"
+                ></button>
+                <button
+                  class="color-dot"
+                  data-color="#f97316"
+                  style="background: #f97316"
+                  title="Naranja"
+                ></button>
               </span>
             </div>
           </div>
           <div class="modal-field hidden" id="mcc-cols-section">
             <label class="form-label">Columna de etiqueta (eje X)</label>
             <select id="mcc-label-col" class="form-select"></select>
-            <label class="form-label" style="margin-top:12px">Columnas de valores</label>
+            <label class="form-label" style="margin-top: 12px"
+              >Columnas de valores</label
+            >
             <div id="mcc-value-cols" class="columnas-check-grid"></div>
           </div>
         </div>
         <div class="modal-footer">
           <button class="btn btn-ghost" id="mcc-btn-cancelar">Cancelar</button>
-          <button class="btn btn-primary" id="mcc-btn-aplicar">✓ Aplicar</button>
+          <button class="btn btn-primary" id="mcc-btn-aplicar">
+            ✓ Aplicar
+          </button>
         </div>
       </div>
     </div>
 
-    <script src="/app.js" defer></script>
+    <script type="module" src="/app-main.js"></script>
     <script src="/canvas.js" defer></script>
   </body>
 </html>

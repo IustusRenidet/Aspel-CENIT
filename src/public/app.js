@@ -7,6 +7,19 @@
 
 const API = '/api';
 
+// ── Token CSRF (se obtiene al iniciar y se refresca cada 50 min) ───────────
+let _csrfToken = null;
+async function obtenerCsrfToken() {
+  try {
+    const r = await fetch(`${API}/csrf-token`);
+    const d = await r.json();
+    _csrfToken = d.token || null;
+  } catch (_) { /* silencioso */ }
+}
+function csrfHeaders() {
+  return _csrfToken ? { 'X-CSRF-Token': _csrfToken } : {};
+}
+
 // ── Estado global ──────────────────────────────────────────
 const state = {
   view: 'inicio',
@@ -25,8 +38,14 @@ const state = {
 
 // ── Utilidades ─────────────────────────────────────────────
 async function api(url, opts = {}) {
+  const method = (opts.method || 'GET').toUpperCase();
+  const mutante = ['POST', 'PUT', 'DELETE', 'PATCH'].includes(method);
   const res = await fetch(url, {
-    headers: { 'Content-Type': 'application/json', ...(opts.headers || {}) },
+    headers: {
+      'Content-Type': 'application/json',
+      ...(mutante ? csrfHeaders() : {}),
+      ...(opts.headers || {})
+    },
     ...opts
   });
   const data = await res.json().catch(() => ({}));
@@ -81,7 +100,12 @@ function navegar(vista) {
   document.querySelectorAll('.view').forEach(v => v.classList.toggle('hidden', true));
   const el = document.getElementById(`view-${vista}`);
   if (el) { el.classList.remove('hidden'); el.classList.add('active'); }
-  document.querySelectorAll('.nav-item').forEach(li => li.classList.toggle('active', li.dataset.view === vista));
+  document.querySelectorAll('.nav-item').forEach(li => {
+    const isActive = li.dataset.view === vista;
+    li.classList.toggle('active', isActive);
+    if (isActive) li.setAttribute('aria-current', 'page');
+    else li.removeAttribute('aria-current');
+  });
 
   if (vista === 'inicio') cargarInicio();
   if (vista === 'dashboards') cargarPaneles();
@@ -378,8 +402,8 @@ function fmtCompacto(n) {
   const abs = Math.abs(n);
   const sign = n < 0 ? '-' : '';
   if (abs >= 1_000_000_000) return sign + (abs / 1_000_000_000).toFixed(2) + ' B';
-  if (abs >= 1_000_000)     return sign + (abs / 1_000_000).toFixed(2) + ' M';
-  if (abs >= 1_000)         return sign + (abs / 1_000).toFixed(1) + ' K';
+  if (abs >= 1_000_000) return sign + (abs / 1_000_000).toFixed(2) + ' M';
+  if (abs >= 1_000) return sign + (abs / 1_000).toFixed(1) + ' K';
   return n.toLocaleString('es-MX', { maximumFractionDigits: 2 });
 }
 
@@ -423,7 +447,7 @@ function renderTabla(container, filas) {
 
   // Detectar columnas numéricas y calcular máximos por columna
   const esCurrencyCol = c => /importe|total|monto|saldo|cargo|abono|subtotal|iva|presup|inicial|montomov|imp_tot/i.test(c);
-  const esPctCol     = c => /pct|margen|porc|cumpl|variacion/i.test(c);
+  const esPctCol = c => /pct|margen|porc|cumpl|variacion/i.test(c);
 
   const numCols = {};
   cols.forEach(c => {
@@ -444,13 +468,13 @@ function renderTabla(container, filas) {
     if (v === null || v === undefined || v === '') return '<span class="null-val">—</span>';
     if (numCols[col]) {
       const info = numCols[col];
-      const cls  = n < 0 ? 'num-neg' : n > 0 ? 'num-pos' : 'num-zero';
+      const cls = n < 0 ? 'num-neg' : n > 0 ? 'num-pos' : 'num-zero';
       let txt;
       if (info.esCurrency) txt = fmtMoneda(n);
-      else if (info.esPct)  txt = n.toFixed(1) + '%';
+      else if (info.esPct) txt = n.toFixed(1) + '%';
       else txt = n.toLocaleString('es-MX', { maximumFractionDigits: 2 });
 
-      const pct  = info.max > 0 ? Math.min(Math.abs(n) / info.max * 100, 100) : 0;
+      const pct = info.max > 0 ? Math.min(Math.abs(n) / info.max * 100, 100) : 0;
       return `<div class="cell-num ${cls}">
         <div class="ibar" style="width:${pct.toFixed(1)}%"></div>
         <span class="cell-txt">${txt}</span>
@@ -545,37 +569,37 @@ function renderChart(container, chartId, filas, viz, titulo) {
   // Construir datasets — uno por columna de valor
   const datasets = tipo === 'pie'
     ? [{
-        label: valueCols[0],
-        data: filas.slice(0, MAX_ROWS).map(r => Number(r[valueCols[0]]) || 0),
-        backgroundColor: palette,
-        borderColor: '#161b22',
-        borderWidth: 2,
-      }]
+      label: valueCols[0],
+      data: filas.slice(0, MAX_ROWS).map(r => Number(r[valueCols[0]]) || 0),
+      backgroundColor: palette,
+      borderColor: '#161b22',
+      borderWidth: 2,
+    }]
     : valueCols.map((col, i) => {
-        const color = palette[i % palette.length];
-        const data  = filas.slice(0, MAX_ROWS).map(r => Number(r[col]) || 0);
-        return {
-          label: col,
-          data,
-          backgroundColor: tipo === 'bar'
-            ? color + 'bb'
-            : (ctx) => {
-                const chart = ctx.chart;
-                const { ctx: c2d, chartArea } = chart;
-                if (!chartArea) return color;
-                const gradient = c2d.createLinearGradient(0, chartArea.top, 0, chartArea.bottom);
-                gradient.addColorStop(0, color + 'cc');
-                gradient.addColorStop(1, color + '11');
-                return gradient;
-              },
-          borderColor: color,
-          borderWidth: tipo === 'line' ? 2 : 0,
-          fill: viz === 'area',
-          tension: 0.35,
-          pointRadius: tipo === 'line' ? 3 : 0,
-          pointHoverRadius: 5,
-        };
-      });
+      const color = palette[i % palette.length];
+      const data = filas.slice(0, MAX_ROWS).map(r => Number(r[col]) || 0);
+      return {
+        label: col,
+        data,
+        backgroundColor: tipo === 'bar'
+          ? color + 'bb'
+          : (ctx) => {
+            const chart = ctx.chart;
+            const { ctx: c2d, chartArea } = chart;
+            if (!chartArea) return color;
+            const gradient = c2d.createLinearGradient(0, chartArea.top, 0, chartArea.bottom);
+            gradient.addColorStop(0, color + 'cc');
+            gradient.addColorStop(1, color + '11');
+            return gradient;
+          },
+        borderColor: color,
+        borderWidth: tipo === 'line' ? 2 : 0,
+        fill: viz === 'area',
+        tension: 0.35,
+        pointRadius: tipo === 'line' ? 3 : 0,
+        pointHoverRadius: 5,
+      };
+    });
 
   const wrapper = document.createElement('div');
   wrapper.className = 'chart-wrapper';
@@ -1326,8 +1350,64 @@ async function ejecutarSQLLibre() {
       params_sql,
       params_dinamicos: paramNames,
       tipo_origen: 'sql_libre',
-      tipo_viz: 'tabla'
+      tipo_viz: 'tabla'   // será actualizado por el recomendador
     };
+
+    // ── Recomendador automático de visualización ────────────────────────────
+    // Detectar tipos de columna desde la primera fila y llamar al recomendador.
+    // El resultado actualiza tipo_viz en pendingWidgetSave ANTES de abrir el modal.
+    try {
+      const primeraFila = filas[0] || {};
+      const colsParaRec = Object.keys(primeraFila).map(k => {
+        const v = primeraFila[k];
+        let tipo = 'texto';
+        if (typeof v === 'number') tipo = 'numero';
+        else if (v instanceof Date) tipo = 'fecha';
+        else if (typeof v === 'string') {
+          if (/^\d{4}-\d{2}-\d{2}/.test(v)) tipo = 'fecha';
+          else if (/^-?\d+(\.\d+)?$/.test(v)) tipo = 'numero';
+        }
+        return { nombre: k, tipo };
+      });
+
+      const vizResp = await api(`${API}/widgets/recomendar-viz`, {
+        method: 'POST',
+        body: JSON.stringify({ columnas: colsParaRec, muestra: filas.slice(0, 5) })
+      });
+
+      if (vizResp?.data?.recomendado) {
+        const rec = vizResp.data;
+        // Mapear tipos sin botón aún en el UI a su equivalente más cercano
+        const VIZ_DISPONIBLES = ['tabla', 'barra', 'linea', 'pastel', 'kpi'];
+        const vizFinal = VIZ_DISPONIBLES.includes(rec.recomendado)
+          ? rec.recomendado
+          : (rec.recomendado === 'barra_horizontal' ? 'barra' : 'tabla');
+
+        state.pendingWidgetSave.tipo_viz = vizFinal;
+        state.pendingWidgetSave.viz_recomendada = rec;
+
+        // Mostrar una pequeña píldora de sugerencia junto al botón Guardar
+        const hintId = 'viz-rec-hint';
+        let hint = document.getElementById(hintId);
+        if (!hint) {
+          hint = document.createElement('span');
+          hint.id = hintId;
+          hint.className = 'viz-rec-hint';
+          const btnGuardar = document.getElementById('btn-sql-guardar-widget');
+          btnGuardar.parentNode.insertBefore(hint, btnGuardar.nextSibling);
+        }
+        const vizLabels = {
+          tabla: 'Tabla', barra: 'Barras', linea: 'Línea',
+          pastel: 'Pastel', kpi: 'KPI',
+          barra_horizontal: 'Barras H.', dispersion: 'Dispersión'
+        };
+        hint.textContent = `Viz sugerida: ${vizLabels[rec.recomendado] || rec.recomendado} — ${rec.razon}`;
+        hint.title = rec.alternativas?.length
+          ? `Alternativas: ${rec.alternativas.join(', ')}` : '';
+      }
+    } catch { /* silenciar — el recomendador no debe bloquear el guardado */ }
+    // ────────────────────────────────────────────────────────────────────────
+
     document.getElementById('btn-sql-guardar-widget').classList.remove('hidden');
   } catch (err) {
     container.innerHTML = `<p class="error-msg">⚠ ${esc(err.message)}</p>`;
@@ -1358,7 +1438,7 @@ async function analizarConAsistente() {
   try {
     const { ok, data, error, sin_match, sugerencias, error_ejecucion } = await fetch(`${API}/widget-studio/interpretar`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json', ...csrfHeaders() },
       body: JSON.stringify({ texto })
     }).then(r => r.json());
 
@@ -1621,7 +1701,7 @@ async function aplicarAjusteAsistente() {
   try {
     const { ok, data, error } = await fetch(`${API}/widget-studio/interpretar`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json', ...csrfHeaders() },
       body: JSON.stringify({
         texto: document.getElementById('asistente-texto').value,
         params_override: paramsAjustados
@@ -1718,82 +1798,444 @@ function agregarWidgetAsistenteAlDashboard() {
 // ── ═══════════════ INIT ═══════════════ ──
 // ── ═══════════════ MIS WIDGETS ═══════════════ ──
 
+// ═══════════════════════════════════════════════════════════════
+//  WIZARD DE CREACIÓN DE WIDGETS (4 pasos)
+// ═══════════════════════════════════════════════════════════════
+
+/**
+ * Abre el wizard.
+ * Si se pasa `config` (desde SQL Libre / Asistente IA) salta al paso 3.
+ * Sin config, arranca en el paso 1 (lenguaje natural).
+ */
 function abrirModalGuardar(config) {
-  state.pendingWidgetSave = config;
-  document.getElementById('mw-nombre').value = '';
-  document.getElementById('mw-descripcion').value = '';
-  document.getElementById('mw-color').value = config.color_primario || '#6366f1';
-
-  // Viz toggle
-  state._mwViz = config.tipo_viz || 'tabla';
-  document.getElementById('mw-viz-toggle').querySelectorAll('.viz-btn').forEach(b => {
-    b.classList.toggle('active', b.dataset.viz === state._mwViz);
-  });
-
-  // Columnas
-  const cols = config.columnas_resultado || [];
-  const colsVisibles = config.columnas_visibles || cols;
-  document.getElementById('mw-columnas').innerHTML = cols.map(c =>
-    `<label class="col-check-item"><input type="checkbox" class="mw-col-check" value="${esc(c)}" ${colsVisibles.includes(c) ? 'checked' : ''}/> ${esc(c)}</label>`
-  ).join('');
-  document.getElementById('mw-columnas-field').classList.toggle('hidden', !cols.length);
-
-  // Params dinámicos
-  const params = config.params_dinamicos || [];
-  const paramsField = document.getElementById('mw-params-field');
-  if (params.length) {
-    document.getElementById('mw-params-list').innerHTML = params.map(p =>
-      `<span class="param-tag">:${esc(p)}</span>`
-    ).join('');
-    paramsField.classList.remove('hidden');
-  } else {
-    paramsField.classList.add('hidden');
-  }
-
+  const inicio = config ? 3 : 1;
+  state.wizard = {
+    paso: inicio,
+    tipo: config ? 'personalizado' : null,
+    metricaIa: null,
+    sql: config?.sql || '',
+    sistema: config?.sistema || 'SAE',
+    columnas: config?.columnas_detectadas || [],
+    filas: [],
+    vizRec: config?.viz_recomendada || null,
+    viz: config?.tipo_viz || 'tabla',
+    ejeX: (config?.viz_recomendada?.config_sugerida?.eje_x || '').toLowerCase(),
+    ejeY: (config?.viz_recomendada?.config_sugerida?.eje_y || '').toLowerCase(),
+    nombre: '',
+    descripcion: '',
+    color: config?.color_primario || '#6366f1',
+    columnas_resultado: config?.columnas_resultado || [],
+    params_sql: config?.params_sql || {},
+    params_dinamicos: config?.params_dinamicos || [],
+    tipo_origen: config?.tipo_origen || 'sql_libre',
+    widget_guardado: null
+  };
+  _wzRenderPaso(inicio);
   document.getElementById('modal-guardar-widget').classList.remove('hidden');
-  setTimeout(() => document.getElementById('mw-nombre').focus(), 50);
 }
 
 function cerrarModalGuardar() {
   document.getElementById('modal-guardar-widget').classList.add('hidden');
+  state.wizard = null;
+}
+
+// ── Navegación entre pasos ──────────────────────────────────────
+
+function _wzRenderPaso(n) {
+  const wz = state.wizard;
+  wz.paso = n;
+
+  // Indicadores de progreso
+  for (let i = 1; i <= 4; i++) {
+    const ind = document.getElementById(`wz-step-ind-${i}`);
+    if (!ind) continue;
+    ind.classList.toggle('active', i === n);
+    ind.classList.toggle('done', i < n);
+  }
+
+  // Panels
+  for (let i = 1; i <= 4; i++) {
+    const p = document.getElementById(`wz-panel-${i}`);
+    if (p) p.classList.toggle('hidden', i !== n);
+  }
+
+  // Botones footer
+  const btnAtras = document.getElementById('wz-btn-atras');
+  const btnSig = document.getElementById('wz-btn-siguiente');
+  const btnGuardar = document.getElementById('mw-btn-guardar');
+  const btnPanel = document.getElementById('wz-btn-agregar-panel');
+
+  if (btnAtras) btnAtras.classList.toggle('hidden', n === 1);
+  if (btnSig) btnSig.classList.toggle('hidden', n >= 4);
+  if (btnGuardar) { btnGuardar.classList.toggle('hidden', n !== 4); btnGuardar.disabled = false; btnGuardar.textContent = '★ Guardar Widget'; }
+  if (btnPanel) btnPanel.classList.toggle('hidden', n !== 4 || !wz.widget_guardado);
+
+  // Inicialización por paso
+  if (n === 2) _wzInicializarPaso2();
+  if (n === 3) _wzInicializarPaso3();
+  if (n === 4) _wzInicializarPaso4();
+}
+
+function _wzInicializarPaso2() {
+  const wz = state.wizard;
+  if (wz.sql) document.getElementById('wz-sql').value = wz.sql;
+  if (wz.sistema) document.getElementById('wz-sistema').value = wz.sistema;
+}
+
+function _wzInicializarPaso3() {
+  const wz = state.wizard;
+
+  // Viz toggle
+  document.getElementById('wz-viz-toggle').querySelectorAll('.viz-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.viz === wz.viz);
+  });
+
+  // Hint de recomendación
+  const hint = document.getElementById('wz-viz-rec');
+  if (hint) {
+    if (wz.vizRec?.razon) {
+      hint.textContent = `✦ ${wz.vizRec.razon}`;
+      hint.title = wz.vizRec.alternativas?.join(', ') || '';
+      hint.classList.remove('hidden');
+    } else {
+      hint.classList.add('hidden');
+    }
+  }
+
+  // Dropdowns Eje X / Y
+  _wzPopularDropdowns();
+
+  // Restaurar valores guardados
+  document.getElementById('wz-nombre').value = wz.nombre || '';
+  document.getElementById('wz-descripcion').value = wz.descripcion || '';
+  document.getElementById('wz-color').value = wz.color || '#6366f1';
+
+  setTimeout(() => document.getElementById('wz-nombre').focus(), 60);
+}
+
+function _wzPopularDropdowns() {
+  const wz = state.wizard;
+  const cols = wz.columnas || [];
+  const nums = cols.filter(c => c.tipo === 'numero');
+
+  const optsAll = `<option value="">— ninguna —</option>` + cols.map(c =>
+    `<option value="${esc(c.nombre)}" ${c.nombre.toLowerCase() === wz.ejeX ? 'selected' : ''}>${esc(c.nombre)} (${c.tipo})</option>`
+  ).join('');
+  const optsNum = `<option value="">— ninguna —</option>` + (nums.length ? nums : cols).map(c =>
+    `<option value="${esc(c.nombre)}" ${c.nombre.toLowerCase() === wz.ejeY ? 'selected' : ''}>${esc(c.nombre)}</option>`
+  ).join('');
+
+  const selX = document.getElementById('wz-eje-x');
+  const selY = document.getElementById('wz-eje-y');
+  if (selX) selX.innerHTML = optsAll;
+  if (selY) selY.innerHTML = optsNum;
+
+  const ejesSection = document.getElementById('wz-ejes-section');
+  if (ejesSection) ejesSection.classList.toggle('hidden', cols.length === 0);
+}
+
+async function _wzInicializarPaso4() {
+  const wz = state.wizard;
+  const summary = document.getElementById('wz-summary');
+  const preview = document.getElementById('wz-final-preview');
+  const vizLabel = { tabla: 'Tabla', barra: 'Barras', linea: 'Línea', pastel: 'Pastel', kpi: 'KPI' };
+
+  summary.innerHTML = `
+    <div class="wz-summary-row"><span>Nombre:</span><strong>${esc(wz.nombre || '—')}</strong></div>
+    <div class="wz-summary-row"><span>Sistema:</span><strong>${esc(wz.sistema || '—')}</strong></div>
+    <div class="wz-summary-row"><span>Visualización:</span><strong>${esc(vizLabel[wz.viz] || wz.viz)}</strong></div>
+    ${wz.columnas?.length ? `<div class="wz-summary-row"><span>Columnas:</span><strong>${wz.columnas.map(c => esc(c.nombre)).join(', ')}</strong></div>` : ''}
+  `;
+
+  if (!wz.sql || !wz.sistema) {
+    if (wz.metricaIa) {
+      preview.innerHTML = `<p class="hint-text">✦ Métrica de IA seleccionada: <strong>${esc(wz.metricaIa.nombre)}</strong><br>La vista previa se generará al ejecutar el widget.</p>`;
+    } else {
+      preview.innerHTML = '<p class="hint-text">Sin SQL configurado — la vista previa no está disponible.</p>';
+    }
+    return;
+  }
+
+  preview.innerHTML = '<div class="spinner"></div>';
+  try {
+    const { ok, data, error } = await api(`${API}/widgets/preview`, {
+      method: 'POST',
+      body: JSON.stringify({ sql: wz.sql, sistema: wz.sistema, parametros: wz.params_sql || {} })
+    });
+    if (!ok) throw new Error(error);
+    const filas = data.filas || [];
+    if (!filas.length) {
+      preview.innerHTML = '<p class="hint-text">La consulta no devolvió filas en la muestra.</p>';
+      return;
+    }
+    const datosWrap = {
+      datos: {
+        filas: filas.map(fila => {
+          const row = {};
+          for (const [k, v] of Object.entries(fila)) row[k] = { valor: v, valor_formateado: fmt(v) };
+          return row;
+        })
+      }
+    };
+    renderizarEnContenedor(preview, datosWrap, wz.viz, wz.nombre || 'Vista previa', 'wz-final-chart');
+  } catch (err) {
+    preview.innerHTML = `<p class="error-msg">⚠ ${esc(err.message)}</p>`;
+  }
+}
+
+// ── Acciones del wizard ────────────────────────────────────────
+
+async function wzSiguiente() {
+  const wz = state.wizard;
+
+  if (wz.paso === 1) {
+    if (!wz.tipo) wz.tipo = 'personalizado';
+    _wzRenderPaso(wz.tipo === 'personalizado' ? 2 : 3);
+    return;
+  }
+
+  if (wz.paso === 2) {
+    const sql = document.getElementById('wz-sql').value.trim();
+    const sistema = document.getElementById('wz-sistema').value;
+    if (!sql) { toast('Escribe un SQL para continuar', 'error'); return; }
+    wz.sql = sql;
+    wz.sistema = sistema;
+    _wzRenderPaso(3);
+    return;
+  }
+
+  if (wz.paso === 3) {
+    const nombre = document.getElementById('wz-nombre').value.trim();
+    if (!nombre) { toast('El nombre del widget es obligatorio', 'error'); return; }
+    wz.nombre = nombre;
+    wz.descripcion = document.getElementById('wz-descripcion').value.trim();
+    wz.color = document.getElementById('wz-color').value || '#6366f1';
+    wz.ejeX = document.getElementById('wz-eje-x')?.value || '';
+    wz.ejeY = document.getElementById('wz-eje-y')?.value || '';
+    _wzRenderPaso(4);
+    return;
+  }
+}
+
+function wzAtras() {
+  const wz = state.wizard;
+  // Guardar estado del paso actual antes de volver
+  if (wz.paso === 3) {
+    wz.nombre = document.getElementById('wz-nombre').value.trim();
+    wz.descripcion = document.getElementById('wz-descripcion').value.trim();
+    wz.color = document.getElementById('wz-color').value;
+  }
+  if (wz.paso === 2) {
+    wz.sql = document.getElementById('wz-sql').value.trim();
+    wz.sistema = document.getElementById('wz-sistema').value;
+  }
+  // Desde paso 3 con tipo 'ia' o directo desde config → volver a 1; demás casos -1
+  const prev = (wz.paso === 3 && wz.tipo === 'ia') ? 1 : wz.paso - 1;
+  _wzRenderPaso(Math.max(1, prev));
+}
+
+async function wzInterpretar() {
+  const texto = document.getElementById('wz-nl-input').value.trim();
+  if (!texto) { toast('Describe qué quieres analizar', 'error'); return; }
+
+  const btn = document.getElementById('wz-btn-interpretar');
+  const container = document.getElementById('wz-metricas-ia');
+  loading(btn, true, '✦ Interpretando...');
+  container.innerHTML = '<div class="spinner"></div>';
+  container.classList.remove('hidden');
+
+  try {
+    const resp = await api(`${API}/inteligencia/buscar`, {
+      method: 'POST',
+      body: JSON.stringify({ objetivo: texto, limite: 6 })
+    });
+    const resultados = resp?.resultados || [];
+
+    if (!resultados.length) {
+      container.innerHTML = '<p class="hint-text">No encontré métricas relacionadas — usa &ldquo;Widget personalizado con SQL&rdquo;.</p>';
+      return;
+    }
+
+    container.innerHTML = resultados.map(m => `
+      <div class="wz-metrica-card">
+        <div class="wz-mc-badges">
+          <span class="badge badge-${esc((m.sistema || '').toLowerCase())}">${esc(m.sistema || '?')}</span>
+          <span class="badge badge-cat">${esc(m.categoria || 'general')}</span>
+          ${m.score_relevancia ? `<span class="wz-score">${m.score_relevancia}%</span>` : ''}
+        </div>
+        <div class="wz-mc-nombre">${esc(m.nombre || m.id)}</div>
+        ${m.descripcion ? `<p class="wz-mc-desc">${esc(m.descripcion)}</p>` : ''}
+        <button class="btn btn-primary btn-sm wz-usar-metrica"
+          data-id="${esc(m.id)}" data-sistema="${esc(m.sistema || '')}"
+          data-nombre="${esc(m.nombre || m.id)}">✓ Usar esta métrica</button>
+      </div>
+    `).join('');
+
+    container.querySelectorAll('.wz-usar-metrica').forEach(b => {
+      b.addEventListener('click', () => {
+        const wz = state.wizard;
+        wz.tipo = 'ia';
+        wz.metricaIa = { id: b.dataset.id, sistema: b.dataset.sistema, nombre: b.dataset.nombre };
+        wz.nombre = b.dataset.nombre;
+        wz.sistema = b.dataset.sistema;
+        _wzRenderPaso(3);
+      });
+    });
+  } catch (err) {
+    container.innerHTML = `<p class="error-msg">⚠ ${esc(err.message)}</p>`;
+  } finally {
+    loading(btn, false);
+  }
+}
+
+async function wzPreview() {
+  const sql = document.getElementById('wz-sql').value.trim();
+  const sistema = document.getElementById('wz-sistema').value;
+  if (!sql) { toast('Escribe un SQL primero', 'error'); return; }
+
+  const btn = document.getElementById('wz-btn-preview');
+  const area = document.getElementById('wz-preview-area');
+  const tablaDiv = document.getElementById('wz-preview-tabla');
+  const colsBadges = document.getElementById('wz-cols-detectadas');
+  const vizHint = document.getElementById('wz-viz-hint');
+
+  loading(btn, true, '⏳ Consultando...');
+  area.classList.remove('hidden');
+  tablaDiv.innerHTML = '<div class="spinner"></div>';
+  colsBadges.innerHTML = '';
+  vizHint.classList.add('hidden');
+
+  try {
+    const { ok, data, error } = await api(`${API}/widgets/preview`, {
+      method: 'POST',
+      body: JSON.stringify({ sql, sistema, parametros: {} })
+    });
+    if (!ok) throw new Error(error);
+
+    const wz = state.wizard;
+    wz.sql = sql;
+    wz.sistema = sistema;
+    wz.columnas = data.columnas || [];
+    wz.filas = data.filas || [];
+    wz.vizRec = data.viz_recomendada || null;
+
+    // Aplicar visualización recomendada
+    if (wz.vizRec?.recomendado) {
+      const OK = ['tabla', 'barra', 'linea', 'pastel', 'kpi'];
+      wz.viz = OK.includes(wz.vizRec.recomendado) ? wz.vizRec.recomendado : 'tabla';
+    }
+    if (wz.vizRec?.config_sugerida) {
+      wz.ejeX = (wz.vizRec.config_sugerida.eje_x || '').toLowerCase();
+      wz.ejeY = (wz.vizRec.config_sugerida.eje_y || '').toLowerCase();
+    }
+
+    // Tabla de muestra
+    const filas = data.filas || [];
+    if (filas.length) {
+      const cols = Object.keys(filas[0]);
+      tablaDiv.innerHTML = `<div class="wz-preview-scroll"><table class="mini-tabla">
+        <thead><tr>${cols.map(c => `<th>${esc(c)}</th>`).join('')}</tr></thead>
+        <tbody>${filas.map(f => `<tr>${cols.map(c => `<td>${esc(String(f[c] ?? ''))}</td>`).join('')}</tr>`).join('')}</tbody>
+      </table></div>`;
+    } else {
+      tablaDiv.innerHTML = '<p class="hint-text">La consulta no devolvió filas en esta muestra.</p>';
+    }
+
+    // Badges de columnas
+    colsBadges.innerHTML = '<span class="wz-cols-label">Columnas detectadas:</span> ' +
+      (data.columnas || []).map(c =>
+        `<span class="wz-col-badge wz-col-${c.tipo}">${esc(c.nombre)} <em>${c.tipo}</em></span>`
+      ).join('');
+
+    // Hint visualización
+    if (wz.vizRec?.razon) {
+      vizHint.textContent = `✦ Sugerida: ${wz.vizRec.recomendado} — ${wz.vizRec.razon}`;
+      vizHint.classList.remove('hidden');
+    }
+
+    toast(`Vista previa: ${filas.length} fila(s)`, 'ok');
+  } catch (err) {
+    tablaDiv.innerHTML = `<p class="error-msg">⚠ ${esc(err.message)}</p>`;
+    toast(err.message, 'error');
+  } finally {
+    loading(btn, false);
+  }
 }
 
 async function guardarWidgetDesdeModal() {
-  const nombre = document.getElementById('mw-nombre').value.trim();
-  if (!nombre) { toast('Escribe un nombre para el widget', 'error'); return; }
+  const wz = state.wizard;
+  if (!wz) return;
 
-  const config = state.pendingWidgetSave || {};
-  const columnas_visibles = [...document.querySelectorAll('.mw-col-check:checked')].map(el => el.value);
+  const nombre = wz.nombre || document.getElementById('wz-nombre')?.value?.trim();
+  if (!nombre) { toast('El nombre es obligatorio', 'error'); return; }
 
   const payload = {
     nombre,
-    descripcion: document.getElementById('mw-descripcion').value.trim(),
-    tipo_viz: state._mwViz || 'tabla',
-    color_primario: document.getElementById('mw-color').value || '#6366f1',
-    columnas_visibles,
-    columnas_resultado: config.columnas_resultado || [],
-    sql: config.sql || null,
-    sistema: config.sistema || null,
-    params_sql: config.params_sql || {},
-    params_dinamicos: config.params_dinamicos || [],
-    tipo_origen: config.tipo_origen || 'sql_libre',
-    interpretacion_tipo: config.interpretacion_tipo || null
+    descripcion: wz.descripcion || '',
+    tipo_viz: wz.viz || 'tabla',
+    color_primario: wz.color || '#6366f1',
+    columnas_visibles: wz.columnas?.map(c => c.nombre) || [],
+    columnas_resultado: wz.columnas_resultado || wz.columnas?.map(c => c.nombre) || [],
+    columnas_detectadas: wz.columnas || [],
+    sql: wz.sql || null,
+    sistema: wz.sistema || null,
+    params_sql: wz.params_sql || {},
+    params_dinamicos: wz.params_dinamicos || [],
+    tipo_origen: wz.tipo_origen || 'sql_libre',
+    interpretacion_tipo: wz.metricaIa?.id || null
   };
 
   const btn = document.getElementById('mw-btn-guardar');
   loading(btn, true, 'Guardando...');
   try {
-    const { ok, widget, error } = await api(`${API}/widget-studio/mis-widgets`, {
+    const { ok, widget, error } = await api(`${API}/widgets`, {
       method: 'POST',
       body: JSON.stringify(payload)
     });
     if (!ok) throw new Error(error || 'Error guardando');
-    cerrarModalGuardar();
+
+    wz.widget_guardado = widget;
+
+    // Retroalimentación visual en el paso 4
+    document.getElementById('wz-summary').insertAdjacentHTML('beforeend',
+      `<div class="wz-saved-badge">✓ Widget "${esc(widget.nombre)}" guardado correctamente</div>`
+    );
+    btn.textContent = '✓ Guardado';
+    btn.disabled = true;
+
+    // Mostrar botón de agregar al panel
+    const btnPanel = document.getElementById('wz-btn-agregar-panel');
+    if (btnPanel) btnPanel.classList.remove('hidden');
+
+    // Refrescar lista si la vista Mis Widgets está activa
+    if (!document.getElementById('view-mis-widgets').classList.contains('hidden')) {
+      cargarMisWidgets();
+    }
     toast(`✓ Widget "${widget.nombre}" guardado`, 'ok');
   } catch (err) {
     toast(err.message, 'error');
   } finally {
     loading(btn, false);
+  }
+}
+
+function wzAgregarAlPanel() {
+  const wz = state.wizard;
+  const w = wz?.widget_guardado;
+  if (!w) { toast('Guarda el widget primero', 'error'); return; }
+
+  if (typeof window.addTileToCanvas === 'function') {
+    window.addTileToCanvas({
+      id: w.id, nombre: w.nombre, sistema: w.sistema,
+      sql: w.sql, color_primario: w.color_primario, tipo_viz: w.tipo_viz,
+      params_dinamicos: w.params_dinamicos || []
+    });
+    cerrarModalGuardar();
+    window.navegar('canvas');
+    toast('Widget agregado al Canvas ⊞', 'ok');
+  } else {
+    cerrarModalGuardar();
+    toast('Navega al Canvas Editor para agregar el widget', 'info');
   }
 }
 
@@ -1897,6 +2339,39 @@ async function eliminarWidgetGuardado(id, nombre) {
 // ─────────────────────────────────────────────────────────────────────────────
 
 function init() {
+  // ── Tema claro/oscuro ─────────────────────────────────────
+  if (localStorage.getItem('cenit-light') === 'true') document.body.classList.add('light');
+  document.getElementById('btn-dark-mode').addEventListener('click', () => {
+    document.body.classList.toggle('light');
+    const isLight = document.body.classList.contains('light');
+    localStorage.setItem('cenit-light', String(isLight));
+    document.getElementById('btn-dark-mode').textContent = isLight ? '🌙' : '☀️';
+    document.getElementById('btn-dark-mode').setAttribute('aria-label', isLight ? 'Cambiar a tema oscuro' : 'Cambiar a tema claro');
+  });
+
+  // ── ESC — cerrar cualquier modal abierto ──────────────────
+  document.addEventListener('keydown', e => {
+    if (e.key !== 'Escape') return;
+    const overlays = ['modal-guardar-widget', 'modal-guardar', 'modal-ejecutar',
+      'modal-ejecutar-widget', 'modal-canvas-params', 'modal-canvas-customize'];
+    overlays.forEach(id => {
+      const el = document.getElementById(id);
+      if (el && !el.classList.contains('hidden')) {
+        el.classList.add('hidden');
+        if (id === 'modal-guardar-widget') cerrarModalGuardar();
+      }
+    });
+  });
+
+  // ── Teclado — nav items (Enter / Espacio) ─────────────────
+  document.getElementById('nav-menu').addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      const li = e.target.closest('.nav-item');
+      if (li?.dataset.view) navegar(li.dataset.view);
+    }
+  });
+
   // Navegación sidebar
   document.getElementById('nav-menu').addEventListener('click', e => {
     const li = e.target.closest('.nav-item');
@@ -2042,37 +2517,60 @@ function init() {
     else toast('Ejecuta primero una consulta', 'error');
   });
 
-  // ── Modal Guardar Widget ──────────────────────────────────
+  // ── Wizard de creación de widgets ────────────────────────────
+  document.getElementById('btn-nuevo-widget').addEventListener('click', () => abrirModalGuardar(null));
+
   document.getElementById('mw-btn-cerrar').addEventListener('click', cerrarModalGuardar);
   document.getElementById('mw-btn-cancelar').addEventListener('click', cerrarModalGuardar);
   document.getElementById('mw-btn-guardar').addEventListener('click', guardarWidgetDesdeModal);
   document.getElementById('modal-guardar-widget').addEventListener('click', e => {
     if (e.target === e.currentTarget) cerrarModalGuardar();
   });
-  document.getElementById('mw-viz-toggle').addEventListener('click', e => {
+
+  // Paso 1
+  document.getElementById('wz-btn-interpretar').addEventListener('click', wzInterpretar);
+  document.getElementById('wz-nl-input').addEventListener('keydown', e => {
+    if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); wzInterpretar(); }
+  });
+  document.getElementById('wz-btn-personalizado').addEventListener('click', () => {
+    if (state.wizard) { state.wizard.tipo = 'personalizado'; _wzRenderPaso(2); }
+  });
+
+  // Paso 2
+  document.getElementById('wz-btn-preview').addEventListener('click', wzPreview);
+
+  // Paso 3 — viz toggle
+  document.getElementById('wz-viz-toggle').addEventListener('click', e => {
     const btn = e.target.closest('.viz-btn');
-    if (!btn) return;
-    state._mwViz = btn.dataset.viz;
-    document.getElementById('mw-viz-toggle').querySelectorAll('.viz-btn').forEach(b =>
-      b.classList.toggle('active', b.dataset.viz === state._mwViz)
+    if (!btn || !state.wizard) return;
+    state.wizard.viz = btn.dataset.viz;
+    document.getElementById('wz-viz-toggle').querySelectorAll('.viz-btn').forEach(b =>
+      b.classList.toggle('active', b.dataset.viz === state.wizard.viz)
     );
   });
-  document.getElementById('modal-guardar-widget').addEventListener('click', e => {
+
+  // Paso 3 — color picker
+  document.getElementById('wz-color-presets').addEventListener('click', e => {
     const dot = e.target.closest('.color-dot');
-    if (dot) document.getElementById('mw-color').value = dot.dataset.color;
+    if (dot) document.getElementById('wz-color').value = dot.dataset.color;
   });
+
+  // Footer
+  document.getElementById('wz-btn-siguiente').addEventListener('click', wzSiguiente);
+  document.getElementById('wz-btn-atras').addEventListener('click', wzAtras);
+  document.getElementById('wz-btn-agregar-panel').addEventListener('click', wzAgregarAlPanel);
 
   // ── Mis Widgets: ejecutar / eliminar (delegación) ─────────
   document.getElementById('mis-widgets-lista').addEventListener('click', e => {
-    const btnRun    = e.target.closest('.wcg-btn-run');
-    const btnDel    = e.target.closest('.wcg-btn-delete');
+    const btnRun = e.target.closest('.wcg-btn-run');
+    const btnDel = e.target.closest('.wcg-btn-delete');
     const btnCanvas = e.target.closest('.wcg-btn-canvas');
     if (btnRun) ejecutarWidgetGuardado(btnRun.dataset.id);
     if (btnDel) eliminarWidgetGuardado(btnDel.dataset.id, btnDel.dataset.nombre);
     if (btnCanvas) {
       const d = btnCanvas.dataset;
       let params = [];
-      try { params = JSON.parse(d.params || '[]'); } catch(_) {}
+      try { params = JSON.parse(d.params || '[]'); } catch (_) { }
       if (typeof window.addTileToCanvas === 'function') {
         window.addTileToCanvas({
           id: d.id, nombre: d.nombre, sistema: d.sistema,
@@ -2119,5 +2617,10 @@ function init() {
   navegar('inicio');
 }
 
-document.addEventListener('DOMContentLoaded', init);
+document.addEventListener('DOMContentLoaded', async () => {
+  await obtenerCsrfToken();
+  // Refrescar token cada 50 min (validez ~2h, ventana de 1h acepta anterior)
+  setInterval(obtenerCsrfToken, 50 * 60 * 1000);
+  init();
+});
 
